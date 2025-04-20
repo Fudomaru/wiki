@@ -1,17 +1,27 @@
 # Welcome to MkDocs
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# How I Built My MkDocs Wiki on a Fresh Windows Install
 
-## Commands
+## 1. Installed Python
+- Checked with `py --version`
+- Added Python to PATH
+- Disabled Microsoft Store shortcut trap
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## 2. Installed MkDocs
+- `pip install mkdocs`
+- Ran `mkdocs new .` inside my project folder
 
-## Project layout
+## 3. Git & GitHub Setup
+- Installed Git with winget
+- Set up username + email
+- Created GitHub repo and pushed source
+- Deployed using `mkdocs gh-deploy`
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## 4. Lessons Learned
+- Don't trust Windows defaults
+- GitHub Pages uses `gh-pages`, not `main`
+- Always check your branches and remotes
+
+## 5. What's Next
+- Theme upgrade
+- First real knowledge sections
