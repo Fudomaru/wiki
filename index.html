@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Short tutorial style explaination how I build this page, what problems I had, and what I learned from it.">
+      
       
       
       
@@ -16,7 +18,7 @@
     
     
       
-        <title>Wiki</title>
+        <title>Building a Wiki - Wiki</title>
       
     
     
@@ -26,6 +28,17 @@
         <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
       
       
+  
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20448%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M64%2032C28.7%2032%200%2060.7%200%2096v320c0%2035.3%2028.7%2064%2064%2064h224V368c0-26.5%2021.5-48%2048-48h112V96c0-35.3-28.7-64-64-64zm384%20320H336c-8.8%200-16%207.2-16%2016v112l32-32%2064-64z%22/%3E%3C/svg%3E');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C%21--%21%20Font%20Awesome%20Free%206.7.2%20by%20%40fontawesome%20-%20https%3A//fontawesome.com%20License%20-%20https%3A//fontawesome.com/license/free%20%28Icons%3A%20CC%20BY%204.0%2C%20Fonts%3A%20SIL%20OFL%201.1%2C%20Code%3A%20MIT%20License%29%20Copyright%202024%20Fonticons%2C%20Inc.--%3E%3Cpath%20d%3D%22M256%20512a256%20256%200%201%200%200-512%20256%20256%200%201%200%200%20512m-40-176h24v-64h-24c-13.3%200-24-10.7-24-24s10.7-24%2024-24h48c13.3%200%2024%2010.7%2024%2024v88h8c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024h-80c-13.3%200-24-10.7-24-24s10.7-24%2024-24m40-208a32%2032%200%201%201%200%2064%2032%2032%200%201%201%200-64%22/%3E%3C/svg%3E');}</style>
+
 
 
     
@@ -329,6 +342,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#py-is-the-launcher-python-is-the-interpreter" class="md-nav__link">
+    <span class="md-ellipsis">
+      py is the launcher. python is the interpreter.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-this-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why does this matter?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#2-installed-mkdocs" class="md-nav__link">
     <span class="md-ellipsis">
       2. Installed MkDocs
@@ -423,6 +454,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#py-is-the-launcher-python-is-the-interpreter" class="md-nav__link">
+    <span class="md-ellipsis">
+      py is the launcher. python is the interpreter.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-this-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why does this matter?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#2-installed-mkdocs" class="md-nav__link">
     <span class="md-ellipsis">
       2. Installed MkDocs
@@ -483,28 +532,40 @@
 <h2 id="how-i-built-my-wiki-using-mkdocs">How I Built My Wiki Using MkDocs</h2>
 <h3 id="1-installing-python">1. Installing Python</h3>
 <ul>
-<li>First things first: Checking if Python is already installed. For that I just checked for the Versions using <code>py --version</code> or <code>python --version</code></li>
-<li>Since for me it wasn't installed, I went on installing it. I used <code>winget install --id Python.Python.3 --source winget</code> to install it over Powershell, which seamed the most strait forward way to do it. </li>
-<li>Then I got to my first bump in the road: <code>py --version</code> worked, but <code>python --version</code> did not. For that I wanted to figure out what the actual difference is</li>
+<li>
+<p>First things first: Checking if Python is already installed. For that I just checked for the Version using <code>py --version</code> or <code>python --version</code></p>
+</li>
+<li>
+<p>Since for me it wasn't installed, I went on installing it. I used <code>winget install --id Python.Python.3 --source winget</code> to install it over Powershell, which seamed the most strait forward way to do it. </p>
+</li>
+<li>
+<p>Then I got to my first bump in the road: <code>py --version</code> worked, but <code>python --version</code> did not. For that I wanted to figure out what the actual difference is</p>
+</li>
 </ul>
-<hr />
-<p>!!! note "Difference py and python command"
-    <strong><code>py</code> is the launcher. <code>python</code> is the interpreter.</strong>
-    - <code>py</code> is a small helper program that comes with the official Python installation on Windows. Its only job is to find and launch the correct version of Python installed on your system.<br />
-    Think of it as the <em>middleman</em>, the bouncer at the club door asking, "Which Python do you want?"
-    - <code>python</code> is the actual executable — the real Python interpreter. When you type <code>python</code>, you're telling your system, "Run this specific program."
-    Why does this matter?
-    Because on a fresh Windows install:
-    py will usually work, even if your system PATH isn’t set up right.
-    - <code>python</code> might be broken or hijacked by the Microsoft Store’s fake shortcut — leading to frustration and confusion.
-    <strong>Bottom line:</strong>
-    - Use <code>py</code> when your system is fresh and you’re still figuring things out.
-    - But for full control and compatibility (especially with scripts, tools, and virtual environments), make sure <code>python</code> points to your real install — and then use <code>python</code> from that point forward.
-    <strong>If <code>py</code> is the butler, <code>python</code> is the king.</strong><br />
-    Eventually, you don’t want to talk to the butler anymore.</p>
-<hr />
+<div class="admonition info">
+<p class="admonition-title">Difference py and python command</p>
+<h3 id="py-is-the-launcher-python-is-the-interpreter"><strong><code>py</code> is the launcher. <code>python</code> is the interpreter.</strong></h3>
 <ul>
-<li>Disabled Microsoft Store shortcut trap</li>
+<li>
+<p><code>py</code> is a small helper program that comes with the official Python installation on Windows. Its only job is to find and launch the correct version of Python installed on your system.  </p>
+</li>
+<li>
+<p><code>python</code> is the actual executable — the real Python interpreter. When you type <code>python</code>, you're telling your system, "Run this specific program."</p>
+</li>
+</ul>
+<h3 id="why-does-this-matter">Why does this matter?</h3>
+<p>Because <code>py</code> will usually work, even if your system PATH isn’t set up right.
+- <code>python</code> might be broken or hijacked by the Microsoft Store’s fake shortcut — leading to frustration and confusion.</p>
+<p><strong>Bottom line:</strong></p>
+<ul>
+<li>Use <code>py</code> when your system is fresh and you’re still figuring things out.</li>
+<li>But for full control and compatibility (especially with scripts, tools, and virtual environments), make sure <code>python</code> points to your real install — and then use <code>python</code> from that point forward.</li>
+</ul>
+<p><strong>If <code>py</code> is the butler, <code>python</code> is the king.</strong><br />
+Eventually, you don’t want to talk to the butler anymore.</p>
+</div>
+<ul>
+<li>With that in mind, I figured out that I had to disable the Microsoft Store shortcut, which lets <code>python</code> point to the install in the MS Store. I found it under <code>Settings&gt;Apps&gt;App execution aliases</code></li>
 </ul>
 <h3 id="2-installed-mkdocs">2. Installed MkDocs</h3>
 <ul>
@@ -535,6 +596,9 @@
 
 
 
+
+  
+  
 
 
 
