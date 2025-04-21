@@ -7,6 +7,10 @@ theme:
   icon: 
     logo: material/brain
 
+    admonition:
+      note: fontawesome/solid/note-sticky
+      info: fontawesome/solid/circle-info
+
   palette: 
     # Palette toggle for light mode
     - scheme: default
@@ -42,3 +46,8 @@ extra:
   social:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/marcel-busch-b42783268
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
