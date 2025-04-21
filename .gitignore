@@ -1,0 +1,35 @@
+# MkDocs build output
+site/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.pipenv/
+.python-version
+
+# mkdocs cache (if using plugins)
+.mkdocs/
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Editor-specific
+.vscode/
+.idea/
+*.swp
+
+# OS junk
+*.bak
+*.tmp

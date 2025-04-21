@@ -24,7 +24,7 @@ theme:
         icon: material/lightbulb-outline
         name: Light
       primary: teal
-      accent: light green
+      accent: deep purple
   
   font:
     text: Anonymous Pro
