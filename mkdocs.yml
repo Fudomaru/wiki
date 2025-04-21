@@ -1,6 +1,44 @@
 site_name: Wiki
 
-theme: 
- name: material
- palette:
-  scheme: slate
+theme:
+
+  name: material
+
+  icon: 
+    logo: material/brain
+
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/lightbulb
+        name: Dark
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/lightbulb-outline
+        name: Light
+      primary: teal
+      accent: light green
+  
+  font:
+    text: Anonymous Pro
+    code: Fira Code
+  
+  features:
+    - navigation.instant 
+    - navigation.instant.progress 
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+
+    - search.suggest
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: www.linkedin.com/in/marcel-busch-b42783268
