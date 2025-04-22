@@ -1,4 +1,6 @@
 site_name: Wiki
+site_description: "A Linux & Cybersecurity notebook forged in fire."
+site_author: "Fudomaru"
 
 theme:
 
@@ -24,7 +26,7 @@ theme:
         icon: material/lightbulb-outline
         name: Light
       primary: teal
-      accent: deep purple
+      accent: lime
   
   font:
     text: Anonymous Pro
@@ -51,3 +53,27 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - Linux Wizardry:
+      - CLI Magic: linux/cli-magic.md
+      - System Internals: linux/system-internals.md
+      - Network Kung-Fu: linux/networking.md
+      - Automation & Scripts: linux/automation.md
+  - Cybersecurity:
+      - Fundamentals: cybersec/fundamentals.md
+      - Toolbelt: cybersec/tools.md
+      - Playbooks: cybersec/playbooks.md
+  - CTF & Wargames:
+      - Overthewire:
+          - Bandit: ctf/overthewire/bandit.md
+          - Narnia: ctf/overthewire/narnia.md
+      - HackTheBox: ctf/htb.md
+      - TryHackMe: ctf/thm.md
+  - Notes:
+      - Certifications: notes/certs.md
+      - Readings & Videos: notes/media.md
+      - Projects: 
+        - Digital Dojo: notes/projects/digital-dojo.md
+  - About: about.md
