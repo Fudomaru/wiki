@@ -19,6 +19,8 @@ theme:
       toggle:
         icon: material/lightbulb
         name: Dark
+      primary: red
+      accent: deep orange
 
     # Palette toggle for dark mode
     - scheme: slate
@@ -53,6 +55,10 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+
+repo_url: https://github.com/fudomaru/wiki
+repo_name: ""
+edit_uri: ""
 
 nav:
   - Home: index.md
