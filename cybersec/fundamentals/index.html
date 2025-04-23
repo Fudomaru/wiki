@@ -86,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#what-is-this-page" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -622,6 +627,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Fundamentals
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -633,6 +651,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-this-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is this Page
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mindset-of-a-hacker" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Mindset of a Hacker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concepts-to-understand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Concepts to Understand
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-i-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools I use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-learning-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      My Learning Plan
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1087,6 +1167,59 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-this-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is this Page
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mindset-of-a-hacker" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Mindset of a Hacker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concepts-to-understand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Concepts to Understand
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-i-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools I use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-learning-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      My Learning Plan
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1103,7 +1236,74 @@
 
   <h1>Fundamentals</h1>
 
-
+<h2 id="what-is-this-page">What is this Page</h2>
+<p>This is my personal crash course into cybersecurity.<br />
+I use it to track concepts, tools and tactis I pick up and get to use efficantly in CTFs and during my learning.  </p>
+<div class="admonition info">
+<p>It evolves as I learn!</p>
+</div>
+<h2 id="the-mindset-of-a-hacker">The Mindset of a Hacker</h2>
+<ul>
+<li>
+<p>Thinking outside the box: Try to find as many ways to use tools and systems as you can. There is never the right way, there are only endless possibilities.  </p>
+</li>
+<li>
+<p>The Why is more important then the How: Understanding why something is done, the motivation and psychologie behind it, you find the weak points.  </p>
+</li>
+<li>
+<p>No is not an option: You often get the best results, after nothing works and you have to get creative.  </p>
+</li>
+<li>
+<p>See the System: To figure something out, and really understand it, it is often recommended to take a step back.   </p>
+</li>
+<li>
+<p>Attention to Detail: Pay close attention to every detail and be persistent in figuring out the why.   </p>
+</li>
+<li>
+<p>"Man lernt nie aus": This is not just a phrase, it is a philosophy  </p>
+</li>
+</ul>
+<h2 id="core-concepts-to-understand">Core Concepts to Understand</h2>
+<ul>
+<li>
+<p>CIA Triade: The three core parts to make things secure. Look at this on every level, from singel packages to complete infrastructures. If any is missing, that is where things go wrong.  </p>
+</li>
+<li>
+<p>OWASP Top 10: The most commen vulnarbilities found in the wild. Learn them, know them, and look for them everywhere.  </p>
+</li>
+<li>
+<p>Defense in depth: Layering security strategies, always know that every layer will be breached. So configure every layer like it is the first and last defence.  </p>
+</li>
+<li>
+<p>Privilege escalation: Type of attack where a unauthorized user gains access to more then they should. There are two ways for that, vertical and horizontal. Vertical movement is going up the food ladder, to management and admin. Horizontal means staying on your permission level, but accessing a different user, gaining confidentail data.  </p>
+</li>
+<li>
+<p>Post Exploitation: Don't forget that most seriouse attackers are not done after they get access. They will try to get persistence, escalate privileges, and gather information.  </p>
+</li>
+</ul>
+<h2 id="tools-i-use">Tools I use</h2>
+<ul>
+<li>
+<p>nmap: Networkscanner of choice. </p>
+</li>
+<li>
+<p>Burp Suite: Package interception, changing and exploring of WebApps on a new level.  </p>
+</li>
+<li>
+<p>John the Ripper: Because weak passwords are still more common then you think.  </p>
+</li>
+<li>
+<p>ffuf: Because Enumerating is at least half of the game.  </p>
+</li>
+<li>
+<p>netcat: The Swiss army knife of raw Networking Connections.  </p>
+</li>
+</ul>
+<h2 id="my-learning-plan">My Learning Plan</h2>
+<p>Phase 1: Basics - get as much Hands on as you can.<br />
+Phase 2: Enumeration - try to learn to understand systems quickly.<br />
+Phase 3: Exploration - warming up with all the common bugs.<br />
+Phase 4: Real World - getting my Hands dirty in Bug Bounty</p>
 
 
 
