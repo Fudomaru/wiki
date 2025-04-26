@@ -647,6 +647,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssh
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1375,6 +1384,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssh
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1451,6 +1469,7 @@
 <li><a href="#ping"><code>ping</code></a></li>
 <li><code>ip</code></li>
 <li><code>ss</code></li>
+<li><a href="#ssh"><code>ssh</code></a></li>
 <li><code>netstat</code></li>
 <li><code>dig</code></li>
 <li><code>nslookup</code></li>
@@ -1509,77 +1528,6 @@ Format suggestion for each command:
 ***Tip:***
 
 
-alias  
-apt  
-awk  
-cat     -- done
-cd      -- done
-chgrp  
-chmod   -- done
-chown  
-curl  
-cut  
-dd  
-df  
-dig  
-dnf  
-dpkg  
-dmesg  
-du  
-find  
-free  
-groups  
-head  
-history  
-htop  
-ip  
-kill  
-less  
-locate 
-ls      -- done 
-lsof  
-man  
-mkfs  
-mount  
-netstat  
-nmap  
-nslookup  
-passwd  
-pacman  
-ping    -- done
-pkill  
-ps  
-pwd  
-readlink  
-reboot  
-rm  
-rpm  
-sed  
-shutdown  
-sort  
-ss  
-sudo  
-tail  
-tar  
-tee  
-time  
-top  
-traceroute  
-tree  
-type  
-umount  
-uniq  
-uptime  
-usermod  
-vmstat  
-wc  
-wget  
-which  
-whoami  
-xargs  
-yes  
-zip  
-
 -->
 
 <hr />
@@ -1600,20 +1548,38 @@ That also makes it perfect for searching though large files, like logs, together
 </ul>
 <hr />
 <h4 id="chmod">chmod</h4>
-<p><strong><em>What it does:</em></strong> Used to change permissions of a file.</p>
-<p><strong><em>Real use case:</em></strong> Whenever you make a script so you are actually able to run it. </p>
-<p><strong><em>Example:</em></strong> In the example above, making a file executable, it would like that <code>chmod -x [file]</code></p>
-<p><strong><em>Tip:</em></strong> Learning the numbercodes is extremly helpful. First number for the user, second for the group, and last for others. Each digit represents a combination of read (4), write (2), and execute (1). </p>
+<p><strong><em>What it does:</em></strong><br />
+Used to change permissions of a file.</p>
+<p><strong><em>Real use case:</em></strong><br />
+Whenever you make a script so you are actually able to run it. </p>
+<p><strong><em>Example:</em></strong><br />
+In the example above, making a file executable, it would like that <code>chmod -x [file]</code></p>
+<p><strong><em>Tip:</em></strong><br />
+Learning the numbercodes is extremly helpful. First number for the user, second for the group, and last for others. Each digit represents a combination of read (4), write (2), and execute (1). </p>
 <hr />
 <h4 id="ls">ls</h4>
-<p><strong><em>What it does:</em></strong> Shows the inside of the current directory.</p>
-<p><strong><em>Tip:</em></strong> Best used with a <code>-al</code> flag to list all files in long format.</p>
+<p><strong><em>What it does:</em></strong><br />
+Shows the inside of the current directory.</p>
+<p><strong><em>Tip:</em></strong><br />
+Best used with a <code>-al</code> flag to list all files in long format.</p>
 <hr />
 <h4 id="ping">ping</h4>
-<p><strong><em>What it does:</em></strong> Sends an ICMP echo request to a target host. </p>
-<p><strong><em>Real use case:</em></strong> Perfect to test if there is a connection. Eighter to the target on the way in, or from the mashine on the way out (by pinging something that is alway reachable)</p>
-<p><strong><em>Example:</em></strong> <code>ping 8.8.8.8</code> to try to ping the google DNS server, which should always work if you have connection to the internet. </p>
+<p><strong><em>What it does:</em></strong><br />
+Sends an ICMP echo request to a target host. </p>
+<p><strong><em>Real use case:</em></strong><br />
+Perfect to test if there is a connection. Eighter to the target on the way in, or from the mashine on the way out (by pinging something that is alway reachable)</p>
+<p><strong><em>Example:</em></strong><br />
+<code>ping 8.8.8.8</code> to try to ping the google DNS server, which should always work if you have connection to the internet. </p>
 <p><strong><em>Tip:</em></strong> Is often used to monitor server uptime from afar, by regularly sending a ping. </p>
+<hr />
+<h4 id="ssh">ssh</h4>
+<p><strong><em>What it does:</em></strong><br />
+Creates a secure connetion with access to the local terminal. </p>
+<p><strong><em>Real use case:</em></strong><br />
+Maintaining remote servers where it is not reasonable to have direkt access, and which might not have a GUI.</p>
+<p><strong><em>Example:</em></strong><br />
+Accessing the Bandit Wargame from OvertheWire:<br />
+<code>ssh -p 2220 bandit0@bandit.labs.overthewire.org</code></p>
 
 
 
