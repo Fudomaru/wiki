@@ -58,6 +58,7 @@ These are the commands I reach for when things get real.
 - [`ping`](#ping)
 - `ip`
 - `ss`
+- [`ssh`](#ssh)
 - `netstat`
 - `dig`
 - `nslookup`
@@ -114,77 +115,6 @@ Format suggestion for each command:
 ***Tip:***
 
 
-alias  
-apt  
-awk  
-cat     -- done
-cd      -- done
-chgrp  
-chmod   -- done
-chown  
-curl  
-cut  
-dd  
-df  
-dig  
-dnf  
-dpkg  
-dmesg  
-du  
-find  
-free  
-groups  
-head  
-history  
-htop  
-ip  
-kill  
-less  
-locate 
-ls      -- done 
-lsof  
-man  
-mkfs  
-mount  
-netstat  
-nmap  
-nslookup  
-passwd  
-pacman  
-ping    -- done
-pkill  
-ps  
-pwd  
-readlink  
-reboot  
-rm  
-rpm  
-sed  
-shutdown  
-sort  
-ss  
-sudo  
-tail  
-tar  
-tee  
-time  
-top  
-traceroute  
-tree  
-type  
-umount  
-uniq  
-uptime  
-usermod  
-vmstat  
-wc  
-wget  
-which  
-whoami  
-xargs  
-yes  
-zip  
-
 --> 
 
 ---
@@ -215,30 +145,53 @@ That also makes it perfect for searching though large files, like logs, together
 
 #### chmod
 
-***What it does:*** Used to change permissions of a file.
+***What it does:***  
+Used to change permissions of a file.
 
-***Real use case:*** Whenever you make a script so you are actually able to run it. 
+***Real use case:***  
+Whenever you make a script so you are actually able to run it. 
 
-***Example:*** In the example above, making a file executable, it would like that `chmod -x [file]`
+***Example:***  
+In the example above, making a file executable, it would like that `chmod -x [file]`
 
-***Tip:*** Learning the numbercodes is extremly helpful. First number for the user, second for the group, and last for others. Each digit represents a combination of read (4), write (2), and execute (1). 
+***Tip:***  
+Learning the numbercodes is extremly helpful. First number for the user, second for the group, and last for others. Each digit represents a combination of read (4), write (2), and execute (1). 
 
 ---
 
 #### ls
 
-***What it does:*** Shows the inside of the current directory.
+***What it does:***  
+Shows the inside of the current directory.
 
-***Tip:*** Best used with a `-al` flag to list all files in long format.
+***Tip:***  
+Best used with a `-al` flag to list all files in long format.
 
 ---
 
 #### ping
 
-***What it does:*** Sends an ICMP echo request to a target host. 
+***What it does:***  
+Sends an ICMP echo request to a target host. 
 
-***Real use case:*** Perfect to test if there is a connection. Eighter to the target on the way in, or from the mashine on the way out (by pinging something that is alway reachable)
+***Real use case:***  
+Perfect to test if there is a connection. Eighter to the target on the way in, or from the mashine on the way out (by pinging something that is alway reachable)
 
-***Example:*** `ping 8.8.8.8` to try to ping the google DNS server, which should always work if you have connection to the internet. 
+***Example:***  
+`ping 8.8.8.8` to try to ping the google DNS server, which should always work if you have connection to the internet. 
 
 ***Tip:*** Is often used to monitor server uptime from afar, by regularly sending a ping. 
+
+---
+
+#### ssh
+
+***What it does:***  
+Creates a secure connetion with access to the local terminal. 
+
+***Real use case:***  
+Maintaining remote servers where it is not reasonable to have direkt access, and which might not have a GUI.
+
+***Example:***  
+Accessing the Bandit Wargame from OvertheWire:  
+`ssh -p 2220 bandit0@bandit.labs.overthewire.org`
