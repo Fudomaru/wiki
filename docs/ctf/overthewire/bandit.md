@@ -169,8 +169,10 @@ So I thought to be really clever figured out how to search on the `man` pages.
 This is done with `/ WhatYouWantToSearch`.  
 With this it was a lot easier to find out the right command to find the user and group.  
 `find / -user bandit7 -group bandit6 -size 33c`  
-But still there where way to many files, most of which the permission was denied to me anyway. 
-
+But still there where way to many files, most of which the permission was denied to me anyway.  
+Going though it, with most of them I had no permissions to look at them anyway.  
+So a quick google search came up with this to give the stderr to the void:  
+`find / -user bandit7 -group bandit6 -size 33c 2>/dev/null`    
 
 <!--
 morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
@@ -178,82 +180,155 @@ morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 
 ## Level 7 → Level 8
 
-#### New Commands
+#### New Commands  
+grep, strings, base64
 
-#### My Solutions
+#### My Solutions  
+So for this level there where a whole lot of new commands.  
+The Info for this was as follows:  
+The password for the next level is stored in the file data.txt next to the word millionth  
+That meant I now what to do:  
+`cat data.txt | grep millionth`
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
 -->
 
 ## Level 8 → Level 9
 
-#### New Commands
+#### New Commands  
+sort, uniq  
 
-#### My Solutions
+#### My Solutions  
+So same set up, but the only line of text that occurs only once.  
+For this I imidiatly went to the `sort` command.  
+I thought that would make it easy.  
+But I was wrong.  
+Probably I could just go though the output and find the line that only occurs once.  
+But I want it clean.  
+If at all possible just giving me the one line I need.  
+I went looking, but didn't find anything in the sort command.  
+Back to the list with new commands.  
+Kind of ashamed I saw that the next command is called `uniq`.  
+If that is not made for finding something only existing once in the file.  
+After reading though the man page, I figured I would need to use both.  
+In the end it looked something like that:  
+`sort data.txt | uniq -u`
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
 -->
 
 ## Level 9 → Level 10
 
-#### New Commands
+#### New Commands  
+string
 
-#### My Solutions
+#### My Solutions  
+So I have a data.txt, but it is all gibberish.  
+Again needing to go back to the description.  
+It is supposed to be the only human readable string preceded by several =.  
+For me the imidiat problem is that several is not very specific.  
+But leaving that for the end, I needed to find some good way to look for the right part. I though for the equal sign I can just use `qrep`.  
+Sadly that wouldn't want to work.  
+Back to the commands.  
+Just checking the next in line, since they seam to come in order, gave me this final answer:  
+`strings data.txt | grep "=="`
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 -->
 
 ## Level 10 → Level 11
 
-#### New Commands
+#### New Commands  
+base64  
 
-#### My Solutions
+#### My Solutions  
+Going though the description first this time I learned, that the data this time  is base64 encoded.  
+So it seams it was pretty straight forward.  
+Reading though the docu for `base64` and building a funktioning command to use it.  
+`base64 -d data.txt`
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 -->
 
 ## Level 11 → Level 12
 
-#### New Commands
+#### New Commands  
+tr  
 
-#### My Solutions
+#### My Solutions  
+With this I had a bit more problems.  
+I feel like I have heared it somewhere before, so I search online for what this actually is.  
+This is how I found [ROT13](#level-11--level-12).  
+With that knowledge I just tried looking at the next command.  
+`tr` is for translating or deleting charaters in a text.  
+So I knew what I had to do.  
+Delete every letter with the coresponding one.  
+`cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'`  
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 -->
 
 ## Level 12 → Level 13
 
-#### New Commands
+#### New Commands  
+tar, gzip, bzip2, xxd  
 
-#### My Solutions
+#### My Solutions  
+So for this the info for the level recomanded to make a directory to work at.  
+I did as I was told.  
+Then I started working my way though everything saving every step of the way.  
+First I converted the hex dump back with:  
+`xxd -d data`  
+Afterwards I always look what conversion was used with `file`, then changed the name to have the apropriat ending with `mv` and used the fitting decompression command.  
+This I needed to do 10 times until finally -> filetype: ASCII  
+Finally I was done and had the password.  
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 -->
 
 ## Level 13 → Level 14
 
-#### New Commands
+#### New Commands  
+ssh, telnet, nc, openssl, s_client, nmap
 
-#### My Solutions
+#### My Solutions  
+This was pretty exciting for me.  
+I am a big fan of using keys and what happens when it gets into the wrong hands.  
+This might be why I never saved the password for level 14.  
+I copied the privat key and used it to connect directly to the bandit14 account.  
+But I do know you are supposed to connect to bandit14 from your bandit13 account.  
+The command for that would be:  
+`ssh -i sshkey.private -p 2220 bandit14@localhost`
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
 -->
 
 ## Level 14 → Level 15
 
-#### New Commands
+#### New Commands  
+nc
 
-#### My Solutions
+#### My Solutions  
+For this I was really unsure what to do at first.  
+Okay that is not quite true.  
+The level description actually tells me exactly what to do.  
+But I was not sure how I can just send something to a port.  
+This means I went to the internet to figure it out.  
+And found out that I can use netcat for it.  
+So I connected to the port using  
+`nc localhost 30000`  
+and send the password. 
+And promt I got the new password for bandit15.  
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
 -->
 
 ## Level 15 → Level 16
