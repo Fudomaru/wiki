@@ -3530,65 +3530,141 @@ So I thought to be really clever figured out how to search on the <code>man</cod
 This is done with <code>/ WhatYouWantToSearch</code>.<br />
 With this it was a lot easier to find out the right command to find the user and group.<br />
 <code>find / -user bandit7 -group bandit6 -size 33c</code><br />
-But still there where way to many files, most of which the permission was denied to me anyway. </p>
+But still there where way to many files, most of which the permission was denied to me anyway.<br />
+Going though it, with most of them I had no permissions to look at them anyway.<br />
+So a quick google search came up with this to give the stderr to the void:<br />
+<code>find / -user bandit7 -group bandit6 -size 33c 2&gt;/dev/null</code>    </p>
 <!--
 morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 -->
 
 <h2 id="level-7-level-8">Level 7 → Level 8</h2>
 <h4 id="new-commands_4">New Commands</h4>
+<p>grep, strings, base64</p>
 <h4 id="my-solutions_7">My Solutions</h4>
+<p>So for this level there where a whole lot of new commands.<br />
+The Info for this was as follows:<br />
+The password for the next level is stored in the file data.txt next to the word millionth<br />
+That meant I now what to do:<br />
+<code>cat data.txt | grep millionth</code></p>
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
 -->
 
 <h2 id="level-8-level-9">Level 8 → Level 9</h2>
 <h4 id="new-commands_5">New Commands</h4>
+<p>sort, uniq  </p>
 <h4 id="my-solutions_8">My Solutions</h4>
+<p>So same set up, but the only line of text that occurs only once.<br />
+For this I imidiatly went to the <code>sort</code> command.<br />
+I thought that would make it easy.<br />
+But I was wrong.<br />
+Probably I could just go though the output and find the line that only occurs once.<br />
+But I want it clean.<br />
+If at all possible just giving me the one line I need.<br />
+I went looking, but didn't find anything in the sort command.<br />
+Back to the list with new commands.<br />
+Kind of ashamed I saw that the next command is called <code>uniq</code>.<br />
+If that is not made for finding something only existing once in the file.<br />
+After reading though the man page, I figured I would need to use both.<br />
+In the end it looked something like that:<br />
+<code>sort data.txt | uniq -u</code></p>
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
 -->
 
 <h2 id="level-9-level-10">Level 9 → Level 10</h2>
 <h4 id="new-commands_6">New Commands</h4>
+<p>string</p>
 <h4 id="my-solutions_9">My Solutions</h4>
+<p>So I have a data.txt, but it is all gibberish.<br />
+Again needing to go back to the description.<br />
+It is supposed to be the only human readable string preceded by several =.<br />
+For me the imidiat problem is that several is not very specific.<br />
+But leaving that for the end, I needed to find some good way to look for the right part. I though for the equal sign I can just use <code>qrep</code>.<br />
+Sadly that wouldn't want to work.<br />
+Back to the commands.<br />
+Just checking the next in line, since they seam to come in order, gave me this final answer:<br />
+<code>strings data.txt | grep "=="</code></p>
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 -->
 
 <h2 id="level-10-level-11">Level 10 → Level 11</h2>
 <h4 id="new-commands_7">New Commands</h4>
+<p>base64  </p>
 <h4 id="my-solutions_10">My Solutions</h4>
+<p>Going though the description first this time I learned, that the data this time  is base64 encoded.<br />
+So it seams it was pretty straight forward.<br />
+Reading though the docu for <code>base64</code> and building a funktioning command to use it.<br />
+<code>base64 -d data.txt</code></p>
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 -->
 
 <h2 id="level-11-level-12">Level 11 → Level 12</h2>
 <h4 id="new-commands_8">New Commands</h4>
+<p>tr  </p>
 <h4 id="my-solutions_11">My Solutions</h4>
+<p>With this I had a bit more problems.<br />
+I feel like I have heared it somewhere before, so I search online for what this actually is.<br />
+This is how I found <a href="#level-11--level-12">ROT13</a>.<br />
+With that knowledge I just tried looking at the next command.<br />
+<code>tr</code> is for translating or deleting charaters in a text.<br />
+So I knew what I had to do.<br />
+Delete every letter with the coresponding one.<br />
+<code>cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'</code>  </p>
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 -->
 
 <h2 id="level-12-level-13">Level 12 → Level 13</h2>
 <h4 id="new-commands_9">New Commands</h4>
+<p>tar, gzip, bzip2, xxd  </p>
 <h4 id="my-solutions_12">My Solutions</h4>
+<p>So for this the info for the level recomanded to make a directory to work at.<br />
+I did as I was told.<br />
+Then I started working my way though everything saving every step of the way.<br />
+First I converted the hex dump back with:<br />
+<code>xxd -d data</code><br />
+Afterwards I always look what conversion was used with <code>file</code>, then changed the name to have the apropriat ending with <code>mv</code> and used the fitting decompression command.<br />
+This I needed to do 10 times until finally -&gt; filetype: ASCII<br />
+Finally I was done and had the password.  </p>
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 -->
 
 <h2 id="level-13-level-14">Level 13 → Level 14</h2>
 <h4 id="new-commands_10">New Commands</h4>
+<p>ssh, telnet, nc, openssl, s_client, nmap</p>
 <h4 id="my-solutions_13">My Solutions</h4>
+<p>This was pretty exciting for me.<br />
+I am a big fan of using keys and what happens when it gets into the wrong hands.<br />
+This might be why I never saved the password for level 14.<br />
+I copied the privat key and used it to connect directly to the bandit14 account.<br />
+But I do know you are supposed to connect to bandit14 from your bandit13 account.<br />
+The command for that would be:<br />
+<code>ssh -i sshkey.private -p 2220 bandit14@localhost</code></p>
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
 -->
 
 <h2 id="level-14-level-15">Level 14 → Level 15</h2>
 <h4 id="new-commands_11">New Commands</h4>
+<p>nc</p>
 <h4 id="my-solutions_14">My Solutions</h4>
+<p>For this I was really unsure what to do at first.<br />
+Okay that is not quite true.<br />
+The level description actually tells me exactly what to do.<br />
+But I was not sure how I can just send something to a port.<br />
+This means I went to the internet to figure it out.<br />
+And found out that I can use netcat for it.<br />
+So I connected to the port using<br />
+<code>nc localhost 30000</code><br />
+and send the password. 
+And promt I got the new password for bandit15.  </p>
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
 -->
 
 <h2 id="level-15-level-16">Level 15 → Level 16</h2>
