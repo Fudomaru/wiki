@@ -11,13 +11,13 @@ These are the commands I reach for when things get real.
 
 - [`cd`](#cd)
 - [`ls`](#ls)
-- `find` 
+- [`find`](#find) 
 - `tree`
 - `locate` 
 - `du` 
 - `df` 
 - `pwd` 
-- `readlink`
+- `readlink` 
 
 ## System Info & Process Control
 
@@ -38,7 +38,7 @@ These are the commands I reach for when things get real.
 - `tail`
 - `cut`
 - `sort`
-- `uniq`
+- [`uniq`](#uniq)
 - `awk`
 - `sed`
 - `wc`
@@ -66,6 +66,7 @@ These are the commands I reach for when things get real.
 - `wget`
 - `traceroute`
 - `nmap`
+- [`nc`](#nc)
 
 ## Archives & Packages
 - `tar`
@@ -159,6 +160,22 @@ Learning the numbercodes is extremly helpful. First number for the user, second 
 
 ---
 
+#### find
+
+***What it does:***  
+Used to search for files in a specifed directory. You can search for all kinds of properties that you already know about it. 
+
+***Real use case:***  
+I used it to find the flag while playing OWT Bandit. For the level you got the size and some of the properties of the flag, and had to find it. 
+
+***Example:***
+`find / -user bandit7 -group bandit6 -size 33c 2>/dev/null`  
+That is how I found the specific flag. 
+***Tip:***  
+I really want to remember the 2>/dev/null part for throwing out strerr. 
+
+---
+
 #### ls
 
 ***What it does:***  
@@ -166,6 +183,20 @@ Shows the inside of the current directory.
 
 ***Tip:***  
 Best used with a `-al` flag to list all files in long format.
+
+---
+
+#### nc
+
+***What it does:***  
+Used for everything concering connections via TCP or UDP.  
+You can do **soo** much with it that it would probably be to much for this little section, and I need to make a whole page for netcat in the futur. 
+
+***Real use case:***
+Mainly to set up listeners to get a reverse shell.
+That would look something like this:  
+`nc -l 1234`  
+Also netcat can be used to connect to some port and set it something manuel or in a script. 
 
 ---
 
@@ -194,4 +225,16 @@ Maintaining remote servers where it is not reasonable to have direkt access, and
 
 ***Example:***  
 Accessing the Bandit Wargame from OvertheWire:  
-`ssh -p 2220 bandit0@bandit.labs.overthewire.org`
+`ssh -p 2220 bandit0@bandit.labs.overthewire.org`  
+
+---
+
+#### uniq
+
+***What it does:***  
+Filter adjacent matching lines. It is mostly used when you have to omit or report repeating lines. Really helpful to dens down loads of data. 
+
+***Real use case:***  
+For me it was alo really helpful in one of the OTW Bandit levels. It was mainly designed to teach the `uniq` command, so I am really excited to find some more real world use cases. 
+
+

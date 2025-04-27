@@ -129,7 +129,7 @@ This is what I ended up using, and it only put one file as ASCII instead of data
 ## Level 5 → Level 6
 
 #### New Commands  
-[find]()
+[find](/linux/cli-magic/#find)
 
 #### My Solutions  
 So for this I had to do a bit more reading.  
@@ -197,7 +197,7 @@ dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
 ## Level 8 → Level 9
 
 #### New Commands  
-sort, uniq  
+sort, [uniq](/linux/cli-magic/#uniq)  
 
 #### My Solutions  
 So same set up, but the only line of text that occurs only once.  

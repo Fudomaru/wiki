@@ -4,6 +4,8 @@ site_author: "Fudomaru"
 
 theme:
 
+  logo: assets/Logo.png
+
   name: material
 
   icon: 
