@@ -12,18 +12,17 @@ These are the commands I reach for when things get real.
 - [`cd`](#cd)
 - [`ls`](#ls)
 - [`find`](#find) 
-- `tree`
-- `locate` 
-- `du` 
+- [`tree`](#tree)
+- [`du`](#du) 
 - `df` 
 - `pwd` 
 - `readlink` 
 
 ## System Info & Process Control
 
-- `top` 
-- `htop`
-- `ps`
+- [`top`](#top) 
+- [`htop`](#htop)
+- [`ps`](#ps)
 - `lsof`
 - `uptime`
 - `free`
@@ -160,6 +159,19 @@ Learning the numbercodes is extremly helpful. First number for the user, second 
 
 ---
 
+#### du
+
+***What it does:***  
+Calculates actual disk space used by files and directories. 
+
+***Real use case:***
+Good to identify how the space is used in case of low disk space.  
+
+***Tip:***  
+You can pipe it through `sort -rh` to sort it by biggest size first. 
+
+---
+
 #### find
 
 ***What it does:***  
@@ -173,6 +185,19 @@ I used it to find the flag while playing OWT Bandit. For the level you got the s
 That is how I found the specific flag. 
 ***Tip:***  
 I really want to remember the 2>/dev/null part for throwing out strerr. 
+
+---
+
+#### htop
+
+***What it does:***  
+An enhanced, interactive version of `top` with better visuals and controls. 
+
+***Real use case:***  
+Quickly kill, renice, or inspect processes without needing multiple commands
+
+***Tip:***  
+It is really important do learn the short cuts and ways to use it to be effectiv. 
 
 ---
 
@@ -215,6 +240,20 @@ Perfect to test if there is a connection. Eighter to the target on the way in, o
 
 ---
 
+#### ps
+
+***What it does:***  
+Prints out the current processes. 
+
+***Real use case:***  
+Audit running processes precisely, grep specific patterns, or script behavior. 
+
+***Tip:***  
+`ps faux` shows process hierachy, kind of like tree for files.  
+This really helps with finding out where everything is comming from.  
+
+---
+
 #### ssh
 
 ***What it does:***  
@@ -228,6 +267,27 @@ Accessing the Bandit Wargame from OvertheWire:
 `ssh -p 2220 bandit0@bandit.labs.overthewire.org`  
 
 ---
+
+#### top
+
+***What it does:***  
+Real-time view of system processes and resource usage. 
+
+***Real use case:***  
+Monitor CPU and detect runaway processes. 
+
+***Tip:***  
+You can press M to sort instantly by memory usage.  
+
+---
+
+#### tree
+
+***What it does:***  
+It prints out a skeleton of file system you give it.  
+Awesome to get an overview of where everything lives and to better understand what you are working with.  
+
+---  
 
 #### uniq
 
