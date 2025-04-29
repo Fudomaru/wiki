@@ -333,92 +333,154 @@ And promt I got the new password for bandit15.
 
 ## Level 15 → Level 16
 
-#### New Commands
+#### New Commands  
+openssl, s_client
 
-#### My Solutions
+#### My Solutions  
+I used the openSSL s_client to connect to localhost Port 30001. 
+It worked very smoothly and I send the password for the level.  
+`opelssl s_client -connect localhost:30001`
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
 -->
 
 ## Level 16 → Level 17
 
-#### New Commands
+#### New Commands  
+nmap
 
 #### My Solutions
+First I scanned the given portspace with nmap also trying to find out the service version.  
+`nmap -p 31000-32000 --open -sV localhost`  
+The options made the port I needed pretty clear.  
+Next I thought to pretty much just do what I did in the last level.  
+First it did not work and made me really scatch my head.  
+---
+So after I quite literally smashed my head against the keyboard I finally stumbled upon a solution.  
+I got the connection to the port.  
+I also seam to have the right password, since if I put anything else in, I got the message "wrong password" and it kicked me of the connection.  
+But for my password, I only got KEYUPDATED and not the actuall key.  
+I do not know why, but for some reason I could not find out how to look at the key.  
+My solution finally was this:  
+`openssl s_client -nocommands -connect localhost:31790`  
+With that I avoided the KEYUPDATED information, and instead got the key, which I used like in one of the earlier levels to connect via a SSL key.  
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
 -->
 
 ## Level 17 → Level 18
 
-#### New Commands
+#### New Commands  
+diff
 
-#### My Solutions
+#### My Solutions  
+In comparison with the last level, I felt like it was to easy to work.  
+But I pretty much just used `diff` to compare the old and new password files.  
+And used the result to log into the next level.  
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
 -->
 
 ## Level 18 → Level 19
 
-#### New Commands
+#### New Commands  
+scp
 
-#### My Solutions
+#### My Solutions  
+So I really liked this idea from the start.  
+Instead of just logging in and finding the password, you are actually logged out.  
+Or at least something like it.  
+When you log in you are imidiatly kicked back out.  
+---  
+So I logged back unto level 17 to see if I can just open the readme file from there.  
+But of course I did not have the permissions to do so.  
+Also I looked at the .bashrc file to see if I can figure out how exactly it works, and how I can get around it.  
+But while looking at it, I had another idea.  
+And so I used folling command to copy the readme file to my own mashine.  
+`scp -P 2220 bandit18@bandit.labs.overthewire.org:/home/readme ./bandit18pass`
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
 -->
 
 ## Level 19 → Level 20
 
-#### New Commands
-
-#### My Solutions
+#### My Solutions  
+This one was really staight forward.  
+Just do what you are told in the description and you get the password.  
+But it is made to teach about setuid and what that means, so I need to learn more about it. 
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
 -->
 
 ## Level 20 → Level 21
 
-#### New Commands
-
-#### My Solutions
+#### My Solutions  
+This I found also really interessting. I couldn't get tmux to work, which is why I will not put it as a new command here.  
+But I do need to learn how to use it.  
+Instead I connected twice, the old fashen way. I just opened two terminals, and connected both over SSH.  
+After that it was just a matter of knowing what to do.  
+On the one side I opened a nc listener, and connected to it with the setuid from the other side.  
+Then I gave the setuid the password, and got the next one out.  
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+EeoULMCra2q0dSkYj561DX7s1CpBuOBt
 -->
 
 ## Level 21 → Level 22
 
-#### New Commands
-
-#### My Solutions
+#### My Solutions  
+For this I got to see cronjobs for the first time, at least in this game.  
+I went to look at the bandit22 job in /etc/con.d/ folder.  
+Here I found a script, and looking at it I just needed to cat the file the password got saved in.  
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
 -->
 
 ## Level 22 → Level 23
 
-#### New Commands
-
-#### My Solutions
+#### My Solutions  
+The first part was just like the last level.  
+Looking at the cronjob_bandit23.sh I understood that it did some conversion with md5sum and a sentence that contains a variable from the current whoami command.  
+With that I recreated that converstion using bandit23 as the variable.  
+Then it creates a temp file with this as the name and saves the password from the current user in it.  
+This file I could just cat to see the next flag.  
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
 -->
 
 ## Level 23 → Level 24
 
-#### New Commands
+#### New Commands  
+chmod
 
-#### My Solutions
+#### My Solutions  
+Same trick new rules.  
+This was really fun for me because I really had to think about what permissions really mean and on how many levels they work.  
+I found the script that was run by cron every minute at the same place as the last.  
+It is pretty much to excecute everything in a specific folder and afterwards delete everything in that folder.  
+But one small problem for me. The scripts only runs if the executable is owned my Bandit23.  
+Shouldn't be hard since that is where I already am. But still a bit eye opening for me.  
+The permissions of access is determined by the one that executes, even if the owner of the script is someone else.  
+So I made this to just copy the pass into my temp file:
+```
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 > /tmp/tmp.RXVt3VhFpv/pass24.txt
+```  
+Should work like a charm.  
+I checked the permissions, and the ownership and made sure everything is correct with chmod.  
+After moving it into the write folder, I was waiting for cron to run to get the password.  
+It never happened.  
+Then it tool quite a while for me to figure out, that Bandit24 didn't have permission to write into my temp folder, so as soon as I changed that, everything worked.  
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
 -->
 
 ## Level 24 → Level 25
