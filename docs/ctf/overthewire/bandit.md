@@ -485,100 +485,182 @@ gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
 
 ## Level 24 → Level 25
 
-#### New Commands
+#### My Solutions  
+For this I could either try ever 10000 possiblities by hand, or I had to come up with a script.  
+So the script it was:  
+```
+#!/bin/bash
 
-#### My Solutions
+password="Old Password"
+{
+    for pin in $(seq -w 0000 9999); do
+        echo "$password $pin"
+    done
+} | nc localhost 30002
+```
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
 -->
 
 ## Level 25 → Level 26
 
-#### New Commands
-
-#### My Solutions
+#### My Solutions  
+So I guess this one I can easily just scip. You get a SSL Key for level 26.  
+That is why it wasnt ever important for me not have the normal shell.  
+I just grabbed the key to the next level and was out of there.    
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
 -->
 
 ## Level 26 → Level 27
 
 #### New Commands
 
-#### My Solutions
+#### My Solutions  
+Small Window to get `more`.
+Use V to get into vim.  
+Use `:term shell` to normally get a shell in the top half of the termanl.  
+
+With that you can get a shell and take what you need, like the password for bandait26 just to be sure to have it.  
+It is saved in the same spot all the other passwords are saved, and can just be read out:  
+`cat /ect/bandit_pass/bandit26`  
+---  
+But that isn't it.  
+You also have to get to bandit27 from here, or get the password somehow.  
+Luckely the solution for that came from [Bandit19](#level-19-level-20).  
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
 -->
 
 ## Level 27 → Level 28
 
-#### New Commands
+#### New Commands  
+git
 
-#### My Solutions
+#### My Solutions  
+So for this you have to use `git` for the first time.  
+But it was not too difficult yet.  
+You have to clone the repo, and make sure you are on the right port.  
+`git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/h
+ome/bandit27-git/repo`  
+After that I just took a look inside, found a readme file, and there was the pass for the next level.  
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
 -->
 
 ## Level 28 → Level 29
 
-#### New Commands
-
-#### My Solutions
+#### My Solutions  
+The description for this level was the same as the last one.  
+So I went the same way and cloned the repo, and looked at the readme file.  
+It desplayed the the credentials of Bandit29, but the password was **xxxxxxxx**.  
+Since I know git is a version control, I thought that is probably *the* feature for me to learn about.  
+So I looked at the perviouse commits with:  
+`git log`  
+And in one of them I found the comment **fix info leak** and in the one before it read **add missing data**.  
+So of course I needed to look at the **add missing data** commit just to see what that meant.  
+`git checkout <commit-hash>`  
+That reverted me back to the version befor the info leak fixing.  
+And now it was just a matter of looking at the readme file, and copying the password.  
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7
 -->
 
 ## Level 29 → Level 30
 
-#### New Commands
-
-#### My Solutions
+#### My Solutions  
+Same stepps as in the last two levels. But no results.  
+So I looked at the different branches.  
+`git branch -r`  
+There were severeal branches, but the one that imidiatly took my interest was *origin/sploits-dev*.  
+So I got to work.  
+`git pull origin sploits-dev`  
+Pulled the branch I wanted to take a look at.  
+`cat exploits/horde5.md`  
+Let me see what is in there.  
+But there wasn't anything in there. So I took a look at the previouse versions.  
+There had to be something, but after reading the comment **add some silly exploit, just for shit and giggles** I knew.  
+They played with me.  
+So I went back to look at the other branches.  
+I saw the branch origion/dev and thought to myself:  
+Since the readme file said for password **not in Production** that would be a strong hint, that maybe the dev branch already has something.  
+So I want to the dev branch and looked at the readme file, and found the password.  
+`git fetch origin dev`  
+`git switch dev`  
+`cat README.md`
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL
 -->
 
 ## Level 30 → Level 31
 
-#### New Commands
-
-#### My Solutions
+#### My Solutions  
+Same same. Just cloned the repo, looked at the log and the branches.  
+And found nothing.  
+After a while of searching online, what all you can do with git, I found tags.  
+I looked at the tags and found: **secret**  
+`git tag`  
+`git show secret`  
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy
 -->
 
 ## Level 31 → Level 32
 
-#### New Commands
-
-#### My Solutions
+#### My Solutions  
+Again I cloned the repo and looked at the readme file. This one had a really interesting description of what I needed to do.  
+I had to upload a file with specific conditions.  
+So I got to work. 
+```
+echo 'May I come in?' > key.txt
+```
+I also needed to delete the `*.txt` from the .gitignor file to get everything to work. 
+Then it was just:  
+```
+git add .
+git commit "something clever"
+git push
+```
+And I got the next password back. 
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K
 -->
 
 ## Level 32 → Level 33
 
-#### New Commands
-
-#### My Solutions
+#### My Solutions  
+This was a lot of fun.  
+When I arrived, I found this:  
+`WELCOME TO THE UPPERCASE SHELL`  
+So I tought, that should not make too much of a difference.  
+But I was very wrong.  
+Non of the previously learned commands worked.  
+But I could try around and see if I find something good to do.  
+After searching though the web for shell commands that only use uppercase, I pretty much only found the variables.  
+So I looked though them to see what there is.  
+Maybe I can use one of them to escape this uppercase shell, just like the level desciption suggested.  
+I found one: `$0`  
+With that I was back to something more usefull.  
+But for convinence I wanted more.  
+`/bin/bash` got me to something I was used too.  
+But there was still the problem with getting the next level password.  
+At least until I noticed that I am already bandit33, so I just went to the usuall place and get my password. 
+`cat /etc/bandit_pass/bandit33`
 
 <!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0
 -->
 
-## Level 33 → Level 34
+---
 
-#### New Commands
 
-#### My Solutions
-
-<!--
-263JGJPfgU6LtdEvgfWU1XP5yac29mFx
--->
+!!! info "Conclution"
+    With this I got though all of the bandit levels. I think it is an awesome experiance, a lot of fun, and you can learn a lot of the basic commands and structure of a linux system. Also you get used to the idea of not knowing something, and figuring it out on you own. 
