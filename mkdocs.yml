@@ -71,8 +71,10 @@ nav:
       - Automation & Scripts: linux/automation.md
   - Cybersecurity:
       - Fundamentals: cybersec/fundamentals.md
-      - Toolbelt: cybersec/tools.md
-      - Playbooks: cybersec/playbooks.md
+      - Toolbelt: 
+        - nmap: cybersec/toolbelt/nmap.md
+      - Playbooks: 
+        - Recon: cybersec/playbooks/recon.md
   - CTF & Wargames:
       - Overthewire:
           - Bandit: ctf/overthewire/bandit.md
@@ -80,6 +82,7 @@ nav:
       - HackTheBox: ctf/htb.md
       - TryHackMe: ctf/thm.md
   - Notes:
+      - Warboard: notes/warboard.md
       - Certifications: notes/certs.md
       - Readings & Videos: notes/media.md
       - Projects: 

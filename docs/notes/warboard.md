@@ -19,7 +19,7 @@ description: List of my planes for furtur write ups and general project ideas.
 - Working though OWT Natas and documenting it.
 - Create automation script for deployment 
 - Updating CLI-Magic
-- Cybersec Playbooks: Basic Nmap Recon
+- Cybersecurity Sturctur: Nmap
 
 ---
 ## STAGING ZONE
