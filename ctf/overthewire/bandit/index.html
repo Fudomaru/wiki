@@ -3133,27 +3133,27 @@
 OvertheWire is something I found as a good way to get started with CTFs. 
 Bandit is a simple Linux machine, setup in a way, where each "flag" you find is the password for the next level.
 With this password you can access the machine over SSH, using the level as a username.<br />
-It is aimed at absolute beginners, teaching the basics of linux and playing CTFs. 
+It is aimed at absolute beginners, teaching the basics of Linux and playing CTFs. 
 For each level you get a list with new introduced commands, which can help you with figuring out what to do. </p>
 <h2 id="level-0-level-1">Level 0 → Level 1</h2>
-<p>The first level is mainly the get the setup right.<br />
-It explaines that you connect over SSH over port 2220 to bandit.labs.overthewire.org.<br />
+<p>The first level is mainly to get the setup right.<br />
+It explains that you connect over SSH over port 2220 to bandit.labs.overthewire.org.<br />
 The username is bandit0 and the password for the first level is given -&gt; also bandit0.  </p>
 <h4 id="my-setup">My Setup:</h4>
-<p>I don´t really want to miss out with the linux expiriance, so I use WSL2 on my Windows machine.<br />
-It worked like a charme. </p>
+<p>I don't really want to miss out with the Linux experience, so I use WSL2 on my Windows machine.<br />
+It worked like a charm. </p>
 <h4 id="new-commands">New Commands</h4>
 <p>For this there was only one command given: <a href="/linux/cli-magic/#ssh"><strong>SSH</strong></a><br />
 This is used to get a secure remote access to another machine. You use this general format:<br />
-<code>ssh username@connection.adress</code><br />
+<code>ssh username@connection.address</code><br />
 In this case that would look like this:<br />
 <code>ssh bandit0@bandit.labs.overthewire.org</code></p>
 <h4 id="my-solutions">My Solutions</h4>
-<p>I think for this the most imporant step is to not forget about the port.<br />
+<p>I think for this the most important step is to not forget about the port.<br />
 At first I wanted to just skip reading and try things out, thinking of the way a port is put in an URL. My first try was this:<br />
 <code>ssh bandit0@bandit.labs.overthewire.org:2220</code>
-That was obiously wrong.<br />
-So I did have do figure out what the right way was.<br />
+That was obviously wrong.<br />
+So I did have to figure out what the right way was.<br />
 I wanted to improve in figuring out this the right way, so instead of looking it up online, I opened the man pages.<br />
 And shortly after that I found it.<br />
 I had to use a -p flag to give it the port to use. So I got connected with:<br />
@@ -3163,7 +3163,7 @@ It was a nice greeting in consol, giving a bit more information on the game.  </
 <p>But I wasn't done.  </p>
 <p>There was still something missing.<br />
 The flag, or to be correct: The password for the next level.<br />
-I started just just looking around. With <code>ls</code> I found the conveniently placed readme file.<br />
+I started just looking around. With <code>ls</code> I found the conveniently placed readme file.<br />
 I looked at it with <code>cat readme</code> and there it was: the <strong>FLAG</strong>!</p>
 <!-- 
 ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
@@ -3215,7 +3215,7 @@ Helped me a lot for all these flags.</p>
 <h4 id="my-solutions_4">My Solutions</h4>
 <p>So again: No new commands, so I guess I can just <code>cat</code> all the files in there.<br />
 Or so I tought.<br />
-I was really supprised to find output infront of my bash setup. It wasn't too bad, and just brute forcing my way though all 10 files, it was easy to find the human readable file and the flag.  </p>
+I was really surprised to find output in front of my bash setup. It wasn't too bad, and just brute forcing my way though all 10 files, it was easy to find the human readable file and the flag.  </p>
 <h4 id="but">but</h4>
 <p>I couldn't let it be. So I started searching for to figure out if a file is human readable first.<br />
 It felt like that would be the <strong>right</strong> solution.<br />
@@ -3266,7 +3266,8 @@ With this it was a lot easier to find out the right command to find the user and
 <code>find / -user bandit7 -group bandit6 -size 33c</code><br />
 But still there where way to many files, most of which the permission was denied to me anyway.<br />
 Going though it, with most of them I had no permissions to look at them anyway.<br />
-So a quick google search came up with this to give the stderr to the void:<br />
+So a quick google search came up with this to check the return code.<br />
+Then it saves everything that is coded with an standard error (2) to the dedicated place for deletion:<br />
 <code>find / -user bandit7 -group bandit6 -size 33c 2&gt;/dev/null</code>    </p>
 <!--
 morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
@@ -3330,7 +3331,7 @@ FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 <h4 id="my-solutions_10">My Solutions</h4>
 <p>Going though the description first this time I learned, that the data this time  is base64 encoded.<br />
 So it seams it was pretty straight forward.<br />
-Reading though the docu for <code>base64</code> and building a funktioning command to use it.<br />
+Reading though the docu for <code>base64</code> and building a functioning command to use it.<br />
 <code>base64 -d data.txt</code></p>
 <!--
 dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
@@ -3346,7 +3347,7 @@ This is how I found <a href="#level-11--level-12">ROT13</a>.<br />
 With that knowledge I just tried looking at the next command.<br />
 <code>tr</code> is for translating or deleting charaters in a text.<br />
 So I knew what I had to do.<br />
-Delete every letter with the coresponding one.<br />
+Delete every letter with the corresponding one.<br />
 <code>cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'</code>  </p>
 <!--
 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
@@ -3390,7 +3391,7 @@ MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
 <p>For this I was really unsure what to do at first.<br />
 Okay that is not quite true.<br />
 The level description actually tells me exactly what to do.<br />
-But I was not sure how I can just send something to a port.<br />
+However, I was unsure how to send something to a port.  <br />
 This means I went to the internet to figure it out.<br />
 And found out that I can use netcat for it.<br />
 So I connected to the port using<br />
@@ -3466,7 +3467,7 @@ cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
 
 <h2 id="level-19-level-20">Level 19 → Level 20</h2>
 <h4 id="my-solutions_19">My Solutions</h4>
-<p>This one was really staight forward.<br />
+<p>This one was really straight forward.<br />
 Just do what you are told in the description and you get the password.<br />
 But it is made to teach about setuid and what that means, so I need to learn more about it. </p>
 <!--
@@ -3684,7 +3685,7 @@ tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0
 <hr />
 <div class="admonition info">
 <p class="admonition-title">Conclution</p>
-<p>With this I got though all of the bandit levels. I think it is an awesome experiance, a lot of fun, and you can learn a lot of the basic commands and structure of a linux system. Also you get used to the idea of not knowing something, and figuring it out on you own. </p>
+<p>With this I got though all of the bandit levels. I think it is an awesome experiance, a lot of fun, and you can learn a lot of the basic commands and structure of a Linux system. Also you get used to the idea of not knowing something, and figuring it out on you own. </p>
 </div>
 
 
