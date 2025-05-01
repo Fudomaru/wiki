@@ -10,33 +10,33 @@ So first of all: The setup:
 OvertheWire is something I found as a good way to get started with CTFs. 
 Bandit is a simple Linux machine, setup in a way, where each "flag" you find is the password for the next level.
 With this password you can access the machine over SSH, using the level as a username.  
-It is aimed at absolute beginners, teaching the basics of linux and playing CTFs. 
+It is aimed at absolute beginners, teaching the basics of Linux and playing CTFs. 
 For each level you get a list with new introduced commands, which can help you with figuring out what to do. 
 
 ## Level 0 → Level 1
 
-The first level is mainly the get the setup right.  
-It explaines that you connect over SSH over port 2220 to bandit.labs.overthewire.org.  
+The first level is mainly to get the setup right.  
+It explains that you connect over SSH over port 2220 to bandit.labs.overthewire.org.  
 The username is bandit0 and the password for the first level is given -> also bandit0.  
 
 #### My Setup:  
-I don´t really want to miss out with the linux expiriance, so I use WSL2 on my Windows machine.  
-It worked like a charme. 
+I don't really want to miss out with the Linux experience, so I use WSL2 on my Windows machine.  
+It worked like a charm. 
 
 #### New Commands  
 For this there was only one command given: [**SSH**](/linux/cli-magic/#ssh)  
 This is used to get a secure remote access to another machine. You use this general format:  
-`ssh username@connection.adress`  
+`ssh username@connection.address`  
 In this case that would look like this:  
 `ssh bandit0@bandit.labs.overthewire.org`
 
 #### My Solutions
 
-I think for this the most imporant step is to not forget about the port.  
+I think for this the most important step is to not forget about the port.  
 At first I wanted to just skip reading and try things out, thinking of the way a port is put in an URL. My first try was this:  
 `ssh bandit0@bandit.labs.overthewire.org:2220`
-That was obiously wrong.  
-So I did have do figure out what the right way was.  
+That was obviously wrong.  
+So I did have to figure out what the right way was.  
 I wanted to improve in figuring out this the right way, so instead of looking it up online, I opened the man pages.  
 And shortly after that I found it.  
 I had to use a -p flag to give it the port to use. So I got connected with:  
@@ -49,7 +49,7 @@ But I wasn't done.
 
 There was still something missing.  
 The flag, or to be correct: The password for the next level.  
-I started just just looking around. With `ls` I found the conveniently placed readme file.  
+I started just looking around. With `ls` I found the conveniently placed readme file.  
 I looked at it with `cat readme` and there it was: the **FLAG**!
 
 <!-- 
@@ -112,7 +112,7 @@ Then it was just the now typical `cat` to get to the flag.
 #### My Solutions
 So again: No new commands, so I guess I can just `cat` all the files in there.  
 Or so I tought.  
-I was really supprised to find output infront of my bash setup. It wasn't too bad, and just brute forcing my way though all 10 files, it was easy to find the human readable file and the flag.  
+I was really surprised to find output in front of my bash setup. It wasn't too bad, and just brute forcing my way though all 10 files, it was easy to find the human readable file and the flag.  
 
 #### but
 I couldn't let it be. So I started searching for to figure out if a file is human readable first.  
@@ -171,7 +171,8 @@ With this it was a lot easier to find out the right command to find the user and
 `find / -user bandit7 -group bandit6 -size 33c`  
 But still there where way to many files, most of which the permission was denied to me anyway.  
 Going though it, with most of them I had no permissions to look at them anyway.  
-So a quick google search came up with this to give the stderr to the void:  
+So a quick google search came up with this to check the return code.  
+Then it saves everything that is coded with an standard error (2) to the dedicated place for deletion:  
 `find / -user bandit7 -group bandit6 -size 33c 2>/dev/null`    
 
 <!--
@@ -247,7 +248,7 @@ base64
 #### My Solutions  
 Going though the description first this time I learned, that the data this time  is base64 encoded.  
 So it seams it was pretty straight forward.  
-Reading though the docu for `base64` and building a funktioning command to use it.  
+Reading though the docu for `base64` and building a functioning command to use it.  
 `base64 -d data.txt`
 
 <!--
@@ -266,7 +267,7 @@ This is how I found [ROT13](#level-11--level-12).
 With that knowledge I just tried looking at the next command.  
 `tr` is for translating or deleting charaters in a text.  
 So I knew what I had to do.  
-Delete every letter with the coresponding one.  
+Delete every letter with the corresponding one.  
 `cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'`  
 
 <!--
@@ -319,7 +320,7 @@ nc
 For this I was really unsure what to do at first.  
 Okay that is not quite true.  
 The level description actually tells me exactly what to do.  
-But I was not sure how I can just send something to a port.  
+However, I was unsure how to send something to a port.    
 This means I went to the internet to figure it out.  
 And found out that I can use netcat for it.  
 So I connected to the port using  
@@ -409,7 +410,7 @@ cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
 ## Level 19 → Level 20
 
 #### My Solutions  
-This one was really staight forward.  
+This one was really straight forward.  
 Just do what you are told in the description and you get the password.  
 But it is made to teach about setuid and what that means, so I need to learn more about it. 
 
@@ -663,4 +664,4 @@ tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0
 
 
 !!! info "Conclution"
-    With this I got though all of the bandit levels. I think it is an awesome experiance, a lot of fun, and you can learn a lot of the basic commands and structure of a linux system. Also you get used to the idea of not knowing something, and figuring it out on you own. 
+    With this I got though all of the bandit levels. I think it is an awesome experiance, a lot of fun, and you can learn a lot of the basic commands and structure of a Linux system. Also you get used to the idea of not knowing something, and figuring it out on you own. 
