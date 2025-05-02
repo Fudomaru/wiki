@@ -11,7 +11,7 @@ Perform a full reconnaissance scan on a target host with minimal noise.
 
 ### Tools Needed: 
 
-- [Nmap](/cybersec/toolbelt/nmap)
+- [Nmap](/wiki/cybersec/toolbelt/nmap)
 - Basic shell access
 
 ### Steps:

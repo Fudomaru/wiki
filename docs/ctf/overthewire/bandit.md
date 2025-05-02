@@ -663,5 +663,5 @@ tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0
 ---
 
 
-!!! info "Conclution"
+!!! example "Conclution"
     With this I got though all of the bandit levels. I think it is an awesome experiance, a lot of fun, and you can learn a lot of the basic commands and structure of a Linux system. Also you get used to the idea of not knowing something, and figuring it out on you own. 

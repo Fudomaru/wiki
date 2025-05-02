@@ -21,4 +21,4 @@ Network mapper used for host descovery and port scanning.
 
 ### Used in
 
-- [Recon](/cybersec/playbooks/recon)
+- [Recon](/wiki/cybersec/playbooks/recon)

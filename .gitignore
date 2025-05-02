@@ -1,11 +1,6 @@
 # MkDocs build output
 site/
 
-# Python bytecode
-__pycache__/
-*.py[cod]
-*$py.class
-
 # Virtual environments
 venv/
 env/
