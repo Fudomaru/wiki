@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Simple scripts for everyday tasks and how to master them.">
+        <meta name="description" content="Simple scripts used to automate the deployment and updating of this digital Dojo.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../networking/">
+        <link rel="prev" href="../../linux/networking/">
       
       
         <link rel="next" href="../../cybersec/fundamentals/">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Linux Automation - Wiki</title>
+        <title>Deployment - Wiki</title>
       
     
     
@@ -116,6 +116,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#mkdocs-auto-deploy-script-powershell" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -147,7 +152,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linux Automation
+              Deployment
             
           </span>
         </div>
@@ -271,17 +276,37 @@
   
   
   
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../linux/cli-magic/" class="md-tabs__link">
+          
+  
+  
+  Linux Wizardry
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
     
   
   
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../cli-magic/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   
-  Linux Wizardry
+  Automation & Scripts
 
         </a>
       </li>
@@ -454,29 +479,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -489,7 +509,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Linux Wizardry
@@ -503,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cli-magic/" class="md-nav__link">
+      <a href="../../linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -526,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../system-internals/" class="md-nav__link">
+      <a href="../../linux/system-internals/" class="md-nav__link">
         
   
   
@@ -549,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../networking/" class="md-nav__link">
+      <a href="../../linux/networking/" class="md-nav__link">
         
   
   
@@ -565,6 +585,59 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Automation & Scripts
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Automation & Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -578,18 +651,121 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Deploying the Wiki
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Automation & Scripts
+    Deploying the Wiki
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functional-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functional Breakdown
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functional Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Location
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-git-commit-comment" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Git Commit Comment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-git-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Git Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-githup-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. GitHup Pages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Ideas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -621,10 +797,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -637,8 +813,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Cybersecurity
           </label>
@@ -685,10 +861,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   
@@ -701,8 +877,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Toolbelt
           </label>
@@ -757,10 +933,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
             
   
   
@@ -773,8 +949,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             Playbooks
           </label>
@@ -836,10 +1012,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -852,8 +1028,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             CTF & Wargames
           </label>
@@ -877,10 +1053,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
   
   
@@ -893,8 +1069,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             Overthewire
           </label>
@@ -1025,10 +1201,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -1041,8 +1217,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Notes
           </label>
@@ -1135,10 +1311,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
         
           
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
             
   
   
@@ -1151,8 +1327,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
             <span class="md-nav__icon md-icon"></span>
             Projects
           </label>
@@ -1235,6 +1411,85 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functional-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functional Breakdown
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functional Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Location
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-git-commit-comment" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Git Commit Comment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-git-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Git Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-githup-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. GitHup Pages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-ideas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Ideas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1250,9 +1505,79 @@
 
 
 
-  <h1>Automation & Scripts</h1>
+<h1 id="mkdocs-auto-deploy-script-powershell">MkDocs Auto-Deploy Script (Powershell)</h1>
+<h2 id="overview">Overview</h2>
+<p>Automates committing and deploying changes to my Digital Dojo.<br />
+I build this as a first step to understanding and using a real CI/CD for this project. 
+For that I needed to solve going to every command by hand.<br />
+But I didn't want to start using any fancy tool for this simple task. So I decided to make this simple script to automate it.  </p>
+<h2 id="functional-breakdown">Functional Breakdown</h2>
+<p>Here I am going to break down what I put into this script: </p>
+<h3 id="1-location">1. Location</h3>
+<p>I wanted this to be portable and usable without much of a hustle.
+So I put the script right into the repo of this page.<br />
+This way I can always use it as long as I pulled the repo to work on it. 
+I needed to make sure it runs from the right place: the rood of my repo.<br />
+To get this location in Powershell I used the following:  </p>
+<div class="highlight"><pre><span></span><code>$ScriptPath = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
+$WikiRoot = Join-Path $ScriptPath &quot;..&quot; | Resolve-Path
+Set-Location $WikiRoot 
+</code></pre></div>
+<hr />
+<h3 id="2-git-commit-comment">2. Git Commit Comment</h3>
+<p>To actually use git commit I have to have a comment of what I am commiting.<br />
+I wanted to solve this by using an argument I can just put in after the script to make it feel like a real command.<br />
+That wasn't good enough. When I tried it and it worked, I thought it would be enough. 
+But even the second try I just forgot about the comment. So I needed a fallback method.<br />
+And what better option then just let the script ask the user for the Commit Message. That would look like that: </p>
+<div class="highlight"><pre><span></span><code>if ($args.Length -gt 0 -and -not [string]::IsNullOrWhiteSpace($args[0])) {
+$message = $args[0]
+} else {
+$message = Read-Host &quot;Enter commit message&quot;
+}
+</code></pre></div>
+<hr />
+<h3 id="3-git-operations">3. Git Operations</h3>
+<p>This is actually the most straight forward. Just the git commands I normally use by hand. But I did not want to make it quite as easy for myself. So I tried myself with some error catching and outputting what was successful and what failed. All in all I just used a simple try catch with an output of what was currently running when it failed ($_). This gives always gives me a good idea of where the error happend, and let me look at the right thing to try to figure out what went wrong. Also I put the $message variable I got in the previouse part as the commit message.  </p>
+<div class="highlight"><pre><span></span><code>try {
+    git add .
+    git commit -m &quot;$message&quot;
+    if ($?) {
+        Write-Host &quot;Commit successful&quot;
+    } else {
+        Write-Host &quot;Commit failed&quot;
+    }
 
-
+    git push
+    if ($?) {
+        Write-Host &quot;Push successful&quot;
+    } else {
+        Write-Host &quot;Push failed&quot;
+    }
+}
+catch {
+    $errorMessage = &quot;An error occurred at $(Get-Date): $_&quot;
+    Write-Host $errorMessage
+}
+</code></pre></div>
+<h3 id="4-githup-pages">4. GitHup Pages</h3>
+<p>Here I used MkDocs own command gh-deploy. This command pretty much handels everything I need for me. First it builds the actual site. That would be the same as running <code>mkdocs build</code>. Then it pushes this build to a seperate branch in my repo. This way I do not have to have the build site in my main branch, and just tell GitHub to use the seperate branch to deploy from. This works like a charme, without a lot of hassle so far. I put this right after my git operations.<br />
+<div class="highlight"><pre><span></span><code>mkdocs gh-deploy
+    if ($?) {
+        Write-Host &quot;Deployment successful&quot;
+    } else {
+        Write-Host &quot;Deployment failed&quot;
+    }
+</code></pre></div></p>
+<h2 id="future-ideas">Future Ideas</h2>
+<ul>
+<li>
+<p>Building in local logging to get more information and maintain everything cleanly for building a full CI/CD. </p>
+</li>
+<li>
+<p>Timestemping inside the commit message and log output. </p>
+</li>
+</ul>
 
 
 
@@ -1291,7 +1616,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../networking/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Network Kung-Fu">
+          <a href="../../linux/networking/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Network Kung-Fu">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
