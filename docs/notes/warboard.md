@@ -17,7 +17,6 @@ description: List of my planes for furtur write ups and general project ideas.
     Tasks that I am currently working on.
 
 - Working though OWT Natas and documenting it.
-- Create automation script for deployment 
 - Updating CLI-Magic
 - Cybersecurity Sturctur: Nmap
 
@@ -43,6 +42,8 @@ description: List of my planes for furtur write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newes pages are.  
 
+- Create automation script for deployment and dokumenting it (2025-05-03)
+- Using Warboard as a way to stay acountable (2025-05-01)
 - Bandit dokumetation (2025-04-30)
 - Adding a Logo (2025-04-27)
 - First draft Cyber Fundamentals (2025-04-23)

@@ -73,28 +73,36 @@ repo_name: ""
 edit_uri: ""
 
 nav:
+
   - Home: index.md
+
   - Linux Wizardry:
       - CLI Magic: linux/cli-magic.md
       - System Internals: linux/system-internals.md
       - Network Kung-Fu: linux/networking.md
-      - Automation & Scripts: linux/automation.md
+
+  - Automation & Scripts:
+      - Deploying the Wiki: auto/deploy.md
+
   - Cybersecurity:
       - Fundamentals: cybersec/fundamentals.md
       - Toolbelt: 
         - nmap: cybersec/toolbelt/nmap.md
       - Playbooks: 
         - Recon: cybersec/playbooks/recon.md
+
   - CTF & Wargames:
       - Overthewire:
           - Bandit: ctf/overthewire/bandit.md
           - Natas: ctf/overthewire/natas.md
       - HackTheBox: ctf/htb.md
       - TryHackMe: ctf/thm.md
+
   - Notes:
       - Warboard: notes/warboard.md
       - Certifications: notes/certs.md
       - Readings & Videos: notes/media.md
       - Projects: 
         - Digital Dojo: notes/projects/digital-dojo.md
+        
   - About: about.md
