@@ -17,7 +17,7 @@ You need to define if you are doing a CTF, a Pentest or if you are going for a b
 
 Take a detailed look in the rules you are to follow. If something is not clear, it needs to be adressed.  
 Is social engineering in scope?  
-Are descrutive payloads prohibited?  
+Are destructive payloads prohibited?  
 Can you fuzz login forms?  
 What are the time restrictions?  
 It is important that everything is documented and everyone involved understands the rules.  
@@ -44,7 +44,7 @@ Which accounts are authorized. What about VPN, access tokes. You need a explicit
 ---
 
 ---
-# Passis Recon
+# Passive Recon
 
 !!! info "Definition"
 
@@ -77,7 +77,7 @@ This is to find potentail subdomains without touching the target. Create a list 
 
 ## DNS Enumeration 
 
-- Passis DNS record discovery 
+- Passive DNS record discovery 
 - Zone history (SecurityTrails, PassiveTotal)
 
 Helps to understand the infrastruture layout and potentail service endpoints. 
@@ -132,7 +132,7 @@ By the end of this stage this is what you should have:
 - Public known infrastructure
 - Highlevel service stack
 - Potentail weak links from external assets
-- Initail attack surface mindmap
+- Initial attack surface mindmap
 
 
 ---
@@ -157,7 +157,7 @@ By the end of this stage this is what you should have:
 
 ## Authentication & Access Points
 
-- Scan for login portals acreoss services: SSH, FTP, RDP, Telnet
+- Scan for login portals across services: SSH, FTP, RDP, Telnet
 - Identify entry points that may lead to further attack vectors
 - Tools: hydra, ncrack, meduse 
 
@@ -169,7 +169,7 @@ By the end of this stage this is what you should have:
 
 ## Notes to take: 
 
-Document everything you find. Put the new finds in the old documentation, marke the still active subdomains, fill out your map of the infrastructure. Complete with where you find which ports and services. 
+Document everything you find. Put the new finds in the old documentation, mark the still active subdomains, fill out your map of the infrastructure. Complete with where you find which ports and services. 
 
 ## Outcome
 
@@ -184,16 +184,39 @@ By the endof this stage this is what you should have:
 ---
 # Web Recon 
 
-Digging deep into web services. There is normal a lot to find. From hidden dirctories, files, over headers used. Find the login portals. Specifiy where attack surface is. 
+Digging deep into web services. There is normally a lot to find. From hidden dirctories, files, over headers used. Find the login portals. Specifiy where attack surface is. 
 
-#### Tools to use:
+## Identifying Web Assets
 
-- ffuf
-- dirsearch
-- robots.txt
-- headers
-- wappalyzer
-- endpoints
+You should already have a pretty good idea of the web assets after the last steps. But you should make yourself a specified plan of what you need to takle in this section. 
+
+## Clientside Logic
+
+- Parse JavaScript files manually or with tools 
+- Find API endpoints, secrets and tokens
+- Map JS-based routing and hidden funktionality
+
+## Input Vectors 
+
+- Query strings, forms and hidden inputs
+- File uploaders, search bars and filters
+- Are there any client-side validations?
+
+## Session Handling & Authentication Behavior
+
+- Cookie flags, token behavior, session expiry
+- Authentication flows (login, rest, MFA)
+- Redirect behavior, caching
+- Version leaks, misconfigs 
+
+## Notes
+
+- Put everything you find to your map
+- Mark interesting targets, that might offer more
+
+# Outcome
+
+You should be able to tie findings to potential exploitation paths. Through the exploration of headers and forms, you have a solid understanding of what your targets exposes on the web and where to dig deeper. 
 
 ---
 # Enumeration
@@ -223,4 +246,4 @@ Now that you have loads of information, it is time to look where you can actuall
 ---
 # Documentation 
 
-Most underated weapon. Espacially for reacon. With down everything you have. Go over your notes. Make them usefull. You need to be able to find everything you wrote down in an instand. 
+Most underated weapon. Espacially for recon. With down everything you have. Go over your notes. Make them usefull. You need to be able to find everything you wrote down in an instand. 
