@@ -1241,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/certs/" class="md-nav__link">
+      <a href="../../../notes/ccna/" class="md-nav__link">
         
   
   
@@ -1485,7 +1485,7 @@ You need to define if you are doing a CTF, a Pentest or if you are going for a b
 <h3 id="rules-of-engagement-roe">Rules of Engagement (RoE)</h3>
 <p>Take a detailed look in the rules you are to follow. If something is not clear, it needs to be adressed.<br />
 Is social engineering in scope?<br />
-Are descrutive payloads prohibited?<br />
+Are destructive payloads prohibited?<br />
 Can you fuzz login forms?<br />
 What are the time restrictions?<br />
 It is important that everything is documented and everyone involved understands the rules.  </p>
@@ -1503,7 +1503,7 @@ It is important that everything is documented and everyone involved understands 
 </div>
 <hr />
 <hr />
-<h1 id="passis-recon">Passis Recon</h1>
+<h1 id="passive-recon">Passive Recon</h1>
 <div class="admonition info">
 <p class="admonition-title">Definition</p>
 <p>Collecting information without touching the target. Stay a ghost by watching, not touching. The rule is: No traffic hits their servers. </p>
@@ -1531,7 +1531,7 @@ Your Building the dossier befor stepping on the field. </p>
 <p>This is to find potentail subdomains without touching the target. Create a list of possiblities to make the next stepps easier for yourself. </p>
 <h2 id="dns-enumeration">DNS Enumeration</h2>
 <ul>
-<li>Passis DNS record discovery </li>
+<li>Passive DNS record discovery </li>
 <li>Zone history (SecurityTrails, PassiveTotal)</li>
 </ul>
 <p>Helps to understand the infrastruture layout and potentail service endpoints. </p>
@@ -1576,7 +1576,7 @@ This helps you to fit everything else you find into its place.  </p>
 <li>Public known infrastructure</li>
 <li>Highlevel service stack</li>
 <li>Potentail weak links from external assets</li>
-<li>Initail attack surface mindmap</li>
+<li>Initial attack surface mindmap</li>
 </ul>
 <hr />
 <h1 id="active-recon">Active Recon</h1>
@@ -1598,7 +1598,7 @@ This helps you to fit everything else you find into its place.  </p>
 </ul>
 <h2 id="authentication-access-points">Authentication &amp; Access Points</h2>
 <ul>
-<li>Scan for login portals acreoss services: SSH, FTP, RDP, Telnet</li>
+<li>Scan for login portals across services: SSH, FTP, RDP, Telnet</li>
 <li>Identify entry points that may lead to further attack vectors</li>
 <li>Tools: hydra, ncrack, meduse </li>
 </ul>
@@ -1609,7 +1609,7 @@ This helps you to fit everything else you find into its place.  </p>
 <li>Tools: netcat, curl, openssl</li>
 </ul>
 <h2 id="notes-to-take_1">Notes to take:</h2>
-<p>Document everything you find. Put the new finds in the old documentation, marke the still active subdomains, fill out your map of the infrastructure. Complete with where you find which ports and services. </p>
+<p>Document everything you find. Put the new finds in the old documentation, mark the still active subdomains, fill out your map of the infrastructure. Complete with where you find which ports and services. </p>
 <h2 id="outcome_1">Outcome</h2>
 <p>By the endof this stage this is what you should have: </p>
 <ul>
@@ -1621,20 +1621,39 @@ This helps you to fit everything else you find into its place.  </p>
 </ul>
 <hr />
 <h1 id="web-recon">Web Recon</h1>
-<p>Digging deep into web services. There is normal a lot to find. From hidden dirctories, files, over headers used. Find the login portals. Specifiy where attack surface is. </p>
-<h4 id="tools-to-use">Tools to use:</h4>
+<p>Digging deep into web services. There is normally a lot to find. From hidden dirctories, files, over headers used. Find the login portals. Specifiy where attack surface is. </p>
+<h2 id="identifying-web-assets">Identifying Web Assets</h2>
+<p>You should already have a pretty good idea of the web assets after the last steps. But you should make yourself a specified plan of what you need to takle in this section. </p>
+<h2 id="clientside-logic">Clientside Logic</h2>
 <ul>
-<li>ffuf</li>
-<li>dirsearch</li>
-<li>robots.txt</li>
-<li>headers</li>
-<li>wappalyzer</li>
-<li>endpoints</li>
+<li>Parse JavaScript files manually or with tools </li>
+<li>Find API endpoints, secrets and tokens</li>
+<li>Map JS-based routing and hidden funktionality</li>
 </ul>
+<h2 id="input-vectors">Input Vectors</h2>
+<ul>
+<li>Query strings, forms and hidden inputs</li>
+<li>File uploaders, search bars and filters</li>
+<li>Are there any client-side validations?</li>
+</ul>
+<h2 id="session-handling-authentication-behavior">Session Handling &amp; Authentication Behavior</h2>
+<ul>
+<li>Cookie flags, token behavior, session expiry</li>
+<li>Authentication flows (login, rest, MFA)</li>
+<li>Redirect behavior, caching</li>
+<li>Version leaks, misconfigs </li>
+</ul>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Put everything you find to your map</li>
+<li>Mark interesting targets, that might offer more</li>
+</ul>
+<h1 id="outcome_2">Outcome</h1>
+<p>You should be able to tie findings to potential exploitation paths. Through the exploration of headers and forms, you have a solid understanding of what your targets exposes on the web and where to dig deeper. </p>
 <hr />
 <h1 id="enumeration">Enumeration</h1>
 <p>Here you want to see what is used. Finding every service and protocol they use. You need to provoke, record and understand every response. </p>
-<h4 id="tools-to-use_1">Tools to use:</h4>
+<h4 id="tools-to-use">Tools to use:</h4>
 <ul>
 <li>SMB shares</li>
 <li>HTTPS services</li>
@@ -1645,7 +1664,7 @@ This helps you to fit everything else you find into its place.  </p>
 <hr />
 <h1 id="vulnerability-enumeration">Vulnerability Enumeration</h1>
 <p>Now that you have loads of information, it is time to look where you can actually get somewhere. Look for known vulnerabilities for services they use, use vuln scanner and look though CVEs. Match exposed services with weaknesses. </p>
-<h4 id="tools-to-use_2">Tools to use:</h4>
+<h4 id="tools-to-use_1">Tools to use:</h4>
 <ul>
 <li>Nikto</li>
 <li>Searchsploit</li>
@@ -1653,7 +1672,7 @@ This helps you to fit everything else you find into its place.  </p>
 </ul>
 <hr />
 <h1 id="documentation">Documentation</h1>
-<p>Most underated weapon. Espacially for reacon. With down everything you have. Go over your notes. Make them usefull. You need to be able to find everything you wrote down in an instand. </p>
+<p>Most underated weapon. Espacially for recon. With down everything you have. Go over your notes. Make them usefull. You need to be able to find everything you wrote down in an instand. </p>
 
 
 
