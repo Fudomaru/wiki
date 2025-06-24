@@ -17,8 +17,8 @@ description: List of my planes for furtur write ups and general project ideas.
     Tasks that I am currently working on.
 
 - Working though OWT Natas and documenting it.
-- Updating CLI-Magic
 - Cybersecurity Sturctur: Nmap
+- Restructure considering my current knowledge
 
 ---
 ## STAGING ZONE
@@ -36,6 +36,8 @@ description: List of my planes for furtur write ups and general project ideas.
 
 - Deep-dive into privilege escalation.
 - Getting picture documentation to work
+- List of file formats and what it means and you can do with it. 
+- Explaining where I stand in my Nvim Journy
 
 ---
 ## COMPLETED STRIKES
