@@ -76,7 +76,7 @@ nav:
 
   - Home: index.md
   
-  - Projects: 
+  - Projects:
       - EchoSnare: projects/echosnare.md
 
   - Linux Wizardry:
