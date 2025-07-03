@@ -27,12 +27,12 @@ theme:
 
   palette: 
     # Palette toggle for light mode
-    - scheme: default
-      toggle:
-        icon: material/lightbulb
-        name: Dark
-      primary: red
-      accent: deep orange
+    #- scheme: default
+    #toggle:
+        #icon: material/lightbulb
+        #name: Dark
+        #      primary: red
+      #      accent: deep orange
 
     # Palette toggle for dark mode
     - scheme: slate
@@ -75,6 +75,9 @@ edit_uri: ""
 nav:
 
   - Home: index.md
+  
+  - Projects: 
+      - EchoSnare: projects/echosnare.md
 
   - Linux Wizardry:
       - CLI Magic: linux/cli-magic.md
