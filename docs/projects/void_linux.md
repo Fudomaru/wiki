@@ -15,7 +15,7 @@ description: This is the journey of me setting up my new Laptop as a minimal Voi
 
 * [`Post-Install Setup`](#post-install-setup)
 
-* Graphical Stack: X11 + dwm + st
+* [`Graphical Stack`](#graphical-stack)
 
 * Networking (TTY Wi-Fi)
 
@@ -116,5 +116,55 @@ I knew that it probably won't work completly the way I am used to it, since some
 Searching it up to be exact it relies on a NerdFont Package and on truecolor. 
 Since tty is not able to do eighter or, I would just have to get used to it. 
 To be honest I don't really mind, since it is both just about looks, not about funktionality. 
+
+
+## Graphical Stack
+
+So there we are. 
+I have set this up with the intention of a tty only minimal system to learn how everything works. 
+And with that I was pretty much done. 
+So all that I needed now was to work with it. 
+But then it started getting to me.
+I am still in a lot of need for some graphical things. 
+This is why I needed something. 
+It needs to be small enough to still fit my feeling of a minimal setup, but I need some basic things to make this my daily driver. 
+And so I found suckless. 
+I really liked the idea. 
+Not just the minimal, from the feeling almost self build setup. I really enjoyed reading there documentation, having to compile it locally also sounded like a lot of fun,
+and to get to the "settings" you just change the code. 
+That actually sounds exatly like what I want. 
+To be able to use this system, you have no choice but to understand it. 
+And I just keeps going like that. 
+The form of patching also made me smile. 
+No updates, patches, code changes, and you do what you need to fix things, if you want to. 
+
+That is why I descided to try my luck. 
+And I installed not only dwm. 
+I put ST, Dmenu, and dwmblocks. At least for now. 
+I want to try to set everything up and see how that feels. 
+Everything of that setup brings me closer to the metal, having more controle and for that also generates more understanding and knowledge. 
+And whatever happens afterwards happens.
+I would love to go to a tty only setup, but I am just not ready yet. 
+
+
+## Networking
+
+So my next step is to setup some good networking without installing any more tools. 
+I am planing on using dmenu, wpa-supplicant, and dhcped. 
+That and some bash script should be enough to let me create something very similar to a modern network manager.
+Or at least the part that is mostly used. 
+Without all the unnessesary bloat, which no one understands, or needs. 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
