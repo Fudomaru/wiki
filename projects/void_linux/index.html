@@ -6,17 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Personal Wifi Sniffer Project using a ESP32 with MicroPhyton">
+        <meta name="description" content="This is the journey of me setting up my new Laptop as a minimal VoidStation.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../..">
-      
-      
-        <link rel="next" href="../../linux/cli-magic/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +20,7 @@
     
     
       
-        <title>EchoSnare - Wiki</title>
+        <title>void_linux - Wiki</title>
       
     
     
@@ -117,7 +113,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#echosnare" class="md-skip">
+        <a href="#void_station_setup" class="md-skip">
           Skip to content
         </a>
       
@@ -152,7 +148,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              EchoSnare
+              void_linux
             
           </span>
         </div>
@@ -266,13 +262,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../echosnare/" class="md-tabs__link">
           
   
   
@@ -489,29 +483,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -524,7 +513,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Projects
@@ -535,32 +524,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    EchoSnare
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../echosnare/" class="md-nav__link">
         
   
   
@@ -571,137 +538,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#vision" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vision
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-of-the-hunt" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tools of the Hunt
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Tools of the Hunt">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hardware
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
-    <span class="md-ellipsis">
-      Software
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gameplan" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gameplan
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Gameplan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#battle-station-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Battle Station Setup
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#flash-and-burn" class="md-nav__link">
-    <span class="md-ellipsis">
-      Flash and Burn
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wifi-sniffing-core" class="md-nav__link">
-    <span class="md-ellipsis">
-      WIFI Sniffing Core
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#oled-display" class="md-nav__link">
-    <span class="md-ellipsis">
-      OLED Display
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sync-to-base" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sync to Base
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#geotagging" class="md-nav__link">
-    <span class="md-ellipsis">
-      Geotagging
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1544,113 +1380,65 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vision" class="md-nav__link">
+  <a href="#table-of-contents" class="md-nav__link">
     <span class="md-ellipsis">
-      Vision
+      Table of Contents
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tools-of-the-hunt" class="md-nav__link">
+  <a href="#why-void" class="md-nav__link">
     <span class="md-ellipsis">
-      Tools of the Hunt
+      Why Void
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Tools of the Hunt">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hardware
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#software" class="md-nav__link">
-    <span class="md-ellipsis">
-      Software
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gameplan" class="md-nav__link">
+  <a href="#pre-install-decisions" class="md-nav__link">
     <span class="md-ellipsis">
-      Gameplan
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Gameplan">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#battle-station-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Battle Station Setup
+      Pre-Install Decisions
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#flash-and-burn" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Flash and Burn
+      Installation
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#wifi-sniffing-core" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#post-install-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      WIFI Sniffing Core
+      Post-Install Setup
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#oled-display" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#graphical-stack" class="md-nav__link">
     <span class="md-ellipsis">
-      OLED Display
+      Graphical Stack
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#sync-to-base" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
     <span class="md-ellipsis">
-      Sync to Base
+      Networking
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#geotagging" class="md-nav__link">
-    <span class="md-ellipsis">
-      Geotagging
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1670,70 +1458,142 @@
 
 
 
-<h1 id="echosnare">EchoSnare</h1>
-<h2 id="vision">Vision</h2>
-<p>For a while now I have been interested in Networking. 
-With that a big part of understanding is working out how everything fits together. 
-And so I started to think about what I can do to understand where I am, and what surrounds me in the Internet. 
-What paths does my traffic usually follow. 
-Can I find out where it differs. 
-And I already have a few good Ideas of how to start mapping out the cables I am using all day long to talk, game, and watch stuff. </p>
+<h1 id="void_station_setup">Void_Station_Setup</h1>
+<h3 id="table-of-contents">Table of Contents</h3>
+<ul>
+<li>
+<p><a href="#why-void"><code>Why Void</code></a></p>
+</li>
+<li>
+<p><a href="#pre-install-decisions"><code>Pre-Install Decisions</code></a></p>
+</li>
+<li>
+<p><a href="#installation"><code>Installation</code></a></p>
+</li>
+<li>
+<p><a href="#post-install-setup"><code>Post-Install Setup</code></a></p>
+</li>
+<li>
+<p><a href="#graphical-stack"><code>Graphical Stack</code></a></p>
+</li>
+<li>
+<p>Networking (TTY Wi-Fi)</p>
+</li>
+<li>
+<p>Final Touches</p>
+</li>
+<li>
+<p>Gotchas &amp; Lessons</p>
+</li>
+<li>
+<p>Replication Checklist</p>
+</li>
+</ul>
+<h2 id="why-void">Why Void</h2>
+<p>So for this there can be a lot of reason. 
+But to be completely honest it comes mostly down to what I found and what sounded interesting. 
+I have been looking to have something a lot more minimal then my current fedora setup. 
+But not just minimal, because I still feel that is a bit of a bold statement. 
+You don't just want something minimal, there is normally a reason even for that. 
+And with that I am pretty clear: 
+<em>I want to understand!</em>
+And the less there is, the more of it you can actually comprehensivly understand. 
+So starting out with a minimal system, if at all possible staying in the TTY, the possibility is a lot more realistic to actually get how everything works. 
+To be clear:
+I do not expect to actually be able to just comprehend the whole linux kernal like that. 
+But the less I have on top, the less there is to abstract and keep me from actually knowing what is going on. </p>
+<p>There are a lot more fun things to learn using Void Linux. 
+But these I figured out after already choosing it, and so I don't want to clame them as my reason. </p>
+<h2 id="pre-install-decisions">Pre-Install Decisions</h2>
+<p>So there had to be a few decisions I had to make before, and for me also during the installation. 
+The first was choosing the ISO. 
+But this was relativly easy. 
+I wanted a clean install without anything. 
+So even if I would choose a Window Manager later on, I did now want anything like that on my ISO. 
+Next was the boot method.
+And there I have to be honest again, since before I started I wanted to see how it workes, I looked though quite a few guides. 
+Pretty much all of them used the UEFI system. 
+So that is what I choose. </p>
+<details>
+<summary>UEFI vs. BIOS</summary>
+<p>So even though I just choose the UEFI because of the information I got. 
+Mainly BIOS doesn't have a lot of features. 
+From bigger drives and more partitions.
+It has also better graphical support and secure boot. 
+The problem is that I can't really say one of these things are a game breaker for me, so I might have to go back and figure out more details. </p>
+</details>
+<h2 id="installation">Installation</h2>
+<p>So this was suprisiongly problematic at first.
+And I still don't really know what went wrong. 
+First I used the <code>dd</code> command to make the bootable USB form the ISO. 
+This already impressed me, since I have never used that tool to be honest. 
+Also a point where I still have a lot of things to learn. 
+Then booting to the USB, and running <code>void-installer</code> is pretty straight forward. </p>
+<p>Now I went through the installer one by one, and all seemed pretty logically, I struggled a bit with making sure I have the UEFI partition and choose to use a bit of SWAP too. 
+Also I wasnt completly sure what groups I would need, so I choose to use almost non, so I could add them later if I can't do something because I am missing them. 
+That comes back to me understanding what everything is for. 
+And if you add something because you need it, then you know what it is for by definition. </p>
+<h2 id="post-install-setup">Post-Install Setup</h2>
+<p>So this is where the fun actually begun. 
+Booting up I was in the tty. 
+That is pretty much everything I ever wanted from a system. 
+Reading up on the documentation (https://voidlinux.org) I tried to figure out as much as I could. 
+But I am still far from understanding everything.</p>
 <hr />
-<p>Now it also happend that I came across something special. 
-Something that probably always peaked my interest, but I have never really felt ready to dive deeper. 
-Well I am ready. 
-I have learned a lot, and I feel ready to get my feet wet trying to <strong>really</strong> understand what IoT means, what it is and what it can do. 
-I found an ESP32 Dev board with battery, case, Oled Display and LoRa Modul. 
-So what do I want to do with it. Everything. 
-But for now I want to build my own Wifi_Sniffer.</p>
-<h2 id="tools-of-the-hunt">Tools of the Hunt</h2>
-<p>Here are the tools I plan to use for this project. </p>
-<h3 id="hardware">Hardware</h3>
-<ul>
-<li>ESP32 LoRa V3 Development Board</li>
-<li>3000mAh LiPo battery</li>
-<li>Meshtastic case</li>
-<li>Smartphone (for eventual geotagging)</li>
-<li>PC running some Linux Distro</li>
-</ul>
-<h3 id="software">Software</h3>
-<ul>
-<li>MicroPython</li>
-<li>Nvim (with MicroPython plugin)</li>
-<li>rshell</li>
-<li>ampy</li>
-</ul>
-<h2 id="gameplan">Gameplan</h2>
-<h3 id="battle-station-setup">Battle Station Setup</h3>
-<p>This is the first real move in the direction of actually doing something after the planning phase.
-I need to get my Nvim setup for MicroPython.
-For that I need to install all the dependicies I will need to finish this projcet.
-Then I set up my Nvim to have Highlighting, etc. </p>
-<h3 id="flash-and-burn">Flash and Burn</h3>
-<p>Then the next step will be flashing the right firmware to the board. 
-I also need to find out which firmware I need since I have already read somewhere there might be a problem with promiscuous mode in there. 
-Next just making sure it works, and I can start getting to work. </p>
-<h3 id="wifi-sniffing-core">WIFI Sniffing Core</h3>
-<p>This is going to be the first step. 
-For that I need to enable the sniffing. 
-Then figure out how I can log what I need and how to save it using onboard flash. 
-And last I would need to figure out good settings and control over the scanning rate and uptime. </p>
-<h3 id="oled-display">OLED Display</h3>
-<p>Next I will be considering what to do with the already integreted display. 
-Thinking about it there should probably be some way to display the battery level. 
-And also maybe a count of how many SSID/MAC adresses I have found and saved. 
-Maybe I can do a percentage of how full the storage is or something like it. </p>
-<h3 id="sync-to-base">Sync to Base</h3>
-<p>The last thing of the offical project is going to be how I handle syncing the data to my server. 
-Since this is going to be local, I will probably try to make the ESP32 connect to my local Wifi, and then start a sync automatically. 
-Maybe I find a better way, but the idea is that I can have it with me, 
-and only worry about charging it. 
-The rest should be automated. </p>
-<h3 id="geotagging">Geotagging</h3>
-<p>As a bonus I will try to get some location to my scanned data, and maybe start to build a map. 
-For that my idea is to use my androids GPS. 
-And for something special the fun Idea I had was to use my phones ability to create a hotspot for a few seconds and encode the location in the SSID name, 
-and later convert it back for some general location based on time. </p>
+<p>The first problem I run into was the font, more spefically the font size. 
+Don't understand me wrong, I wanted to change the font too, but the size was the acutal problem. 
+But I couldn't get it to stay persistent for a reboot.
+To quickly change the the font I used <code>setfont /usr/share/kbd/consolefonts/&lt;font&gt;</code>
+That works fine, but I needed to find the right config file to change it. 
+There I did something stupid, which cost me a lot of time.
+I found the right file to change it very quickly, and just for your info, it is <code>/etc/rc.conf</code>
+It is pretty self explanatory, just setting the <code>FONT="&lt;font&gt;"</code> to the desired font. 
+It was also pretty fun to find out that in the tty there isn't really a fontsize. 
+Since a font in tty is just a bitmap, laying out exactly which bit is part of the letter and which is not, the different size is just a different font. </p>
+<p>But my problem was that I had a typo in the rc.conf file. 
+So it did not take it, and I was on the search of how else to change it. 
+So my big lesson learned is: if it doesn't work as expected, check again. 
+It might not be that you have the wrong way to do something, it might just be a small mistake costing you sanity.</p>
+<hr />
+<p>But I was connected to my wifi, and I started updating with <code>xbps-install -Su</code> and installing some basic things I liked. 
+One of them is neovim.
+Since I am using NVIM already on my fedora workstation, and I have the setup in my dotfiles repo, I went on trying to connect to that. 
+For this I installed git and cloned my local dotfiles. 
+I knew that it probably won't work completly the way I am used to it, since some of my plugins relay on the graphical interface. 
+Searching it up to be exact it relies on a NerdFont Package and on truecolor. 
+Since tty is not able to do eighter or, I would just have to get used to it. 
+To be honest I don't really mind, since it is both just about looks, not about funktionality. </p>
+<h2 id="graphical-stack">Graphical Stack</h2>
+<p>So there we are. 
+I have set this up with the intention of a tty only minimal system to learn how everything works. 
+And with that I was pretty much done. 
+So all that I needed now was to work with it. 
+But then it started getting to me.
+I am still in a lot of need for some graphical things. 
+This is why I needed something. 
+It needs to be small enough to still fit my feeling of a minimal setup, but I need some basic things to make this my daily driver. 
+And so I found suckless. 
+I really liked the idea. 
+Not just the minimal, from the feeling almost self build setup. I really enjoyed reading there documentation, having to compile it locally also sounded like a lot of fun,
+and to get to the "settings" you just change the code. 
+That actually sounds exatly like what I want. 
+To be able to use this system, you have no choice but to understand it. 
+And I just keeps going like that. 
+The form of patching also made me smile. 
+No updates, patches, code changes, and you do what you need to fix things, if you want to. </p>
+<p>That is why I descided to try my luck. 
+And I installed not only dwm. 
+I put ST, Dmenu, and dwmblocks. At least for now. 
+I want to try to set everything up and see how that feels. 
+Everything of that setup brings me closer to the metal, having more controle and for that also generates more understanding and knowledge. 
+And whatever happens afterwards happens.
+I would love to go to a tty only setup, but I am just not ready yet. </p>
+<h2 id="networking">Networking</h2>
+<p>So my next step is to setup some good networking without installing any more tools. 
+I am planing on using dmenu, wpa-supplicant, and dhcped. 
+That and some bash script should be enough to let me create something very similar to a modern network manager.
+Or at least the part that is mostly used. 
+Without all the unnessesary bloat, which no one understands, or needs. </p>
 
 
 
@@ -1767,44 +1627,6 @@ and later convert it back for some general location based on time. </p>
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Home
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../../linux/cli-magic/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI Magic">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                CLI Magic
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
