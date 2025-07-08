@@ -78,6 +78,7 @@ nav:
   
   - Projects:
       - EchoSnare: projects/echosnare.md
+      - Void Linux: projects/void_linux.md
 
   - Linux Wizardry:
       - CLI Magic: linux/cli-magic.md

@@ -17,7 +17,7 @@ description: This is the journey of me setting up my new Laptop as a minimal Voi
 
 * [`Graphical Stack`](#graphical-stack)
 
-* Networking (TTY Wi-Fi)
+* [`Networking`](#networking)
 
 * Final Touches
 
@@ -140,7 +140,7 @@ No updates, patches, code changes, and you do what you need to fix things, if yo
 
 That is why I descided to try my luck. 
 And I installed not only dwm. 
-I put ST, Dmenu, and dwmblocks. At least for now. 
+I put ST, Dmenu, and slstatus. At least for now. 
 I want to try to set everything up and see how that feels. 
 Everything of that setup brings me closer to the metal, having more controle and for that also generates more understanding and knowledge. 
 And whatever happens afterwards happens.
@@ -154,9 +154,40 @@ I am planing on using dmenu, wpa-supplicant, and dhcped.
 That and some bash script should be enough to let me create something very similar to a modern network manager.
 Or at least the part that is mostly used. 
 Without all the unnessesary bloat, which no one understands, or needs. 
+Everything Else comes later. 
 
 
+## Lessons learned
 
+With this project there are a lot of things I have learned, and am still learning. 
+But most of them don't really bolong into a "lessons learned" section. 
+I feel like here should mostly belong things that went wrong and taught me something. 
+Since this is an ongoing experiment, I think there will still be a lot of things that go wrong.
+So this part is going to be regularly updated with everything I have learned.
+
+#### Minimalism
+
+With this project I feel like the most important lessons I have learned,
+is the difference people can see in the same idea. 
+At the beginning, a minimal system mostly sounded like something without a lot of buttons and programs constantly running. 
+I thought that it could be a really good looking aesthetic. 
+Less programms already installed. 
+And maybe I even recognized a smaller ISO file size. 
+But working with it, and trying to find my way and make this PC my own, I learned what that really means. 
+It means that there is a whole lot of things that can be made simpler. 
+Things that work the way they do, because somewhere there is some edge case that needs them to work that way. 
+But that also adds a huge amount of noise. 
+And with a minimal setup, it constrains and makes you think about what you actually want and need. 
+The best example is networking. 
+There are a lot of things that can be done in networking.
+And almost all of these things, I dont need for my day to day work. 
+For a stationary PC, even if it is connected over wlan, I dont need a menu and all these different settings to manage different SSIDs. 
+I am not moving a stationary PC. 
+And I am not changing the SSID of my wlan weekly, or even monthly, probably not even every year. 
+So in this case, every one of these options is noise. 
+
+I think this one of the best way for me to explain it. 
+Maybe I can find a better explaination in the future, but for now that needs to be enough.
 
 
 
