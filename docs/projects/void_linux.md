@@ -19,11 +19,11 @@ description: This is the journey of me setting up my new Laptop as a minimal Voi
 
 * [`Networking`](#networking)
 
-* Final Touches
+* [`Final Touches`](#final-touches)
 
-* Gotchas & Lessons
+* [`Lessons learned`](#lessons-lerned)
 
-* Replication Checklist
+* [`Replication Checklist`](#replication-checklist)
 
       
 ## Why Void
@@ -157,6 +157,12 @@ Without all the unnessesary bloat, which no one understands, or needs.
 Everything Else comes later. 
 
 
+## Final touches
+
+Here I am going to write the general things I did to make this system my own. 
+
+
+
 ## Lessons learned
 
 With this project there are a lot of things I have learned, and am still learning. 
@@ -190,7 +196,34 @@ I think this one of the best way for me to explain it.
 Maybe I can find a better explaination in the future, but for now that needs to be enough.
 
 
+## Replication Checklist
 
+Get yourself a base image of Void Linux. 
+Also you need a USB stick without any important data on it. 
+Burn the ISO on the USB stick using
+
+´´´
+sudo dd if=/path/to/your.iso of=/dev/sdX bs=4M oflag=sync
+´´´
+Then you just need to start you pc from the USB. 
+It starts into the live void system, and you are already almost done. 
+There are now just a few options you need to set and fit to your liking. 
+For that, I wouls say you do your own research, but I will give you my settings anyway. 
+After you start the installation process you just run ``void-installer``. 
+Going though the different options you need to choose your keyboard and network yourself. 
+For source I used the network with base installation. 
+Next is the partioning. 
+I use cfdisk, and cleaned everything form the PC, because I did my backup beforehand. 
+I made a 1g efi partition, and put everything else into a file system. 
+The mount points need to be as following:
+For the boot partition it is ``/boot/efi`` and the root partition is just ``/``.
+Then you have to create a user and and choose which groups you want to be in. 
+That is also completly your own choice. 
+Just one thing that helped my decision. 
+Since I wanted this to learn how everything works, I didn't choose anything. 
+I know I can log into root if nessesary, and I can put myself to every group I want to if nessesary. 
+Then you start the installation and you are pretty much done with everything I will decribe here. 
+From there you choose what you want. 
 
 
 
