@@ -680,6 +680,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Final touches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-visuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Visuals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1630,6 +1645,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Final touches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-visuals" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Visuals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1819,7 +1849,33 @@ Or at least the part that is mostly used.
 Without all the unnessesary bloat, which no one understands, or needs. 
 Everything Else comes later. </p>
 <h2 id="final-touches">Final touches</h2>
-<p>Here I am going to write the general things I did to make this system my own. </p>
+<p>There are a few things I want to do. 
+I started with the thing that bortherd me the most.
+And then I worked form there. 
+This way I hoped to build up only what really helps me, and what I want visually. </p>
+<h4 id="first-visuals">First Visuals</h4>
+<p>For that reason I startet with slstatus. 
+The things I wanted to display are only things that I would actually want to look at. 
+Something that gives me information I need and want to check regularly. 
+That came out as following: Time and Date, Battery (since it is Laptop), RAM usage.
+There is one more thing, which is still a to-do. 
+And that would be some way to show where I am. 
+But I want that to be mainly for when I am using SSH, just to have a clear way to see on which mashine I am working on. 
+That set up I have now looks something like this: </p>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">arg</span><span class="w"> </span><span class="n">args</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">{</span><span class="n">datetime</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%d&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="n">datetime</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%T&quot;</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="n">battery_perc</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%s%%&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">BAT0</span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="n">ram_perc</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%s%%&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Then I also got myself some Nerd Fonts, put the ones I wanted in <strong>dwm</strong> and in <strong>st</strong> and fixed the size, to make everything feel more like home. 
+And directly after that I also installed the fibonacci patch for dwm,
+because I think that is one of the most efficent layouts I can think of. </p>
+<!-- 
+TODO
+-->
+
 <h2 id="lessons-learned">Lessons learned</h2>
 <p>With this project there are a lot of things I have learned, and am still learning. 
 But most of them don't really bolong into a "lessons learned" section. 
@@ -1851,10 +1907,9 @@ Maybe I can find a better explaination in the future, but for now that needs to 
 <p>Get yourself a base image of Void Linux. 
 Also you need a USB stick without any important data on it. 
 Burn the ISO on the USB stick using</p>
-<p>´´´
-sudo dd if=/path/to/your.iso of=/dev/sdX bs=4M oflag=sync
-´´´
-Then you just need to start you pc from the USB. 
+<div class="highlight"><pre><span></span><code>sudo dd if=/path/to/your.iso of=/dev/sdX bs=4M oflag=sync
+</code></pre></div>
+<p>Then you just need to start you pc from the USB. 
 It starts into the live void system, and you are already almost done. 
 There are now just a few options you need to set and fit to your liking. 
 For that, I wouls say you do your own research, but I will give you my settings anyway. 
