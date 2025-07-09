@@ -159,9 +159,38 @@ Everything Else comes later.
 
 ## Final touches
 
-Here I am going to write the general things I did to make this system my own. 
+There are a few things I want to do. 
+I started with the thing that bortherd me the most.
+And then I worked form there. 
+This way I hoped to build up only what really helps me, and what I want visually. 
 
+#### First Visuals
 
+For that reason I startet with slstatus. 
+The things I wanted to display are only things that I would actually want to look at. 
+Something that gives me information I need and want to check regularly. 
+That came out as following: Time and Date, Battery (since it is Laptop), RAM usage.
+There is one more thing, which is still a to-do. 
+And that would be some way to show where I am. 
+But I want that to be mainly for when I am using SSH, just to have a clear way to see on which mashine I am working on. 
+That set up I have now looks something like this: 
+
+``` c
+static const struct arg args[] = {
+    {datetime, "%s", "%d"},
+    {datetime, "%s", "%T"},
+    {battery_perc, "%s%%", BAT0},
+    {ram_perc, "%s%%", NULL},
+}
+```
+
+Then I also got myself some Nerd Fonts, put the ones I wanted in **dwm** and in **st** and fixed the size, to make everything feel more like home. 
+And directly after that I also installed the fibonacci patch for dwm,
+because I think that is one of the most efficent layouts I can think of. 
+
+<!-- 
+TODO
+--> 
 
 ## Lessons learned
 
@@ -202,9 +231,10 @@ Get yourself a base image of Void Linux.
 Also you need a USB stick without any important data on it. 
 Burn the ISO on the USB stick using
 
-´´´
+``` 
 sudo dd if=/path/to/your.iso of=/dev/sdX bs=4M oflag=sync
-´´´
+```
+
 Then you just need to start you pc from the USB. 
 It starts into the live void system, and you are already almost done. 
 There are now just a few options you need to set and fit to your liking. 
