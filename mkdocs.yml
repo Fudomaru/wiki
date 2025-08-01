@@ -54,7 +54,6 @@ theme:
     - navigation.path
     - navigation.top
     - navigation.footer
-
     - search.suggest
 
 extra:
