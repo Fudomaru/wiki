@@ -33,7 +33,18 @@ fi
 
 # === Step 4: Deploy with MkDocs ===
 echo "🌍 Deploying with mkdocs..."
-mkdocs gh-deploy
+
+VENV_DIR="$HOME/.mkdocs-env"
+MKDOCS_BIN="$VENV_DIR/bin/mkdocs"
+
+if [ ! -x "$MKDOCS_BIN" ]; then
+    echo "❌ MkDocs binary not found at $MKDOCS_BIN"
+    echo "➡️  Create it with: python3 -m venv $VENV_DIR && source $VENV_DIR/bin/activate && pip install mkdocs"
+    exit 1
+fi
+
+"$MKDOCS_BIN" gh-deploy
+
 if [[ $? -eq 0 ]]; then
     echo "✅ Deployment successful"
 else
