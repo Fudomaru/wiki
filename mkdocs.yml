@@ -1,10 +1,8 @@
-site_name: Wiki
+site_name: Voidex
 site_description: "A Linux & Cybersecurity notebook forged in fire."
 site_author: "Fudomaru"
 
 theme:
-
-  logo: assets/Logo.png
 
   name: material
 
@@ -26,13 +24,6 @@ theme:
       quote: fontawesome/solid/quote-left
 
   palette: 
-    # Palette toggle for light mode
-    #- scheme: default
-    #toggle:
-        #icon: material/lightbulb
-        #name: Dark
-        #      primary: red
-      #      accent: deep orange
 
     # Palette toggle for dark mode
     - scheme: slate
@@ -49,8 +40,8 @@ theme:
   features:
     - navigation.instant 
     - navigation.instant.progress 
+    - navigation.tracking
     - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.path
     - navigation.top
     - navigation.footer
