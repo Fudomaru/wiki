@@ -69,6 +69,7 @@ nav:
   - Projects:
       - EchoSnare: projects/echosnare.md
       - Void Linux: projects/void_linux.md
+      - Digital Dojo: projects/digital-dojo.md
 
   - Linux Wizardry:
       - CLI Magic: linux/cli-magic.md
@@ -96,8 +97,6 @@ nav:
       - Warboard: notes/warboard.md
       - Certifications: notes/ccna.md
       - Readings & Videos: notes/media.md
-      - Projects: 
-        - Digital Dojo: notes/projects/digital-dojo.md
         
   - About: about.md
 
