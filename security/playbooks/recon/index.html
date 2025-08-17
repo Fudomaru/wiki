@@ -6,32 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Networking tools in linux.">
+        <meta name="description" content="Easy to follow Rulesets, helping me to go through Recon processes step by step, without missing anything.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../system-internals/">
+        <link rel="prev" href="../../toolbelt/nmap/">
       
       
-        <link rel="next" href="../../auto/deploy/">
+        <link rel="next" href="../../../homelab/overview/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>Linux Networking - Voidex</title>
+        <title>Recon - Voidex</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -91,7 +91,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#checking-connectivity" class="md-skip">
+        <a href="#inital-target-scope" class="md-skip">
           Skip to content
         </a>
       
@@ -131,7 +131,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -151,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linux Networking
+              Recon
             
           </span>
         </div>
@@ -254,7 +254,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -272,10 +272,121 @@
   
   
   
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
     
     
       <li class="md-tabs__item">
-        <a href="../../projects/echosnare/" class="md-tabs__link">
+        <a href="../../../foundations/cli-magic.md" class="md-tabs__link">
+          
+  
+  
+  Foundations
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../fundamentals/" class="md-tabs__link">
+          
+  
+  
+  Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../homelab/overview/" class="md-tabs__link">
+          
+  
+  
+  Homelab
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../challenges/htb/" class="md-tabs__link">
+          
+  
+  
+  Challenges
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/digital_dojo.md" class="md-tabs__link">
           
   
   
@@ -291,103 +402,11 @@
   
   
   
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../cli-magic/" class="md-tabs__link">
-          
-  
-  
-  Linux Wizardry
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
   
     
     
       <li class="md-tabs__item">
-        <a href="../../auto/deploy/" class="md-tabs__link">
-          
-  
-  
-  Automation & Scripts
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../cybersec/fundamentals/" class="md-tabs__link">
-          
-  
-  
-  Cybersecurity
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../ctf/overthewire/bandit/" class="md-tabs__link">
-          
-  
-  
-  CTF & Wargames
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../notes/warboard/" class="md-tabs__link">
+        <a href="../../../notes/ccna/" class="md-tabs__link">
           
   
   
@@ -396,25 +415,6 @@
         </a>
       </li>
     
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  About
-
-      </a>
-    </li>
   
 
       
@@ -440,7 +440,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -470,12 +470,34 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
     
   </span>
   
@@ -503,15 +525,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Projects
+    Foundations
     
   </span>
   
@@ -519,10 +541,51 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Projects
+            Foundations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -533,12 +596,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/echosnare/" class="md-nav__link">
+      <a href="../../../foundations/cli-magic.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    EchoSnare
+    CLI
     
   </span>
   
@@ -556,12 +619,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/void_linux/" class="md-nav__link">
+      <a href="../../../foundations/networking.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Void Linux
+    Networking
     
   </span>
   
@@ -579,17 +642,25 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/digital-dojo/" class="md-nav__link">
+      <a href="../../../foundations/system-internals.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Digital Dojo
+    System
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -625,15 +696,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Linux Wizardry
+    Security
     
   </span>
   
@@ -641,10 +712,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Linux Wizardry
+            Security
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -655,12 +726,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../cli-magic/" class="md-nav__link">
+      <a href="../../fundamentals/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    CLI Magic
+    Fundamentals
     
   </span>
   
@@ -677,13 +748,54 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Toolbelt
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Toolbelt
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../system-internals/" class="md-nav__link">
+      <a href="../../toolbelt/nmap/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    System Internals
+    Nmap
     
   </span>
   
@@ -693,6 +805,57 @@
   
 
               
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Playbooks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Playbooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -715,7 +878,7 @@
   
   
   <span class="md-ellipsis">
-    Network Kung-Fu
+    Recon
     
   </span>
   
@@ -728,7 +891,7 @@
   
   
   <span class="md-ellipsis">
-    Network Kung-Fu
+    Recon
     
   </span>
   
@@ -751,45 +914,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ping" class="md-nav__link">
+  <a href="#engagement-type" class="md-nav__link">
     <span class="md-ellipsis">
-      Ping
+      Engagement Type
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#traceroute" class="md-nav__link">
+  <a href="#rules-of-engagement-roe" class="md-nav__link">
     <span class="md-ellipsis">
-      Traceroute:
+      Rules of Engagement (RoE)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#netstat" class="md-nav__link">
+  <a href="#in-scope" class="md-nav__link">
     <span class="md-ellipsis">
-      Netstat:
+      In Scope
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#curl" class="md-nav__link">
+  <a href="#out-of-scope" class="md-nav__link">
     <span class="md-ellipsis">
-      Curl
+      Out of Scope
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#netcat" class="md-nav__link">
+  <a href="#success-criteria" class="md-nav__link">
     <span class="md-ellipsis">
-      Netcat:
+      Success Criteria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logistics-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logistics &amp; Authorization
     </span>
   </a>
   
@@ -807,69 +979,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Automation & Scripts
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Automation & Scripts
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../auto/deploy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Deploying the Wiki
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -908,7 +1017,7 @@
   
   
   <span class="md-ellipsis">
-    Cybersecurity
+    Homelab
     
   </span>
   
@@ -919,7 +1028,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Cybersecurity
+            Homelab
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -930,12 +1039,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cybersec/fundamentals/" class="md-nav__link">
+      <a href="../../../homelab/overview/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Fundamentals
+    Overview
     
   </span>
   
@@ -952,54 +1061,13 @@
   
   
   
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Toolbelt
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            Toolbelt
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../cybersec/toolbelt/nmap/" class="md-nav__link">
+      <a href="../../../homelab/network_design/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    nmap
+    Network Design
     
   </span>
   
@@ -1010,55 +1078,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Playbooks
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            Playbooks
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -1066,25 +1085,17 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cybersec/playbooks/recon/" class="md-nav__link">
+      <a href="../../../homelab/services/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Recon
+    Services
     
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1123,7 +1134,7 @@
   
   
   <span class="md-ellipsis">
-    CTF & Wargames
+    Challenges
     
   </span>
   
@@ -1134,9 +1145,55 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            CTF & Wargames
+            Challenges
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../challenges/htb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../challenges/thm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    THM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1156,15 +1213,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
         
           
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Overthewire
+    OverTheWire
     
   </span>
   
@@ -1172,10 +1229,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
             <span class="md-nav__icon md-icon"></span>
-            Overthewire
+            OverTheWire
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1186,7 +1243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ctf/overthewire/bandit/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -1209,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ctf/overthewire/natas/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/natas/" class="md-nav__link">
         
   
   
@@ -1228,52 +1285,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ctf/htb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    HackTheBox
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ctf/thm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    TryHackMe
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1312,7 +1323,7 @@
   
   
   <span class="md-ellipsis">
-    Notes
+    Projects
     
   </span>
   
@@ -1323,7 +1334,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Notes
+            Projects
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1334,12 +1345,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/warboard/" class="md-nav__link">
+      <a href="../../../projects/digital_dojo.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Warboard
+    Digital Dojo
     
   </span>
   
@@ -1357,12 +1368,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/ccna/" class="md-nav__link">
+      <a href="../../../projects/echosnare/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Certifications
+    EchoSnare
     
   </span>
   
@@ -1380,12 +1391,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/media/" class="md-nav__link">
+      <a href="../../../projects/void_linux/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Readings & Videos
+    Void Linux
     
   </span>
   
@@ -1409,18 +1420,113 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Notes
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../notes/ccna/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    About
+    CCNA
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/warboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Warboard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/media/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Media
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1452,45 +1558,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ping" class="md-nav__link">
+  <a href="#engagement-type" class="md-nav__link">
     <span class="md-ellipsis">
-      Ping
+      Engagement Type
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#traceroute" class="md-nav__link">
+  <a href="#rules-of-engagement-roe" class="md-nav__link">
     <span class="md-ellipsis">
-      Traceroute:
+      Rules of Engagement (RoE)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#netstat" class="md-nav__link">
+  <a href="#in-scope" class="md-nav__link">
     <span class="md-ellipsis">
-      Netstat:
+      In Scope
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#curl" class="md-nav__link">
+  <a href="#out-of-scope" class="md-nav__link">
     <span class="md-ellipsis">
-      Curl
+      Out of Scope
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#netcat" class="md-nav__link">
+  <a href="#success-criteria" class="md-nav__link">
     <span class="md-ellipsis">
-      Netcat:
+      Success Criteria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logistics-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logistics &amp; Authorization
     </span>
   </a>
   
@@ -1512,23 +1627,202 @@
 
 
 
-<details class="warning">
-<summary>Warning</summary>
-<p>This page is a placeholder</p>
-</details>
-<h1 id="checking-connectivity">Checking Connectivity</h1>
-<h2 id="ping">Ping</h2>
-<p>Test if a host is reachable. Example: <code>ping -c 4 google.com</code></p>
-<h2 id="traceroute">Traceroute:</h2>
-<p>Shows each hop on the path to a host.</p>
-<h2 id="netstat">Netstat:</h2>
-<p>Show open ports, listening services. Standard usage:<br />
-<code>ss -tuln</code>  </p>
-<h2 id="curl">Curl</h2>
-<p>Verify web service responses.</p>
-<h2 id="netcat">Netcat:</h2>
-<p>Swiss Army Knife of network tools.<br />
-Good for checking for open ports, connecting to one, sending or resiving TCP or UDP packages. </p>
+<h1 id="inital-target-scope">Inital Target Scope</h1>
+<p>Define what the target is. Find the domains, subdomains, IP range. What Infrastructure do they use, what company profiles are attackable and in scope. This sets the boundaries and makes sure it is clear where the recon begins and where it ends.  </p>
+<h3 id="engagement-type">Engagement Type</h3>
+<p>First it is essential to clearly define what are you doing your recon for. What is the goal. 
+You need to define if you are doing a CTF, a Pentest or if you are going for a bug bounty.</p>
+<h3 id="rules-of-engagement-roe">Rules of Engagement (RoE)</h3>
+<p>Take a detailed look in the rules you are to follow. If something is not clear, it needs to be adressed.<br />
+Is social engineering in scope?<br />
+Are destructive payloads prohibited?<br />
+Can you fuzz login forms?<br />
+What are the time restrictions?<br />
+It is important that everything is documented and everyone involved understands the rules.  </p>
+<h3 id="in-scope">In Scope</h3>
+<p>It need to be clearly defined. What domains, subdomains, etc. can be attackt. What about third-party services? You have to be very clear. </p>
+<h3 id="out-of-scope">Out of Scope</h3>
+<p>You also need to define specific services, IPs, domains that are not to be touched. Partners, shared infrastructure or production critical services.  </p>
+<h3 id="success-criteria">Success Criteria</h3>
+<p>Also really important to define. You want to know when you are done, when you have done your job. It should be clear, that no system is ever completly save, it always depends a multitude of things if and when it will be owned. But what is actually needed to count it as success. </p>
+<h3 id="logistics-authorization">Logistics &amp; Authorization</h3>
+<p>Which accounts are authorized. What about VPN, access tokes. You need a explicit permission to go through with it. What is your point of contact if anything happens. Do you have a "get out of jail" card? </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>No moving forward until this part is airtight. </p>
+</div>
+<hr />
+<hr />
+<h1 id="passive-recon">Passive Recon</h1>
+<div class="admonition info">
+<p class="admonition-title">Definition</p>
+<p>Collecting information without touching the target. Stay a ghost by watching, not touching. The rule is: No traffic hits their servers. </p>
+</div>
+<h2 id="osint-open-source-intelligence">OSINT (Open-Source Intelligence)</h2>
+<p>Tool and techniques:  </p>
+<ul>
+<li>crt.sh, CertSpotter, Censys, Shodan, ZoomEye, Hunter.io</li>
+<li>Employee footprinting  (LinkedIn, GitHub, Twitter)</li>
+<li>WHOIS &amp; DNS history</li>
+<li>Archive.org (Wayback Machine)</li>
+</ul>
+<p>Trying to extract all public data about the target without making direct contact. 
+Your Building the dossier befor stepping on the field. </p>
+<h2 id="subdomain-enumeration">Subdomain Enumeration</h2>
+<p>Tools: </p>
+<ul>
+<li>Amass (passive mode), Subfinder, Assetfinder, Findomain </li>
+</ul>
+<p>Sources:</p>
+<ul>
+<li>Certificate Transparency Logs</li>
+<li>Public DNS data aggregation (VirusTotal, dns.bufferover.run) </li>
+</ul>
+<p>This is to find potentail subdomains without touching the target. Create a list of possiblities to make the next stepps easier for yourself. </p>
+<h2 id="dns-enumeration">DNS Enumeration</h2>
+<ul>
+<li>Passive DNS record discovery </li>
+<li>Zone history (SecurityTrails, PassiveTotal)</li>
+</ul>
+<p>Helps to understand the infrastruture layout and potentail service endpoints. </p>
+<h2 id="technologie-figerprinting">Technologie Figerprinting</h2>
+<p>Tools: </p>
+<ul>
+<li>Wappalyzer</li>
+<li>BuiltWith</li>
+<li>Netcraft</li>
+<li>WhatWeb</li>
+</ul>
+<p>You can start to understand the stack with the used languages, frameworks, CMS and libraries used. </p>
+<h2 id="codebase-asset-hunting">Codebase &amp; Asset Hunting</h2>
+<ul>
+<li>You can look for public GitHub repos by target name </li>
+<li>Identify exposed .git, .env, .bak, etc. in the Waybackmashine </li>
+<li>also looking for though Pastbin, Gist or leaks from your target can be helpful </li>
+</ul>
+<p>Here it is not unlikly to come across old credentials, forgotten endpoints or internal code what helps you extract how things are done to find the logic and structure behind it. </p>
+<h2 id="thrid-party-enumeration">Thrid-Party Enumeration</h2>
+<p>Figuring out about third partries they use. </p>
+<ul>
+<li>SSO provider</li>
+<li>Marketing tools</li>
+<li>used CDN</li>
+<li>Library dependencies</li>
+</ul>
+<p>Mapping dependencies and weak links can help you find differenct attack vectors. </p>
+<h2 id="notes-to-take">Notes to take:</h2>
+<p>You need to start building you documentation here.<br />
+Here is what you write down:<br />
+- Domains
+- Subdomains
+- Tech stacks
+- Notable files/ leaks</p>
+<p>Also you should start making a inital map about the internal sturcture.<br />
+This helps you to fit everything else you find into its place.  </p>
+<h2 id="outcome">Outcome</h2>
+<p>By the end of this stage this is what you should have:  </p>
+<ul>
+<li>A list of target domains/ subdomains</li>
+<li>Public known infrastructure</li>
+<li>Highlevel service stack</li>
+<li>Potentail weak links from external assets</li>
+<li>Initial attack surface mindmap</li>
+</ul>
+<hr />
+<h1 id="active-recon">Active Recon</h1>
+<div class="admonition info">
+<p class="admonition-title">Definition</p>
+<p>Here you are interacting with the target's Infrastructure directly. You are scanning and probing. Since you are sending packages, here you are leaving fingerprints and should be aware of that. </p>
+</div>
+<h2 id="port-scanning">Port scanning</h2>
+<ul>
+<li>Discovering open ports and determine their state</li>
+<li>Understanding exposed surface area</li>
+<li>Tools: <a href="/wiki/cybersec/toolbelt/nmap/">nmap</a>, rustscan, masscan</li>
+</ul>
+<h2 id="service-enumation">Service Enumation</h2>
+<ul>
+<li>Idenfy running services and versions</li>
+<li>Fingerprint protocols, grab banners, test endpoints</li>
+<li>Tools: nmap, netcat, telnet, whatweb, httpx</li>
+</ul>
+<h2 id="authentication-access-points">Authentication &amp; Access Points</h2>
+<ul>
+<li>Scan for login portals across services: SSH, FTP, RDP, Telnet</li>
+<li>Identify entry points that may lead to further attack vectors</li>
+<li>Tools: hydra, ncrack, meduse </li>
+</ul>
+<h2 id="info-leaks">Info Leaks</h2>
+<ul>
+<li>Interact with services to provoke behavior to test for leaks, misconfigs, or sloppy responses </li>
+<li>Think SMPT, VRFY, FTP misconfigs or SSH MOTD leaks</li>
+<li>Tools: netcat, curl, openssl</li>
+</ul>
+<h2 id="notes-to-take_1">Notes to take:</h2>
+<p>Document everything you find. Put the new finds in the old documentation, mark the still active subdomains, fill out your map of the infrastructure. Complete with where you find which ports and services. </p>
+<h2 id="outcome_1">Outcome</h2>
+<p>By the endof this stage this is what you should have: </p>
+<ul>
+<li>List of reachable hosts with open ports and active services</li>
+<li>Serivce versions with potential weak configs</li>
+<li>Authentication endpoints and any possible misconfigurations</li>
+<li>A prioritized attack surface with targets worth deeper inspection </li>
+<li>Clear specification what need Web Recon to start the next phase with. </li>
+</ul>
+<hr />
+<h1 id="web-recon">Web Recon</h1>
+<p>Digging deep into web services. There is normally a lot to find. From hidden dirctories, files, over headers used. Find the login portals. Specifiy where attack surface is. </p>
+<h2 id="identifying-web-assets">Identifying Web Assets</h2>
+<p>You should already have a pretty good idea of the web assets after the last steps. But you should make yourself a specified plan of what you need to takle in this section. </p>
+<h2 id="clientside-logic">Clientside Logic</h2>
+<ul>
+<li>Parse JavaScript files manually or with tools </li>
+<li>Find API endpoints, secrets and tokens</li>
+<li>Map JS-based routing and hidden funktionality</li>
+</ul>
+<h2 id="input-vectors">Input Vectors</h2>
+<ul>
+<li>Query strings, forms and hidden inputs</li>
+<li>File uploaders, search bars and filters</li>
+<li>Are there any client-side validations?</li>
+</ul>
+<h2 id="session-handling-authentication-behavior">Session Handling &amp; Authentication Behavior</h2>
+<ul>
+<li>Cookie flags, token behavior, session expiry</li>
+<li>Authentication flows (login, rest, MFA)</li>
+<li>Redirect behavior, caching</li>
+<li>Version leaks, misconfigs </li>
+</ul>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>Put everything you find to your map</li>
+<li>Mark interesting targets, that might offer more</li>
+</ul>
+<h1 id="outcome_2">Outcome</h1>
+<p>You should be able to tie findings to potential exploitation paths. Through the exploration of headers and forms, you have a solid understanding of what your targets exposes on the web and where to dig deeper. </p>
+<hr />
+<h1 id="enumeration">Enumeration</h1>
+<p>Here you want to see what is used. Finding every service and protocol they use. You need to provoke, record and understand every response. </p>
+<h4 id="tools-to-use">Tools to use:</h4>
+<ul>
+<li>SMB shares</li>
+<li>HTTPS services</li>
+<li>FTP</li>
+<li>DNS zone transfer attempts</li>
+<li>SNMP</li>
+</ul>
+<hr />
+<h1 id="vulnerability-enumeration">Vulnerability Enumeration</h1>
+<p>Now that you have loads of information, it is time to look where you can actually get somewhere. Look for known vulnerabilities for services they use, use vuln scanner and look though CVEs. Match exposed services with weaknesses. </p>
+<h4 id="tools-to-use_1">Tools to use:</h4>
+<ul>
+<li>Nikto</li>
+<li>Searchsploit</li>
+<li>CVE search</li>
+</ul>
+<hr />
+<h1 id="documentation">Documentation</h1>
+<p>Most underated weapon. Espacially for recon. With down everything you have. Go over your notes. Make them usefull. You need to be able to find everything you wrote down in an instand. </p>
 
 
 
@@ -1567,7 +1861,7 @@ Good for checking for open ports, connecting to one, sending or resiving TCP or 
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../system-internals/" class="md-footer__link md-footer__link--prev" aria-label="Previous: System Internals">
+          <a href="../../toolbelt/nmap/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Nmap">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1577,20 +1871,20 @@ Good for checking for open ports, connecting to one, sending or resiving TCP or 
                 Previous
               </span>
               <div class="md-ellipsis">
-                System Internals
+                Nmap
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../auto/deploy/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploying the Wiki">
+          <a href="../../../homelab/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Deploying the Wiki
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1638,10 +1932,10 @@ Good for checking for open ports, connecting to one, sending or resiving TCP or 
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>

@@ -6,17 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Aimed at Beginners. Basic WebApp with a white box approch, showing of the most common bugs and how to abuse them.">
+        <meta name="description" content="Common linux CLI, what they do and how to use them.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../bandit/">
-      
-      
-        <link rel="next" href="../../htb/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Natas - Voidex</title>
+        <title>Linux CLI - Voidex</title>
       
     
     
@@ -116,6 +112,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#cli-magic" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -146,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Natas
+              Linux CLI
             
           </span>
         </div>
@@ -267,10 +268,119 @@
   
   
   
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
     
     
       <li class="md-tabs__item">
-        <a href="../../../projects/echosnare/" class="md-tabs__link">
+        <a href="../../cli-magic.md" class="md-tabs__link">
+          
+  
+  
+  Foundations
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../security/fundamentals/" class="md-tabs__link">
+          
+  
+  
+  Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../homelab/overview/" class="md-tabs__link">
+          
+  
+  
+  Homelab
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../challenges/htb/" class="md-tabs__link">
+          
+  
+  
+  Challenges
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/digital_dojo.md" class="md-tabs__link">
           
   
   
@@ -290,101 +400,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../linux/cli-magic/" class="md-tabs__link">
-          
-  
-  
-  Linux Wizardry
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../auto/deploy/" class="md-tabs__link">
-          
-  
-  
-  Automation & Scripts
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../cybersec/fundamentals/" class="md-tabs__link">
-          
-  
-  
-  Cybersecurity
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    
-    
-      
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../bandit/" class="md-tabs__link">
-          
-  
-  
-  CTF & Wargames
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../notes/warboard/" class="md-tabs__link">
+        <a href="../../../notes/ccna/" class="md-tabs__link">
           
   
   
@@ -393,25 +409,6 @@
         </a>
       </li>
     
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../about/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  About
-
-      </a>
-    </li>
   
 
       
@@ -488,6 +485,28 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -500,10 +519,697 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Foundations
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Foundations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli-magic.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Networking
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system-internals.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Security
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Toolbelt
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Toolbelt
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/toolbelt/nmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Playbooks
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Playbooks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/playbooks/recon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Recon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Homelab
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Homelab
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homelab/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homelab/network_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Network Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../homelab/services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Challenges
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Challenges
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../challenges/htb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    HTB
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../challenges/thm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    THM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    OverTheWire
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            OverTheWire
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../challenges/overthewire/bandit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bandit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../challenges/overthewire/natas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Natas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -516,12 +1222,35 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Projects
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/digital_dojo.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Digital Dojo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -569,29 +1298,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../projects/digital-dojo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Digital Dojo
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -617,617 +1323,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Linux Wizardry
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Linux Wizardry
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../linux/cli-magic/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    CLI Magic
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../linux/system-internals/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    System Internals
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../linux/networking/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Network Kung-Fu
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Automation & Scripts
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Automation & Scripts
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../auto/deploy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Deploying the Wiki
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Cybersecurity
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Cybersecurity
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../cybersec/fundamentals/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Fundamentals
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Toolbelt
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            Toolbelt
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../cybersec/toolbelt/nmap/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    nmap
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Playbooks
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
-            <span class="md-nav__icon md-icon"></span>
-            Playbooks
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../cybersec/playbooks/recon/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Recon
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    CTF & Wargames
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            CTF & Wargames
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Overthewire
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            Overthewire
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../bandit/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Bandit
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Natas
-    
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../htb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    HackTheBox
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../thm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    TryHackMe
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -1240,12 +1339,35 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Notes
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/ccna/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CCNA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1277,35 +1399,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/ccna/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Certifications
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../notes/media/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Readings & Videos
+    Media
     
   </span>
   
@@ -1319,28 +1418,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    About
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1362,6 +1439,220 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#navigation-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation &amp; Discovery
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-info-process-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Info &amp; Process Control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-text-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      File &amp; Text Manipulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permissions &amp; Users
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#archives-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archives &amp; Packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dangerous-but-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dangerous but Useful
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc-meta" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc &amp; Meta
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Misc &amp; Meta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      cat
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      cd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      chmod
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#du" class="md-nav__link">
+    <span class="md-ellipsis">
+      du
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find" class="md-nav__link">
+    <span class="md-ellipsis">
+      find
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#htop" class="md-nav__link">
+    <span class="md-ellipsis">
+      htop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    <span class="md-ellipsis">
+      ls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nc" class="md-nav__link">
+    <span class="md-ellipsis">
+      nc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ping" class="md-nav__link">
+    <span class="md-ellipsis">
+      ping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ps" class="md-nav__link">
+    <span class="md-ellipsis">
+      ps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top" class="md-nav__link">
+    <span class="md-ellipsis">
+      top
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      tree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uniq" class="md-nav__link">
+    <span class="md-ellipsis">
+      uniq
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1377,9 +1668,237 @@
 
 
 
-  <h1>Natas</h1>
+<h1 id="cli-magic">CLI Magic</h1>
+<p>These are the commands I reach for when things get real.</p>
+<h2 id="navigation-discovery">Navigation &amp; Discovery</h2>
+<ul>
+<li><a href="#cd"><code>cd</code></a></li>
+<li><a href="#ls"><code>ls</code></a></li>
+<li><a href="#find"><code>find</code></a> </li>
+<li><a href="#tree"><code>tree</code></a></li>
+<li><a href="#du"><code>du</code></a> </li>
+<li><code>df</code> </li>
+<li><code>pwd</code> </li>
+<li><code>readlink</code> </li>
+</ul>
+<h2 id="system-info-process-control">System Info &amp; Process Control</h2>
+<ul>
+<li><a href="#top"><code>top</code></a> </li>
+<li><a href="#htop"><code>htop</code></a></li>
+<li><a href="#ps"><code>ps</code></a></li>
+<li><code>lsof</code></li>
+<li><code>uptime</code></li>
+<li><code>free</code></li>
+<li><code>vmstat</code> </li>
+<li><code>dmesg</code></li>
+</ul>
+<h2 id="file-text-manipulation">File &amp; Text Manipulation</h2>
+<ul>
+<li><a href="#cat"><code>cat</code></a></li>
+<li><code>less</code></li>
+<li><code>head</code></li>
+<li><code>tail</code></li>
+<li><code>cut</code></li>
+<li><code>sort</code></li>
+<li><a href="#uniq"><code>uniq</code></a></li>
+<li><code>awk</code></li>
+<li><code>sed</code></li>
+<li><code>wc</code></li>
+<li><code>xargs</code></li>
+<li><code>tee</code></li>
+</ul>
+<h2 id="permissions-users">Permissions &amp; Users</h2>
+<ul>
+<li><a href="#chmod"><code>chmod</code></a></li>
+<li><code>chown</code></li>
+<li><code>usermod</code></li>
+<li><code>whoami</code></li>
+<li><code>groups</code></li>
+<li><code>sudo</code></li>
+<li><code>passwd</code></li>
+</ul>
+<h2 id="networking">Networking</h2>
+<ul>
+<li><a href="#ping"><code>ping</code></a></li>
+<li><code>ip</code></li>
+<li><code>ss</code></li>
+<li><a href="#ssh"><code>ssh</code></a></li>
+<li><code>netstat</code></li>
+<li><code>dig</code></li>
+<li><code>nslookup</code></li>
+<li><code>curl</code></li>
+<li><code>wget</code></li>
+<li><code>traceroute</code></li>
+<li><code>nmap</code></li>
+<li><a href="#nc"><code>nc</code></a></li>
+</ul>
+<h2 id="archives-packages">Archives &amp; Packages</h2>
+<ul>
+<li><code>tar</code></li>
+<li><code>zip</code></li>
+<li><code>unzip</code></li>
+<li><code>dpkg</code></li>
+<li><code>apt</code></li>
+<li><code>rpm</code></li>
+<li><code>dnf</code></li>
+<li><code>pacman</code></li>
+</ul>
+<h2 id="dangerous-but-useful">Dangerous but Useful</h2>
+<ul>
+<li><code>rm -rf</code></li>
+<li><code>dd</code></li>
+<li><code>mkfs</code></li>
+<li><code>mount</code></li>
+<li><code>umount</code></li>
+<li><code>kill</code></li>
+<li><code>pkill</code></li>
+<li><code>reboot</code></li>
+<li><code>shutdown</code></li>
+</ul>
+<h2 id="misc-meta">Misc &amp; Meta</h2>
+<ul>
+<li><code>alias</code></li>
+<li><code>history</code></li>
+<li><code>!</code> </li>
+<li><code>man</code></li>
+<li><code>which</code></li>
+<li><code>type</code></li>
+<li><code>time</code></li>
+<li><code>yes</code></li>
+</ul>
+<hr />
+<!--
+
+Format suggestion for each command:
+
+#### command
+
+***What it does:***  
+
+***Real use case:***
+
+***Example:***
+
+***Tip:***
 
 
+-->
+
+<hr />
+<h4 id="cat">cat</h4>
+<p><strong><em>What it does:</em></strong> It shows what is inside the file you append.  </p>
+<p><strong><em>Example:</em></strong> I use it all the time to read out the flag on some CTF's. </p>
+<p><strong><em>Tip:</em></strong> Awesomt for any automation, where you want to work with some text inside a file.<br />
+ Just use <code>cat | secondCommand</code>.<br />
+That also makes it perfect for searching though large files, like logs, together with <code>grep</code></p>
+<hr />
+<h4 id="cd">cd</h4>
+<p><strong><em>What it does:</em></strong> Let's you move to the directory of your choosing.  </p>
+<p><strong><em>Tip:</em></strong> Don't forget about the special usecases:  </p>
+<ul>
+<li><code>..</code> move up the file structure</li>
+<li><code>~</code> move to home directory of the current user</li>
+<li><code>/</code> move to root, but also let's you move anywhere you want, as long as you know the path</li>
+</ul>
+<hr />
+<h4 id="chmod">chmod</h4>
+<p><strong><em>What it does:</em></strong><br />
+Used to change permissions of a file.</p>
+<p><strong><em>Real use case:</em></strong><br />
+Whenever you make a script so you are actually able to run it. </p>
+<p><strong><em>Example:</em></strong><br />
+In the example above, making a file executable, it would like that <code>chmod -x [file]</code></p>
+<p><strong><em>Tip:</em></strong><br />
+Learning the numbercodes is extremly helpful. First number for the user, second for the group, and last for others. Each digit represents a combination of read (4), write (2), and execute (1). </p>
+<hr />
+<h4 id="du">du</h4>
+<p><strong><em>What it does:</em></strong><br />
+Calculates actual disk space used by files and directories. </p>
+<p><strong><em>Real use case:</em></strong>
+Good to identify how the space is used in case of low disk space.  </p>
+<p><strong><em>Tip:</em></strong><br />
+You can pipe it through <code>sort -rh</code> to sort it by biggest size first. </p>
+<hr />
+<h4 id="find">find</h4>
+<p><strong><em>What it does:</em></strong><br />
+Used to search for files in a specifed directory. You can search for all kinds of properties that you already know about it. </p>
+<p><strong><em>Real use case:</em></strong><br />
+I used it to find the flag while playing OWT Bandit. For the level you got the size and some of the properties of the flag, and had to find it. </p>
+<p><strong><em>Example:</em></strong>
+<code>find / -user bandit7 -group bandit6 -size 33c 2&gt;/dev/null</code><br />
+That is how I found the specific flag. 
+<strong><em>Tip:</em></strong><br />
+I really want to remember the 2&gt;/dev/null part for throwing out strerr. </p>
+<hr />
+<h4 id="htop">htop</h4>
+<p><strong><em>What it does:</em></strong><br />
+An enhanced, interactive version of <code>top</code> with better visuals and controls. </p>
+<p><strong><em>Real use case:</em></strong><br />
+Quickly kill, renice, or inspect processes without needing multiple commands</p>
+<p><strong><em>Tip:</em></strong><br />
+It is really important do learn the short cuts and ways to use it to be effectiv. </p>
+<hr />
+<h4 id="ls">ls</h4>
+<p><strong><em>What it does:</em></strong><br />
+Shows the inside of the current directory.</p>
+<p><strong><em>Tip:</em></strong><br />
+Best used with a <code>-al</code> flag to list all files in long format.</p>
+<hr />
+<h4 id="nc">nc</h4>
+<p><strong><em>What it does:</em></strong><br />
+Used for everything concering connections via TCP or UDP.<br />
+You can do <strong>soo</strong> much with it that it would probably be to much for this little section, and I need to make a whole page for netcat in the futur. </p>
+<p><strong><em>Real use case:</em></strong>
+Mainly to set up listeners to get a reverse shell.
+That would look something like this:<br />
+<code>nc -l 1234</code><br />
+Also netcat can be used to connect to some port and set it something manuel or in a script. </p>
+<hr />
+<h4 id="ping">ping</h4>
+<p><strong><em>What it does:</em></strong><br />
+Sends an ICMP echo request to a target host. </p>
+<p><strong><em>Real use case:</em></strong><br />
+Perfect to test if there is a connection. Eighter to the target on the way in, or from the mashine on the way out (by pinging something that is alway reachable)</p>
+<p><strong><em>Example:</em></strong><br />
+<code>ping 8.8.8.8</code> to try to ping the google DNS server, which should always work if you have connection to the internet. </p>
+<p><strong><em>Tip:</em></strong> Is often used to monitor server uptime from afar, by regularly sending a ping. </p>
+<hr />
+<h4 id="ps">ps</h4>
+<p><strong><em>What it does:</em></strong><br />
+Prints out the current processes. </p>
+<p><strong><em>Real use case:</em></strong><br />
+Audit running processes precisely, grep specific patterns, or script behavior. </p>
+<p><strong><em>Tip:</em></strong><br />
+<code>ps faux</code> shows process hierachy, kind of like tree for files.<br />
+This really helps with finding out where everything is comming from.  </p>
+<hr />
+<h4 id="ssh">ssh</h4>
+<p><strong><em>What it does:</em></strong><br />
+Creates a secure connetion with access to the local terminal. </p>
+<p><strong><em>Real use case:</em></strong><br />
+Maintaining remote servers where it is not reasonable to have direkt access, and which might not have a GUI.</p>
+<p><strong><em>Example:</em></strong><br />
+Accessing the Bandit Wargame from OvertheWire:<br />
+<code>ssh -p 2220 bandit0@bandit.labs.overthewire.org</code>  </p>
+<hr />
+<h4 id="top">top</h4>
+<p><strong><em>What it does:</em></strong><br />
+Real-time view of system processes and resource usage. </p>
+<p><strong><em>Real use case:</em></strong><br />
+Monitor CPU and detect runaway processes. </p>
+<p><strong><em>Tip:</em></strong><br />
+You can press M to sort instantly by memory usage.  </p>
+<hr />
+<h4 id="tree">tree</h4>
+<p><strong><em>What it does:</em></strong><br />
+It prints out a skeleton of file system you give it.<br />
+Awesome to get an overview of where everything lives and to better understand what you are working with.  </p>
+<hr />
+<h4 id="uniq">uniq</h4>
+<p><strong><em>What it does:</em></strong><br />
+Filter adjacent matching lines. It is mostly used when you have to omit or report repeating lines. Really helpful to dens down loads of data. </p>
+<p><strong><em>Real use case:</em></strong><br />
+For me it was alo really helpful in one of the OTW Bandit levels. It was mainly designed to teach the <code>uniq</code> command, so I am really excited to find some more real world use cases. </p>
 
 
 
@@ -1413,44 +1932,6 @@
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../bandit/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Bandit">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Bandit
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../../htb/" class="md-footer__link md-footer__link--next" aria-label="Next: HackTheBox">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                HackTheBox
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
