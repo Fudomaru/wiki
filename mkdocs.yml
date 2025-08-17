@@ -63,40 +63,35 @@ repo_name: ""
 edit_uri: ""
 
 nav:
-
   - Home: index.md
-  
+  - About: about.md
+  - Foundations:
+      - Linux: foundations/linux.md
+        - CLI: foundations/cli-magic.md
+        - Networking: foundations/networking.md
+        - System: foundations/system-internals.md
+  - Security:
+      - Fundamentals: security/fundamentals.md
+      - Toolbelt:
+          - Nmap: security/toolbelt/nmap.md
+      - Playbooks:
+          - Recon: security/playbooks/recon.md
+  - Homelab:
+      - Overview: homelab/overview.md
+      - Network Design: homelab/network_design.md
+      - Services: homelab/services.md
+  - Challenges:
+      - HTB: challenges/htb.md
+      - THM: challenges/thm.md
+      - OverTheWire:
+          - Bandit: challenges/overthewire/bandit.md
+          - Natas: challenges/overthewire/natas.md
   - Projects:
+      - Digital Dojo: projects/digital_dojo.md
       - EchoSnare: projects/echosnare.md
       - Void Linux: projects/void_linux.md
-      - Digital Dojo: projects/digital-dojo.md
-
-  - Linux Wizardry:
-      - CLI Magic: linux/cli-magic.md
-      - System Internals: linux/system-internals.md
-      - Network Kung-Fu: linux/networking.md
-
-  - Automation & Scripts:
-      - Deploying the Wiki: auto/deploy.md
-
-  - Cybersecurity:
-      - Fundamentals: cybersec/fundamentals.md
-      - Toolbelt: 
-        - nmap: cybersec/toolbelt/nmap.md
-      - Playbooks: 
-        - Recon: cybersec/playbooks/recon.md
-
-  - CTF & Wargames:
-      - Overthewire:
-          - Bandit: ctf/overthewire/bandit.md
-          - Natas: ctf/overthewire/natas.md
-      - HackTheBox: ctf/htb.md
-      - TryHackMe: ctf/thm.md
-
   - Notes:
+      - CCNA: notes/ccna.md
       - Warboard: notes/warboard.md
-      - Certifications: notes/ccna.md
-      - Readings & Videos: notes/media.md
-        
-  - About: about.md
+      - Media: notes/media.md
 
