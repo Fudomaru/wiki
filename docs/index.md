@@ -1,6 +1,6 @@
 ---
 title: Home
-description: Welcome to my Dojo. Now enjoy. 
+description: The Digital Dojo — my evolving lab notebook and training ground.
 ---
 
 # 🧠 Digital Dojo
@@ -9,19 +9,28 @@ description: Welcome to my Dojo. Now enjoy.
 
     “The faintest ink is better than the best memory.”
 
+Welcome to my **Digital Dojo** — a living system where I train, test, and document everything I learn.  
+It’s not a blog. It’s not a portfolio. It’s my external brain, structured for growth and reuse.  
 
-Welcome to my **Digital Dojo**, part lab notebook, part black book, part brain dump.  
-This isn’t a blog. It’s not a portfolio. It’s my system. My memory, externalized. My training ground, documented.  
+## What this is
 
-What you'll find here:
+- **Foundations** → Core knowledge in Linux, networking, and system internals.  
+- **Security** → Playbooks, toolbelt, and fundamentals of my cybersecurity practice.  
+- **Homelab** → Designs, services, and experiments running in my own network hive.  
+- **Challenges** → Notes and walkthroughs from CTFs and wargames (HTB, THM, OTW).  
+- **Projects** → Active builds like Void Linux configs, EchoSnare hardware, and this dojo itself.  
+- **Notes** → References, cert prep, media, and my personal warboard.  
 
-- **Linux Wizardry**: Real-world tricks, CLI sorcery, and system insights
-- **Cybersecurity**: Core knowledge, personal playbooks, and tools of the trade
-- **CTFs & Wargames**: Walkthroughs, failures, and wins — OverTheWire, HTB, TryHackMe
-- **Notes**: Certs, reading lists, tech write-ups, and more
+## How to use this space
 
-This space evolves with me. Some notes are polished. Others are messy. That’s the point — it’s all part of the grind.
+Some notes are polished guides. Others are rough sketches. That mix is intentional:  
+this Dojo reflects the grind of learning — theory, practice, and failure included.  
 
-!!! info ""
+If you’re new here:  
+- Start at **Foundations** to see how I structure my base knowledge.  
+- Jump to **Security** or **Challenges** if you want action.  
+- Explore **Projects** for ongoing builds.  
 
-     Don’t read. Steal. Fork ideas. Twist commands. Make them yours.
+!!! tip ""
+    Don’t just read. Fork ideas. Steal commands. Break things. That’s the spirit of the Dojo.
+
