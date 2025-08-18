@@ -66,32 +66,32 @@ nav:
   - Home: index.md
   - About: about.md
   - Foundations:
-      - Linux:
-        - CLI: foundations/linux/cli-magic.md
-        - Networking: foundations/linux/networking.md
-        - System: foundations/linux/system-internals.md
+    - foundations/index.md
+    - Linux:
+      - CLI: foundations/linux/cli-magic.md
+      - Networking: foundations/linux/networking.md
+      - System: foundations/linux/system-internals.md
   - Security:
-      - Fundamentals: security/fundamentals.md
-      - Toolbelt:
-          - Nmap: security/toolbelt/nmap.md
-      - Playbooks:
-          - Recon: security/playbooks/recon.md
+    - Fundamentals: security/fundamentals.md
+    - Toolbelt:
+        - Nmap: security/toolbelt/nmap.md
+    - Playbooks:
+        - Recon: security/playbooks/recon.md
   - Homelab:
-      - Overview: homelab/overview.md
-      - Network Design: homelab/network_design.md
-      - Services: homelab/services.md
+    - Overview: homelab/overview.md
+    - Network Design: homelab/network_design.md
+    - Services: homelab/services.md
   - Challenges:
-      - HTB: challenges/htb.md
-      - THM: challenges/thm.md
-      - OverTheWire:
-          - Bandit: challenges/overthewire/bandit.md
-          - Natas: challenges/overthewire/natas.md
+    - HTB: challenges/htb.md
+    - THM: challenges/thm.md
+    - OverTheWire:
+      - Bandit: challenges/overthewire/bandit.md
+      - Natas: challenges/overthewire/natas.md
   - Projects:
-      - Digital Dojo: projects/digital_dojo.md
-      - EchoSnare: projects/echosnare.md
-      - Void Linux: projects/void_linux.md
+    - Digital Dojo: projects/digital_dojo.md
+    - EchoSnare: projects/echosnare.md
+    - Void Linux: projects/void_linux.md
   - Notes:
-      - CCNA: notes/ccna.md
-      - Warboard: notes/warboard.md
-      - Media: notes/media.md
-
+    - CCNA: notes/ccna.md
+    - Media: notes/media.md
+    - Warboard: notes/warboard.md
