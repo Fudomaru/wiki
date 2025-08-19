@@ -88,7 +88,7 @@ nav:
       - Bandit: challenges/overthewire/bandit.md
       - Natas: challenges/overthewire/natas.md
   - Projects:
-    - Digital Dojo: projects/digital_dojo.md
+    - Digital Dojo: projects/digital-dojo.md
     - EchoSnare: projects/echosnare.md
     - Void Linux: projects/void_linux.md
   - Notes:
