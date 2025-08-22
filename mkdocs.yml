@@ -66,12 +66,13 @@ nav:
   - Home: index.md
   - About: about.md
   - Foundations:
-    - foundations/index.md
+    - Overview: foundations/overview.md
     - Linux:
       - CLI: foundations/linux/cli-magic.md
       - Networking: foundations/linux/networking.md
       - System: foundations/linux/system-internals.md
   - Security:
+    - Overview: security/overview.md
     - Fundamentals: security/fundamentals.md
     - Toolbelt:
         - Nmap: security/toolbelt/nmap.md
