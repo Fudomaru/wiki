@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A Linux & Cybersecurity notebook forged in fire.">
+        <meta name="description" content="My Grimnex Hive — where I build, break, and replicate enterprise systems.">
       
       
         <meta name="author" content="Fudomaru">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Overview - Voidex</title>
+        <title>Homelab - Voidex</title>
       
     
     
@@ -116,6 +116,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#homelab" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -146,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Homelab
             
           </span>
         </div>
@@ -978,6 +983,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -990,6 +1010,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-i-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why I Build
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Questions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1489,6 +1564,52 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-i-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why I Build
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Questions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1504,7 +1625,46 @@
 
 
 
-  <h1>Overview</h1>
+<h1 id="homelab">Homelab</h1>
+<h2 id="overview">Overview</h2>
+<p>The homelab is the proving ground.<br />
+It is where theory turns into something that can fail under my hands.<br />
+I do not chase uptime here, I chase insight.  </p>
+<p>Every service I deploy, every network I stitch together, every breakage I cause, it all serves one purpose: to learn in a way no book or video could ever give me.  </p>
+<p>This is not a datacenter.<br />
+It is not meant to impress with scale or hardware.<br />
+It is meant to expose me to the complexity of real systems, the tension between stability and change, and the truth that every configuration choice carries both benefits and risks.  </p>
+<h2 id="why-i-build">Why I Build</h2>
+<p>I build this lab because control is not given, it is taken.<br />
+If I want to master systems, I need to run them, misconfigure them, repair them, and push them until they break.  </p>
+<p>I need a place where mistakes are safe, but lessons are sharp.<br />
+The homelab gives me that place.  </p>
+<p>It forces me to balance my two perspectives:<br />
+as the defender who needs resilience, and as the attacker who seeks the cracks.<br />
+Only by seeing both can I understand the full picture.  </p>
+<h2 id="design">Design</h2>
+<p>I build modular.<br />
+Every piece should be able to stand alone, but also connect cleanly with others.  </p>
+<p>The network has firewalls, DNS, version control, and services I actually rely on daily.<br />
+I design them as if I were setting up the skeleton of a small company.  </p>
+<p>Because that is what most environments really are: small systems that grow, get patched, bent, and sometimes broken, until they turn into something much larger.  </p>
+<p>I want to see how that happens in my own hands.<br />
+Where it works.<br />
+Where it fails.<br />
+Where it reveals truths you cannot see on paper.  </p>
+<h2 id="questions">Questions</h2>
+<p>The lab is not just machines.<br />
+It is a diary of questions I keep returning to:  </p>
+<ul>
+<li>What is worth building, and why?  </li>
+<li>Which services actually create value, and which are noise?  </li>
+<li>How do systems evolve as they scale, and where do they collapse?  </li>
+</ul>
+<p>These are not questions I expect to solve once.<br />
+They grow with the lab.<br />
+They grow with me.<br />
+And with every new system I add, they get sharper.  </p>
+<hr />
 
 
 
@@ -1512,7 +1672,8 @@
 
 
 
-
+  
+  
 
 
 
