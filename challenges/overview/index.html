@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Explaing the fundamentals of Cybersecurity, how to use them, abuse and defend against them.">
+        <meta name="description" content="A collection of challenge write-ups—documenting failures, breakthroughs, and the lessons learned along the way.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../overview/">
+        <link rel="prev" href="../../homelab/services/">
       
       
-        <link rel="next" href="../toolbelt/nmap/">
+        <link rel="next" href="../htb/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Cybersec Fundamenals - Voidex</title>
+        <title>Challenges - Voidex</title>
       
     
     
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-is-this-page" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -151,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cybersec Fundamenals
+              Challenges
             
           </span>
         </div>
@@ -310,13 +310,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../security/overview/" class="md-tabs__link">
           
   
   
@@ -352,11 +350,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../challenges/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -690,29 +690,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -725,7 +720,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Security
@@ -739,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../security/overview/" class="md-nav__link">
         
   
   
@@ -759,30 +754,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Fundamentals
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../security/fundamentals/" class="md-nav__link">
         
   
   
@@ -793,69 +768,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-this-page" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is this Page
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-mindset-of-a-hacker" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Mindset of a Hacker
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-concepts-to-understand" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Concepts to Understand
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-i-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tools I use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#my-learning-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      My Learning Plan
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -909,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../toolbelt/nmap/" class="md-nav__link">
+      <a href="../../security/toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -981,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../playbooks/recon/" class="md-nav__link">
+      <a href="../../security/playbooks/recon/" class="md-nav__link">
         
   
   
@@ -1133,24 +1045,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -1163,7 +1080,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Challenges
@@ -1174,10 +1091,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../challenges/overview/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1188,6 +1114,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1200,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/htb/" class="md-nav__link">
+      <a href="../htb/" class="md-nav__link">
         
   
   
@@ -1223,7 +1150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/thm/" class="md-nav__link">
+      <a href="../thm/" class="md-nav__link">
         
   
   
@@ -1287,7 +1214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overthewire/bandit/" class="md-nav__link">
+      <a href="../overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -1310,7 +1237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overthewire/natas/" class="md-nav__link">
+      <a href="../overthewire/natas/" class="md-nav__link">
         
   
   
@@ -1592,59 +1519,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-this-page" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is this Page
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-mindset-of-a-hacker" class="md-nav__link">
-    <span class="md-ellipsis">
-      The Mindset of a Hacker
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-concepts-to-understand" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Concepts to Understand
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-i-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tools I use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#my-learning-plan" class="md-nav__link">
-    <span class="md-ellipsis">
-      My Learning Plan
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1660,76 +1536,43 @@
 
 
 
-  <h1>Fundamentals</h1>
-
-<h2 id="what-is-this-page">What is this Page</h2>
-<p>This is my personal crash course into cybersecurity.<br />
-I use it to track concepts, tools and tactis I pick up and get to use efficantly in CTFs and during my learning.  </p>
-<div class="admonition info">
-<p>It evolves as I learn!</p>
-</div>
-<h2 id="the-mindset-of-a-hacker">The Mindset of a Hacker</h2>
-<ul>
-<li>
-<p>Thinking outside the box: Try to find as many ways to use tools and systems as you can. There is never the right way, there are only endless possibilities.  </p>
-</li>
-<li>
-<p>The Why is more important then the How: Understanding why something is done, the motivation and psychologie behind it, you find the weak points.  </p>
-</li>
-<li>
-<p>No is not an option: You often get the best results, after nothing works and you have to get creative.  </p>
-</li>
-<li>
-<p>See the System: To figure something out, and really understand it, it is often recommended to take a step back.   </p>
-</li>
-<li>
-<p>Attention to Detail: Pay close attention to every detail and be persistent in figuring out the why.   </p>
-</li>
-<li>
-<p>"Man lernt nie aus": This is not just a phrase, it is a philosophy  </p>
-</li>
-</ul>
-<h2 id="core-concepts-to-understand">Core Concepts to Understand</h2>
-<ul>
-<li>
-<p>CIA Triade: The three core parts to make things secure. Look at this on every level, from singel packages to complete infrastructures. If any is missing, that is where things go wrong.  </p>
-</li>
-<li>
-<p>OWASP Top 10: The most commen vulnarbilities found in the wild. Learn them, know them, and look for them everywhere.  </p>
-</li>
-<li>
-<p>Defense in depth: Layering security strategies, always know that every layer will be breached. So configure every layer like it is the first and last defence.  </p>
-</li>
-<li>
-<p>Privilege escalation: Type of attack where a unauthorized user gains access to more then they should. There are two ways for that, vertical and horizontal. Vertical movement is going up the food ladder, to management and admin. Horizontal means staying on your permission level, but accessing a different user, gaining confidentail data.  </p>
-</li>
-<li>
-<p>Post Exploitation: Don't forget that most seriouse attackers are not done after they get access. They will try to get persistence, escalate privileges, and gather information.  </p>
-</li>
-</ul>
-<h2 id="tools-i-use">Tools I use</h2>
-<ul>
-<li>
-<p>nmap: Networkscanner of choice. </p>
-</li>
-<li>
-<p>Burp Suite: Package interception, changing and exploring of WebApps on a new level.  </p>
-</li>
-<li>
-<p>John the Ripper: Because weak passwords are still more common then you think.  </p>
-</li>
-<li>
-<p>ffuf: Because Enumerating is at least half of the game.  </p>
-</li>
-<li>
-<p>netcat: The Swiss army knife of raw Networking Connections.  </p>
-</li>
-</ul>
-<h2 id="my-learning-plan">My Learning Plan</h2>
-<p>Phase 1: Basics - get as much Hands on as you can.<br />
-Phase 2: Enumeration - try to learn to understand systems quickly.<br />
-Phase 3: Exploration - warming up with all the common bugs.<br />
-Phase 4: Real World - getting my Hands dirty in Bug Bounty</p>
+<h1 id="overview">Overview</h1>
+<p>Challenges are where theory turns into struggle. 
+This section is not about polished systems or long-term structures. 
+It is about the fights I pick for their own sake: 
+capture-the-flag exercises, wargames, 
+reverse engineering puzzles, cryptography problems, 
+and any other tests that demand focus and persistence.</p>
+<p>I take on challenges for two reasons. 
+First, the thrill. 
+There is something addictive about failing repeatedly 
+and then finding the one path that works. 
+The moment of success after breaking through 
+resistance is what keeps me coming back. 
+Second, the learning. 
+The write-ups I keep here are not trophies. 
+They are tools. 
+Writing down each step forces me to understand what happened, 
+why it worked, and how I can explain it clearly to myself and others.</p>
+<p>Every entry will reflect how I approached the problem: 
+sometimes methodical, sometimes improvisational, 
+sometimes driven by curiosity more than efficiency. 
+The important part is not following a fixed formula 
+but documenting the reality of the process. 
+Mistakes and dead ends matter just as much as clean solutions.</p>
+<p>This section also ties into the rest of my work. 
+When I use a specific tool or method, 
+I will link back to its deeper documentation. 
+In the same way, 
+tools can point forward to challenge write-ups 
+that show them in practice. 
+The result is a two-way map: 
+concepts supported by examples, 
+and examples grounded in concepts.</p>
+<p>The challenges collected here are not about external recognition. 
+They are my battleground for exploration and growth. 
+Each write-up is a trace of the fight, the frustration, 
+and the moment when the lock finally turned.</p>
 
 
 
@@ -1768,7 +1611,7 @@ Phase 4: Real World - getting my Hands dirty in Bug Bounty</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+          <a href="../../homelab/services/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Services">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1778,20 +1621,20 @@ Phase 4: Real World - getting my Hands dirty in Bug Bounty</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Overview
+                Services
               </div>
             </div>
           </a>
         
         
           
-          <a href="../toolbelt/nmap/" class="md-footer__link md-footer__link--next" aria-label="Next: Nmap">
+          <a href="../htb/" class="md-footer__link md-footer__link--next" aria-label="Next: HTB">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Nmap
+                HTB
               </div>
             </div>
             <div class="md-footer__button md-icon">
