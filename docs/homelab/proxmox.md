@@ -41,10 +41,13 @@ which keeps management traffic isolated and feels like a proper enterprise setup
 
 My administrative practices are still developing, 
 but I already try to keep things disciplined:
+
 - **Snapshots**: I take weekly snapshots of the important VMs. 
                  Nothing changes much week to week, so this keeps me covered.  
+
 - **Backups**: I’m still working on a real backup strategy. 
                Snapshots are not backups, and I know I need more resilience.  
+               
 - **Philosophy**: Virtualization-first. 
                   No single-use machines, no hardware locked into one function 
                   if I can help it.  
