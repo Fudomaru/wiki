@@ -80,6 +80,7 @@ nav:
         - Recon: security/playbooks/recon.md
   - Homelab:
     - Overview: homelab/overview.md
+    - Proxmox: homelab/proxmox.md
     - Network Design: homelab/network_design.md
     - Services: homelab/services.md
   - Challenges:

@@ -1,6 +1,6 @@
 ---
 title: Homelab
-description: My Grimnex Hive — where I build, break, and replicate enterprise systems.
+description: Where I build, break, and replicate enterprise systems.
 ---
 
 
