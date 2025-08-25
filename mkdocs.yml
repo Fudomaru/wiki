@@ -81,6 +81,7 @@ nav:
   - Homelab:
     - Overview: homelab/overview.md
     - Proxmox: homelab/proxmox.md
+    - pfSense: homelab/pfsense.md
     - PiHole: homelab/pihole.md
     - Gitea: homelab/gitea.md
   - Challenges:

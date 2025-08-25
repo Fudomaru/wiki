@@ -3,7 +3,7 @@ title: Gitea
 description: My personal Git server and DevOps training ground.
 ---
 
-# Gitea LXC
+# Gitea
 
 Gitea runs inside a lightweight LXC container in my Proxmox cluster.  
 It serves as my self-hosted Git server, a place where I can version-control projects, experiment with workflows, and practice enterprise-style DevOps setups. While I also use GitHub, Gitea gives me the independence to run my own infrastructure and build muscle memory for real-world scenarios.
