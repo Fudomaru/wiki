@@ -82,6 +82,7 @@ nav:
     - Overview: homelab/overview.md
     - Proxmox: homelab/proxmox.md
     - PiHole: homelab/pihole.md
+    - Gitea: homelab/gitea.md
   - Challenges:
     - Overview: challenges/overview.md
     - HTB: challenges/htb.md
