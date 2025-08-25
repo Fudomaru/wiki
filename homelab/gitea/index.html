@@ -6,28 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A Linux & Cybersecurity notebook forged in fire.">
+        <meta name="description" content="My personal Git server and DevOps training ground.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
+        <link rel="prev" href="../pihole/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+        <link rel="next" href="../../challenges/overview/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>Voidex</title>
+        <title>Gitea - Voidex</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -87,7 +91,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -112,6 +116,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#gitea-lxc" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -122,7 +131,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -142,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Gitea
             
           </span>
         </div>
@@ -245,7 +254,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -264,7 +273,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
@@ -285,7 +294,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/foundations/overview/" class="md-tabs__link">
+        <a href="../../foundations/overview/" class="md-tabs__link">
           
   
   
@@ -305,7 +314,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/security/overview/" class="md-tabs__link">
+        <a href="../../security/overview/" class="md-tabs__link">
           
   
   
@@ -321,11 +330,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/homelab/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
           
   
   
@@ -345,7 +356,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/challenges/overview/" class="md-tabs__link">
+        <a href="../../challenges/overview/" class="md-tabs__link">
           
   
   
@@ -365,7 +376,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/projects/digital-dojo/" class="md-tabs__link">
+        <a href="../../projects/digital-dojo/" class="md-tabs__link">
           
   
   
@@ -399,7 +410,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -429,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -451,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
@@ -514,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/foundations/overview/" class="md-nav__link">
+      <a href="../../foundations/overview/" class="md-nav__link">
         
   
   
@@ -578,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/foundations/linux/cli-magic/" class="md-nav__link">
+      <a href="../../foundations/linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -601,7 +612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/foundations/linux/networking/" class="md-nav__link">
+      <a href="../../foundations/linux/networking/" class="md-nav__link">
         
   
   
@@ -624,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/foundations/linux/system-internals/" class="md-nav__link">
+      <a href="../../foundations/linux/system-internals/" class="md-nav__link">
         
   
   
@@ -703,7 +714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/security/overview/" class="md-nav__link">
+      <a href="../../security/overview/" class="md-nav__link">
         
   
   
@@ -726,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/security/fundamentals/" class="md-nav__link">
+      <a href="../../security/fundamentals/" class="md-nav__link">
         
   
   
@@ -790,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/security/toolbelt/nmap/" class="md-nav__link">
+      <a href="../../security/toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -862,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/security/playbooks/recon/" class="md-nav__link">
+      <a href="../../security/playbooks/recon/" class="md-nav__link">
         
   
   
@@ -897,24 +908,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -927,7 +943,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Homelab
@@ -941,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/homelab/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -964,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/homelab/proxmox/" class="md-nav__link">
+      <a href="../proxmox/" class="md-nav__link">
         
   
   
@@ -987,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/homelab/pihole/" class="md-nav__link">
+      <a href="../pihole/" class="md-nav__link">
         
   
   
@@ -1007,10 +1023,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/homelab/gitea/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Gitea
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1021,6 +1059,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-gitea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Gitea?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access and Security
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value-in-my-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value in My Lab
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1081,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/challenges/overview/" class="md-nav__link">
+      <a href="../../challenges/overview/" class="md-nav__link">
         
   
   
@@ -1104,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/challenges/htb/" class="md-nav__link">
+      <a href="../../challenges/htb/" class="md-nav__link">
         
   
   
@@ -1127,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/challenges/thm/" class="md-nav__link">
+      <a href="../../challenges/thm/" class="md-nav__link">
         
   
   
@@ -1191,7 +1276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/challenges/overthewire/bandit/" class="md-nav__link">
+      <a href="../../challenges/overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -1214,7 +1299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/challenges/overthewire/natas/" class="md-nav__link">
+      <a href="../../challenges/overthewire/natas/" class="md-nav__link">
         
   
   
@@ -1293,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/projects/digital-dojo/" class="md-nav__link">
+      <a href="../../projects/digital-dojo/" class="md-nav__link">
         
   
   
@@ -1316,7 +1401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/projects/echosnare/" class="md-nav__link">
+      <a href="../../projects/echosnare/" class="md-nav__link">
         
   
   
@@ -1339,7 +1424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/projects/void_linux/" class="md-nav__link">
+      <a href="../../projects/void_linux/" class="md-nav__link">
         
   
   
@@ -1379,6 +1464,43 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-gitea" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Gitea?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access and Security
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value-in-my-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value in My Lab
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1390,8 +1512,50 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="gitea-lxc">Gitea LXC</h1>
+<p>Gitea runs inside a lightweight LXC container in my Proxmox cluster.<br />
+It serves as my self-hosted Git server, a place where I can version-control projects, experiment with workflows, and practice enterprise-style DevOps setups. While I also use GitHub, Gitea gives me the independence to run my own infrastructure and build muscle memory for real-world scenarios.</p>
+<hr />
+<h2 id="why-gitea">Why Gitea?</h2>
+<p>At first, I just wanted a safe place to store and manage code without relying solely on third-party services. Over time, I realized Gitea offered much more:  </p>
+<ul>
+<li><strong>Enterprise training ground</strong> — It allows me to practice CI/CD pipelines, access control, and repo management like an internal development team would.  </li>
+<li><strong>Redundancy with GitHub</strong> — Even without a full backup strategy yet, GitHub mirrors provide a safety net while I learn proper backup discipline.  </li>
+<li><strong>Snapshots for recovery</strong> — Proxmox snapshots give me a fallback if something goes wrong, though I plan to move to a more robust backup system in the future.</li>
+</ul>
+<hr />
+<h2 id="access-and-security">Access and Security</h2>
+<p>I’ve set up <strong>SSH key authentication only</strong>, no passwords, across all my machines. My Void Linux laptop and Fedora workstation are both authorized, giving me flexible access.<br />
+If things ever break badly, I can still reach the container directly through the Proxmox web UI console — a safety hatch that ensures I’m never locked out.</p>
+<hr />
+<h2 id="value-in-my-lab">Value in My Lab</h2>
+<p>While I treat it like production in daily use, I view this Gitea instance as a <strong>learning environment</strong> first. It lets me:  </p>
+<ul>
+<li>Build habits for <strong>self-hosted version control</strong>  </li>
+<li>Test real-world practices for <strong>developer collaboration</strong>  </li>
+<li>Gain confidence in <strong>infrastructure management</strong> without risking external systems  </li>
+</ul>
+<p>Running Gitea in my lab is less about hosting for others and more about proving to myself that I can run, maintain, and secure such a service — skills directly transferable to enterprise DevOps and cybersecurity work.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1409,6 +1573,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../pihole/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PiHole">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                PiHole
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../challenges/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1447,10 +1649,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "/assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>
