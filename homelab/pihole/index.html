@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A Linux & Cybersecurity notebook forged in fire.">
+        <meta name="description" content="My DNS sinkhole and first step into network-wide control.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../network_design/">
+        <link rel="prev" href="../proxmox/">
       
       
         <link rel="next" href="../../challenges/overview/">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Services - Voidex</title>
+        <title>Pi-hole - Voidex</title>
       
     
     
@@ -116,6 +116,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#pi-hole" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -146,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Services
+              Pi-hole
             
           </span>
         </div>
@@ -995,29 +1000,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../network_design/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Network Design
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -1027,18 +1009,79 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    PiHole
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Services
+    PiHole
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lessons Learned
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1398,6 +1441,43 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lessons Learned
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1413,7 +1493,48 @@
 
 
 
-  <h1>Services</h1>
+<h1 id="pi-hole">Pi-hole</h1>
+<p>Pi-hole runs as an LXC on my Proxmox host. 
+It’s tiny—just 512 MB RAM, but it has been running without issues. 
+The container is Ubuntu 22.04 with kernel 6.8.12-13-pve, 
+updated and managed mostly over SSH rather than the Web UI.  </p>
+<h2 id="purpose">Purpose</h2>
+<p>Pi-hole is my single DNS server. 
+pfSense points to it and hands it out over DHCP, 
+making it the authoritative DNS for every device on my network. 
+It also resolves the internal names of my homelab machines, 
+giving my lab the feel of a self-contained network 
+rather than just a collection of boxes.  </p>
+<p>This was my first deliberate “production” service in the lab. 
+Initially, it was mostly an exercise, adblocking was familiar territory, 
+and I wanted a stepping stone toward something bigger. 
+My plan is to pair it with <strong>Unbound</strong>, 
+so I can move away from forwarding to Cloudflare 
+and instead perform my own recursive DNS resolution.  </p>
+<h2 id="operation">Operation</h2>
+<ul>
+<li>Pi-hole does not handle DHCP, only DNS.  </li>
+<li>Default blocklist is active, but I don’t spend time tweaking it, since that isn’t the focus.  </li>
+<li>Updates are performed over SSH. I’ve begun automating this process.  </li>
+<li>I almost never touch the Web UI.  </li>
+</ul>
+<p>Longer term, Pi-hole will feed into a <strong>logging/analytics pipeline</strong>. 
+Owning my DNS means I own the query data, 
+which is invaluable for monitoring, research, and building detection capabilities.  </p>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>Running Pi-hole taught me how DNS actually behaves at scale. 
+I’ve seen firsthand how much traffic flows through DNS 
+and how caching layers propagate changes. 
+I now understand how records move through the hierarchy 
+until consistency is reached, 
+and how modern DNS resolvers deal with latency and reliability.  </p>
+<p>I also dug into DNS record types, 
+name server delegation, and the subtle mechanics of resolution. 
+One surprising realization: 
+much of so-called <em>“geo-blocking”</em> is simply DNS manipulation.
+There’s no deeper enforcement, just traffic pointed elsewhere.  </p>
+<p>Pi-hole made DNS real, not just theoretical. 
+It turned an abstract system into something I can bend, test, and own.  </p>
 
 
 
@@ -1421,7 +1542,8 @@
 
 
 
-
+  
+  
 
 
 
@@ -1451,7 +1573,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../network_design/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Network Design">
+          <a href="../proxmox/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Proxmox">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1461,7 +1583,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Network Design
+                Proxmox
               </div>
             </div>
           </a>
