@@ -81,8 +81,7 @@ nav:
   - Homelab:
     - Overview: homelab/overview.md
     - Proxmox: homelab/proxmox.md
-    - Network Design: homelab/network_design.md
-    - Services: homelab/services.md
+    - PiHole: homelab/pihole.md
   - Challenges:
     - Overview: challenges/overview.md
     - HTB: challenges/htb.md
