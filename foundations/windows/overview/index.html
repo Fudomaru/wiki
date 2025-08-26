@@ -6,30 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The Digital Dojo — my evolving lab notebook and training ground.">
+        <meta name="description" content="General explaination of how Windows is build up.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
+        <link rel="prev" href="../../overview/">
       
-        <link rel="next" href="about/">
+      
+        <link rel="next" href="../../linux/cli-magic/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>Home - Voidex</title>
+        <title>Windows Overview - Voidex</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -89,7 +91,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -115,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#digital-dojo" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +131,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -149,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Windows Overview
             
           </span>
         </div>
@@ -250,11 +252,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -273,7 +273,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -290,11 +290,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="foundations/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -314,7 +316,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="security/overview/" class="md-tabs__link">
+        <a href="../../../security/overview/" class="md-tabs__link">
           
   
   
@@ -334,7 +336,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="homelab/overview/" class="md-tabs__link">
+        <a href="../../../homelab/overview/" class="md-tabs__link">
           
   
   
@@ -354,7 +356,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="challenges/overview/" class="md-tabs__link">
+        <a href="../../../challenges/overview/" class="md-tabs__link">
           
   
   
@@ -374,7 +376,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="projects/digital-dojo/" class="md-tabs__link">
+        <a href="../../../projects/digital-dojo/" class="md-tabs__link">
           
   
   
@@ -408,7 +410,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -435,6 +437,162 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Foundations
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Foundations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Windows
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
     
   
   
@@ -452,7 +610,7 @@
   
   
   <span class="md-ellipsis">
-    Home
+    Overview
     
   </span>
   
@@ -460,12 +618,12 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Home
+    Overview
     
   </span>
   
@@ -488,18 +646,390 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-this-is" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      What this is
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-this-space" class="md-nav__link">
+  <a href="#phase-1-firmware-boot-manager" class="md-nav__link">
     <span class="md-ellipsis">
-      How to use this space
+      Phase 1 - Firmware &amp; Boot Manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1 - Firmware &amp; Boot Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uefi-frimware" class="md-nav__link">
+    <span class="md-ellipsis">
+      UEFI frimware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot-configuration-bcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boot Configuration (BCD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-boot-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure Boot (optional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitlocker-pre-boot-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      BitLocker pre-boot (optional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winloadefi" class="md-nav__link">
+    <span class="md-ellipsis">
+      winload.efi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#early-driver-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Early driver class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-handoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel handoff
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-kernel-hal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2 – Kernel &amp; HAL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2 – Kernel &amp; HAL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ntoskrnlexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      ntoskrnl.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hal-hardware-abstraction-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      HAL (Hardware Abstraction Layer)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-registry-hive" class="md-nav__link">
+    <span class="md-ellipsis">
+      SYSTEM registry hive
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot_start-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      BOOT_START drivers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-mode-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel-mode initialization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition-to-session-init" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transition to session init
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-session-initialization-user-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3 – Session Initialization (User Space)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3 – Session Initialization (User Space)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smssexe-session-manager-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      smss.exe (Session Manager Subsystem)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csrssexe-clientserver-runtime-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      csrss.exe (Client/Server Runtime Subsystem)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wininitexe-windows-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      wininit.exe (Windows Initialization)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicesexe-service-control-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      services.exe (Service Control Manager)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsassexe-local-security-authority-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      lsass.exe (Local Security Authority Subsystem)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsmexe-local-session-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      lsm.exe (Local Session Manager)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition-to-logon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transition to logon
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-logon-shell-startup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4 – Logon &amp; Shell Startup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4 – Logon &amp; Shell Startup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#winlogonexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      winlogon.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logonuiexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      logonui.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#userinitexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      userinit.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explorerexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      explorer.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-policy-client-gpsvc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group Policy Client (gpsvc)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      System ready
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5-core-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 5 – Core Foundations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 5 – Core Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-system-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      File system layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svchostexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      svchost.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-subsystems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows subsystems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication &amp; Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      System services
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closing note
     </span>
   </a>
   
@@ -509,155 +1039,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="about/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    About
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Foundations
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Foundations
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="foundations/overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Windows
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            Windows
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="foundations/windows/overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -719,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="foundations/linux/cli-magic/" class="md-nav__link">
+      <a href="../../linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -742,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="foundations/linux/networking/" class="md-nav__link">
+      <a href="../../linux/networking/" class="md-nav__link">
         
   
   
@@ -765,7 +1146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="foundations/linux/system-internals/" class="md-nav__link">
+      <a href="../../linux/system-internals/" class="md-nav__link">
         
   
   
@@ -844,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="security/overview/" class="md-nav__link">
+      <a href="../../../security/overview/" class="md-nav__link">
         
   
   
@@ -867,7 +1248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="security/fundamentals/" class="md-nav__link">
+      <a href="../../../security/fundamentals/" class="md-nav__link">
         
   
   
@@ -931,7 +1312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="security/toolbelt/nmap/" class="md-nav__link">
+      <a href="../../../security/toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -1003,7 +1384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="security/playbooks/recon/" class="md-nav__link">
+      <a href="../../../security/playbooks/recon/" class="md-nav__link">
         
   
   
@@ -1082,7 +1463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="homelab/overview/" class="md-nav__link">
+      <a href="../../../homelab/overview/" class="md-nav__link">
         
   
   
@@ -1105,7 +1486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="homelab/proxmox/" class="md-nav__link">
+      <a href="../../../homelab/proxmox/" class="md-nav__link">
         
   
   
@@ -1128,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="homelab/pfsense/" class="md-nav__link">
+      <a href="../../../homelab/pfsense/" class="md-nav__link">
         
   
   
@@ -1151,7 +1532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="homelab/pihole/" class="md-nav__link">
+      <a href="../../../homelab/pihole/" class="md-nav__link">
         
   
   
@@ -1174,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="homelab/gitea/" class="md-nav__link">
+      <a href="../../../homelab/gitea/" class="md-nav__link">
         
   
   
@@ -1245,7 +1626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="challenges/overview/" class="md-nav__link">
+      <a href="../../../challenges/overview/" class="md-nav__link">
         
   
   
@@ -1309,7 +1690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="challenges/overthewire/bandit/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -1332,7 +1713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="challenges/overthewire/natas/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/natas/" class="md-nav__link">
         
   
   
@@ -1363,7 +1744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="challenges/htb/" class="md-nav__link">
+      <a href="../../../challenges/htb/" class="md-nav__link">
         
   
   
@@ -1386,7 +1767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="challenges/thm/" class="md-nav__link">
+      <a href="../../../challenges/thm/" class="md-nav__link">
         
   
   
@@ -1457,7 +1838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="projects/digital-dojo/" class="md-nav__link">
+      <a href="../../../projects/digital-dojo/" class="md-nav__link">
         
   
   
@@ -1480,7 +1861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="projects/echosnare/" class="md-nav__link">
+      <a href="../../../projects/echosnare/" class="md-nav__link">
         
   
   
@@ -1503,7 +1884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="projects/void_linux/" class="md-nav__link">
+      <a href="../../../projects/void_linux/" class="md-nav__link">
         
   
   
@@ -1553,18 +1934,390 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-this-is" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      What this is
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-this-space" class="md-nav__link">
+  <a href="#phase-1-firmware-boot-manager" class="md-nav__link">
     <span class="md-ellipsis">
-      How to use this space
+      Phase 1 - Firmware &amp; Boot Manager
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 1 - Firmware &amp; Boot Manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uefi-frimware" class="md-nav__link">
+    <span class="md-ellipsis">
+      UEFI frimware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot-configuration-bcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boot Configuration (BCD)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-boot-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure Boot (optional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bitlocker-pre-boot-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      BitLocker pre-boot (optional)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winloadefi" class="md-nav__link">
+    <span class="md-ellipsis">
+      winload.efi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#early-driver-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      Early driver class
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-handoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel handoff
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-kernel-hal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2 – Kernel &amp; HAL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 2 – Kernel &amp; HAL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ntoskrnlexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      ntoskrnl.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hal-hardware-abstraction-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      HAL (Hardware Abstraction Layer)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-registry-hive" class="md-nav__link">
+    <span class="md-ellipsis">
+      SYSTEM registry hive
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boot_start-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      BOOT_START drivers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kernel-mode-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kernel-mode initialization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition-to-session-init" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transition to session init
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-session-initialization-user-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3 – Session Initialization (User Space)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 3 – Session Initialization (User Space)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smssexe-session-manager-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      smss.exe (Session Manager Subsystem)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csrssexe-clientserver-runtime-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      csrss.exe (Client/Server Runtime Subsystem)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wininitexe-windows-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      wininit.exe (Windows Initialization)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicesexe-service-control-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      services.exe (Service Control Manager)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsassexe-local-security-authority-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      lsass.exe (Local Security Authority Subsystem)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsmexe-local-session-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      lsm.exe (Local Session Manager)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transition-to-logon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transition to logon
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-logon-shell-startup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4 – Logon &amp; Shell Startup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 4 – Logon &amp; Shell Startup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#winlogonexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      winlogon.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logonuiexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      logonui.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#userinitexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      userinit.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explorerexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      explorer.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#group-policy-client-gpsvc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Group Policy Client (gpsvc)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      System ready
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5-core-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 5 – Core Foundations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Phase 5 – Core Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Registry
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-system-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      File system layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svchostexe" class="md-nav__link">
+    <span class="md-ellipsis">
+      svchost.exe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-subsystems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows subsystems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication &amp; Security
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      System services
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closing note
     </span>
   </a>
   
@@ -1586,31 +2339,196 @@
 
 
 
-<h1 id="digital-dojo">🧠 Digital Dojo</h1>
-<div class="admonition info">
-<p>“The faintest ink is better than the best memory.”</p>
-</div>
-<p>Welcome to my <strong>Digital Dojo</strong> — a living system where I train, test, and document everything I learn.<br />
-It’s not a blog. It’s not a portfolio. It’s my external brain, structured for growth and reuse.  </p>
-<h2 id="what-this-is">What this is</h2>
+<h1 id="overview">Overview</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This page is not a manual and not an expert’s lecture.<br />
+It is my learning map — an outline of how Windows comes alive,<br />
+from firmware to desktop.  </p>
+<p>Each phase is written in broad strokes, with one-liners that keep the 
+scope small but leave room to expand later.<br />
+It’s a reference for me when I get lost, a checklist when I troubleshoot, 
+and a reminder that nothing in Windows is “magic” once you trace it 
+back to its roots.  </p>
+<p>I’m still learning, and this page shows where I am in that process.<br />
+It doesn’t mean I know every corner of Windows — only that I’ve started 
+to chart the territory.  </p>
+<h2 id="phase-1-firmware-boot-manager">Phase 1 - Firmware &amp; Boot Manager</h2>
+<h3 id="uefi-frimware">UEFI frimware</h3>
+<p>Initializes hardware, reads the EFI System Partition,
+and launches Windows Boot Manager 
+(\EFI\Microsoft\Boot\bootmgfw.efi).</p>
+<h3 id="boot-configuration-bcd">Boot Configuration (BCD)</h3>
+<p>A registry-like store on the ESP 
+that tells Boot Manager which Windows to load 
+and how (debug flags, Safe Mode, etc.).</p>
+<h3 id="secure-boot-optional">Secure Boot (optional)</h3>
+<p>UEFI verifies Microsoft-signed boot components 
+so nothing unsigned runs before the kernel.</p>
+<h3 id="bitlocker-pre-boot-optional">BitLocker pre-boot (optional)</h3>
+<p>If the OS volum is encrypted, 
+TPM/pin/unlock happens here so the loader 
+can read \windows\System32\drivers... .</p>
+<h3 id="winloadefi">winload.efi</h3>
+<p>The OS loader that pulls ntoskrnl.exe,
+the HAL and BOOT_START drivers from 
+\Windows\System32\drivers\ into memory.</p>
+<h3 id="early-driver-class">Early driver class</h3>
+<p>Only minial storage, filesystem, 
+and bus drivers load now, 
+just enough to mount the system volume.</p>
+<h3 id="kernel-handoff">Kernel handoff</h3>
+<p>Control transfers to the kernel 
+with hardware tables (ACPI, memory map)
+and loader parameters.</p>
+<h2 id="phase-2-kernel-hal">Phase 2 – Kernel &amp; HAL</h2>
+<h3 id="ntoskrnlexe">ntoskrnl.exe</h3>
+<p>The Windows kernel itself. 
+Schedules threads, manages memory, 
+handles interrupts, and enforces security boundaries.  </p>
+<h3 id="hal-hardware-abstraction-layer">HAL (Hardware Abstraction Layer)</h3>
+<p>Sits between kernel and raw hardware. 
+Normalizes differences across CPUs, chipsets, 
+and boards so higher layers don’t care 
+about vendor quirks.  </p>
+<h3 id="system-registry-hive">SYSTEM registry hive</h3>
+<p>Loaded from disk early, 
+contains driver/services config (HKLM\SYSTEM). 
+Without this, the kernel has no roadmap.  </p>
+<h3 id="boot_start-drivers">BOOT_START drivers</h3>
+<p>Critical drivers (storage, filesystem, low-level bus) 
+that must load before the OS volume is usable. 
+Examples: disk filter drivers, NTFS.  </p>
+<h3 id="kernel-mode-initialization">Kernel-mode initialization</h3>
+<p>Core managers spin up:</p>
 <ul>
-<li><strong>Foundations</strong> → Core knowledge in Linux, networking, and system internals.  </li>
-<li><strong>Security</strong> → Playbooks, toolbelt, and fundamentals of my cybersecurity practice.  </li>
-<li><strong>Homelab</strong> → Designs, services, and experiments running in my own network hive.  </li>
-<li><strong>Challenges</strong> → Notes and walkthroughs from CTFs and wargames (HTB, THM, OTW).  </li>
-<li><strong>Projects</strong> → Active builds like Void Linux configs, EchoSnare hardware, and this dojo itself.  </li>
-<li><strong>Notes</strong> → References, cert prep, media, and my personal warboard.  </li>
+<li><strong>Memory Manager</strong> → virtual memory, paging  </li>
+<li><strong>Process Manager</strong> → basic process/thread structures  </li>
+<li><strong>I/O Manager</strong> → unified device I/O model  </li>
+<li><strong>Security Reference Monitor</strong> → enforces permissions and access checks  </li>
 </ul>
-<h2 id="how-to-use-this-space">How to use this space</h2>
-<p>Some notes are polished guides. Others are rough sketches. That mix is intentional:<br />
-this Dojo reflects the grind of learning — theory, practice, and failure included.  </p>
-<p>If you’re new here:<br />
-- Start at <strong>Foundations</strong> to see how I structure my base knowledge.<br />
-- Jump to <strong>Security</strong> or <strong>Challenges</strong> if you want action.<br />
-- Explore <strong>Projects</strong> for ongoing builds.  </p>
-<div class="admonition tip">
-<p>Don’t just read. Fork ideas. Steal commands. Break things. That’s the spirit of the Dojo.</p>
-</div>
+<h3 id="transition-to-session-init">Transition to session init</h3>
+<p>When kernel space is stable, 
+control is passed to <strong>smss.exe</strong> (Session Manager), 
+which marks the boundary into user space.  </p>
+<h2 id="phase-3-session-initialization-user-space">Phase 3 – Session Initialization (User Space)</h2>
+<h3 id="smssexe-session-manager-subsystem">smss.exe (Session Manager Subsystem)</h3>
+<p>First user-mode process. 
+Creates Session 0 (system) 
+and Session 1+ (interactive users).<br />
+Launches core subsystems and sets up paging files, 
+environment variables, 
+and handles the transition to user sessions.  </p>
+<h3 id="csrssexe-clientserver-runtime-subsystem">csrss.exe (Client/Server Runtime Subsystem)</h3>
+<p>Responsible for console windows, thread creation, 
+and parts of the Windows graphical subsystem.<br />
+Critical process — if it dies, the system blue-screens.  </p>
+<h3 id="wininitexe-windows-initialization">wininit.exe (Windows Initialization)</h3>
+<p>Spawns essential system processes:</p>
+<ul>
+<li><strong>services.exe</strong> (Service Control Manager)  </li>
+<li><strong>lsass.exe</strong> (Local Security Authority)  </li>
+<li><strong>lsm.exe</strong> (Local Session Manager)  </li>
+</ul>
+<h3 id="servicesexe-service-control-manager">services.exe (Service Control Manager)</h3>
+<p>Starts and manages Windows services. 
+Loads AUTO_START drivers and background services 
+that are not kernel-level.  </p>
+<h3 id="lsassexe-local-security-authority-subsystem">lsass.exe (Local Security Authority Subsystem)</h3>
+<p>Handles authentication (logons, password changes) 
+and enforces local security policies.<br />
+Works with SAM (Security Accounts Manager) 
+and Active Directory in domain setups.  </p>
+<h3 id="lsmexe-local-session-manager">lsm.exe (Local Session Manager)</h3>
+<p>Coordinates sessions (system vs. user), 
+fast user switching, and the framework 
+used by Remote Desktop / Terminal Services.  </p>
+<p>Note: Remote Desktop itself is optional 
+and only starts if enabled 
+through services.exe in later phases.</p>
+<h3 id="transition-to-logon">Transition to logon</h3>
+<p>At this stage, the system is alive 
+enough for a user to authenticate.<br />
+Control passes to <strong>winlogon.exe</strong>, 
+which handles secure logon.  </p>
+<h2 id="phase-4-logon-shell-startup">Phase 4 – Logon &amp; Shell Startup</h2>
+<h3 id="winlogonexe">winlogon.exe</h3>
+<p>Handles the secure attention sequence (Ctrl+Alt+Del), 
+spawns the logon UI, and passes credentials to LSASS 
+for authentication.  </p>
+<h3 id="logonuiexe">logonui.exe</h3>
+<p>The graphical logon screen. Collects username/password, 
+or PIN/biometrics, and hands them off securely 
+through Winlogon to LSASS.  </p>
+<h3 id="userinitexe">userinit.exe</h3>
+<p>Runs after successful authentication.<br />
+Initializes the user profile, applies logon scripts, 
+and finally launches the shell.  </p>
+<h3 id="explorerexe">explorer.exe</h3>
+<p>The Windows shell: desktop, Start menu, taskbar, 
+and file explorer. Defines the “Windows experience” 
+for interactive users.  </p>
+<h3 id="group-policy-client-gpsvc">Group Policy Client (gpsvc)</h3>
+<p>If the system is domain-joined, applies computer and user 
+policies at logon. Can control startup scripts, security 
+settings, network mappings, and more.  </p>
+<h3 id="network-services">Network services</h3>
+<p>At this point, network connectivity is established through 
+<code>svchost.exe</code>-hosted services such as:</p>
+<ul>
+<li><strong>DHCP Client</strong> (auto-configure IP)  </li>
+<li><strong>DNS Client</strong> (name resolution)  </li>
+<li><strong>Workstation Service</strong> (network shares, SMB client)  </li>
+</ul>
+<h3 id="system-ready">System ready</h3>
+<p>With the kernel, services, and shell running, the system 
+is now in a usable state. Optional roles and features 
+(IIS, RDP, Hyper-V, etc.) are loaded as services 
+on top of this foundation.  </p>
+<h2 id="phase-5-core-foundations">Phase 5 – Core Foundations</h2>
+<h3 id="registry">Registry</h3>
+<p>A hierarchical database of system and application settings.<br />
+Key hives include:</p>
+<ul>
+<li><strong>HKLM</strong> (HKEY_LOCAL_MACHINE) → system-wide settings  </li>
+<li><strong>HKCU</strong> (HKEY_CURRENT_USER) → user-specific settings  </li>
+<li><strong>SYSTEM</strong> hive → driver and service configuration  </li>
+</ul>
+<h3 id="file-system-layout">File system layout</h3>
+<p>Windows relies on a few critical directories:</p>
+<ul>
+<li><strong>\Windows\System32</strong> → core executables and DLLs  </li>
+<li><strong>\Windows\SysWOW64</strong> → 32-bit binaries on 64-bit systems  </li>
+<li><strong>WinSxS</strong> (Side-by-Side store) → keeps multiple versions of system libraries for compatibility  </li>
+</ul>
+<h3 id="svchostexe">svchost.exe</h3>
+<p>A generic host process that loads many Windows services 
+from DLLs. Multiple instances run, each hosting a group 
+of related services.  </p>
+<h3 id="windows-subsystems">Windows subsystems</h3>
+<p>Compatibility layers that define what kind of applications can run:</p>
+<ul>
+<li><strong>Win32</strong> → the main API for modern Windows applications  </li>
+<li><strong>WOW64</strong> → runs 32-bit apps on 64-bit Windows  </li>
+<li><strong>Legacy POSIX / OS/2 layers</strong> (historical) → no longer default, but once provided compatibility  </li>
+</ul>
+<h3 id="authentication-security">Authentication &amp; Security</h3>
+<ul>
+<li><strong>LSASS</strong> enforces policies, credentials, and tokens  </li>
+<li><strong>SAM (Security Accounts Manager)</strong> holds local accounts  </li>
+<li><strong>Active Directory support</strong> when domain-joined  </li>
+</ul>
+<h3 id="system-services">System services</h3>
+<p>Beyond kernel and drivers, Windows depends on background services 
+(networking, print spooler, Windows Update, etc.) managed by 
+the Service Control Manager.  </p>
+<hr />
+<h2 id="closing-note">Closing note</h2>
+<p>By walking the startup phases and these core foundations, 
+Windows is no longer a black box: every layer, from firmware 
+to shell, sits on knowable structures.<br />
+This page is both a map and a checklist — a reminder of 
+where to look when something breaks, or when you want to 
+dig deeper into the machinery that makes Windows run.  </p>
 
 
 
@@ -1648,15 +2566,31 @@ this Dojo reflects the grind of learning — theory, practice, and failure inclu
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="../../overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="about/" class="md-footer__link md-footer__link--next" aria-label="Next: About">
+          <a href="../../linux/cli-magic/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                About
+                CLI
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1704,10 +2638,10 @@ this Dojo reflects the grind of learning — theory, practice, and failure inclu
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>
