@@ -67,6 +67,8 @@ nav:
   - About: about.md
   - Foundations:
     - Overview: foundations/overview.md
+    - Windows:
+      - Overview: foundations/windows/overview.md
     - Linux:
       - CLI: foundations/linux/cli-magic.md
       - Networking: foundations/linux/networking.md
@@ -86,11 +88,11 @@ nav:
     - Gitea: homelab/gitea.md
   - Challenges:
     - Overview: challenges/overview.md
-    - HTB: challenges/htb.md
-    - THM: challenges/thm.md
     - OverTheWire:
       - Bandit: challenges/overthewire/bandit.md
       - Natas: challenges/overthewire/natas.md
+    - HTB: challenges/htb.md
+    - THM: challenges/thm.md
   - Projects:
     - Digital Dojo: projects/digital-dojo.md
     - EchoSnare: projects/echosnare.md
