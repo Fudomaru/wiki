@@ -10,13 +10,15 @@ description: Offensive craft, defensive insight — my playbook of attack and re
 To defend, you have to think like an attacker.  
 To attack, you have to understand what’s worth defending.  
 
-This section is where I train that perspective. Not “tips and tricks,” but the mindset and methods that reveal how systems break — and how they hold.  
+This section is where I train that perspective. 
+No “tips and tricks”, but the mindset and methods 
+that reveal how systems break and how they hold.  
 
 ---
 
 ## What belongs here
 
-- **Fundamentals** → core security principles, models, and mental frameworks.  
+- [**Fundamentals**](/security/fundamentals/) → core security principles, models, and mental frameworks.  
 - **Toolbelt** → the utilities I train with: scanners, proxies, sniffers, exploit frameworks.  
 - **Playbooks** → practical flows: recon, enumeration, exploitation, post-exploitation, and the obstacles that shut each down.  
 
