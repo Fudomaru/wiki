@@ -17,7 +17,7 @@ This part of the dojo is about **systems thinking** — the layers that make eve
 
 ## What belongs here
 
-- **Linux** — my home turf, the kernel, CLI, and internals.  
+- [**Linux**](/foundations/linux/overview/) — my home turf, the kernel, CLI, and internals.  
 - [**Windows**](/foundations/windows/overview/) & [**macOS**](/foundations/macos/overview/) — different philosophies, different layers, worth understanding.  
 - **Android & iOS** — mobile platforms, their architecture, and security implications.  
 - **Networking** — because no system lives alone.  

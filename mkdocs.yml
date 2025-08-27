@@ -72,6 +72,7 @@ nav:
     - MacOS: 
       - Overview: foundations/macos/overview.md
     - Linux:
+      - Overview: foundations/linux/overview.md
       - CLI: foundations/linux/cli-magic.md
       - Networking: foundations/linux/networking.md
       - System: foundations/linux/system-internals.md
