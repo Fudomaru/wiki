@@ -6,28 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Offensive craft, defensive insight — my playbook of attack and resistance.">
+        <meta name="description" content="A high-level learning map of the Linux startup process — covering the kernel and common early userspace until distribution-specific layers take over.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
+        <link rel="prev" href="../../macos/overview/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+        <link rel="next" href="../cli-magic/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
-        <title>Security - Voidex</title>
+        <title>Linux Fundamentals – From Firmware to Userspace - Voidex</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -111,7 +115,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -137,7 +141,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#security" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -151,7 +155,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -171,7 +175,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Security
+              Linux Fundamentals – From Firmware to Userspace
             
           </span>
         </div>
@@ -274,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -293,7 +297,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -310,11 +314,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../foundations/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -334,7 +340,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="overview/" class="md-tabs__link">
+        <a href="../../../security/overview/" class="md-tabs__link">
           
   
   
@@ -354,7 +360,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../homelab/overview/" class="md-tabs__link">
+        <a href="../../../homelab/overview/" class="md-tabs__link">
           
   
   
@@ -374,7 +380,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../challenges/overview/" class="md-tabs__link">
+        <a href="../../../challenges/overview/" class="md-tabs__link">
           
   
   
@@ -394,7 +400,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../projects/digital-dojo/" class="md-tabs__link">
+        <a href="../../../projects/digital-dojo/" class="md-tabs__link">
           
   
   
@@ -428,7 +434,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -458,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -480,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -499,24 +505,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -529,7 +540,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Foundations
@@ -543,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../foundations/overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
@@ -607,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../foundations/windows/overview/" class="md-nav__link">
+      <a href="../../windows/overview/" class="md-nav__link">
         
   
   
@@ -679,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../foundations/macos/overview/" class="md-nav__link">
+      <a href="../../macos/overview/" class="md-nav__link">
         
   
   
@@ -707,6 +718,8 @@
                 
   
   
+    
+  
   
   
     
@@ -717,11 +730,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
         
           
           <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
@@ -737,7 +750,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             Linux
@@ -748,10 +761,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../foundations/linux/overview/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -762,6 +797,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-1-firmware-bootloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 1 – Firmware &amp; Bootloader
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-kernel-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 2 – Kernel Initialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-early-userspace-kernel-init-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3 – Early Userspace (Kernel → Init Process)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-distribution-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4 – Distribution Layer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5-where-i-go-from-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 5 – Where I Go From Here
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closing Note
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -774,7 +892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../foundations/linux/cli-magic/" class="md-nav__link">
+      <a href="../cli-magic/" class="md-nav__link">
         
   
   
@@ -797,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../foundations/linux/networking/" class="md-nav__link">
+      <a href="../networking/" class="md-nav__link">
         
   
   
@@ -820,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../foundations/linux/system-internals/" class="md-nav__link">
+      <a href="../system-internals/" class="md-nav__link">
         
   
   
@@ -899,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="overview/" class="md-nav__link">
+      <a href="../../../security/overview/" class="md-nav__link">
         
   
   
@@ -922,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="fundamentals/" class="md-nav__link">
+      <a href="../../../security/fundamentals/" class="md-nav__link">
         
   
   
@@ -986,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="toolbelt/nmap/" class="md-nav__link">
+      <a href="../../../security/toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -1058,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="playbooks/recon/" class="md-nav__link">
+      <a href="../../../security/playbooks/recon/" class="md-nav__link">
         
   
   
@@ -1137,7 +1255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/overview/" class="md-nav__link">
+      <a href="../../../homelab/overview/" class="md-nav__link">
         
   
   
@@ -1160,7 +1278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/proxmox/" class="md-nav__link">
+      <a href="../../../homelab/proxmox/" class="md-nav__link">
         
   
   
@@ -1183,7 +1301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/pfsense/" class="md-nav__link">
+      <a href="../../../homelab/pfsense/" class="md-nav__link">
         
   
   
@@ -1206,7 +1324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/pihole/" class="md-nav__link">
+      <a href="../../../homelab/pihole/" class="md-nav__link">
         
   
   
@@ -1229,7 +1347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../homelab/gitea/" class="md-nav__link">
+      <a href="../../../homelab/gitea/" class="md-nav__link">
         
   
   
@@ -1300,7 +1418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../challenges/overview/" class="md-nav__link">
+      <a href="../../../challenges/overview/" class="md-nav__link">
         
   
   
@@ -1364,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../challenges/overthewire/bandit/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -1387,7 +1505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../challenges/overthewire/natas/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/natas/" class="md-nav__link">
         
   
   
@@ -1418,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../challenges/htb/" class="md-nav__link">
+      <a href="../../../challenges/htb/" class="md-nav__link">
         
   
   
@@ -1441,7 +1559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../challenges/thm/" class="md-nav__link">
+      <a href="../../../challenges/thm/" class="md-nav__link">
         
   
   
@@ -1512,7 +1630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../projects/digital-dojo/" class="md-nav__link">
+      <a href="../../../projects/digital-dojo/" class="md-nav__link">
         
   
   
@@ -1535,7 +1653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../projects/echosnare/" class="md-nav__link">
+      <a href="../../../projects/echosnare/" class="md-nav__link">
         
   
   
@@ -1558,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../projects/void_linux/" class="md-nav__link">
+      <a href="../../../projects/void_linux/" class="md-nav__link">
         
   
   
@@ -1608,27 +1726,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-belongs-here" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      What belongs here
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-security-matters-to-me" class="md-nav__link">
+  <a href="#phase-1-firmware-bootloader" class="md-nav__link">
     <span class="md-ellipsis">
-      Why security matters to me
+      Phase 1 – Firmware &amp; Bootloader
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-ill-use-this-space" class="md-nav__link">
+  <a href="#phase-2-kernel-initialization" class="md-nav__link">
     <span class="md-ellipsis">
-      How I’ll use this space
+      Phase 2 – Kernel Initialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-early-userspace-kernel-init-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 3 – Early Userspace (Kernel → Init Process)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-distribution-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 4 – Distribution Layer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5-where-i-go-from-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      Phase 5 – Where I Go From Here
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closing Note
     </span>
   </a>
   
@@ -1650,40 +1804,80 @@
 
 
 
-<h1 id="security">Security</h1>
+<h1 id="overview"><strong>Overview</strong></h1>
+<h2 id="introduction"><strong>Introduction</strong></h2>
+<p>This is not a distro war or a kernel hacker’s whitepaper.<br />
+It’s my <strong>learning map</strong> — an outline of how Linux comes alive, from firmware to the point where distributions layer on their own systems.</p>
+<p>Each phase is in broad strokes: concise enough to fit in my head, but ready to be expanded when I dive deeper.<br />
+This is my navigation aid when troubleshooting, my checklist when something breaks, and my reminder that while the word “Linux” often means “a whole OS,” the kernel is just one — very important — piece.</p>
 <hr />
-<p>To defend, you have to think like an attacker.<br />
-To attack, you have to understand what’s worth defending.  </p>
-<p>This section is where I train that perspective. 
-No “tips and tricks”, but the mindset and methods 
-that reveal how systems break and how they hold.  </p>
+<h2 id="phase-1-firmware-bootloader"><strong>Phase 1 – Firmware &amp; Bootloader</strong></h2>
+<p><strong>Firmware (BIOS/UEFI)</strong><br />
+- Runs POST, initializes hardware, and finds the bootloader.<br />
+- On UEFI systems, reads EFI System Partition to locate bootloader <code>.efi</code> file.  </p>
+<p><strong>Secure Boot (optional)</strong><br />
+- Verifies bootloader signatures before handing off control (varies by distro config).</p>
+<p><strong>Bootloader</strong><br />
+- Common: GRUB, systemd‑boot, LILO (rare now).<br />
+- Presents boot menu, chooses kernel/initramfs, passes kernel parameters.<br />
+- Loads Linux kernel and initial RAM disk (initrd/initramfs) into memory.</p>
 <hr />
-<h2 id="what-belongs-here">What belongs here</h2>
-<ul>
-<li><strong>Fundamentals</strong> → core security principles, models, and mental frameworks.  </li>
-<li><strong>Toolbelt</strong> → the utilities I train with: scanners, proxies, sniffers, exploit frameworks.  </li>
-<li><strong>Playbooks</strong> → practical flows: recon, enumeration, exploitation, post-exploitation, and the obstacles that shut each down.  </li>
-</ul>
-<p>The focus is <strong>offensive security</strong> — but never in isolation.<br />
-Every exploit I study comes with a shadow: the defense that makes it harder, slower, or impossible.  </p>
+<h2 id="phase-2-kernel-initialization"><strong>Phase 2 – Kernel Initialization</strong></h2>
+<p><strong>Decompression &amp; Start</strong><br />
+- Kernel binary unpacks itself into memory and begins executing <code>start_kernel()</code>.</p>
+<p><strong>Hardware Detection &amp; Drivers</strong><br />
+- Initializes CPU, memory, timers.<br />
+- Detects buses (PCI, USB, etc.) and loads built‑in or initramfs‑supplied drivers.</p>
+<p><strong>Mount root (temporary)</strong><br />
+- Mounts initramfs as the initial root filesystem.<br />
+- Provides space for early userspace tools before the “real” root is mounted.</p>
+<p><strong>Initramfs Tasks</strong><br />
+- Loads extra drivers/modules needed to access the real root filesystem.<br />
+- Sets up device nodes via <code>udev</code> or a minimal equivalent.<br />
+- Handles disk decryption (LUKS), RAID assembly, or filesystem checks if needed.</p>
+<p><strong>Switch Root</strong><br />
+- Mounts the actual root filesystem and pivots away from the initramfs.</p>
 <hr />
-<h2 id="why-security-matters-to-me">Why security matters to me</h2>
-<p>Security isn’t just about keeping bad actors out. It’s about knowing the terrain:  </p>
-<ul>
-<li>What do I have that’s valuable?  </li>
-<li>What path would someone take to get it?  </li>
-<li>What would make their life hell along the way?  </li>
-</ul>
-<p>The old saying holds: <em>know your friends, but know your enemies better.</em>  </p>
-<p>For me, that means documenting every angle — from the attacker’s first probe to the defender’s last line of resistance.  </p>
+<h2 id="phase-3-early-userspace-kernel-init-process"><strong>Phase 3 – Early Userspace (Kernel → Init Process)</strong></h2>
+<p><strong>Init Process Start</strong><br />
+- Kernel executes the first process (<code>/sbin/init</code> by default).<br />
+- Can be <code>systemd</code>, <code>SysV init</code>, <code>OpenRC</code>, <code>runit</code>, <code>s6</code>, etc., depending on the distro.</p>
+<p><strong>Responsibilities here</strong><br />
+- Mount essential pseudo‑filesystems: <code>/proc</code>, <code>/sys</code>, <code>/dev</code>.<br />
+- Start early daemons required for the system to function.<br />
+- Configure basic networking (if set to start this early).</p>
 <hr />
-<h2 id="how-ill-use-this-space">How I’ll use this space</h2>
-<p>This isn’t a news feed of CVEs or copy-paste exploits.<br />
-It’s my personal playbook: evolving, imperfect, and sharpened by practice.  </p>
-<p>Some notes will be polished — structured guides, recon flows, tool deep-dives.<br />
-Others will be messy — ideas mid-grind, tactics that worked once and failed twice.  </p>
-<p>That mix is intentional. Real security work isn’t static. Neither is this dojo.  </p>
+<h2 id="phase-4-distribution-layer"><strong>Phase 4 – Distribution Layer</strong></h2>
+<p>From here, the <strong>shared “Linux” story</strong> branches into <strong>distro‑specific policy</strong>:</p>
+<p><strong>Init System &amp; Service Management</strong><br />
+- <code>systemd</code> (Debian, Fedora, Arch, etc.)<br />
+- <code>OpenRC</code> (Gentoo, Alpine)<br />
+- <code>runit</code> (Void Linux)<br />
+- <code>s6</code> (specialized/minimalist setups)  </p>
+<p><strong>What the Distro Adds on Top</strong><br />
+- Default services, daemons, and configuration defaults.<br />
+- Package manager (APT, DNF, pacman, apk, nix, etc.).<br />
+- Userland tools and shells (Bash, Zsh, dash).<br />
+- Graphical stack: X11, Wayland, desktop environments (GNOME, KDE, etc.) or minimal WM.</p>
+<p>This is the point where two systems both “running Linux” can behave very differently.</p>
 <hr />
+<h2 id="phase-5-where-i-go-from-here"><strong>Phase 5 – Where I Go From Here</strong></h2>
+<ol>
+<li><strong>Make a Distro List</strong>  </li>
+<li>
+<p>Example: Debian, Arch, Void, NixOS, Fedora, Alpine, Gentoo.  </p>
+</li>
+<li>
+<p><strong>Per‑Distro Pages</strong>  </p>
+</li>
+<li>What’s the same?  </li>
+<li>What’s different (init system, package manager, filesystem layout, service defaults)?  </li>
+<li>What you can expect when troubleshooting or securing the system.</li>
+</ol>
+<hr />
+<h2 id="closing-note"><strong>Closing Note</strong></h2>
+<p>By separating the <strong>universal Linux startup</strong> from the <strong>distro layer</strong>, I keep one clean mental model for everything the kernel does — and avoid mixing it up with the policies and tools each distro bolts on.<br />
+From firmware to init, the process is surprisingly consistent; after that, it’s all about the choices the distribution makes.</p>
 
 
 
@@ -1717,6 +1911,44 @@ Others will be messy — ideas mid-grind, tactics that worked once and failed tw
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../macos/overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../cli-magic/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                CLI
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1756,10 +1988,10 @@ Others will be messy — ideas mid-grind, tactics that worked once and failed tw
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>
