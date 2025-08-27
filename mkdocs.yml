@@ -1,4 +1,3 @@
-#test
 site_name: Voidex
 site_description: "A Linux & Cybersecurity notebook forged in fire."
 site_author: "Fudomaru"
@@ -70,6 +69,8 @@ nav:
     - Overview: foundations/overview.md
     - Windows:
       - Overview: foundations/windows/overview.md
+    - MacOS: 
+      - Overview: foundations/macos/overview.md
     - Linux:
       - CLI: foundations/linux/cli-magic.md
       - Networking: foundations/linux/networking.md
