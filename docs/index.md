@@ -18,7 +18,7 @@ It’s not a blog. It’s not a portfolio. It’s my external brain, structured 
 - [**Security**](/security/overview/) → Playbooks, toolbelt, and fundamentals of my cybersecurity practice.  
 - [**Homelab**](/homelab/overview/) → Designs, services, and experiments running in my own network hive.  
 - [**Challenges**](/challenges/overview/) → Notes and walkthroughs from CTFs and wargames (HTB, THM, OTW).  
-- **Projects** → Active builds like Void Linux configs, EchoSnare hardware, and this dojo itself.  
+- [**Projects**](/projects/overview/) → Active builds like Void Linux configs, EchoSnare hardware, and this dojo itself.  
 - [**Notes**](/notes/overview/) → References, cert prep, media, and my personal warboard.  
 
 ## How to use this space
