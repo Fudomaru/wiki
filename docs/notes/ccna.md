@@ -158,18 +158,86 @@ For CCNA, you should know that PoE is defined by standards
 like IEEE 802.3af and 802.3at, 
 and that switches can be PoE-enabled to deliver power to connected devices.
 
+
 ### 1.2 Describe characteristics of network topology architectures
 
+#### 1.2.a Two-tier
+
+The two-tier architecture is a simple and efficient network design 
+used mostly in smaller environments. 
+It consists of an access layer, where endpoints connect, 
+and a distribution layer, which aggregates traffic and applies policies 
+before sending it to the core or external networks. 
+This setup reduces complexity and cost, 
+while still allowing for basic scalability and segmentation. 
+For CCNA, it’s important to know 
+that two-tier designs are common in small to medium-sized networks 
+where performance and simplicity are key.
+
+#### 1.2.b Three-tier
+
+The three-tier architecture adds a core layer on top of the access and distribution layers. 
+The core layer handles high-speed backbone traffic 
+and interconnects multiple distribution blocks. 
+This design is used in larger enterprise networks 
+to improve scalability, redundancy, and performance. 
+Each layer has a clear role: 
+access connects devices, 
+distribution enforces policies, 
+and core ensures fast, reliable transport. 
+For CCNA, understanding the separation of roles 
+and traffic flow between layers is essential.
+
+#### 1.2.c Spine-leaf
+
+Spine-leaf is a modern topology used in data centers and high-performance environments. 
+It consists of leaf switches that connect to endpoints 
+and spine switches that interconnect all leaf switches. 
+Every leaf connects to every spine, 
+creating a non-blocking fabric with predictable latency and bandwidth. 
+This design supports east-west traffic and scales horizontally. 
+For CCNA, you should know that spine-leaf replaces traditional hierarchies 
+in environments where speed, scalability, and redundancy are critical.
+
+#### 1.2.d WAN
+
+A Wide Area Network (WAN) connects geographically separated networks, 
+like branch offices to headquarters or cloud services. 
+It uses technologies like MPLS, VPNs, and leased lines 
+to transmit data over long distances. 
+WANs are slower and more complex than LANs, 
+but they’re essential for global connectivity. 
+For CCNA, you need to understand how WAN links are provisioned, 
+what protocols are used, and how routing adapts 
+to different bandwidth and latency conditions.
+
+#### 1.2.e Small office/home office (SOHO)
+
+SOHO networks are compact setups designed for homes or small businesses. 
+They typically use a single router that combines 
+routing, switching, wireless access, and sometimes firewall functions. 
+Devices connect via Ethernet or Wi-Fi, 
+and internet access is usually through a broadband connection. 
+For CCNA, it’s important to recognize 
+how SOHO networks simplify infrastructure, 
+and how basic security and configuration principles 
+still apply even in small environments.
+
+#### 1.2.f On-premise and cloud
+
+On-premise networks run entirely on local infrastructure: 
+switches, routers, servers are managed by the organization. 
+Cloud networks, on the other hand, 
+use remote infrastructure hosted by providers like AWS or Azure. 
+Many modern setups are hybrid, combining both. 
+Cloud offers scalability and flexibility, 
+while on-premise gives control and performance. 
+For CCNA, you should understand the trade-offs, 
+how connectivity works between cloud and local networks, 
+and how services like VPNs and SD-WAN bridge the gap.
 
 
-1.2.a Two-tier
-1.2.b Three-tier
-1.2.c Spine-leaf
-1.2.d WAN
-1.2.e Small office/home office (SOHO)
-1.2.f On-premise and cloud
-
-1.3 Compare physical interface and cabling types
+### 1.3 Compare physical interface and cabling types
 1.3.a Single-mode fiber, multimode fiber, copper
 1.3.b Connections (Ethernet shared media and point-to-point)
 
