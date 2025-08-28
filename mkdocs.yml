@@ -100,7 +100,8 @@ nav:
     - Digital Dojo: projects/digital-dojo.md
     - EchoSnare: projects/echosnare.md
     - Void Linux: projects/void_linux.md
-  # - Notes:
-  #   - CCNA: notes/ccna.md
-  #   - Media: notes/media.md
-  #   - Warboard: notes/warboard.md
+  - Notes:
+    - Overview: notes/overview.md
+    - CCNA Training: notes/ccna.md
+    - Media: notes/media.md
+    - Warboard: notes/warboard.md

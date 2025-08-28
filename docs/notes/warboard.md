@@ -17,8 +17,9 @@ description: List of my planes for furtur write ups and general project ideas.
     Tasks that I am currently working on.
 
 - Working though OWT Natas and documenting it.
-- Cybersecurity Sturctur: Nmap
-- Restructure considering my current knowledge
+- Building an Overview page for the Offensive Cybersecurtiy tools I want to learn
+- Making an Overview of the different Sections
+- Working though the learning material of the CCNA
 
 ---
 ## STAGING ZONE
@@ -28,6 +29,7 @@ description: List of my planes for furtur write ups and general project ideas.
 
 - Write secontion on setuid, openssl, permissions in linux
 - Writing the generall CyberSec tools section 
+- Explaining where I stand in my Nvim Journy
 
 ---
 ## STRATEGIC BACKLOG
@@ -37,17 +39,18 @@ description: List of my planes for furtur write ups and general project ideas.
 - Deep-dive into privilege escalation.
 - Getting picture documentation to work
 - List of file formats and what it means and you can do with it. 
-- Explaining where I stand in my Nvim Journy
 
 ---
 ## COMPLETED STRIKES
 ??? info
     Trying to keep a brief history and show of what the newes pages are.  
 
-- Create automation script for deployment and dokumenting it (2025-05-03)
-- Using Warboard as a way to stay acountable (2025-05-01)
-- Bandit dokumetation (2025-04-30)
-- Adding a Logo (2025-04-27)
-- First draft Cyber Fundamentals (2025-04-23)
-- Adding Filestructure, Home and About Page (2025-04-22)
-- Adding Digital Dojo Project (2025-04-21)
+- Creating an Overview of the Startup process of the main operating systems (2025-08)
+- Restructure considering my current knowledge (2025-08)
+- Create automation script for deployment and dokumenting it (2025-05)
+- Using Warboard as a way to stay acountable (2025-05)
+- Bandit dokumetation (2025-04)
+- Adding a Logo (2025-04)
+- First draft Cyber Fundamentals (2025-04)
+- Adding Filestructure, Home and About Page (2025-04)
+- Adding Digital Dojo Project (2025-04)
