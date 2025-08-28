@@ -1,6 +1,6 @@
 ---
-title: Certifications
-description: List of Certifications I have, and what I am working towards. 
+title: CCNA Training
+description: This page I made to have an overview to my CCNA Training.  
 ---
 
 # CCNA Training
@@ -8,23 +8,160 @@ description: List of Certifications I have, and what I am working towards.
 This is going to be my training for the CCNA.  
 I want the cert for the knowledge, the recognizion of my knowledge comes last.  
 The best way to show you knowledge, is by knowing.  
+
 ---
 Since I don't want to scip anything important, I am going to write a paragraphe about every topic mentioned: 
 --- 
 
 ## 1.0 Network Fundamentals
 
-1.1 Explain the role and function of network components
-1.1.a Routers
-1.1.b Layer 2 and Layer 3 switches
-1.1.c Next-generation firewalls and IPS
-1.1.d Access points
-1.1.e Controllers (Cisco DNA Center and WLC)
-1.1.f Endpoints
-1.1.g Servers
-1.1.h PoE
+### 1.1 Explain the role and function of network components
 
-1.2 Describe characteristics of network topology architectures
+#### 1.1.a Routers
+
+Routers are network devices that connect different networks together, 
+typically acting as the gateway between a local network 
+and the wider internet. 
+They operate at Layer 3 of the OSI model, 
+using IP addresses to determine the best path for forwarding data packets. 
+By analyzing routing tables and protocols, 
+routers ensure that traffic reaches 
+its correct destination across multiple networks. 
+In most setups, 
+the router serves as the default gateway 
+that all outbound traffic must pass through to reach external networks.
+
+#### 1.1.b Layer 2 and Layer 3 switches
+
+**Layer 2 switch**
+
+A Layer 2 switch is a smarter alternative to a hub, 
+operating at the Data Link layer (Layer 2) of the OSI model. 
+It uses a MAC address table to learn which devices 
+are connected to which ports, 
+allowing it to forward Ethernet frames directly to the correct destination. 
+This reduces unnecessary traffic and improves network efficiency. 
+If the switch doesn’t yet know the destination MAC address, 
+it temporarily acts like a hub by broadcasting the frame 
+to all ports to discover where the device is located.
+
+**Layer 3 switch**
+
+A Layer 3 switch combines the high-speed switching of Layer 2 devices 
+with the routing capabilities of a router, 
+operating at the Network layer of the OSI model. 
+It’s designed to route traffic between different VLANs 
+or subnets within a LAN, using IP addresses to make forwarding decisions. 
+Unlike traditional routers, Layer 3 switches use hardware-based routing, 
+which makes them faster and more efficient for internal network traffic. 
+While routers are ideal for connecting different networks 
+across the internet, Layer 3 switches are optimized for managing complex, 
+segmented networks within large organizations.
+
+#### 1.1.c Next-generation firewalls and IPS
+
+**NGFWs**
+
+A Next-Generation Firewall (NGFW) 
+is a more advanced version of a traditional firewall. 
+While regular firewalls filter traffic 
+based on IP addresses, ports, and protocols, 
+NGFWs perform deep packet inspection to identify 
+which application the traffic belongs to, 
+allowing them to block or allow traffic at the application layer. 
+This makes them much more effective 
+against sophisticated threats in enterprise environments. 
+NGFWs often include built-in intrusion prevention systems (IPS), 
+and they support more flexible filtering based on applications, 
+user identities, and cloud-based threat intelligence.
+
+**IPS**
+
+An Intrusion Prevention System (IPS) 
+is a network security tool designed to detect 
+and block malicious activity in real time. 
+Unlike traditional firewalls that rely on static rules, 
+an IPS analyzes traffic patterns and packet contents to identify known threats, 
+suspicious behavior, or vulnerabilities being exploited. 
+It uses threat intelligence, signatures, and behavioral analysis 
+to dynamically stop attacks before they reach their target. 
+IPS can be a standalone device or integrated into a Next-Generation Firewall, 
+adding an extra layer of protection by actively inspecting and responding to threats.
+not just filtering traffic, but preventing intrusions as they happen.
+
+#### 1.1.d Access points
+
+An Access Point (AP) is the part of a home router 
+that enables wireless connectivity, 
+even though we often forget it’s there. 
+It acts as a bridge between wired Ethernet signals 
+and wireless 802.11 radio frequency signals, 
+allowing devices like phones 
+and laptops to connect to the network without cables. 
+By converting data from the physical layer into a wireless format, 
+the AP makes Wi-Fi possible and keeps us connected 
+to the local network and the internet.
+
+#### 1.1.e Controllers (Cisco DNA Center and WLC)
+
+A network controller is a centralized system 
+that manages and automates the configuration of multiple network devices. 
+Instead of logging into each switch, router, or access point manually, 
+the controller pushes settings, monitors performance, 
+and enforces policies across the network. 
+This makes large environments easier to manage and more secure. 
+Controllers like Cisco DNA Center handle wired and wireless infrastructure, 
+while Wireless LAN Controllers (WLCs) focus on managing access points. 
+They communicate with devices using protocols like CAPWAP or APIs, 
+allowing for real-time control and visibility. 
+In CCNA, understanding that controllers simplify network operations 
+and are key to modern, scalable network design.
+
+#### 1.1.f Endpoints
+
+Endpoints are the devices at the edge of the network 
+that actually use the services provided by the infrastructure. 
+These include laptops, phones, servers, IoT devices, 
+and anything else that sends or receives data.
+They connect through switches, routers, and access points, 
+and are identified by IP and MAC addresses. 
+While they don’t forward traffic like network devices, 
+they are the origin and destination of all communication. 
+In CCNA, it’s important to understand 
+how endpoints behave on the network, 
+how they get their IPs, and why securing them is critical 
+since they’re often the most vulnerable part of any setup.
+
+#### 1.1.g Servers
+
+Servers are specialized endpoints 
+that provide resources or services to other devices on the network. 
+Unlike regular user devices, servers are designed to handle requests 
+from multiple clients, whether it's hosting websites, managing files, 
+or running applications. 
+They often run continuously and are optimized for reliability, scalability, and performance. 
+In a network, servers are key targets and critical assets, 
+identified by static IPs and often protected by firewalls and access controls. 
+For CCNA, it's important to understand how servers fit into the client-server model, 
+how they communicate over TCP/IP, and how they’re accessed and secured.
+
+#### 1.1.h PoE
+
+Power over Ethernet (PoE) is a technology 
+that allows network cables to carry electrical power along with data. 
+This means devices like access points, IP cameras, and VoIP phones 
+can be powered directly through the Ethernet cable, 
+without needing a separate power supply. 
+PoE simplifies installation and reduces cable clutter, 
+especially in places where running electrical wiring is difficult. 
+For CCNA, you should know that PoE is defined by standards 
+like IEEE 802.3af and 802.3at, 
+and that switches can be PoE-enabled to deliver power to connected devices.
+
+### 1.2 Describe characteristics of network topology architectures
+
+
+
 1.2.a Two-tier
 1.2.b Three-tier
 1.2.c Spine-leaf
