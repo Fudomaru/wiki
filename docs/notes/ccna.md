@@ -10,7 +10,9 @@ I want the cert for the knowledge, the recognizion of my knowledge comes last.
 The best way to show you knowledge, is by knowing.  
 
 ---
-Since I don't want to scip anything important, I am going to write a paragraphe about every topic mentioned: 
+
+    Since I don't want to scip anything important, I am going to write a paragraphe about every topic mentioned: 
+
 --- 
 
 ## 1.0 Network Fundamentals
@@ -238,40 +240,73 @@ and how services like VPNs and SD-WAN bridge the gap.
 
 
 ### 1.3 Compare physical interface and cabling types
-1.3.a Single-mode fiber, multimode fiber, copper
-1.3.b Connections (Ethernet shared media and point-to-point)
 
-1.4 Identify interface and cable issues (collisions, errors, mismatch duplex, and/or speed)
+#### 1.3.a Single-mode fiber, multimode fiber, copper
 
-1.5 Compare TCP to UDP
+Single-mode fiber uses a narrow core 
+and laser light to transmit data over long distances 
+with minimal signal loss, ideal for WAN links. 
+Multimode fiber has a wider core and uses LED light, 
+making it suitable for shorter distances like within buildings. 
+Copper cabling, such as twisted-pair Ethernet, 
+is cost-effective and widely used for short-range connections 
+but is more susceptible to interference and signal degradation.
 
-1.6 Configure and verify IPv4 addressing and subnetting
+#### 1.3.b Connections (Ethernet shared media and point-to-point)
 
-1.7 Describe private IPv4 addressing
+Ethernet shared media refers to older network setups 
+where multiple devices share the same transmission medium, 
+often leading to collisions. 
+Point-to-point connections, on the other hand, link two devices directly, 
+eliminating contention and improving performance. 
+Modern networks favor point-to-point for reliability and speed.
 
-1.8 Configure and verify IPv6 addressing and prefix
+#### 1.4 Identify interface and cable issues (collisions, errors, mismatch duplex, and/or speed)
 
-1.9 Describe IPv6 address types
-1.9.a Unicast (global, unique local, and link local)
-1.9.b Anycast
-1.9.c Multicast
-1.9.d Modified EUI 64
+Interface and cable issues can cripple network performance. 
+Collisions occur in half-duplex environments when devices transmit simultaneously. 
+Errors like CRC mismatches suggest physical damage or interference. 
+Duplex mismatches, where one end is full-duplex and the other is half, 
+cause severe throughput problems. 
+Speed mismatches can prevent links from forming or degrade performance. 
+Diagnosing these requires careful interface monitoring and configuration checks.
 
-1.10 Verify IP parameters for Client OS (Windows, Mac OS, Linux)
+#### 1.5 Compare TCP to UDP
 
-1.11 Describe wireless principles
-1.11.a Nonoverlapping Wi-Fi channels
-1.11.b SSID
-1.11.c RF
-1.11.d Encryption
+TCP is a connection-oriented protocol that ensures reliable delivery 
+through acknowledgments, retransmissions, and sequencing—perfect for applications 
+like web browsing and email. UDP is connectionless, faster, and lightweight, 
+but lacks reliability mechanisms. It’s ideal for real-time applications 
+like video streaming or DNS, where speed matters more than guaranteed delivery.
 
-1.12 Explain virtualization fundamentals (server virtualization, containers, and VRFs)
+#### 1.6 Configure and verify IPv4 addressing and subnetting
 
-1.13 Describe switching concepts
-1.13.a MAC learning and aging
-1.13.b Frame switching
-1.13.c Frame flooding
-1.13.d MAC address table
+
+### 1.7 Describe private IPv4 addressing
+
+### 1.8 Configure and verify IPv6 addressing and prefix
+
+### 1.9 Describe IPv6 address types
+#### 1.9.a Unicast (global, unique local, and link local)
+#### 1.9.b Anycast
+#### 1.9.c Multicast
+#### 1.9.d Modified EUI 64
+
+### 1.10 Verify IP parameters for Client OS (Windows, Mac OS, Linux)
+
+### 1.11 Describe wireless principles
+#### 1.11.a Nonoverlapping Wi-Fi channels
+#### 1.11.b SSID
+#### 1.11.c RF
+#### 1.11.d Encryption
+
+### 1.12 Explain virtualization fundamentals (server virtualization, containers, and VRFs)
+
+### 1.13 Describe switching concepts
+##### 1.13.a MAC learning and aging
+##### 1.13.b Frame switching
+##### 1.13.c Frame flooding
+##### 1.13.d MAC address table
 
 ## 2.0 Network Access
 
