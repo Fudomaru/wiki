@@ -36,6 +36,7 @@ description: List of my planes for furtur write ups and general project ideas.
 ??? info
     Goals for the long time and bigger projects befor I actually start working on them.  
 
+- Page with better explaination on DMZs. 
 - Deep-dive into privilege escalation.
 - Getting picture documentation to work
 - List of file formats and what it means and you can do with it. 

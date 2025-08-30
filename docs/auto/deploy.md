@@ -78,7 +78,16 @@ catch {
 
 ### 4. GitHup Pages
 
-Here I used MkDocs own command gh-deploy. This command pretty much handels everything I need for me. First it builds the actual site. That would be the same as running `mkdocs build`. Then it pushes this build to a seperate branch in my repo. This way I do not have to have the build site in my main branch, and just tell GitHub to use the seperate branch to deploy from. This works like a charme, without a lot of hassle so far. I put this right after my git operations.  
+Here I used MkDocs own command gh-deploy. 
+This command pretty much handels everything I need for me. 
+First it builds the actual site. 
+That would be the same as running `mkdocs build`. 
+Then it pushes this build to a seperate branch in my repo. 
+This way I do not have to have the build site in my main branch, 
+and just tell GitHub to use the seperate branch to deploy from. 
+This works like a charme, without a lot of hassle so far. 
+I put this right after my git operations.  
+
 ```
 mkdocs gh-deploy
     if ($?) {
