@@ -403,33 +403,168 @@ A well-maintained table ensures efficient traffic flow.
 
 ## 2.0 Network Access
 
-2.1 Configure and verify VLANs (normal range) spanning multiple switches
-2.1.a Access ports (data and voice)
-2.1.b Default VLAN
-2.1.c InterVLAN connectivity
+### 2.1 Configure and verify VLANs (normal range) spanning multiple switches
 
-2.2 Configure and verify interswitch connectivity
-2.2.a Trunk ports
-2.2.b 802.1Q
-2.2.c Native VLAN
+#### 2.1.a Access ports (data and voice)
 
-2.3 Configure and verify Layer 2 discovery protocols (Cisco Discovery Protocol and LLDP)
+Access ports are switch interfaces configured to carry traffic for a single VLAN.
+Devices like PCs, printers, or IP phones typically connect to access ports.
+In a voice-enabled setup, the switch can assign one VLAN 
+for voice traffic (for the phone) and 
+another for data traffic (for the computer connected through the phone).
+This separation improves QoS and keeps different traffic types logically isolated.
 
-2.4 Configure and verify (Layer 2/Layer 3) EtherChannel (LACP)
+#### 2.1.b Default VLAN
 
-2.5 Interpret basic operations of Rapid PVST+ Spanning Tree Protocol
-2.5.a Root port, root bridge (primary/secondary), and other port names
-2.5.b Port states (forwarding/blocking)
-2.5.c PortFast
-2.5.d Root guard, loop guard, BPDU filter, and BPDU guard
+By default, all switch ports belong to VLAN 1.
+This “default VLAN” carries control traffic 
+such as CDP or STP by default, but in production, 
+it’s considered a best practice to avoid using VLAN 1 for user traffic.
+Moving management interfaces and user ports away 
+from VLAN 1 helps reduce attack surfaces.
 
-2.6 Describe Cisco Wireless Architectures and AP modes
+#### 2.1.c InterVLAN connectivity
 
-2.7 Describe physical infrastructure connections of WLAN components (AP, WLC, access/trunk ports, and LAG)
+Switches segment networks into VLANs, 
+but by themselves, VLANs can’t talk to each other.
+For inter-VLAN communication, a Layer 3 device is required.
+Usually a router (“router-on-a-stick”) or a Layer 3 switch is used.
+This setup allows devices in different VLANs to exchange traffic 
+while still maintaining logical segmentation.
 
-2.8 Describe network device management access (Telnet, SSH, HTTP, HTTPS, console, TACACS+/RADIUS, and cloud managed)
 
-2.9 Interpret the wireless LAN GUI configuration for client connectivity, such as WLAN creation, security settings, QoS profiles, and advanced settings
+### 2.2 Configure and verify interswitch connectivity
+
+#### 2.2.a Trunk ports
+
+Trunk ports are switch ports that carry traffic for multiple VLANs simultaneously.
+They use tagging (like 802.1Q) to mark which VLAN each frame belongs to.
+This allows switches to extend VLANs across multiple devices, 
+keeping network segmentation consistent.
+
+#### 2.2.b 802.1Q
+
+802.1Q is the IEEE standard for VLAN trunking.
+It inserts a small tag (4 bytes) into Ethernet frames to identify the VLAN ID.
+Only trunk ports add and interpret these tags, 
+while access ports deliver untagged traffic to end devices.
+
+#### 2.2.c Native VLAN
+
+On an 802.1Q trunk, one VLAN is designated as the “native VLAN.”
+Traffic from this VLAN is sent untagged across the trunk.
+By default, VLAN 1 is native, but administrators often change it for security reasons.
+Misconfigurations between switches (mismatched native VLANs) 
+can cause VLAN leakage and connectivity issues.
+
+
+### 2.3 Configure and verify Layer 2 discovery protocols (Cisco Discovery Protocol and LLDP)
+
+Discovery protocols allow devices to advertise and learn information 
+about directly connected neighbors.
+Cisco Discovery Protocol (CDP) is Cisco-proprietary, 
+while LLDP is an open standard.
+Both can reveal details like device ID, IP address, platform, and port ID.
+They’re useful for troubleshooting and documentation, 
+but in secure environments, administrators may disable them 
+to avoid leaking network details to attackers.
+
+### 2.4 Configure and verify (Layer 2/Layer 3) EtherChannel (LACP)
+
+EtherChannel bundles multiple physical links into one logical connection, 
+increasing bandwidth and providing redundancy.
+Layer 2 EtherChannel groups switch ports, 
+while Layer 3 EtherChannel creates a routed link.
+LACP (Link Aggregation Control Protocol, IEEE 802.3ad) 
+is the open standard that negotiates and maintains these bundles.
+EtherChannel prevents loops 
+because the bundled ports are treated as a single logical interface by STP.
+
+
+### 2.5 Interpret basic operations of Rapid PVST + Spanning Tree Protocol
+
+#### 2.5.a Root port, root bridge (primary/secondary), and other port names
+
+Spanning Tree Protocol prevents loops by electing 
+a root bridge as the central point of the topology.
+Each non-root switch identifies one root port (its best path to the root bridge) 
+and assigns roles to its other ports (designated or alternate).
+A backup root bridge can be configured for redundancy in case the primary fails.
+
+#### 2.5.b Port states (forwarding/blocking)
+
+Ports in STP move through several states: 
+blocking, listening, learning, and forwarding.
+In Rapid PVST+, convergence is much faster, 
+with ports transitioning directly to forwarding when conditions are safe.
+Blocked ports exist to prevent loops 
+by intentionally disabling redundant paths.
+
+#### 2.5.c PortFast
+
+PortFast allows access ports (like those connecting to PCs) 
+to skip the normal STP states and go directly to forwarding.
+This avoids delays during host boot-up and DHCP processes.
+It should only be enabled on ports facing end devices, never on switch-to-switch links.
+
+#### 2.5.d Root guard, loop guard, BPDU filter, and BPDU guard
+
+- **Root guard** prevents a port from becoming the root port, protecting the current root bridge.
+
+- **Loop guard** keeps redundant links from accidentally moving into forwarding state if BPDUs stop being received.
+
+- **BPDU filter** blocks STP BPDUs from being sent or received on specific ports.
+
+- **BPDU guard** immediately shuts down a port if it receives a BPDU, protecting access ports from rogue switches.
+
+
+### 2.6 Describe Cisco Wireless Architectures and AP modes
+
+Cisco wireless networks can be deployed in autonomous or controller-based architectures.
+In controller-based designs, lightweight APs 
+connect to a Wireless LAN Controller (WLC), 
+which centralizes management and policies.
+AP modes include local mode (serving clients), 
+monitor mode (scanning for rogue APs), 
+and flexconnect (remote branch deployments 
+where APs keep working even if the controller link is down).
+
+
+### 2.7 Describe physical infrastructure connections of WLAN components (AP, WLC, access/trunk ports, and LAG)
+
+Access points typically connect to switch access ports (for client VLANs) 
+or trunk ports (if multiple SSIDs/VLANs are required).
+The WLC usually connects via a trunk port, aggregating WLAN traffic from many APs.
+Link Aggregation Groups (LAG) can be used 
+between controllers and switches for higher bandwidth and redundancy.
+
+
+### 2.8 Describe network device management access (Telnet, SSH, HTTP, HTTPS, console, TACACS+/RADIUS, and cloud managed)
+
+Devices can be managed through different channels:
+
+- **Console:** physical, out-of-band access for initial setup.
+
+- **Telnet:** plaintext, insecure, rarely used today.
+
+- **SSH:** encrypted, standard for CLI-based management.
+
+- **HTTP/HTTPS:** GUI-based management (HTTPS preferred for security).
+
+- **TACACS+ / RADIUS:** centralized authentication, authorization, and accounting, integrating with enterprise identity systems.
+
+- **Cloud management:** modern controllers allow devices to be managed via cloud dashboards, reducing on-premise overhead.
+
+
+### 2.9 Interpret the wireless LAN GUI configuration for client connectivity, such as WLAN creation, security settings, QoS profiles, and advanced settings
+
+Wireless LAN controllers provide a GUI for creating and managing SSIDs (WLANs).
+Admins configure SSID names, 
+security policies (WPA2, WPA3, enterprise authentication with RADIUS), 
+and QoS profiles to prioritize traffic types like voice or video.
+Advanced settings include client isolation, band steering, and load balancing across APs.
+Interpreting these correctly ensures clients connect securely and receive appropriate quality of service.
+
 
 ## 3.0 IP Connectivity 
 
