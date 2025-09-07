@@ -153,10 +153,269 @@ It’s a rookie mistake, but one that still happens in real systems.
 3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH
 -->
 
-## Level 3 → Level 4
-## Level 4 → Level 5
+
+## Level 3 → Level 4  
+
+### Starting Point  
+
+Hitting the main page first:  
+
+```bash
+curl -i -u natas3:3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH http://natas3.natas.labs.overthewire.org/  
+```
+
+The HTML looks empty except for a bold little comment:  
+
+No more information leaks!! Not even Google will find it this time...  
+
+That line practically screams **robots.txt**, 
+because that’s exactly how you tell Google (and other crawlers) to stay away.  
+
+---
+
+### Checking Robots.txt  
+
+So the next step is to grab that file directly:  
+
+```bash
+curl -i -u natas3:3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH http://natas3.natas.labs.overthewire.org/robots.txt  
+```
+
+The response says:  
+
+User-agent: *  
+Disallow: /s3cr3t/  
+
+Bingo.  
+
+---
+
+### Digging Deeper  
+
+Heading into the disallowed directory:  
+
+```bash
+curl -i -u natas3:3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH http://natas3.natas.labs.overthewire.org/s3cr3t/  
+```
+
+This reveals an Apache directory listing with a single interesting file: `users.txt`.  
+
+---
+
+### Grabbing the File  
+
+One more curl to fetch that file directly:  
+
+```bash
+curl -i -u natas3:3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH http://natas3.natas.labs.overthewire.org/s3cr3t/users.txt  
+```
+
+Inside is the credential for the next level.  
+
+---
+
+### Lesson Learned  
+
+This level ties a neat chain together:  
+
+- A comment hints at **Google** → think **robots.txt**.  
+- `robots.txt` discloses a **hidden directory**.  
+- Directory listing exposes sensitive files.  
+
+Each step shows how small leaks can stack up into full compromises. 
+What admins thought was “hidden” was actually trivial to discover with curl.  
+
+<!--
+QryZXc2e0zahULdHrtHxzyYkj59kUxLQ
+-->
+
+
+## Natas Level 4
+
+### Overview
+
+This challenge stepped up from static file discovery into manipulating HTTP headers. 
+The server blocked me by checking the **Referer header**, 
+insisting I could only come from `http://natas5.natas.labs.overthewire.org/`. 
+Instead of touching a browser, I kept things clean in curl 
+and controlling headers directly is actually quite easy and efficent.  
+
+This is where the exercise really starts to feel like proper web hacking: 
+not clicking around, but shaping requests until the server bends.  
+
+---
+
+### First Request: Blocked by Referer
+
+My initial request with just basic authentication got me a rejection. 
+The message made the requirement explicit:  
+
+> “Access disallowed. You are visiting from "" 
+while authorized users should come only from `http://natas5.natas.labs.overthewire.org/`.”  
+
+That’s the server telling me: “Your header is empty, fill it right.”  
+
+---
+
+### Crafting the Correct Header
+
+Curl lets me set or override headers with `-H`. 
+So I added a Referer that matched exactly what the server wanted:  
+
+```bash
+curl -u natas5:natas5password -H "http://natas5.natas.labs.overthewire.org/" http://natas4.natas.labs.overthewire.org/
+```
+
+---
+
+### Result: Access Granted
+
+With the forged header, the server was satisfied and revealed the next password.  
+The simple trick here was learning to lie about **where I came from**, 
+something browsers do automatically but curl makes explicit.  
+
+---
+
+### Reflection
+
+This level drilled the importance of headers: 
+they’re not magic, they’re just lines in the request. 
+Controlling them directly with curl forces me to see 
+how fragile these “protections” are. 
+If I can fake a Referer in one line, I can fake anything else too.  
+
+---
+
+<!--
+0n35PkggAPm2zbEpOU802c0x0Msn1ToK
+-->
+
 ## Level 5 → Level 6
+
+### Why Cookies Matter
+
+At this point I hit a new wall. 
+Basic auth got me through the door, but the page still spat back at me:  
+*"Access disallowed. You are not logged in."*  
+
+Turns out, this wasn’t about the username/password combo anymore. 
+It was about **cookies**. 
+The server decides whether I’m “logged in” 
+by checking the value of a cookie named `loggedin`. 
+If it’s set to `0`, I’m out. If I can set it to `1`, I’m in.
+
+### Set-Cookie vs. Cookie
+
+Here’s the catch: cookies have a direction.  
+
+- `Set-Cookie:` → This is sent by the **server** to tell the client what cookie to store.  
+- `Cookie:` → This is sent by the **client** (browser or curl) back to the server in the next request.  
+
+I made the mistake of trying to inject `Set-Cookie` myself. 
+That’s me impersonating the server which is pointless, 
+because the real server will just overwrite it. 
+What I actually needed was to send a `Cookie` header, 
+the way a browser does.
+
+### Forcing the Cookie
+
+So the correct move was:  
+
+```bash
+curl -i -u natas5:natas5password -H "Cookie: loggedin=1" http://natas5.natas.labs.overthewire.org/
+```
+
+By doing this, I’m explicitly telling the server: 
+*“Yes, I’m logged in.”* And it worked.
+
+### General Rule of Thumb
+
+- Use `Cookie:` when you want to **send data** to the server.  
+- `Set-Cookie:` is only the server telling you what to store. You almost never send that manually.  
+
+
+---
+
+<!--
+0RoJwHdSKWFTYR5WuiAewauSuNaBXned
+-->
+
 ## Level 6 → Level 7
+
+### Level Goal
+
+The goal of this level is to retrieve the password for the next level, **natas7**, by interacting with a form on the page and examining the source code.
+
+### Initial Observation
+
+Accessing the level with basic authentication:
+
+Codeblock example here: curl -i -u natas6:0RoJwHdSKWFTYR5WuiAewauSuNaBXned http://natas6.natas.labs.overthewire.org/
+
+Returns a page containing a simple form:
+
+```bash
+<form method=post> Input secret: <input name=secret><br> <input type=submit name=submit> </form>
+```
+
+Submissions are expected via POST with a field named `secret`.
+
+## Viewing Source Code
+
+The level provides a link to the source code:
+
+```bash
+curl -i -u natas6:0RoJwHdSKWFTYR5WuiAewauSuNaBXned http://natas6.natas.labs.overthewire.org/index-source.html
+```
+
+Inspecting the source shows:
+
+Codeblock example here: <?php include "includes/secret.inc";
+if(array_key_exists("submit", $_POST)) { 
+if($secret == $_POST['secret']) { print "Access granted. 
+    The password for natas7 is <censored>"; }
+else { print "Wrong secret"; } } ?>
+
+### Key Insight
+
+- The secret is stored in a file: `includes/secret.inc`.
+- The server includes this file in the code.
+- This file is **directly accessible**, 
+even though normally PHP includes are not meant to be exposed.
+
+## Retrieving the Secret
+
+Fetching the secret file:
+
+```bash
+curl -i -u natas6:natas6password http://natas6.natas.labs.overthewire.org/includes/secret.inc
+```
+
+Reveals:
+
+```bash
+<? $secret = "FOEIUWGHFEEUHOFUOIU"; ?>
+```
+
+## Submitting the Secret via POST
+
+With `curl` we can emulate the form submission:
+
+Codeblock example here: curl -i -u natas6:0RoJwHdSKWFTYR5WuiAewauSuNaBXned -d "secret=FOEIUWGHFEEUHOFUOIU&submit=submit" http://natas6.natas.labs.overthewire.org/
+
+
+## Summary
+
+1. **Examine the form** to understand required input (`secret` via POST).  
+2. **Check the source code** via the provided `index-source.html` link.  
+3. **Discover hidden files** (`includes/secret.inc`) containing the secret.  
+4. **Submit the secret** with `curl -d` to emulate the form and retrieve the password for **natas7**.  
+
+This level demonstrates the importance of **source code exposure** and how form POST submissions can be automated with `curl`.
+
+<!--
+bmg8SvU1LizuWjx3y7xkNERkHxGre0GS
+-->
 ## Level 7 → Level 8
 ## Level 8 → Level 9
 ## Level 9 → Level 10
