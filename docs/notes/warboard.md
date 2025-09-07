@@ -18,8 +18,6 @@ description: List of my planes for furtur write ups and general project ideas.
 
 - Working though OWT Natas and documenting it.
 - Building an Overview page for the Offensive Cybersecurtiy tools I want to learn
-- Making an Overview of the different Sections
-- Working though the learning material of the CCNA
 
 ---
 ## STAGING ZONE
@@ -46,6 +44,8 @@ description: List of my planes for furtur write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newes pages are.  
 
+- Working though the learning material of the CCNA (2025-09)
+- Making an Overview of the different Sections (2025-08)
 - Creating an Overview of the Startup process of the main operating systems (2025-08)
 - Restructure considering my current knowledge (2025-08)
 - Create automation script for deployment and dokumenting it (2025-05)
