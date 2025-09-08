@@ -95,7 +95,9 @@ nav:
       - Bandit: challenges/overthewire/bandit.md
       - Natas: challenges/overthewire/natas.md
     - HTB: challenges/htb.md
-    - THM: challenges/thm.md
+    - THM: 
+      - Overview: challenges/thm/overview.md
+      - Billing: challenges/thm/billing.md
   - Projects:
     - Overview: projects/overview.md
     - Digital Dojo: projects/digital-dojo.md
