@@ -64,7 +64,6 @@ edit_uri: ""
 
 nav:
   - Home: index.md
-  - About: about.md
   - Foundations:
     - Overview: foundations/overview.md
     - Windows:
@@ -106,6 +105,7 @@ nav:
     - CCNA Training: notes/ccna.md
     - Media: notes/media.md
     - Warboard: notes/warboard.md
+  - About: about.md
 
 
 

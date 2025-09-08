@@ -38,6 +38,7 @@ description: List of my planes for furtur write ups and general project ideas.
 - Deep-dive into privilege escalation.
 - Getting picture documentation to work
 - List of file formats and what it means and you can do with it. 
+- Working on building some Visual Charts
 
 ---
 ## COMPLETED STRIKES
