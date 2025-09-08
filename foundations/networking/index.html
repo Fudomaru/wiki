@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="List of my most liked Readings and Videos on the topic of Information Technology.">
+        <meta name="description" content="My entry point into networking — the protocols, tools, and systems that make communication possible.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../ccna/">
+        <link rel="prev" href="../overview/">
       
       
-        <link rel="next" href="../warboard/">
+        <link rel="next" href="../windows/overview/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Readings and Videos - Voidex</title>
+        <title>Networking Overview - Voidex</title>
       
     
     
@@ -116,6 +116,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#networking-overview" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -146,7 +151,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Readings and Videos
+              Networking Overview
             
           </span>
         </div>
@@ -266,11 +271,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../foundations/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
           
   
   
@@ -366,13 +373,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../notes/overview/" class="md-tabs__link">
           
   
   
@@ -474,24 +479,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -504,7 +514,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Foundations
@@ -518,7 +528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -538,10 +548,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../foundations/networking/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Networking
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -552,6 +584,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#protocols-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocols &amp; Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools &amp; Utilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration &amp; Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-types-topologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Types &amp; Topologies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security &amp; Monitoring
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -605,7 +702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/overview/" class="md-nav__link">
+      <a href="../windows/overview/" class="md-nav__link">
         
   
   
@@ -628,7 +725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/uefi/" class="md-nav__link">
+      <a href="../windows/uefi/" class="md-nav__link">
         
   
   
@@ -700,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/macos/overview/" class="md-nav__link">
+      <a href="../macos/overview/" class="md-nav__link">
         
   
   
@@ -772,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/overview/" class="md-nav__link">
+      <a href="../linux/overview/" class="md-nav__link">
         
   
   
@@ -795,7 +892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/cli-magic/" class="md-nav__link">
+      <a href="../linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -818,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/system-internals/" class="md-nav__link">
+      <a href="../linux/system-internals/" class="md-nav__link">
         
   
   
@@ -1678,29 +1775,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -1713,7 +1805,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Notes
@@ -1727,7 +1819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../notes/overview/" class="md-nav__link">
         
   
   
@@ -1750,7 +1842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ccna/" class="md-nav__link">
+      <a href="../../notes/ccna/" class="md-nav__link">
         
   
   
@@ -1770,17 +1862,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../notes/media/" class="md-nav__link">
         
   
   
@@ -1791,7 +1876,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1804,7 +1888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../warboard/" class="md-nav__link">
+      <a href="../../notes/warboard/" class="md-nav__link">
         
   
   
@@ -1866,6 +1950,61 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#protocols-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protocols &amp; Models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools &amp; Utilities
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration &amp; Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-types-topologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Types &amp; Topologies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security &amp; Monitoring
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1881,9 +2020,145 @@
 
 
 
-  <h1>Media</h1>
-
-
+<h1 id="networking-overview">Networking Overview</h1>
+<p>This page is my launchpad into the world of networking.<br />
+It’s where I collect the core concepts, tools, and systems that shape how machines talk to each other.<br />
+Each item here is a placeholder for deeper dives as I explore further.</p>
+<h2 id="protocols-models">Protocols &amp; Models</h2>
+<ul>
+<li>
+<p><strong>OSI Model</strong><br />
+  A conceptual framework that breaks networking into seven layers, from physical wires to application logic.</p>
+</li>
+<li>
+<p><strong>TCP/IP Stack</strong><br />
+  The real-world implementation of networking, built on transport and internet layers.</p>
+</li>
+<li>
+<p><strong>DHCP</strong><br />
+  Automatically assigns IP addresses to devices on a network.</p>
+</li>
+<li>
+<p><strong>DNS</strong><br />
+  Translates human-readable domain names into IP addresses.</p>
+</li>
+<li>
+<p><strong>HTTP/HTTPS</strong><br />
+  Protocols for web communication, including headers, methods, and status codes.</p>
+</li>
+<li>
+<p><strong>SSH</strong><br />
+  Secure shell protocol for remote access and tunneling.</p>
+</li>
+<li>
+<p><strong>FTP/SFTP</strong><br />
+  File transfer protocols, with and without encryption.</p>
+</li>
+</ul>
+<h2 id="tools-utilities">Tools &amp; Utilities</h2>
+<ul>
+<li>
+<p><strong>Ping</strong><br />
+  Tests basic connectivity by sending ICMP echo requests.</p>
+</li>
+<li>
+<p><strong>Traceroute</strong><br />
+  Maps the path packets take to reach a destination.</p>
+</li>
+<li>
+<p><strong>Curl</strong><br />
+  Sends HTTP requests to test web services and APIs.</p>
+</li>
+<li>
+<p><strong>Netcat</strong><br />
+  A versatile tool for opening ports, sending data, and debugging connections.</p>
+</li>
+<li>
+<p><strong>Wireshark</strong><br />
+  Captures and analyzes network traffic at the packet level.</p>
+</li>
+<li>
+<p><strong>Tcpdump</strong><br />
+  Command-line packet sniffer for quick traffic inspection.</p>
+</li>
+<li>
+<p><strong>Nmap</strong><br />
+  Scans networks for open ports, services, and vulnerabilities.</p>
+</li>
+<li>
+<p><strong>ss / netstat</strong><br />
+  Shows active connections and listening ports.</p>
+</li>
+</ul>
+<h2 id="configuration-management">Configuration &amp; Management</h2>
+<ul>
+<li>
+<p><strong>IP addressing</strong><br />
+  Static vs dynamic IPs, subnetting, and CIDR notation.</p>
+</li>
+<li>
+<p><strong>Routing tables</strong><br />
+  How packets find their way across networks.</p>
+</li>
+<li>
+<p><strong>Firewall rules</strong><br />
+  Controlling traffic with iptables, nftables, or Windows Firewall.</p>
+</li>
+<li>
+<p><strong>VPNs</strong><br />
+  Secure tunnels between networks, including WireGuard and OpenVPN.</p>
+</li>
+<li>
+<p><strong>Proxy servers</strong><br />
+  Intermediaries for traffic routing, caching, and filtering.</p>
+</li>
+</ul>
+<h2 id="network-types-topologies">Network Types &amp; Topologies</h2>
+<ul>
+<li>
+<p><strong>LAN/WAN</strong><br />
+  Local vs wide area networks, and how they differ in scope and control.</p>
+</li>
+<li>
+<p><strong>VLANs</strong><br />
+  Virtual LANs for segmenting traffic within a physical network.</p>
+</li>
+<li>
+<p><strong>Mesh vs Star vs Ring</strong><br />
+  Common topologies and their trade-offs.</p>
+</li>
+<li>
+<p><strong>Client-Server vs Peer-to-Peer</strong><br />
+  Different models of communication and control.</p>
+</li>
+</ul>
+<h2 id="security-monitoring">Security &amp; Monitoring</h2>
+<ul>
+<li>
+<p><strong>Port scanning</strong><br />
+  Identifying open services and potential attack surfaces.</p>
+</li>
+<li>
+<p><strong>Packet inspection</strong><br />
+  Reading traffic to detect anomalies or malicious behavior.</p>
+</li>
+<li>
+<p><strong>IDS/IPS</strong><br />
+  Intrusion detection and prevention systems.</p>
+</li>
+<li>
+<p><strong>MITM attacks</strong><br />
+  How attackers intercept traffic and how to defend against it.</p>
+</li>
+<li>
+<p><strong>TLS/SSL</strong><br />
+  Encryption protocols for securing data in transit.</p>
+</li>
+</ul>
+<hr />
+<p>This page is a map, not a manual.<br />
+Each line is a breadcrumb and a reminder of what I’ve touched, and what I still want to explore.<br />
+As I build out deep dives, I’ll link them here to show how far each branch has grown.</p>
 
 
 
@@ -1922,7 +2197,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../ccna/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CCNA Training">
+          <a href="../overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1932,20 +2207,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                CCNA Training
+                Overview
               </div>
             </div>
           </a>
         
         
           
-          <a href="../warboard/" class="md-footer__link md-footer__link--next" aria-label="Next: Warboard">
+          <a href="../windows/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Warboard
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
