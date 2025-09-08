@@ -66,6 +66,7 @@ nav:
   - Home: index.md
   - Foundations:
     - Overview: foundations/overview.md
+    - Networking: foundations/networking.md
     - Windows:
       - Overview: foundations/windows/overview.md
       - UEFI: foundations/windows/uefi.md
@@ -74,7 +75,6 @@ nav:
     - Linux:
       - Overview: foundations/linux/overview.md
       - CLI: foundations/linux/cli-magic.md
-      - Networking: foundations/linux/networking.md
       - System: foundations/linux/system-internals.md
   - Security:
     - Overview: security/overview.md
