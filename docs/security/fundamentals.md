@@ -40,7 +40,7 @@ I use it to track concepts, tools and tactis I pick up and get to use efficantly
 
 ## Tools I use
 
-- nmap: Networkscanner of choice. 
+- [nmap](/security/toolbelt/nmap.md): Networkscanner of choice. 
 
 - Burp Suite: Package interception, changing and exploring of WebApps on a new level.  
 

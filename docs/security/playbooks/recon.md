@@ -147,7 +147,7 @@ By the end of this stage this is what you should have:
 
 - Discovering open ports and determine their state
 - Understanding exposed surface area
-- Tools: [nmap](/wiki/cybersec/toolbelt/nmap/), rustscan, masscan
+- Tools: [nmap](/cybersec/toolbelt/nmap/), rustscan, masscan
 
 ## Service Enumation
 

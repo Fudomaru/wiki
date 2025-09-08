@@ -68,6 +68,7 @@ nav:
     - Overview: foundations/overview.md
     - Windows:
       - Overview: foundations/windows/overview.md
+      - UEFI: foundations/windows/uefi.md
     - MacOS: 
       - Overview: foundations/macos/overview.md
     - Linux:
