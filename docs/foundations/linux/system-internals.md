@@ -1,37 +1,53 @@
 ---
 title: Linux Internals
-description: Describtion of the inner workings of a Linux systems. 
+description: Notes on how Linux handles processes and signals — the building blocks of system control.
 ---
 
-# Prcesses & Signals 
+# Processes & Signals
 
-??? warning
-    This page is a placeholder
+This page is about how Linux manages running programs — how they’re created, monitored, and controlled.  
+It’s a core topic that connects directly to scripting, scheduling, service management, and system recovery.
 
+## What is a Process?
 
-## Why this?
+A process is a running instance of a program.  
+Each process has a unique PID (Process ID) and runs in its own memory space.  
+Processes can spawn other processes, communicate with each other, and respond to signals.
 
-This is a core Linux topic.  
-It is always relevant and opens the door for advanced topics like scripting, scheduling and system recovery.  
-If you don't know how Linux handles processes and how you see and handle them, it is very hard to do anything.  
+## Basic Commands
 
-## What is a Process? 
+- `ps aux`  
+  Lists all running processes with details like PID, CPU usage, and command.
 
-A process is a running instance of a program, identified by a PID.  
+- `top` / `htop`  
+  Live monitoring of system resources and active processes.
 
-## Basic Commands: 
+- `kill <PID>`  
+  Sends a signal to a process — usually to terminate it.
 
-`ps aux` list all running prcesses  
-`top` / `htop` live monitoring  
-`kill <PID>` kill process by PID  
- `pmap <PID>` showes memory usage  
+- `pmap <PID>`  
+  Shows memory usage of a specific process.
 
 ## Common Signals
 
-| Signal | Explaination |
-|-|-|
-| **SIGTERM** | polite kill |
-| **SIGKILL** | brute-force, can't be caught |
-| **SIGINT** | interrupt |
-| **SIGSTOP** | pause |
-| **SIGCONT** | resume |
+| Signal      | Description                       |
+|-------------|-----------------------------------|
+| **SIGTERM** | Graceful termination request      |
+| **SIGKILL** | Forceful kill, cannot be caught   |
+| **SIGINT**  | Interrupt from keyboard (Ctrl+C)  |
+| **SIGSTOP** | Pause the process                 |
+| **SIGCONT** | Resume a stopped process          |
+
+## What’s Next
+
+This page will grow to include:
+
+- Process states and lifecycle  
+- Foreground vs background jobs  
+- Daemons and service management  
+- Signal handling in scripts  
+- Scheduling with `cron` and `at`
+
+This is one of the leaves under my Linux branch.  
+It’s where I collect the tools and concepts that help me understand what’s running — and how to control it.
+|
