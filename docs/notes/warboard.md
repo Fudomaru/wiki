@@ -52,6 +52,7 @@ description: List of my planes for furtur write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newes pages are.  
 
+- JS Deobfuscation page added to playbooks (2025-09)
 - Overview for the Networking Section (2025-09)
 - DeepDive Page for UEFI (2025-09)
 - DeepDive Page for nmap (2025-09)

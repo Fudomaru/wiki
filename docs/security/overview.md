@@ -19,8 +19,8 @@ that reveal how systems break and how they hold.
 ## What belongs here
 
 - [**Fundamentals**](/security/fundamentals/) → core security principles, models, and mental frameworks.  
-- **Toolbelt** → the utilities I train with: scanners, proxies, sniffers, exploit frameworks.  
-- **Playbooks** → practical flows: recon, enumeration, exploitation, post-exploitation, and the obstacles that shut each down.  
+- [**Toolbelt**](/security/toolbelt/overview/) → the utilities I train with: scanners, proxies, sniffers, exploit frameworks.  
+- [**Playbooks**](/security/playbooks/overview/) → practical flows: recon, enumeration, exploitation, post-exploitation, and the obstacles that shut each down.  
 
 The focus is **offensive security** — but never in isolation.  
 Every exploit I study comes with a shadow: the defense that makes it harder, slower, or impossible.  
