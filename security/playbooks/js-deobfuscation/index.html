@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A high-level learning map of the Linux startup process — covering the kernel and common early userspace until distribution-specific layers take over.">
+        <meta name="description" content="My method for analyzing and reversing obfuscated JavaScript — from locating code to decoding payloads.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../../macos/overview/">
+        <link rel="prev" href="../recon/">
       
       
-        <link rel="next" href="../cli-magic/">
+        <link rel="next" href="../../../homelab/overview/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Linux Fundamentals – From Firmware to Userspace - Voidex</title>
+        <title>JavaScript Deobfuscation - Voidex</title>
       
     
     
@@ -141,7 +141,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#javascript-deobfuscation" class="md-skip">
           Skip to content
         </a>
       
@@ -175,7 +175,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linux Fundamentals – From Firmware to Userspace
+              JavaScript Deobfuscation
             
           </span>
         </div>
@@ -295,13 +295,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../foundations/overview/" class="md-tabs__link">
           
   
   
@@ -317,11 +315,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../security/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -503,29 +503,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -538,7 +533,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Foundations
@@ -552,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../../foundations/overview/" class="md-nav__link">
         
   
   
@@ -575,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/" class="md-nav__link">
+      <a href="../../../foundations/networking/" class="md-nav__link">
         
   
   
@@ -639,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../windows/overview/" class="md-nav__link">
+      <a href="../../../foundations/windows/overview/" class="md-nav__link">
         
   
   
@@ -662,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../windows/uefi/" class="md-nav__link">
+      <a href="../../../foundations/windows/uefi/" class="md-nav__link">
         
   
   
@@ -734,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../macos/overview/" class="md-nav__link">
+      <a href="../../../foundations/macos/overview/" class="md-nav__link">
         
   
   
@@ -762,8 +757,6 @@
                 
   
   
-    
-  
   
   
     
@@ -774,11 +767,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -794,7 +787,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Linux
@@ -805,32 +798,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../foundations/linux/overview/" class="md-nav__link">
         
   
   
@@ -841,89 +812,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-1-firmware-bootloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 1 – Firmware &amp; Bootloader
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-2-kernel-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 2 – Kernel Initialization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-3-early-userspace-kernel-init-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 3 – Early Userspace (Kernel → Init Process)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-4-distribution-layer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 4 – Distribution Layer
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-5-where-i-go-from-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 5 – Where I Go From Here
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#closing-note" class="md-nav__link">
-    <span class="md-ellipsis">
-      Closing Note
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -936,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cli-magic/" class="md-nav__link">
+      <a href="../../../foundations/linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -959,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../system-internals/" class="md-nav__link">
+      <a href="../../../foundations/linux/system-internals/" class="md-nav__link">
         
   
   
@@ -994,24 +882,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -1024,7 +917,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Security
@@ -1038,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
@@ -1061,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/fundamentals/" class="md-nav__link">
+      <a href="../../fundamentals/" class="md-nav__link">
         
   
   
@@ -1125,7 +1018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../../toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -1148,7 +1041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/toolbelt/nmap/" class="md-nav__link">
+      <a href="../../toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -1176,6 +1069,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1186,11 +1081,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
         
           
           <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
@@ -1206,7 +1101,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             Playbooks
@@ -1220,7 +1115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../../toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -1243,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/playbooks/recon/" class="md-nav__link">
+      <a href="../recon/" class="md-nav__link">
         
   
   
@@ -1263,10 +1158,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../security/playbooks/js-deobfuscation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    JS Deobfuscation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1277,6 +1194,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      My Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding-techniques-i-watch-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Encoding Techniques I Watch For
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-i-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools I Use
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What’s Next
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2073,63 +2055,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#why-this-matters" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      Why This Matters
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#phase-1-firmware-bootloader" class="md-nav__link">
+  <a href="#my-workflow" class="md-nav__link">
     <span class="md-ellipsis">
-      Phase 1 – Firmware &amp; Bootloader
+      My Workflow
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#phase-2-kernel-initialization" class="md-nav__link">
+  <a href="#encoding-techniques-i-watch-for" class="md-nav__link">
     <span class="md-ellipsis">
-      Phase 2 – Kernel Initialization
+      Encoding Techniques I Watch For
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#phase-3-early-userspace-kernel-init-process" class="md-nav__link">
+  <a href="#tools-i-use" class="md-nav__link">
     <span class="md-ellipsis">
-      Phase 3 – Early Userspace (Kernel → Init Process)
+      Tools I Use
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#phase-4-distribution-layer" class="md-nav__link">
+  <a href="#whats-next" class="md-nav__link">
     <span class="md-ellipsis">
-      Phase 4 – Distribution Layer
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-5-where-i-go-from-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 5 – Where I Go From Here
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#closing-note" class="md-nav__link">
-    <span class="md-ellipsis">
-      Closing Note
+      What’s Next
     </span>
   </a>
   
@@ -2151,80 +2115,100 @@
 
 
 
-<h1 id="overview"><strong>Overview</strong></h1>
-<h2 id="introduction"><strong>Introduction</strong></h2>
-<p>This is not a distro war or a kernel hacker’s whitepaper.<br />
-It’s my <strong>learning map</strong> — an outline of how Linux comes alive, from firmware to the point where distributions layer on their own systems.</p>
-<p>Each phase is in broad strokes: concise enough to fit in my head, but ready to be expanded when I dive deeper.<br />
-This is my navigation aid when troubleshooting, my checklist when something breaks, and my reminder that while the word “Linux” often means “a whole OS,” the kernel is just one — very important — piece.</p>
-<hr />
-<h2 id="phase-1-firmware-bootloader"><strong>Phase 1 – Firmware &amp; Bootloader</strong></h2>
-<p><strong>Firmware (BIOS/UEFI)</strong><br />
-- Runs POST, initializes hardware, and finds the bootloader.<br />
-- On UEFI systems, reads EFI System Partition to locate bootloader <code>.efi</code> file.  </p>
-<p><strong>Secure Boot (optional)</strong><br />
-- Verifies bootloader signatures before handing off control (varies by distro config).</p>
-<p><strong>Bootloader</strong><br />
-- Common: GRUB, systemd‑boot, LILO (rare now).<br />
-- Presents boot menu, chooses kernel/initramfs, passes kernel parameters.<br />
-- Loads Linux kernel and initial RAM disk (initrd/initramfs) into memory.</p>
-<hr />
-<h2 id="phase-2-kernel-initialization"><strong>Phase 2 – Kernel Initialization</strong></h2>
-<p><strong>Decompression &amp; Start</strong><br />
-- Kernel binary unpacks itself into memory and begins executing <code>start_kernel()</code>.</p>
-<p><strong>Hardware Detection &amp; Drivers</strong><br />
-- Initializes CPU, memory, timers.<br />
-- Detects buses (PCI, USB, etc.) and loads built‑in or initramfs‑supplied drivers.</p>
-<p><strong>Mount root (temporary)</strong><br />
-- Mounts initramfs as the initial root filesystem.<br />
-- Provides space for early userspace tools before the “real” root is mounted.</p>
-<p><strong>Initramfs Tasks</strong><br />
-- Loads extra drivers/modules needed to access the real root filesystem.<br />
-- Sets up device nodes via <code>udev</code> or a minimal equivalent.<br />
-- Handles disk decryption (LUKS), RAID assembly, or filesystem checks if needed.</p>
-<p><strong>Switch Root</strong><br />
-- Mounts the actual root filesystem and pivots away from the initramfs.</p>
-<hr />
-<h2 id="phase-3-early-userspace-kernel-init-process"><strong>Phase 3 – Early Userspace (Kernel → Init Process)</strong></h2>
-<p><strong>Init Process Start</strong><br />
-- Kernel executes the first process (<code>/sbin/init</code> by default).<br />
-- Can be <code>systemd</code>, <code>SysV init</code>, <code>OpenRC</code>, <code>runit</code>, <code>s6</code>, etc., depending on the distro.</p>
-<p><strong>Responsibilities here</strong><br />
-- Mount essential pseudo‑filesystems: <code>/proc</code>, <code>/sys</code>, <code>/dev</code>.<br />
-- Start early daemons required for the system to function.<br />
-- Configure basic networking (if set to start this early).</p>
-<hr />
-<h2 id="phase-4-distribution-layer"><strong>Phase 4 – Distribution Layer</strong></h2>
-<p>From here, the <strong>shared “Linux” story</strong> branches into <strong>distro‑specific policy</strong>:</p>
-<p><strong>Init System &amp; Service Management</strong><br />
-- <code>systemd</code> (Debian, Fedora, Arch, etc.)<br />
-- <code>OpenRC</code> (Gentoo, Alpine)<br />
-- <code>runit</code> (Void Linux)<br />
-- <code>s6</code> (specialized/minimalist setups)  </p>
-<p><strong>What the Distro Adds on Top</strong><br />
-- Default services, daemons, and configuration defaults.<br />
-- Package manager (APT, DNF, pacman, apk, nix, etc.).<br />
-- Userland tools and shells (Bash, Zsh, dash).<br />
-- Graphical stack: X11, Wayland, desktop environments (GNOME, KDE, etc.) or minimal WM.</p>
-<p>This is the point where two systems both “running Linux” can behave very differently.</p>
-<hr />
-<h2 id="phase-5-where-i-go-from-here"><strong>Phase 5 – Where I Go From Here</strong></h2>
+<h1 id="javascript-deobfuscation">JavaScript Deobfuscation</h1>
+<p>This page is part of my playbook.<br />
+It’s where I document how I approach obfuscated JavaScript. 
+Whether it’s hiding logic, encoding payloads, 
+or trying to confuse me during a challenge.</p>
+<h2 id="why-this-matters">Why This Matters</h2>
+<p>Obfuscated JavaScript shows up in phishing kits, 
+shady login pages, payload droppers, and even legitimate apps.<br />
+If I can’t read the code, I can’t understand what it’s doing, 
+and that means I can’t exploit it, defend against it, or learn from it.</p>
+<p>This technique helps me:</p>
+<ul>
+<li>Reveal hidden functionality  </li>
+<li>Extract encoded payloads  </li>
+<li>Understand client-side logic  </li>
+<li>Spot malicious behavior  </li>
+</ul>
+<h2 id="my-workflow">My Workflow</h2>
 <ol>
-<li><strong>Make a Distro List</strong>  </li>
 <li>
-<p>Example: Debian, Arch, Void, NixOS, Fedora, Alpine, Gentoo.  </p>
+<p>Locate the JavaScript<br />
+   I inspect the page source or use browser tools to find embedded or linked scripts.</p>
 </li>
 <li>
-<p><strong>Per‑Distro Pages</strong>  </p>
+<p>Identify Obfuscation<br />
+   I look for signs like long single-line code, packed functions, strange variable names, or encoded strings.</p>
 </li>
-<li>What’s the same?  </li>
-<li>What’s different (init system, package manager, filesystem layout, service defaults)?  </li>
-<li>What you can expect when troubleshooting or securing the system.</li>
+<li>
+<p>Beautify the Code<br />
+   I reformat the code to make it readable — usually the first step before deeper analysis.</p>
+</li>
+<li>
+<p>Deobfuscate<br />
+   I use tools or manual tracing to unpack the logic and reveal what the code is actually doing.</p>
+</li>
+<li>
+<p>Analyze the Functionality<br />
+   I walk through the code line by line to understand its behavior and purpose.</p>
+</li>
+<li>
+<p>Replicate the Behavior<br />
+   I use tools to mimic what the script is doing and test server-side responses.</p>
+</li>
+<li>
+<p>Decode the Output<br />
+   I identify and decode any encoded strings — base64, hex, rot13, or custom formats.</p>
+</li>
+<li>
+<p>Reverse Engineer if Needed<br />
+   If the code is custom-obfuscated or encrypted, I manually trace execution flow and rebuild the logic.</p>
+</li>
 </ol>
-<hr />
-<h2 id="closing-note"><strong>Closing Note</strong></h2>
-<p>By separating the <strong>universal Linux startup</strong> from the <strong>distro layer</strong>, I keep one clean mental model for everything the kernel does — and avoid mixing it up with the policies and tools each distro bolts on.<br />
-From firmware to init, the process is surprisingly consistent; after that, it’s all about the choices the distribution makes.</p>
+<h2 id="encoding-techniques-i-watch-for">Encoding Techniques I Watch For</h2>
+<ul>
+<li>
+<p>Base64<br />
+  Often padded with equal signs and uses only alphanumeric characters plus a few symbols.</p>
+</li>
+<li>
+<p>Hex<br />
+  Uses only digits and lowercase letters a to f, often easy to spot in encoded strings.</p>
+</li>
+<li>
+<p>Rot13<br />
+  A simple Caesar cipher that shifts letters by 13 positions, recognizable by patterns.</p>
+</li>
+<li>
+<p>Other<br />
+  Custom encodings or encryption may require manual analysis or external tools to identify.</p>
+</li>
+</ul>
+<h2 id="tools-i-use">Tools I Use</h2>
+<p>This list will evolve as I refine my workflow:</p>
+<ul>
+<li>Browser DevTools  </li>
+<li>JSBeautifier or js-beautify  </li>
+<li>UnPacker  </li>
+<li>CyberChef  </li>
+<li>Node.js  </li>
+<li>curl  </li>
+<li>Cipher Identifier  </li>
+<li>rot13 online tools  </li>
+<li>JStillery (experimental)</li>
+</ul>
+<h2 id="whats-next">What’s Next</h2>
+<p>This page will grow with:</p>
+<ul>
+<li>Annotated examples from challenges  </li>
+<li>Custom obfuscation patterns I’ve seen  </li>
+<li>Scripts and snippets I use to automate parts of the workflow</li>
+</ul>
+<p>Deobfuscation is not just fun. 
+It is important. 
+It’s where I sharpen my ability to read what others try to hide Turning confusion into clarity.</p>
 
 
 
@@ -2263,7 +2247,7 @@ From firmware to init, the process is surprisingly consistent; after that, it’
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../macos/overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+          <a href="../recon/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Recon">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2273,20 +2257,20 @@ From firmware to init, the process is surprisingly consistent; after that, it’
                 Previous
               </span>
               <div class="md-ellipsis">
-                Overview
+                Recon
               </div>
             </div>
           </a>
         
         
           
-          <a href="../cli-magic/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI">
+          <a href="../../../homelab/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                CLI
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">

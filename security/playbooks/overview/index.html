@@ -6,17 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A high-level learning map of the Linux startup process — covering the kernel and common early userspace until distribution-specific layers take over.">
+        <meta name="description" content="Tactical flows for offensive security — from first scan to final foothold.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../../macos/overview/">
-      
-      
-        <link rel="next" href="../cli-magic/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Linux Fundamentals – From Firmware to Userspace - Voidex</title>
+        <title>Playbooks - Voidex</title>
       
     
     
@@ -141,7 +137,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#playbooks" class="md-skip">
           Skip to content
         </a>
       
@@ -175,7 +171,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linux Fundamentals – From Firmware to Userspace
+              Playbooks
             
           </span>
         </div>
@@ -295,13 +291,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../foundations/overview/" class="md-tabs__link">
           
   
   
@@ -321,7 +315,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../security/overview/" class="md-tabs__link">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -503,29 +497,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -538,7 +527,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Foundations
@@ -552,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../../foundations/overview/" class="md-nav__link">
         
   
   
@@ -575,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/" class="md-nav__link">
+      <a href="../../../foundations/networking/" class="md-nav__link">
         
   
   
@@ -639,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../windows/overview/" class="md-nav__link">
+      <a href="../../../foundations/windows/overview/" class="md-nav__link">
         
   
   
@@ -662,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../windows/uefi/" class="md-nav__link">
+      <a href="../../../foundations/windows/uefi/" class="md-nav__link">
         
   
   
@@ -734,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../macos/overview/" class="md-nav__link">
+      <a href="../../../foundations/macos/overview/" class="md-nav__link">
         
   
   
@@ -762,8 +751,6 @@
                 
   
   
-    
-  
   
   
     
@@ -774,11 +761,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -794,7 +781,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Linux
@@ -805,32 +792,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../foundations/linux/overview/" class="md-nav__link">
         
   
   
@@ -841,89 +806,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-1-firmware-bootloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 1 – Firmware &amp; Bootloader
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-2-kernel-initialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 2 – Kernel Initialization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-3-early-userspace-kernel-init-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 3 – Early Userspace (Kernel → Init Process)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-4-distribution-layer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 4 – Distribution Layer
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-5-where-i-go-from-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 5 – Where I Go From Here
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#closing-note" class="md-nav__link">
-    <span class="md-ellipsis">
-      Closing Note
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -936,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cli-magic/" class="md-nav__link">
+      <a href="../../../foundations/linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -959,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../system-internals/" class="md-nav__link">
+      <a href="../../../foundations/linux/system-internals/" class="md-nav__link">
         
   
   
@@ -1038,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
@@ -1061,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/fundamentals/" class="md-nav__link">
+      <a href="../../fundamentals/" class="md-nav__link">
         
   
   
@@ -1125,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../../toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -1148,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/toolbelt/nmap/" class="md-nav__link">
+      <a href="../../toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -1220,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../../toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -1243,7 +1125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/playbooks/recon/" class="md-nav__link">
+      <a href="../recon/" class="md-nav__link">
         
   
   
@@ -1266,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/playbooks/js-deobfuscation/" class="md-nav__link">
+      <a href="../js-deobfuscation/" class="md-nav__link">
         
   
   
@@ -2073,63 +1955,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#what-belongs-here" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      What belongs here
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#phase-1-firmware-bootloader" class="md-nav__link">
+  <a href="#why-this-matters" class="md-nav__link">
     <span class="md-ellipsis">
-      Phase 1 – Firmware &amp; Bootloader
+      Why this matters
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#phase-2-kernel-initialization" class="md-nav__link">
+  <a href="#how-ill-use-this-space" class="md-nav__link">
     <span class="md-ellipsis">
-      Phase 2 – Kernel Initialization
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-3-early-userspace-kernel-init-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 3 – Early Userspace (Kernel → Init Process)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-4-distribution-layer" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 4 – Distribution Layer
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phase-5-where-i-go-from-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      Phase 5 – Where I Go From Here
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#closing-note" class="md-nav__link">
-    <span class="md-ellipsis">
-      Closing Note
+      How I’ll use this space
     </span>
   </a>
   
@@ -2151,80 +1997,43 @@
 
 
 
-<h1 id="overview"><strong>Overview</strong></h1>
-<h2 id="introduction"><strong>Introduction</strong></h2>
-<p>This is not a distro war or a kernel hacker’s whitepaper.<br />
-It’s my <strong>learning map</strong> — an outline of how Linux comes alive, from firmware to the point where distributions layer on their own systems.</p>
-<p>Each phase is in broad strokes: concise enough to fit in my head, but ready to be expanded when I dive deeper.<br />
-This is my navigation aid when troubleshooting, my checklist when something breaks, and my reminder that while the word “Linux” often means “a whole OS,” the kernel is just one — very important — piece.</p>
-<hr />
-<h2 id="phase-1-firmware-bootloader"><strong>Phase 1 – Firmware &amp; Bootloader</strong></h2>
-<p><strong>Firmware (BIOS/UEFI)</strong><br />
-- Runs POST, initializes hardware, and finds the bootloader.<br />
-- On UEFI systems, reads EFI System Partition to locate bootloader <code>.efi</code> file.  </p>
-<p><strong>Secure Boot (optional)</strong><br />
-- Verifies bootloader signatures before handing off control (varies by distro config).</p>
-<p><strong>Bootloader</strong><br />
-- Common: GRUB, systemd‑boot, LILO (rare now).<br />
-- Presents boot menu, chooses kernel/initramfs, passes kernel parameters.<br />
-- Loads Linux kernel and initial RAM disk (initrd/initramfs) into memory.</p>
-<hr />
-<h2 id="phase-2-kernel-initialization"><strong>Phase 2 – Kernel Initialization</strong></h2>
-<p><strong>Decompression &amp; Start</strong><br />
-- Kernel binary unpacks itself into memory and begins executing <code>start_kernel()</code>.</p>
-<p><strong>Hardware Detection &amp; Drivers</strong><br />
-- Initializes CPU, memory, timers.<br />
-- Detects buses (PCI, USB, etc.) and loads built‑in or initramfs‑supplied drivers.</p>
-<p><strong>Mount root (temporary)</strong><br />
-- Mounts initramfs as the initial root filesystem.<br />
-- Provides space for early userspace tools before the “real” root is mounted.</p>
-<p><strong>Initramfs Tasks</strong><br />
-- Loads extra drivers/modules needed to access the real root filesystem.<br />
-- Sets up device nodes via <code>udev</code> or a minimal equivalent.<br />
-- Handles disk decryption (LUKS), RAID assembly, or filesystem checks if needed.</p>
-<p><strong>Switch Root</strong><br />
-- Mounts the actual root filesystem and pivots away from the initramfs.</p>
-<hr />
-<h2 id="phase-3-early-userspace-kernel-init-process"><strong>Phase 3 – Early Userspace (Kernel → Init Process)</strong></h2>
-<p><strong>Init Process Start</strong><br />
-- Kernel executes the first process (<code>/sbin/init</code> by default).<br />
-- Can be <code>systemd</code>, <code>SysV init</code>, <code>OpenRC</code>, <code>runit</code>, <code>s6</code>, etc., depending on the distro.</p>
-<p><strong>Responsibilities here</strong><br />
-- Mount essential pseudo‑filesystems: <code>/proc</code>, <code>/sys</code>, <code>/dev</code>.<br />
-- Start early daemons required for the system to function.<br />
-- Configure basic networking (if set to start this early).</p>
-<hr />
-<h2 id="phase-4-distribution-layer"><strong>Phase 4 – Distribution Layer</strong></h2>
-<p>From here, the <strong>shared “Linux” story</strong> branches into <strong>distro‑specific policy</strong>:</p>
-<p><strong>Init System &amp; Service Management</strong><br />
-- <code>systemd</code> (Debian, Fedora, Arch, etc.)<br />
-- <code>OpenRC</code> (Gentoo, Alpine)<br />
-- <code>runit</code> (Void Linux)<br />
-- <code>s6</code> (specialized/minimalist setups)  </p>
-<p><strong>What the Distro Adds on Top</strong><br />
-- Default services, daemons, and configuration defaults.<br />
-- Package manager (APT, DNF, pacman, apk, nix, etc.).<br />
-- Userland tools and shells (Bash, Zsh, dash).<br />
-- Graphical stack: X11, Wayland, desktop environments (GNOME, KDE, etc.) or minimal WM.</p>
-<p>This is the point where two systems both “running Linux” can behave very differently.</p>
-<hr />
-<h2 id="phase-5-where-i-go-from-here"><strong>Phase 5 – Where I Go From Here</strong></h2>
-<ol>
-<li><strong>Make a Distro List</strong>  </li>
+<h1 id="playbooks">Playbooks</h1>
+<p>This is where I document the flows — not just the tools, but the thinking behind them.<br />
+Each playbook is a repeatable method I’ve tested, broken, and rebuilt.<br />
+They’re not static recipes. They’re living tactics.</p>
+<h2 id="what-belongs-here">What belongs here</h2>
+<ul>
 <li>
-<p>Example: Debian, Arch, Void, NixOS, Fedora, Alpine, Gentoo.  </p>
+<p><a href="/security/playbooks/recon/">Recon</a><br />
+  How I scan, fingerprint, and map a target — quietly or loudly.</p>
 </li>
 <li>
-<p><strong>Per‑Distro Pages</strong>  </p>
+<p>Enumeration<br />
+  Digging deeper: services, users, directories, and misconfigurations.</p>
 </li>
-<li>What’s the same?  </li>
-<li>What’s different (init system, package manager, filesystem layout, service defaults)?  </li>
-<li>What you can expect when troubleshooting or securing the system.</li>
-</ol>
-<hr />
-<h2 id="closing-note"><strong>Closing Note</strong></h2>
-<p>By separating the <strong>universal Linux startup</strong> from the <strong>distro layer</strong>, I keep one clean mental model for everything the kernel does — and avoid mixing it up with the policies and tools each distro bolts on.<br />
-From firmware to init, the process is surprisingly consistent; after that, it’s all about the choices the distribution makes.</p>
+<li>
+<p>Exploitation<br />
+  Turning a weakness into access — with or without a known CVE.</p>
+</li>
+<li>
+<p>Post-Exploitation<br />
+  What I do once inside: persistence, pivoting, data extraction.</p>
+</li>
+<li>
+<p>Obstacle Handling<br />
+  What shuts me down — and how I adapt when it does.</p>
+</li>
+</ul>
+<h2 id="why-this-matters">Why this matters</h2>
+<p>Tools change. Targets change.<br />
+But the flow — the way I approach a problem — is what I train.</p>
+<p>Each playbook is a snapshot of how I think through a challenge.<br />
+It’s where I sharpen my instincts and document the paths I’ve walked.</p>
+<h2 id="how-ill-use-this-space">How I’ll use this space</h2>
+<p>Some playbooks will be polished — step-by-step guides with diagrams and notes.<br />
+Others will be raw — half-finished ideas, failed attempts, and lessons learned.</p>
+<p>That mix is intentional.<br />
+This isn’t a trophy case. It’s a training ground.</p>
 
 
 
@@ -2258,44 +2067,6 @@ From firmware to init, the process is surprisingly consistent; after that, it’
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../../macos/overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Overview
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../cli-magic/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                CLI
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
