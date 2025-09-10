@@ -83,6 +83,7 @@ nav:
         - Nmap: security/toolbelt/nmap.md
     - Playbooks:
         - Recon: security/playbooks/recon.md
+        - JS Deobfuscation: security/playbooks/js-deobfuscation.md
   - Homelab:
     - Overview: homelab/overview.md
     - Proxmox: homelab/proxmox.md

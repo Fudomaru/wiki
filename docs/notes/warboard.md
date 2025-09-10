@@ -17,7 +17,11 @@ description: List of my planes for furtur write ups and general project ideas.
     Tasks that I am currently working on.
 
 - Working though OWT Natas and documenting it.
-- Building an Overview page for the Offensive Cybersecurtiy tools I want to learn
+- Building an Overview page for the Cybersecurtiy tools 
+- Building an Overview page for the Playbook Section
+- DeepDive Page for searchsploit
+- DeepDive Page for Metasploit
+- DeepDive Page for Netcat
 
 ---
 ## STAGING ZONE
@@ -26,8 +30,9 @@ description: List of my planes for furtur write ups and general project ideas.
     The stuff I am activly thinking on how to put them in.  
 
 - Write secontion on setuid, openssl, permissions in linux
-- Writing the generall CyberSec tools section 
 - Explaining where I stand in my Nvim Journy
+- Building CAIDO Overview page
+- Building PEASS Overview page
 
 ---
 ## STRATEGIC BACKLOG
@@ -39,13 +44,19 @@ description: List of my planes for furtur write ups and general project ideas.
 - Getting picture documentation to work
 - List of file formats and what it means and you can do with it. 
 - Working on building some Visual Charts
+- Talking a loot at OWASP Juice Shop, etc. 
+- Work on underthewire.tech for the Windows version of Overthewire
 
 ---
 ## COMPLETED STRIKES
 ??? info
     Trying to keep a brief history and show of what the newes pages are.  
 
+- Overview for the Networking Section (2025-09)
+- DeepDive Page for UEFI (2025-09)
+- DeepDive Page for nmap (2025-09)
 - Working though the learning material of the CCNA (2025-09)
+- Building out a Page for my Homelab Components (2025-08)
 - Making an Overview of the different Sections (2025-08)
 - Creating an Overview of the Startup process of the main operating systems (2025-08)
 - Restructure considering my current knowledge (2025-08)
