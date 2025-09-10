@@ -17,9 +17,6 @@ description: List of my planes for furtur write ups and general project ideas.
     Tasks that I am currently working on.
 
 - Working though OWT Natas and documenting it.
-- Building an Overview page for the Cybersecurtiy tools 
-- Building an Overview page for the Playbook Section
-- DeepDive Page for searchsploit
 - DeepDive Page for Metasploit
 - DeepDive Page for Netcat
 
@@ -52,6 +49,9 @@ description: List of my planes for furtur write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newes pages are.  
 
+- Building an Overview page for the Cybersecurtiy tools (2025-09)
+- Building an Overview page for the Playbook Section (2025-09)
+- DeepDive Page for searchsploit (2025-09)
 - JS Deobfuscation page added to playbooks (2025-09)
 - Overview for the Networking Section (2025-09)
 - DeepDive Page for UEFI (2025-09)

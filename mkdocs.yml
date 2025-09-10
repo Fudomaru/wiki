@@ -82,6 +82,7 @@ nav:
     - Toolbelt:
         - Overview: security/toolbelt/overview.md
         - Nmap: security/toolbelt/nmap.md
+        - Searchsploit: security/toolbelt/searchsploit.md
     - Playbooks:
         - Overview: security/toolbelt/overview.md
         - Recon: security/playbooks/recon.md
