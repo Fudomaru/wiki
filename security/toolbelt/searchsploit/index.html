@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="My challenge log and learning path through TryHackMe — where I practice, document, and sharpen my reporting.">
+        <meta name="description" content="Deep dive into SearchSploit — how it works, what it searches, and how I use it to find public exploits.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../../htb/">
+        <link rel="prev" href="../nmap/">
       
       
-        <link rel="next" href="../billing/">
+        <link rel="next" href="../overview/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>TryHackMe Overview - Voidex</title>
+        <title>SearchSploit - Voidex</title>
       
     
     
@@ -141,7 +141,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tryhackme-overview" class="md-skip">
+        <a href="#searchsploit" class="md-skip">
           Skip to content
         </a>
       
@@ -175,7 +175,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TryHackMe Overview
+              SearchSploit
             
           </span>
         </div>
@@ -315,11 +315,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../security/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -355,13 +357,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../challenges/overview/" class="md-tabs__link">
           
   
   
@@ -882,24 +882,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -912,7 +917,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Security
@@ -926,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
@@ -949,7 +954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/fundamentals/" class="md-nav__link">
+      <a href="../../fundamentals/" class="md-nav__link">
         
   
   
@@ -969,6 +974,8 @@
                 
   
   
+    
+  
   
   
     
@@ -979,11 +986,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -999,7 +1006,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             Toolbelt
@@ -1013,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -1036,7 +1043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/toolbelt/nmap/" class="md-nav__link">
+      <a href="../nmap/" class="md-nav__link">
         
   
   
@@ -1056,10 +1063,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../security/toolbelt/searchsploit/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Searchsploit
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1070,6 +1099,107 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      What It Does
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-searches" class="md-nav__link">
+    <span class="md-ellipsis">
+      What It Searches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-i-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      How I Use It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What’s Next
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1131,7 +1261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -1154,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/playbooks/recon/" class="md-nav__link">
+      <a href="../../playbooks/recon/" class="md-nav__link">
         
   
   
@@ -1177,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../security/playbooks/js-deobfuscation/" class="md-nav__link">
+      <a href="../../playbooks/js-deobfuscation/" class="md-nav__link">
         
   
   
@@ -1375,29 +1505,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1410,7 +1535,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Challenges
@@ -1424,7 +1549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../../challenges/overview/" class="md-nav__link">
         
   
   
@@ -1488,7 +1613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overthewire/bandit/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -1511,7 +1636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overthewire/natas/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/natas/" class="md-nav__link">
         
   
   
@@ -1542,7 +1667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../htb/" class="md-nav__link">
+      <a href="../../../challenges/htb/" class="md-nav__link">
         
   
   
@@ -1562,8 +1687,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1574,11 +1697,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
           <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
@@ -1594,7 +1717,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             THM
@@ -1605,32 +1728,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../challenges/thm/overview/" class="md-nav__link">
         
   
   
@@ -1641,62 +1742,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-tryhackme" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why TryHackMe?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#learning-path-progress" class="md-nav__link">
-    <span class="md-ellipsis">
-      Learning Path Progress
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documented-rooms" class="md-nav__link">
-    <span class="md-ellipsis">
-      Documented Rooms
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reporting-practice" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reporting Practice
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1709,7 +1754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../billing/" class="md-nav__link">
+      <a href="../../../challenges/thm/billing/" class="md-nav__link">
         
   
   
@@ -2069,36 +2114,81 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-tryhackme" class="md-nav__link">
+  <a href="#what-it-does" class="md-nav__link">
     <span class="md-ellipsis">
-      Why TryHackMe?
+      What It Does
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#learning-path-progress" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
-      Learning Path Progress
+      How It Works
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#documented-rooms" class="md-nav__link">
+  <a href="#what-it-searches" class="md-nav__link">
     <span class="md-ellipsis">
-      Documented Rooms
+      What It Searches
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reporting-practice" class="md-nav__link">
+  <a href="#key-features" class="md-nav__link">
     <span class="md-ellipsis">
-      Reporting Practice
+      Key Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Commands
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-i-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      How I Use It
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      What’s Next
     </span>
   </a>
   
@@ -2120,57 +2210,93 @@
 
 
 
-<h1 id="tryhackme-overview">TryHackMe Overview</h1>
-<p>This page tracks my hands-on work with TryHackMe.<br />
-It’s part of my challenge archive — where I test skills, reinforce fundamentals, and practice documenting like a pentester.</p>
-<h2 id="why-tryhackme">Why TryHackMe?</h2>
-<p>TryHackMe offers structured learning paths and guided labs that complement my work on Hack The Box.<br />
-I use it to:</p>
+<h1 id="searchsploit">SearchSploit</h1>
+<p>SearchSploit is my go-to tool for quickly finding public exploits and shellcodes.<br />
+It’s fast, offline, and built for terminal use, 
+so it is perfect for air-gapped environments or fast triage during recon.</p>
+<h2 id="what-it-does">What It Does</h2>
+<p>SearchSploit lets me search the Exploit Database (Exploit-DB) from the command line.<br />
+It matches software names, versions, and CVE identifiers to known exploits and shellcodes.</p>
+<p>It’s part of the <code>exploitdb</code> package maintained by Offensive Security, 
+and it mirrors the content of <a href="https://www.exploit-db.com">Exploit-DB</a> locally.</p>
+<h2 id="how-it-works">How It Works</h2>
+<p>SearchSploit uses a local copy of the Exploit-DB repository.<br />
+This includes:</p>
 <ul>
-<li>Build foundational knowledge in a controlled environment</li>
-<li>Practice reporting and write-ups in a professional format</li>
-<li>Explore modules that fill gaps in my understanding</li>
+<li>Exploit scripts and shellcode samples  </li>
+<li>Metadata for each entry (title, platform, type, path)  </li>
+<li>Optional papers if configured</li>
 </ul>
-<h2 id="learning-path-progress">Learning Path Progress</h2>
-<p>I’m currently working through:</p>
+<p>The tool parses a CSV index file (<code>files.csv</code>) that maps each exploit to its metadata.<br />
+When I run a search, it filters this index using grep-like logic and returns matching entries.</p>
+<h2 id="what-it-searches">What It Searches</h2>
+<ul>
+<li>Software names and versions  </li>
+<li>CVE identifiers  </li>
+<li>Exploit titles and descriptions  </li>
+<li>File paths and categories</li>
+</ul>
+<p>It does <strong>not</strong> search the Google Hacking Database (GHDB), 
+but it can include security papers if I install the <code>exploitdb-papers</code> package.</p>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li>Offline search so no internet needed once the DB is cloned  </li>
+<li>Fast filtering with grep-style syntax  </li>
+<li>CVE-based lookup  </li>
+<li>Ability to mirror or open exploit files  </li>
+<li>JSON output for scripting and automation</li>
+</ul>
+<h2 id="common-commands">Common Commands</h2>
 <ul>
 <li>
-<p><strong>Pre-Security</strong><br />
-  Basic networking, Linux, and web concepts — good for grounding.</p>
+<p><code>searchsploit &lt;term&gt;</code><br />
+  Basic search by keyword</p>
 </li>
 <li>
-<p><strong>Complete Beginner</strong><br />
-  Enumeration, privilege escalation, and basic exploitation.</p>
+<p><code>searchsploit --cve &lt;CVE-ID&gt;</code><br />
+  Search by CVE identifier</p>
 </li>
 <li>
-<p><strong>Jr Penetration Tester</strong><br />
-  More realistic labs, including Active Directory, web attacks, and reporting.</p>
+<p><code>searchsploit -x &lt;path&gt;</code><br />
+  View the exploit code directly</p>
+</li>
+<li>
+<p><code>searchsploit -m &lt;path&gt;</code><br />
+  Mirror the exploit to my working directory</p>
+</li>
+<li>
+<p><code>searchsploit -u</code><br />
+  Update the local database</p>
 </li>
 </ul>
-<p>Each module I complete will be linked below if I write it up.</p>
-<h2 id="documented-rooms">Documented Rooms</h2>
+<h2 id="installation">Installation</h2>
+<p>On Kali Linux, it’s pre-installed with the <code>exploitdb</code> package.<br />
+On other systems, I clone the Git repository:</p>
 <ul>
-<li>
-<p><a href="/challenges/thm/room-name.md">Room Name</a><br />
-  Summary of the challenge, tools used, and key takeaways.</p>
-</li>
-<li>
-<p><a href="/challenges/thm/another-room.md">Another Room</a><br />
-  Focused on privilege escalation and enumeration techniques.</p>
-</li>
+<li>Exploit scripts: <code>https://gitlab.com/exploit-database/exploitdb.git</code>  </li>
+<li>Binary exploits: <code>https://gitlab.com/exploit-database/exploitdb-bin-sploits.git</code>  </li>
+<li>Optional papers: <code>https://gitlab.com/exploit-database/exploitdb-papers.git</code></li>
 </ul>
-<h2 id="reporting-practice">Reporting Practice</h2>
-<p>Each write-up is structured like a mini pentest report:</p>
+<p>I make sure the <code>searchsploit</code> script is in my <code>$PATH</code>, and I run <code>searchsploit -u</code> to keep the index fresh.</p>
+<h2 id="how-i-use-it">How I Use It</h2>
+<p>SearchSploit is part of my recon and triage workflow.<br />
+When I identify a service or software version, I run a quick search to see if there’s a known exploit.<br />
+If I find something promising, I mirror the exploit and review the code manually.</p>
+<p>It’s also useful for building awareness — seeing what kinds of vulnerabilities exist for common platforms.</p>
+<h2 id="limitations">Limitations</h2>
 <ul>
-<li><strong>Summary</strong> — What the room covers and what I learned</li>
-<li><strong>Enumeration</strong> — Tools used and initial findings</li>
-<li><strong>Exploitation</strong> — Steps taken to gain access</li>
-<li><strong>Post-Exploitation</strong> — Flags captured, persistence, cleanup</li>
-<li><strong>Reflection</strong> — What I’d do differently, what I want to learn next</li>
+<li>It doesn’t verify exploit reliability — I have to test manually  </li>
+<li>Some entries link to external binaries not included by default  </li>
+<li>It’s only as current as my last update — I run <code>searchsploit -u</code> regularly</li>
 </ul>
-<hr />
-<p>This page is a log of my practice — not just what I solved, but how I think through problems.<br />
-It’s also where I sharpen my documentation skills, one room at a time.</p>
+<h2 id="whats-next">What’s Next</h2>
+<p>This page will grow with:</p>
+<ul>
+<li>Notes on exploit categories and naming conventions  </li>
+<li>Examples of how I use SearchSploit in real challenges  </li>
+<li>Scripts to automate CVE lookups and exploit mirroring</li>
+</ul>
+<p>This is one of the tools in my belt — fast, focused, and always ready to help me find the cracks.</p>
 
 
 
@@ -2209,7 +2335,7 @@ It’s also where I sharpen my documentation skills, one room at a time.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../htb/" class="md-footer__link md-footer__link--prev" aria-label="Previous: HTB">
+          <a href="../nmap/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Nmap">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2219,20 +2345,20 @@ It’s also where I sharpen my documentation skills, one room at a time.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                HTB
+                Nmap
               </div>
             </div>
           </a>
         
         
           
-          <a href="../billing/" class="md-footer__link md-footer__link--next" aria-label="Next: Billing">
+          <a href="../overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Billing
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
