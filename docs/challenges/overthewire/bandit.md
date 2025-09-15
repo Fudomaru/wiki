@@ -465,7 +465,7 @@ chmod
 Same trick new rules.  
 This was really fun for me because I really had to think about what permissions really mean and on how many levels they work.  
 I found the script that was run by cron every minute at the same place as the last.  
-It is pretty much to excecute everything in a specific folder and afterwards delete everything in that folder.  
+It is pretty much to execute everything in a specific folder and afterwards delete everything in that folder.  
 But one small problem for me. The scripts only runs if the executable is owned my Bandit23.  
 Shouldn't be hard since that is where I already am. But still a bit eye opening for me.  
 The permissions of access is determined by the one that executes, even if the owner of the script is someone else.  
@@ -478,7 +478,7 @@ Should work like a charm.
 I checked the permissions, and the ownership and made sure everything is correct with chmod.  
 After moving it into the write folder, I was waiting for cron to run to get the password.  
 It never happened.  
-Then it tool quite a while for me to figure out, that Bandit24 didn't have permission to write into my temp folder, so as soon as I changed that, everything worked.  
+Then it took quite a while for me to figure out, that Bandit24 didn't have permission to write into my temp folder, so as soon as I changed that, everything worked.  
 
 <!--
 gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
@@ -487,7 +487,7 @@ gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
 ## Level 24 → Level 25
 
 #### My Solutions  
-For this I could either try ever 10000 possiblities by hand, or I had to come up with a script.  
+For this I could either try all 10.000 possiblities by hand, or I had to come up with a script.  
 So the script it was:  
 ```
 #!/bin/bash
@@ -507,8 +507,8 @@ iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
 ## Level 25 → Level 26
 
 #### My Solutions  
-So I guess this one I can easily just scip. You get a SSL Key for level 26.  
-That is why it wasnt ever important for me not have the normal shell.  
+So I guess this one I can easily just skip. You get a SSL Key for level 26.  
+That is why it wasnt ever important for me not having a normal shell.  
 I just grabbed the key to the next level and was out of there.    
 
 <!--
@@ -522,15 +522,15 @@ s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
 #### My Solutions  
 Small Window to get `more`.
 Use V to get into vim.  
-Use `:term shell` to normally get a shell in the top half of the termanl.  
+Use `:term shell` to normally get a shell in the top half of the terminal.  
 
-With that you can get a shell and take what you need, like the password for bandait26 just to be sure to have it.  
+With that you can get a shell and take what you need, like the password for bandat26 just to be sure to have it.  
 It is saved in the same spot all the other passwords are saved, and can just be read out:  
 `cat /ect/bandit_pass/bandit26`  
 ---  
 But that isn't it.  
 You also have to get to bandit27 from here, or get the password somehow.  
-Luckely the solution for that came from [Bandit19](#level-19-level-20).  
+Luckily the solution for that came from [Bandit19](#level-19-level-20).  
 
 <!--
 upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
@@ -558,14 +558,14 @@ Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
 #### My Solutions  
 The description for this level was the same as the last one.  
 So I went the same way and cloned the repo, and looked at the readme file.  
-It desplayed the the credentials of Bandit29, but the password was **xxxxxxxx**.  
+It displayed the credentials of Bandit29, but the password was **xxxxxxxx**.  
 Since I know git is a version control, I thought that is probably *the* feature for me to learn about.  
 So I looked at the perviouse commits with:  
 `git log`  
 And in one of them I found the comment **fix info leak** and in the one before it read **add missing data**.  
 So of course I needed to look at the **add missing data** commit just to see what that meant.  
 `git checkout <commit-hash>`  
-That reverted me back to the version befor the info leak fixing.  
+That reverted me back to the version before the info leak fixing.  
 And now it was just a matter of looking at the readme file, and copying the password.  
 
 <!--
@@ -575,20 +575,20 @@ And now it was just a matter of looking at the readme file, and copying the pass
 ## Level 29 → Level 30
 
 #### My Solutions  
-Same stepps as in the last two levels. But no results.  
+Same steps as in the last two levels. But no results.  
 So I looked at the different branches.  
 `git branch -r`  
-There were severeal branches, but the one that imidiatly took my interest was *origin/sploits-dev*.  
+There were several branches, but the one that immediatly took my interest was *origin/sploits-dev*.  
 So I got to work.  
 `git pull origin sploits-dev`  
 Pulled the branch I wanted to take a look at.  
 `cat exploits/horde5.md`  
 Let me see what is in there.  
-But there wasn't anything in there. So I took a look at the previouse versions.  
+But there wasn't anything in there. So I took a look at the previous versions.  
 There had to be something, but after reading the comment **add some silly exploit, just for shit and giggles** I knew.  
 They played with me.  
 So I went back to look at the other branches.  
-I saw the branch origion/dev and thought to myself:  
+I saw the branch origin/dev and thought to myself:  
 Since the readme file said for password **not in Production** that would be a strong hint, that maybe the dev branch already has something.  
 So I want to the dev branch and looked at the readme file, and found the password.  
 `git fetch origin dev`  
@@ -663,5 +663,5 @@ tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0
 ---
 
 
-!!! example "Conclution"
-    With this I got though all of the bandit levels. I think it is an awesome experiance, a lot of fun, and you can learn a lot of the basic commands and structure of a Linux system. Also you get used to the idea of not knowing something, and figuring it out on you own. 
+!!! example "Conclusion"
+    With this I got though all of the bandit levels. I think it is an awesome experience, a lot of fun, and you can learn a lot of the basic commands and structure of a Linux system. Also you get used to the idea of not knowing something, and figuring it out on your own. 
