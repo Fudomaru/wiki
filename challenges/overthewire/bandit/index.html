@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
@@ -37,63 +37,39 @@
   
   
     
-      
-      
     
   
     
-      
-      
     
   
     
-      
-      
     
   
     
-      
-      
     
   
     
-      
-      
     
   
     
-      
-      
     
   
     
-      
-      
     
   
     
-      
-      
     
   
     
-      
-      
     
   
     
-      
-      
     
   
     
-      
-      
     
   
     
-      
-      
     
   
   
@@ -4409,7 +4385,7 @@ This file I could just cat to see the next flag.  </p>
 <p>Same trick new rules.<br />
 This was really fun for me because I really had to think about what permissions really mean and on how many levels they work.<br />
 I found the script that was run by cron every minute at the same place as the last.<br />
-It is pretty much to excecute everything in a specific folder and afterwards delete everything in that folder.<br />
+It is pretty much to execute everything in a specific folder and afterwards delete everything in that folder.<br />
 But one small problem for me. The scripts only runs if the executable is owned my Bandit23.<br />
 Shouldn't be hard since that is where I already am. But still a bit eye opening for me.<br />
 The permissions of access is determined by the one that executes, even if the owner of the script is someone else.<br />
@@ -4421,14 +4397,14 @@ Should work like a charm.<br />
 I checked the permissions, and the ownership and made sure everything is correct with chmod.<br />
 After moving it into the write folder, I was waiting for cron to run to get the password.<br />
 It never happened.<br />
-Then it tool quite a while for me to figure out, that Bandit24 didn't have permission to write into my temp folder, so as soon as I changed that, everything worked.  </p>
+Then it took quite a while for me to figure out, that Bandit24 didn't have permission to write into my temp folder, so as soon as I changed that, everything worked.  </p>
 <!--
 gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
 -->
 
 <h2 id="level-24-level-25">Level 24 → Level 25</h2>
 <h4 id="my-solutions_24">My Solutions</h4>
-<p>For this I could either try ever 10000 possiblities by hand, or I had to come up with a script.<br />
+<p>For this I could either try all 10.000 possiblities by hand, or I had to come up with a script.<br />
 So the script it was:<br />
 <div class="highlight"><pre><span></span><code>#!/bin/bash
 
@@ -4445,8 +4421,8 @@ iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
 
 <h2 id="level-25-level-26">Level 25 → Level 26</h2>
 <h4 id="my-solutions_25">My Solutions</h4>
-<p>So I guess this one I can easily just scip. You get a SSL Key for level 26.<br />
-That is why it wasnt ever important for me not have the normal shell.<br />
+<p>So I guess this one I can easily just skip. You get a SSL Key for level 26.<br />
+That is why it wasnt ever important for me not having a normal shell.<br />
 I just grabbed the key to the next level and was out of there.    </p>
 <!--
 s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
@@ -4457,14 +4433,14 @@ s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
 <h4 id="my-solutions_26">My Solutions</h4>
 <p>Small Window to get <code>more</code>.
 Use V to get into vim.<br />
-Use <code>:term shell</code> to normally get a shell in the top half of the termanl.  </p>
-<p>With that you can get a shell and take what you need, like the password for bandait26 just to be sure to have it.<br />
+Use <code>:term shell</code> to normally get a shell in the top half of the terminal.  </p>
+<p>With that you can get a shell and take what you need, like the password for bandat26 just to be sure to have it.<br />
 It is saved in the same spot all the other passwords are saved, and can just be read out:<br />
 <code>cat /ect/bandit_pass/bandit26</code>  </p>
 <hr />
 <p>But that isn't it.<br />
 You also have to get to bandit27 from here, or get the password somehow.<br />
-Luckely the solution for that came from <a href="#level-19-level-20">Bandit19</a>.  </p>
+Luckily the solution for that came from <a href="#level-19-level-20">Bandit19</a>.  </p>
 <!--
 upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
 -->
@@ -4487,14 +4463,14 @@ Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
 <h4 id="my-solutions_28">My Solutions</h4>
 <p>The description for this level was the same as the last one.<br />
 So I went the same way and cloned the repo, and looked at the readme file.<br />
-It desplayed the the credentials of Bandit29, but the password was <strong>xxxxxxxx</strong>.<br />
+It displayed the credentials of Bandit29, but the password was <strong>xxxxxxxx</strong>.<br />
 Since I know git is a version control, I thought that is probably <em>the</em> feature for me to learn about.<br />
 So I looked at the perviouse commits with:<br />
 <code>git log</code><br />
 And in one of them I found the comment <strong>fix info leak</strong> and in the one before it read <strong>add missing data</strong>.<br />
 So of course I needed to look at the <strong>add missing data</strong> commit just to see what that meant.<br />
 <code>git checkout &lt;commit-hash&gt;</code><br />
-That reverted me back to the version befor the info leak fixing.<br />
+That reverted me back to the version before the info leak fixing.<br />
 And now it was just a matter of looking at the readme file, and copying the password.  </p>
 <!--
 4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7
@@ -4502,20 +4478,20 @@ And now it was just a matter of looking at the readme file, and copying the pass
 
 <h2 id="level-29-level-30">Level 29 → Level 30</h2>
 <h4 id="my-solutions_29">My Solutions</h4>
-<p>Same stepps as in the last two levels. But no results.<br />
+<p>Same steps as in the last two levels. But no results.<br />
 So I looked at the different branches.<br />
 <code>git branch -r</code><br />
-There were severeal branches, but the one that imidiatly took my interest was <em>origin/sploits-dev</em>.<br />
+There were several branches, but the one that immediatly took my interest was <em>origin/sploits-dev</em>.<br />
 So I got to work.<br />
 <code>git pull origin sploits-dev</code><br />
 Pulled the branch I wanted to take a look at.<br />
 <code>cat exploits/horde5.md</code><br />
 Let me see what is in there.<br />
-But there wasn't anything in there. So I took a look at the previouse versions.<br />
+But there wasn't anything in there. So I took a look at the previous versions.<br />
 There had to be something, but after reading the comment <strong>add some silly exploit, just for shit and giggles</strong> I knew.<br />
 They played with me.<br />
 So I went back to look at the other branches.<br />
-I saw the branch origion/dev and thought to myself:<br />
+I saw the branch origin/dev and thought to myself:<br />
 Since the readme file said for password <strong>not in Production</strong> that would be a strong hint, that maybe the dev branch already has something.<br />
 So I want to the dev branch and looked at the readme file, and found the password.<br />
 <code>git fetch origin dev</code><br />
@@ -4580,8 +4556,8 @@ tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0
 
 <hr />
 <div class="admonition example">
-<p class="admonition-title">Conclution</p>
-<p>With this I got though all of the bandit levels. I think it is an awesome experiance, a lot of fun, and you can learn a lot of the basic commands and structure of a Linux system. Also you get used to the idea of not knowing something, and figuring it out on you own. </p>
+<p class="admonition-title">Conclusion</p>
+<p>With this I got though all of the bandit levels. I think it is an awesome experience, a lot of fun, and you can learn a lot of the basic commands and structure of a Linux system. Also you get used to the idea of not knowing something, and figuring it out on your own. </p>
 </div>
 
 
@@ -4663,8 +4639,7 @@ tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0
   
 </div>
       
-        
-<div class="md-social">
+        <div class="md-social">
   
     
     
@@ -4693,10 +4668,10 @@ tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
       
     
   </body>
