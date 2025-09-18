@@ -49,6 +49,7 @@ description: List of my planes for furtur write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newes pages are.  
 
+- Building a CLI Overview for Windows Systems (2025-09)
 - Building an Overview page for the Cybersecurtiy tools (2025-09)
 - Building an Overview page for the Playbook Section (2025-09)
 - DeepDive Page for searchsploit (2025-09)

@@ -70,6 +70,7 @@ nav:
     - Windows:
       - Overview: foundations/windows/overview.md
       - UEFI: foundations/windows/uefi.md
+      - CLI: foundations/windows/cli-magic.md
     - MacOS: 
       - Overview: foundations/macos/overview.md
     - Linux:
