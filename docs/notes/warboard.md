@@ -26,6 +26,7 @@ description: List of my planes for furtur write ups and general project ideas.
     Mental RAM.  
     The stuff I am activly thinking on how to put them in.  
 
+- Doing a DeepDive with practice of `schtaks`
 - Write secontion on setuid, openssl, permissions in linux
 - Explaining where I stand in my Nvim Journy
 - Building CAIDO Overview page
