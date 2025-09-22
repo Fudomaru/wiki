@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Common linux CLI, what they do and how to use them.">
+        <meta name="description" content="This is a page to garther all the most used windows cli tools to know in windows.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../overview/">
+        <link rel="prev" href="../uefi/">
       
       
-        <link rel="next" href="../system-internals/">
+        <link rel="next" href="../../macos/overview/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Linux CLI - Voidex</title>
+        <title>Windows CLI Magic - Voidex</title>
       
     
     
@@ -141,7 +141,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cli-magic" class="md-skip">
+        <a href="#windows-cli-magic" class="md-skip">
           Skip to content
         </a>
       
@@ -175,7 +175,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Linux CLI
+              Windows CLI Magic
             
           </span>
         </div>
@@ -595,6 +595,8 @@
                 
   
   
+    
+  
   
   
     
@@ -605,11 +607,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -625,7 +627,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Windows
@@ -639,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../windows/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -662,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../windows/uefi/" class="md-nav__link">
+      <a href="../uefi/" class="md-nav__link">
         
   
   
@@ -682,10 +684,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../windows/cli-magic/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CLI
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -696,6 +720,164 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cmd-essentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      CMD Essentials
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CMD Essentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigation-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation &amp; Discovery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-info-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Info &amp; Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      File &amp; Disk
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powershell-essentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ PowerShell Essentials
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ PowerShell Essentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigation-discovery_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation &amp; Discovery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-info-control_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Info &amp; Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      File &amp; Text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security &amp; Identity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-real-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips &amp; Real Use Cases
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -785,8 +967,6 @@
                 
   
   
-    
-  
   
   
     
@@ -797,11 +977,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -817,7 +997,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Linux
@@ -831,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../linux/overview/" class="md-nav__link">
         
   
   
@@ -851,32 +1031,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    CLI
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -887,230 +1045,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#navigation-discovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      Navigation &amp; Discovery
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-info-process-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      System Info &amp; Process Control
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-text-manipulation" class="md-nav__link">
-    <span class="md-ellipsis">
-      File &amp; Text Manipulation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permissions-users" class="md-nav__link">
-    <span class="md-ellipsis">
-      Permissions &amp; Users
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#networking" class="md-nav__link">
-    <span class="md-ellipsis">
-      Networking
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#archives-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Archives &amp; Packages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dangerous-but-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dangerous but Useful
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-meta" class="md-nav__link">
-    <span class="md-ellipsis">
-      Misc &amp; Meta
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Misc &amp; Meta">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cat" class="md-nav__link">
-    <span class="md-ellipsis">
-      cat
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cd" class="md-nav__link">
-    <span class="md-ellipsis">
-      cd
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#chmod" class="md-nav__link">
-    <span class="md-ellipsis">
-      chmod
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#du" class="md-nav__link">
-    <span class="md-ellipsis">
-      du
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find" class="md-nav__link">
-    <span class="md-ellipsis">
-      find
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#htop" class="md-nav__link">
-    <span class="md-ellipsis">
-      htop
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ls" class="md-nav__link">
-    <span class="md-ellipsis">
-      ls
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nc" class="md-nav__link">
-    <span class="md-ellipsis">
-      nc
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ping" class="md-nav__link">
-    <span class="md-ellipsis">
-      ping
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ps" class="md-nav__link">
-    <span class="md-ellipsis">
-      ps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      ssh
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#top" class="md-nav__link">
-    <span class="md-ellipsis">
-      top
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tree" class="md-nav__link">
-    <span class="md-ellipsis">
-      tree
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uniq" class="md-nav__link">
-    <span class="md-ellipsis">
-      uniq
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1123,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../system-internals/" class="md-nav__link">
+      <a href="../../linux/system-internals/" class="md-nav__link">
         
   
   
@@ -2260,6 +2194,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#cmd-essentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      CMD Essentials
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CMD Essentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#navigation-discovery" class="md-nav__link">
     <span class="md-ellipsis">
       Navigation &amp; Discovery
@@ -2267,35 +2211,17 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#system-info-process-control" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#system-info-control" class="md-nav__link">
     <span class="md-ellipsis">
-      System Info &amp; Process Control
+      System Info &amp; Control
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#file-text-manipulation" class="md-nav__link">
-    <span class="md-ellipsis">
-      File &amp; Text Manipulation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permissions-users" class="md-nav__link">
-    <span class="md-ellipsis">
-      Permissions &amp; Users
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#networking" class="md-nav__link">
     <span class="md-ellipsis">
       Networking
@@ -2303,156 +2229,20 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#archives-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Archives &amp; Packages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dangerous-but-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dangerous but Useful
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-meta" class="md-nav__link">
-    <span class="md-ellipsis">
-      Misc &amp; Meta
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Misc &amp; Meta">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cat" class="md-nav__link">
+  <a href="#file-disk" class="md-nav__link">
     <span class="md-ellipsis">
-      cat
+      File &amp; Disk
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#cd" class="md-nav__link">
+  <a href="#misc" class="md-nav__link">
     <span class="md-ellipsis">
-      cd
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#chmod" class="md-nav__link">
-    <span class="md-ellipsis">
-      chmod
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#du" class="md-nav__link">
-    <span class="md-ellipsis">
-      du
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#find" class="md-nav__link">
-    <span class="md-ellipsis">
-      find
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#htop" class="md-nav__link">
-    <span class="md-ellipsis">
-      htop
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ls" class="md-nav__link">
-    <span class="md-ellipsis">
-      ls
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nc" class="md-nav__link">
-    <span class="md-ellipsis">
-      nc
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ping" class="md-nav__link">
-    <span class="md-ellipsis">
-      ping
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ps" class="md-nav__link">
-    <span class="md-ellipsis">
-      ps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      ssh
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#top" class="md-nav__link">
-    <span class="md-ellipsis">
-      top
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tree" class="md-nav__link">
-    <span class="md-ellipsis">
-      tree
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uniq" class="md-nav__link">
-    <span class="md-ellipsis">
-      uniq
+      Misc
     </span>
   </a>
   
@@ -2460,6 +2250,84 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powershell-essentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ PowerShell Essentials
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ PowerShell Essentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#navigation-discovery_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigation &amp; Discovery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-info-control_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Info &amp; Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      File &amp; Text
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security &amp; Identity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-real-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips &amp; Real Use Cases
+    </span>
+  </a>
   
 </li>
       
@@ -2479,237 +2347,112 @@
 
 
 
-<h1 id="cli-magic">CLI Magic</h1>
-<p>These are the commands I reach for when things get real.</p>
-<h2 id="navigation-discovery">Navigation &amp; Discovery</h2>
+<h1 id="windows-cli-magic">Windows CLI Magic</h1>
+<p>These are the commands I reach for when Windows gets real.
+Not a reference manual, more a survival kit. 
+Split into CMD and PowerShell, 
+because each has its own quirks, strengths, and use cases.</p>
+<hr />
+<h2 id="cmd-essentials">CMD Essentials</h2>
+<p>Old-school, still useful. 
+Especially when scripting in constrained environments 
+or dealing with legacy systems.</p>
+<h3 id="navigation-discovery">Navigation &amp; Discovery</h3>
 <ul>
-<li><a href="#cd"><code>cd</code></a></li>
-<li><a href="#ls"><code>ls</code></a></li>
-<li><a href="#find"><code>find</code></a> </li>
-<li><a href="#tree"><code>tree</code></a></li>
-<li><a href="#du"><code>du</code></a> </li>
-<li><code>df</code> </li>
-<li><code>pwd</code> </li>
-<li><code>readlink</code> </li>
+<li><code>cd</code> : Change directory.</li>
+<li><code>dir</code> : List contents of a directory. Use <code>/A</code> to show hidden files.</li>
+<li><code>tree</code> : Visualize folder structure.</li>
+<li><code>echo %USERNAME%</code> : Show current user.</li>
 </ul>
-<h2 id="system-info-process-control">System Info &amp; Process Control</h2>
+<h3 id="system-info-control">System Info &amp; Control</h3>
 <ul>
-<li><a href="#top"><code>top</code></a> </li>
-<li><a href="#htop"><code>htop</code></a></li>
-<li><a href="#ps"><code>ps</code></a></li>
-<li><code>lsof</code></li>
-<li><code>uptime</code></li>
-<li><code>free</code></li>
-<li><code>vmstat</code> </li>
-<li><code>dmesg</code></li>
+<li><code>tasklist</code> : List running processes.</li>
+<li><code>taskkill /PID 1234 /F</code> : Kill a process by PID.</li>
+<li><code>systeminfo</code> : Dump OS version, uptime, hotfixes.</li>
+<li><code>set</code> : View or set environment variables.</li>
 </ul>
-<h2 id="file-text-manipulation">File &amp; Text Manipulation</h2>
+<h3 id="networking">Networking</h3>
 <ul>
-<li><a href="#cat"><code>cat</code></a></li>
-<li><code>less</code></li>
-<li><code>head</code></li>
-<li><code>tail</code></li>
-<li><code>cut</code></li>
-<li><code>sort</code></li>
-<li><a href="#uniq"><code>uniq</code></a></li>
-<li><code>awk</code></li>
-<li><code>sed</code></li>
-<li><code>wc</code></li>
-<li><code>xargs</code></li>
-<li><code>tee</code></li>
+<li><code>ipconfig</code> : Show IP config. Use <code>/all</code> for full detail.</li>
+<li><code>ping</code>, <code>tracert</code>, <code>netstat</code> : Basic network diagnostics.</li>
+<li><code>nslookup</code> : DNS queries.</li>
+<li><code>net use</code> : Map network drives.</li>
+<li><code>net user</code> : Manage local users.</li>
 </ul>
-<h2 id="permissions-users">Permissions &amp; Users</h2>
+<h3 id="file-disk">File &amp; Disk</h3>
 <ul>
-<li><a href="#chmod"><code>chmod</code></a></li>
-<li><code>chown</code></li>
-<li><code>usermod</code></li>
-<li><code>whoami</code></li>
-<li><code>groups</code></li>
-<li><code>sudo</code></li>
-<li><code>passwd</code></li>
+<li><code>copy</code>, <code>xcopy</code>, <code>robocopy</code> : File copying tools.</li>
+<li><code>del</code>, <code>erase</code> : Delete files.</li>
+<li><code>attrib</code> : View/set file attributes.</li>
+<li><code>chkdsk</code> : Check disk health.</li>
+<li><code>diskpart</code> : Partition manager.</li>
 </ul>
-<h2 id="networking">Networking</h2>
+<h3 id="misc">Misc</h3>
 <ul>
-<li><a href="#ping"><code>ping</code></a></li>
-<li><code>ip</code></li>
-<li><code>ss</code></li>
-<li><a href="#ssh"><code>ssh</code></a></li>
-<li><code>netstat</code></li>
-<li><code>dig</code></li>
-<li><code>nslookup</code></li>
-<li><code>curl</code></li>
-<li><code>wget</code></li>
-<li><code>traceroute</code></li>
-<li><code>nmap</code></li>
-<li><a href="#nc"><code>nc</code></a></li>
-</ul>
-<h2 id="archives-packages">Archives &amp; Packages</h2>
-<ul>
-<li><code>tar</code></li>
-<li><code>zip</code></li>
-<li><code>unzip</code></li>
-<li><code>dpkg</code></li>
-<li><code>apt</code></li>
-<li><code>rpm</code></li>
-<li><code>dnf</code></li>
-<li><code>pacman</code></li>
-</ul>
-<h2 id="dangerous-but-useful">Dangerous but Useful</h2>
-<ul>
-<li><code>rm -rf</code></li>
-<li><code>dd</code></li>
-<li><code>mkfs</code></li>
-<li><code>mount</code></li>
-<li><code>umount</code></li>
-<li><code>kill</code></li>
-<li><code>pkill</code></li>
-<li><code>reboot</code></li>
-<li><code>shutdown</code></li>
-</ul>
-<h2 id="misc-meta">Misc &amp; Meta</h2>
-<ul>
-<li><code>alias</code></li>
-<li><code>history</code></li>
-<li><code>!</code> </li>
-<li><code>man</code></li>
-<li><code>which</code></li>
-<li><code>type</code></li>
-<li><code>time</code></li>
-<li><code>yes</code></li>
+<li><code>cls</code> : Clear screen.</li>
+<li><code>type</code> : View file contents.</li>
+<li><code>findstr</code> : Search inside files.</li>
+<li><code>fc</code> : Compare two files.</li>
+<li><code>shutdown /r /t 0</code> : Reboot instantly.</li>
 </ul>
 <hr />
-<!--
-
-Format suggestion for each command:
-
-#### command
-
-***What it does:***  
-
-***Real use case:***
-
-***Example:***
-
-***Tip:***
-
-
--->
-
-<hr />
-<h4 id="cat">cat</h4>
-<p><strong><em>What it does:</em></strong> It shows what is inside the file you append.  </p>
-<p><strong><em>Example:</em></strong> I use it all the time to read out the flag on some CTF's. </p>
-<p><strong><em>Tip:</em></strong> Awesomt for any automation, where you want to work with some text inside a file.<br />
- Just use <code>cat | secondCommand</code>.<br />
-That also makes it perfect for searching though large files, like logs, together with <code>grep</code></p>
-<hr />
-<h4 id="cd">cd</h4>
-<p><strong><em>What it does:</em></strong> Let's you move to the directory of your choosing.  </p>
-<p><strong><em>Tip:</em></strong> Don't forget about the special usecases:  </p>
+<h2 id="powershell-essentials">⚡ PowerShell Essentials</h2>
+<p>Modern, object-oriented, and scriptable. 
+This is where Windows gets powerful.</p>
+<h3 id="navigation-discovery_1">Navigation &amp; Discovery</h3>
 <ul>
-<li><code>..</code> move up the file structure</li>
-<li><code>~</code> move to home directory of the current user</li>
-<li><code>/</code> move to root, but also let's you move anywhere you want, as long as you know the path</li>
+<li><code>Get-Location</code> : Like <code>pwd</code>.</li>
+<li><code>Set-Location</code> : Like <code>cd</code>.</li>
+<li><code>Get-ChildItem</code> : Like <code>ls</code>. Use <code>-Recurse</code> to go deep.</li>
+<li><code>Resolve-Path</code> : Like <code>readlink</code>.</li>
+</ul>
+<h3 id="system-info-control_1">System Info &amp; Control</h3>
+<ul>
+<li><code>Get-Process</code> : List processes.</li>
+<li><code>Stop-Process -Id 1234</code> : Kill process.</li>
+<li><code>Get-Service</code> : List services.</li>
+<li><code>Restart-Service</code> : Restart a service.</li>
+<li><code>Get-EventLog</code> : View logs.</li>
+</ul>
+<h3 id="networking_1">Networking</h3>
+<ul>
+<li><code>Test-Connection</code> : Like <code>ping</code>.</li>
+<li><code>Resolve-DnsName</code> : Like <code>nslookup</code>.</li>
+<li><code>Get-NetIPAddress</code> : IP config.</li>
+<li><code>New-PSSession</code> : Remote PowerShell session.</li>
+<li><code>Invoke-WebRequest</code> : Like <code>curl</code>.</li>
+</ul>
+<h3 id="file-text">File &amp; Text</h3>
+<ul>
+<li><code>Get-Content</code> : Like <code>cat</code>.</li>
+<li><code>Set-Content</code>, <code>Add-Content</code> : Write to files.</li>
+<li><code>Select-String</code> : Like <code>grep</code>.</li>
+<li><code>Out-File</code> : Redirect output.</li>
+<li><code>Compare-Object</code> : Compare data sets.</li>
+</ul>
+<h3 id="security-identity">Security &amp; Identity</h3>
+<ul>
+<li><code>Get-LocalUser</code>, <code>Get-LocalGroup</code> : Manage users/groups.</li>
+<li><code>Get-Credential</code> : Prompt for secure credentials.</li>
+<li><code>Get-Acl</code>, <code>Set-Acl</code> : View/set permissions.</li>
+</ul>
+<h3 id="misc_1">Misc</h3>
+<ul>
+<li><code>Get-Help</code> : Built-in docs.</li>
+<li><code>Get-History</code> : Command history.</li>
+<li><code>Start-Job</code>, <code>Receive-Job</code> : Background tasks.</li>
+<li><code>$env:USERNAME</code> : Environment variables.</li>
+<li><code>Measure-Command</code> : Time execution.</li>
 </ul>
 <hr />
-<h4 id="chmod">chmod</h4>
-<p><strong><em>What it does:</em></strong><br />
-Used to change permissions of a file.</p>
-<p><strong><em>Real use case:</em></strong><br />
-Whenever you make a script so you are actually able to run it. </p>
-<p><strong><em>Example:</em></strong><br />
-In the example above, making a file executable, it would like that <code>chmod -x [file]</code></p>
-<p><strong><em>Tip:</em></strong><br />
-Learning the numbercodes is extremly helpful. First number for the user, second for the group, and last for others. Each digit represents a combination of read (4), write (2), and execute (1). </p>
+<h2 id="tips-real-use-cases">Tips &amp; Real Use Cases</h2>
+<ul>
+<li><code>Get-Content large.log | Select-String "error"</code>  Search logs for errors.</li>
+<li><code>Invoke-WebRequest -Uri "http://target" -OutFile "page.html"</code> : Grab a webpage.</li>
+<li><code>Get-Process | Sort-Object CPU -Descending | Select-Object -First 5</code> : Top CPU hogs.</li>
+<li><code>Get-ChildItem -Recurse | Where-Object { $_.Length -gt 1MB }</code> : Find big files.</li>
+</ul>
 <hr />
-<h4 id="du">du</h4>
-<p><strong><em>What it does:</em></strong><br />
-Calculates actual disk space used by files and directories. </p>
-<p><strong><em>Real use case:</em></strong>
-Good to identify how the space is used in case of low disk space.  </p>
-<p><strong><em>Tip:</em></strong><br />
-You can pipe it through <code>sort -rh</code> to sort it by biggest size first. </p>
-<hr />
-<h4 id="find">find</h4>
-<p><strong><em>What it does:</em></strong><br />
-Used to search for files in a specifed directory. You can search for all kinds of properties that you already know about it. </p>
-<p><strong><em>Real use case:</em></strong><br />
-I used it to find the flag while playing OWT Bandit. For the level you got the size and some of the properties of the flag, and had to find it. </p>
-<p><strong><em>Example:</em></strong>
-<code>find / -user bandit7 -group bandit6 -size 33c 2&gt;/dev/null</code><br />
-That is how I found the specific flag. 
-<strong><em>Tip:</em></strong><br />
-I really want to remember the 2&gt;/dev/null part for throwing out strerr. </p>
-<hr />
-<h4 id="htop">htop</h4>
-<p><strong><em>What it does:</em></strong><br />
-An enhanced, interactive version of <code>top</code> with better visuals and controls. </p>
-<p><strong><em>Real use case:</em></strong><br />
-Quickly kill, renice, or inspect processes without needing multiple commands</p>
-<p><strong><em>Tip:</em></strong><br />
-It is really important do learn the short cuts and ways to use it to be effectiv. </p>
-<hr />
-<h4 id="ls">ls</h4>
-<p><strong><em>What it does:</em></strong><br />
-Shows the inside of the current directory.</p>
-<p><strong><em>Tip:</em></strong><br />
-Best used with a <code>-al</code> flag to list all files in long format.</p>
-<hr />
-<h4 id="nc">nc</h4>
-<p><strong><em>What it does:</em></strong><br />
-Used for everything concering connections via TCP or UDP.<br />
-You can do <strong>soo</strong> much with it that it would probably be to much for this little section, and I need to make a whole page for netcat in the futur. </p>
-<p><strong><em>Real use case:</em></strong>
-Mainly to set up listeners to get a reverse shell.
-That would look something like this:<br />
-<code>nc -l 1234</code><br />
-Also netcat can be used to connect to some port and set it something manuel or in a script. </p>
-<hr />
-<h4 id="ping">ping</h4>
-<p><strong><em>What it does:</em></strong><br />
-Sends an ICMP echo request to a target host. </p>
-<p><strong><em>Real use case:</em></strong><br />
-Perfect to test if there is a connection. Eighter to the target on the way in, or from the mashine on the way out (by pinging something that is alway reachable)</p>
-<p><strong><em>Example:</em></strong><br />
-<code>ping 8.8.8.8</code> to try to ping the google DNS server, which should always work if you have connection to the internet. </p>
-<p><strong><em>Tip:</em></strong> Is often used to monitor server uptime from afar, by regularly sending a ping. </p>
-<hr />
-<h4 id="ps">ps</h4>
-<p><strong><em>What it does:</em></strong><br />
-Prints out the current processes. </p>
-<p><strong><em>Real use case:</em></strong><br />
-Audit running processes precisely, grep specific patterns, or script behavior. </p>
-<p><strong><em>Tip:</em></strong><br />
-<code>ps faux</code> shows process hierachy, kind of like tree for files.<br />
-This really helps with finding out where everything is comming from.  </p>
-<hr />
-<h4 id="ssh">ssh</h4>
-<p><strong><em>What it does:</em></strong><br />
-Creates a secure connetion with access to the local terminal. </p>
-<p><strong><em>Real use case:</em></strong><br />
-Maintaining remote servers where it is not reasonable to have direkt access, and which might not have a GUI.</p>
-<p><strong><em>Example:</em></strong><br />
-Accessing the Bandit Wargame from OvertheWire:<br />
-<code>ssh -p 2220 bandit0@bandit.labs.overthewire.org</code>  </p>
-<hr />
-<h4 id="top">top</h4>
-<p><strong><em>What it does:</em></strong><br />
-Real-time view of system processes and resource usage. </p>
-<p><strong><em>Real use case:</em></strong><br />
-Monitor CPU and detect runaway processes. </p>
-<p><strong><em>Tip:</em></strong><br />
-You can press M to sort instantly by memory usage.  </p>
-<hr />
-<h4 id="tree">tree</h4>
-<p><strong><em>What it does:</em></strong><br />
-It prints out a skeleton of file system you give it.<br />
-Awesome to get an overview of where everything lives and to better understand what you are working with.  </p>
-<hr />
-<h4 id="uniq">uniq</h4>
-<p><strong><em>What it does:</em></strong><br />
-Filter adjacent matching lines. It is mostly used when you have to omit or report repeating lines. Really helpful to dens down loads of data. </p>
-<p><strong><em>Real use case:</em></strong><br />
-For me it was alo really helpful in one of the OTW Bandit levels. It was mainly designed to teach the <code>uniq</code> command, so I am really excited to find some more real world use cases. </p>
 
 
 
@@ -2748,7 +2491,7 @@ For me it was alo really helpful in one of the OTW Bandit levels. It was mainly 
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+          <a href="../uefi/" class="md-footer__link md-footer__link--prev" aria-label="Previous: UEFI">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2758,20 +2501,20 @@ For me it was alo really helpful in one of the OTW Bandit levels. It was mainly 
                 Previous
               </span>
               <div class="md-ellipsis">
-                Overview
+                UEFI
               </div>
             </div>
           </a>
         
         
           
-          <a href="../system-internals/" class="md-footer__link md-footer__link--next" aria-label="Next: System">
+          <a href="../../macos/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                System
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
