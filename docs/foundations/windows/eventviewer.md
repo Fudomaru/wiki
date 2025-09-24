@@ -79,10 +79,12 @@ It starts automatically at boot and is hard to disable without destabilizing the
 This command-line utility lets you query, export, and manage logs.
 
 - Display last 5 Security events in text format:  
-  CODEBLOCK
+
+  `wevtutil qe Security /c:5 /f:text`
 
 - Export System log for offline analysis:  
-  CODEBLOCK
+
+  `wevtutil epl System SystemLog.evtx`
 
 > Admin rights are required for most `wevtutil` operations.
 
@@ -93,10 +95,12 @@ This command-line utility lets you query, export, and manage logs.
 PowerShell offers flexible log interaction via `Get-WinEvent`.
 
 - List all logs and record counts:  
-  CODEBLOCK
+
+  `Get-WinEvent -ListLog *`
 
 - Filter by log name, event ID, or time range:  
-  CODEBLOCK
+
+  `Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4624; StartTime=(Get-Date).AddDays(-1)`
 
 > PowerShell is ideal for automation and parsing — especially in incident response scripts.
 
