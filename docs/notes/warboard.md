@@ -30,6 +30,8 @@ description: List of my planes for furtur write ups and general project ideas.
 - Explaining where I stand in my Nvim Journy
 - Building CAIDO Overview page
 - Building PEASS Overview page
+- DeepDive into WinRegistry
+- DeepDive into WinEventLog
 
 ---
 ## STRATEGIC BACKLOG
