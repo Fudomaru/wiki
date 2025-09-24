@@ -6,13 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Tactical flows for offensive security — from first scan to final foothold.">
+        <meta name="description" content="A Linux & Cybersecurity notebook forged in fire.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
+        <link rel="prev" href="../uefi/">
+      
+      
+        <link rel="next" href="../cli-magic/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Playbooks - Voidex</title>
+        <title>Windows Event Log Deep Dive - Voidex</title>
       
     
     
@@ -137,7 +141,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#playbooks" class="md-skip">
+        <a href="#windows-event-log-deep-dive" class="md-skip">
           Skip to content
         </a>
       
@@ -171,7 +175,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Playbooks
+              Windows Event Log Deep Dive
             
           </span>
         </div>
@@ -291,11 +295,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../foundations/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -315,7 +321,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../overview/" class="md-tabs__link">
+        <a href="../../../security/overview/" class="md-tabs__link">
           
   
   
@@ -497,24 +503,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -527,7 +538,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Foundations
@@ -541,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
@@ -564,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/networking/" class="md-nav__link">
+      <a href="../../networking/" class="md-nav__link">
         
   
   
@@ -584,6 +595,8 @@
                 
   
   
+    
+  
   
   
     
@@ -594,11 +607,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -614,7 +627,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Windows
@@ -628,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/windows/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -651,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/windows/uefi/" class="md-nav__link">
+      <a href="../uefi/" class="md-nav__link">
         
   
   
@@ -671,10 +684,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../foundations/windows/eventviewer/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Event Log
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -685,6 +720,131 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-windows-event-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is the Windows Event Log?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log Categories
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Event Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#severity-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Severity Levels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-logs-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where Logs Live
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interacting-with-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacting with Logs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interacting with Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-wevtutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using wevtutil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using PowerShell
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Implications
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-monitoring-to-be-expanded" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Monitoring (To Be Expanded)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Thoughts
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -697,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/windows/cli-magic/" class="md-nav__link">
+      <a href="../cli-magic/" class="md-nav__link">
         
   
   
@@ -769,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/macos/overview/" class="md-nav__link">
+      <a href="../../macos/overview/" class="md-nav__link">
         
   
   
@@ -841,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/linux/overview/" class="md-nav__link">
+      <a href="../../linux/overview/" class="md-nav__link">
         
   
   
@@ -864,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/linux/cli-magic/" class="md-nav__link">
+      <a href="../../linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -887,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/linux/system-internals/" class="md-nav__link">
+      <a href="../../linux/system-internals/" class="md-nav__link">
         
   
   
@@ -966,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../../security/overview/" class="md-nav__link">
         
   
   
@@ -989,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fundamentals/" class="md-nav__link">
+      <a href="../../../security/fundamentals/" class="md-nav__link">
         
   
   
@@ -1053,7 +1213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../toolbelt/overview/" class="md-nav__link">
+      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -1076,7 +1236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../toolbelt/nmap/" class="md-nav__link">
+      <a href="../../../security/toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -1099,7 +1259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../toolbelt/searchsploit/" class="md-nav__link">
+      <a href="../../../security/toolbelt/searchsploit/" class="md-nav__link">
         
   
   
@@ -1171,7 +1331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../toolbelt/overview/" class="md-nav__link">
+      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -1194,7 +1354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recon/" class="md-nav__link">
+      <a href="../../../security/playbooks/recon/" class="md-nav__link">
         
   
   
@@ -1217,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../js-deobfuscation/" class="md-nav__link">
+      <a href="../../../security/playbooks/js-deobfuscation/" class="md-nav__link">
         
   
   
@@ -2024,27 +2184,105 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-belongs-here" class="md-nav__link">
+  <a href="#what-is-the-windows-event-log" class="md-nav__link">
     <span class="md-ellipsis">
-      What belongs here
+      What Is the Windows Event Log?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
+  <a href="#log-categories" class="md-nav__link">
     <span class="md-ellipsis">
-      Why this matters
+      Log Categories
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-ill-use-this-space" class="md-nav__link">
+  <a href="#event-types" class="md-nav__link">
     <span class="md-ellipsis">
-      How I’ll use this space
+      Event Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#severity-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Severity Levels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-logs-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where Logs Live
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interacting-with-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interacting with Logs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interacting with Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-wevtutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using wevtutil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using PowerShell
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Implications
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-monitoring-to-be-expanded" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended Monitoring (To Be Expanded)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thoughts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Thoughts
     </span>
   </a>
   
@@ -2066,43 +2304,186 @@
 
 
 
-<h1 id="playbooks">Playbooks</h1>
-<p>This is where I document the flows — not just the tools, but the thinking behind them.<br />
-Each playbook is a repeatable method I’ve tested, broken, and rebuilt.<br />
-They’re not static recipes. They’re living tactics.</p>
-<h2 id="what-belongs-here">What belongs here</h2>
+<h1 id="windows-event-log-deep-dive">Windows Event Log Deep Dive</h1>
+<h2 id="what-is-the-windows-event-log">What Is the Windows Event Log?</h2>
+<p>The Windows Event Log is a centralized system for recording events that occur across the operating system, applications, and security components.<br />
+It’s a vital tool for defenders monitoring suspicious activity — and a potential goldmine for attackers seeking insight, disruption, or stealth.</p>
+<blockquote>
+<p>Think of it as the system’s diary: every login, crash, warning, and audit gets written down — if you know where to look.</p>
+</blockquote>
+<hr />
+<h2 id="log-categories">Log Categories</h2>
+<p>Windows organizes events into several categories, each serving a different purpose:</p>
+<table>
+<thead>
+<tr>
+<th>Log Category</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System</td>
+<td>Events from Windows system components. E.g., a service failing at startup.</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Security-related events like logins, file access, and audit results.</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>Events from installed software. E.g., Slack failing to launch.</td>
+</tr>
+<tr>
+<td>Setup</td>
+<td>OS installation and domain setup events (especially on domain controllers).</td>
+</tr>
+<tr>
+<td>Forwarded Events</td>
+<td>Logs forwarded from other machines in the network.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="event-types">Event Types</h2>
+<p>Each log entry falls into one of five types:</p>
+<table>
+<thead>
+<tr>
+<th>Event Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Error</td>
+<td>A major issue, like a failed service or driver.</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td>A potential problem, such as low disk space.</td>
+</tr>
+<tr>
+<td>Information</td>
+<td>Successful operations, like a driver loading correctly.</td>
+</tr>
+<tr>
+<td>Success Audit</td>
+<td>A successful security access attempt (e.g., login).</td>
+</tr>
+<tr>
+<td>Failure Audit</td>
+<td>A failed security access attempt (e.g., wrong password).</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Multiple failure audits in a short time? Could be password spraying.</p>
+</blockquote>
+<hr />
+<h2 id="severity-levels">Severity Levels</h2>
+<p>Windows assigns a severity level to each event, helping prioritize response:</p>
+<table>
+<thead>
+<tr>
+<th>Severity Level</th>
+<th>Level #</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verbose</td>
+<td>5</td>
+<td>Progress or success messages.</td>
+</tr>
+<tr>
+<td>Information</td>
+<td>4</td>
+<td>Event occurred, no issues.</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td>3</td>
+<td>Potential problem worth investigating.</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>2</td>
+<td>System or service issue, not urgent.</td>
+</tr>
+<tr>
+<td>Critical</td>
+<td>1</td>
+<td>Serious issue requiring immediate attention.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="where-logs-live">Where Logs Live</h2>
+<p>Event logs are stored as <code>.evtx</code> files in:</p>
+<p><code>C:\Windows\System32\winevt\logs</code></p>
+<p>The <strong>Windows Event Log service</strong> (inside <code>svchost.exe</code>) manages these logs.<br />
+It starts automatically at boot and is hard to disable without destabilizing the system.</p>
+<blockquote>
+<p>If you’re trying to hide your tracks, this service is a high-value target — but messing with it can break the system.</p>
+</blockquote>
+<hr />
+<h2 id="interacting-with-logs">Interacting with Logs</h2>
+<h3 id="using-wevtutil">Using <code>wevtutil</code></h3>
+<p>This command-line utility lets you query, export, and manage logs.</p>
 <ul>
 <li>
-<p><a href="/security/playbooks/recon/">Recon</a><br />
-  How I scan, fingerprint, and map a target — quietly or loudly.</p>
+<p>Display last 5 Security events in text format:<br />
+  CODEBLOCK</p>
 </li>
 <li>
-<p>Enumeration<br />
-  Digging deeper: services, users, directories, and misconfigurations.</p>
-</li>
-<li>
-<p>Exploitation<br />
-  Turning a weakness into access — with or without a known CVE.</p>
-</li>
-<li>
-<p>Post-Exploitation<br />
-  What I do once inside: persistence, pivoting, data extraction.</p>
-</li>
-<li>
-<p>Obstacle Handling<br />
-  What shuts me down — and how I adapt when it does.</p>
+<p>Export System log for offline analysis:<br />
+  CODEBLOCK</p>
 </li>
 </ul>
-<h2 id="why-this-matters">Why this matters</h2>
-<p>Tools change. Targets change.<br />
-But the flow — the way I approach a problem — is what I train.</p>
-<p>Each playbook is a snapshot of how I think through a challenge.<br />
-It’s where I sharpen my instincts and document the paths I’ve walked.</p>
-<h2 id="how-ill-use-this-space">How I’ll use this space</h2>
-<p>Some playbooks will be polished — step-by-step guides with diagrams and notes.<br />
-Others will be raw — half-finished ideas, failed attempts, and lessons learned.</p>
-<p>That mix is intentional.<br />
-This isn’t a trophy case. It’s a training ground.</p>
+<blockquote>
+<p>Admin rights are required for most <code>wevtutil</code> operations.</p>
+</blockquote>
+<hr />
+<h3 id="using-powershell">Using PowerShell</h3>
+<p>PowerShell offers flexible log interaction via <code>Get-WinEvent</code>.</p>
+<ul>
+<li>
+<p>List all logs and record counts:<br />
+  CODEBLOCK</p>
+</li>
+<li>
+<p>Filter by log name, event ID, or time range:<br />
+  CODEBLOCK</p>
+</li>
+</ul>
+<blockquote>
+<p>PowerShell is ideal for automation and parsing — especially in incident response scripts.</p>
+</blockquote>
+<hr />
+<h2 id="security-implications">Security Implications</h2>
+<p>Event logs aren’t just for defenders. Attackers can:</p>
+<ul>
+<li><strong>Enumerate logs</strong> to understand logging depth (default vs granular).</li>
+<li><strong>Extract credentials</strong> from logs left behind by misconfigured systems.</li>
+<li><strong>Tamper or clear logs</strong> to hide activity.</li>
+<li><strong>Detect security controls</strong> based on audit failures and alerts.</li>
+</ul>
+<blockquote>
+<p>Pro tip: Always check for log clearing events. They’re often the first sign of an intruder trying to cover their tracks.</p>
+</blockquote>
+<hr />
+<h2 id="recommended-monitoring-to-be-expanded">Recommended Monitoring (To Be Expanded)</h2>
+<p>In Active Directory environments, certain logs are critical to monitor.<br />
+This section will grow as I explore best practices for log auditing and SIEM integration.</p>
+<hr />
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Windows Event Logs are a defender’s best friend — and an attacker’s reconnaissance tool.<br />
+Learning to read them fluently is a key skill for any aspiring red teamer or pentester.</p>
+<blockquote>
+<p>The logs don’t lie. But they can be silenced — if you don’t know what to listen for.</p>
+</blockquote>
 
 
 
@@ -2136,6 +2517,44 @@ This isn’t a trophy case. It’s a training ground.</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../uefi/" class="md-footer__link md-footer__link--prev" aria-label="Previous: UEFI">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                UEFI
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../cli-magic/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                CLI
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
