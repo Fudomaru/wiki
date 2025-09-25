@@ -32,7 +32,6 @@ description: List of my planes for furtur write ups and general project ideas.
 - Building CAIDO Overview page
 - Building PEASS Overview page
 - DeepDive into WinRegistry
-- DeepDive into WinEventLog
 
 ---
 ## STRATEGIC BACKLOG
@@ -52,6 +51,7 @@ description: List of my planes for furtur write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newes pages are.  
 
+- DeepDive into WinEventLog (2025-09)
 - Building a CLI Overview for Windows Systems (2025-09)
 - Building an Overview page for the Cybersecurtiy tools (2025-09)
 - Building an Overview page for the Playbook Section (2025-09)
