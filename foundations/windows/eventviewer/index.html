@@ -2433,15 +2433,13 @@ It starts automatically at boot and is hard to disable without destabilizing the
 <h3 id="using-wevtutil">Using <code>wevtutil</code></h3>
 <p>This command-line utility lets you query, export, and manage logs.</p>
 <ul>
-<li>
-<p>Display last 5 Security events in text format:<br />
-  CODEBLOCK</p>
-</li>
-<li>
-<p>Export System log for offline analysis:<br />
-  CODEBLOCK</p>
-</li>
+<li>Display last 5 Security events in text format:  </li>
 </ul>
+<p><code>wevtutil qe Security /c:5 /f:text</code></p>
+<ul>
+<li>Export System log for offline analysis:  </li>
+</ul>
+<p><code>wevtutil epl System SystemLog.evtx</code></p>
 <blockquote>
 <p>Admin rights are required for most <code>wevtutil</code> operations.</p>
 </blockquote>
@@ -2449,15 +2447,13 @@ It starts automatically at boot and is hard to disable without destabilizing the
 <h3 id="using-powershell">Using PowerShell</h3>
 <p>PowerShell offers flexible log interaction via <code>Get-WinEvent</code>.</p>
 <ul>
-<li>
-<p>List all logs and record counts:<br />
-  CODEBLOCK</p>
-</li>
-<li>
-<p>Filter by log name, event ID, or time range:<br />
-  CODEBLOCK</p>
-</li>
+<li>List all logs and record counts:  </li>
 </ul>
+<p><code>Get-WinEvent -ListLog *</code></p>
+<ul>
+<li>Filter by log name, event ID, or time range:  </li>
+</ul>
+<p><code>Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4624; StartTime=(Get-Date).AddDays(-1)</code></p>
 <blockquote>
 <p>PowerShell is ideal for automation and parsing — especially in incident response scripts.</p>
 </blockquote>
