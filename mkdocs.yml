@@ -80,7 +80,10 @@ nav:
       - System: foundations/linux/system-internals.md
   - Security:
     - Overview: security/overview.md
-    - Pentest Overview: security/pentestoverview.md
+    - Pentesting: 
+      - Fundamentals: security/pentesting/fundamentals.md
+      - Types: security/pentesting/types.md
+      - Structure: security/pentesting/structure.md
     - Fundamentals: security/fundamentals.md
     - Toolbelt:
         - Overview: security/toolbelt/overview.md
