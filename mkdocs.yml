@@ -86,6 +86,7 @@ nav:
       - Types: security/pentesting/types.md
       - Structure: security/pentesting/structure.md
       - Skills: security/pentesting/skills.md
+      - Methodolgies: security/pentesting/methodologies.md
     - Toolbelt:
         - Overview: security/toolbelt/overview.md
         - Nmap: security/toolbelt/nmap.md
