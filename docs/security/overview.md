@@ -22,6 +22,7 @@ that reveal how systems break and how they hold.
 - [**Pentesting**](/security/pentesting/fundamentals/) → full explainations of everything I need to know about pentesting, the ethic, rules, stucture, and everything else important. 
 - [**Toolbelt**](/security/toolbelt/overview/) → the utilities I train with: scanners, proxies, sniffers, exploit frameworks.  
 - [**Playbooks**](/security/playbooks/overview/) → practical flows: recon, enumeration, exploitation, post-exploitation, and the obstacles that shut each down.  
+- [**Exploits**](/security/exploits/overview/) → small Overview of Vulnerability types that I try to understand to build up general knowledge, and learn mitigations to what happens often.
 
 The focus is **offensive security** — but never in isolation.  
 Every exploit I study comes with a shadow: the defense that makes it harder, slower, or impossible.  

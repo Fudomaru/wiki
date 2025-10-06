@@ -51,6 +51,8 @@ description: List of my planes for furtur write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newes pages are.  
 
+- Starting with the first Vulns in the Exploits Seciton (2025-10)
+- Building an Exploits section in Security (2025-10)
 - Building a Pentesting secution in security (2025-09)
 - DeepDive into WinEventLog (2025-09)
 - Building a CLI Overview for Windows Systems (2025-09)
