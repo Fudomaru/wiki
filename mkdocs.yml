@@ -78,6 +78,9 @@ nav:
       - Overview: foundations/linux/overview.md
       - CLI: foundations/linux/cli-magic.md
       - System: foundations/linux/system-internals.md
+    - Protocols:
+      - Overview: foundations/protocols/overview.md
+      - SNMP: foundations/protocols/snmp.md
   - Security:
     - Overview: security/overview.md
     - Fundamentals: security/fundamentals.md
@@ -90,7 +93,9 @@ nav:
     - Exploits:
       - Overview: security/exploits/overview.md
       - XSS: security/exploits/xss.md
+      - Hardcoded Secrets: security/exploits/hardcoded_secrets.md
       - IDOR: security/exploits/idor.md
+      - SSRF: security/exploits/ssrf.md
       - SQLI: security/exploits/sqli.md
     - Toolbelt:
       - Overview: security/toolbelt/overview.md
