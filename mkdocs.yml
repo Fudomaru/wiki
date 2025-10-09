@@ -80,7 +80,18 @@ nav:
       - System: foundations/linux/system-internals.md
     - Protocols:
       - Overview: foundations/protocols/overview.md
+      - ARP: foundations/ protocols/arp.md
+      - ICMP: foundations/protocols/icmp.md
+      - TCP: foundations/protocols/tcp.md
+      - UDP: foundations/protocols/udp.md
+      - TSL: foundations/protocols/tls.md
+      - DNS: foundations/protocols/dns.md
+      - SMTP: foundations/protocols/smtp.md
       - SNMP: foundations/protocols/snmp.md
+      - FTP: foundations/protocols/ftp.md
+      - SSH: foundations/protocols/ssh.md
+      - SMB: foundations/protocols/smb.md
+      - DHCP: foundations/protocols/dhcp.md
   - Security:
     - Overview: security/overview.md
     - Fundamentals: security/fundamentals.md
