@@ -80,7 +80,7 @@ nav:
       - System: foundations/linux/system-internals.md
     - Protocols:
       - Overview: foundations/protocols/overview.md
-      - ARP: foundations/ protocols/arp.md
+      - ARP: foundations/protocols/arp.md
       - ICMP: foundations/protocols/icmp.md
       - TCP: foundations/protocols/tcp.md
       - UDP: foundations/protocols/udp.md
