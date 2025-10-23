@@ -79,7 +79,7 @@ These are the commands I reach for when things get real.
 
 ## Dangerous but Useful
 - `rm -rf`
-- `dd`
+- [`dd`](#dd)
 - `mkfs`
 - `mount`
 - `umount`
@@ -156,6 +156,40 @@ In the example above, making a file executable, it would like that `chmod -x [fi
 
 ***Tip:***  
 Learning the numbercodes is extremly helpful. First number for the user, second for the group, and last for others. Each digit represents a combination of read (4), write (2), and execute (1). 
+
+---
+
+
+#### dd
+
+***What it does:***  
+Used to copy data from one place to another. The interesting about it is that is does that raw - byte by byte. 
+That is why it is often used for cloning drives, making bootable usb drives, or secure deletion by overwriting existing data. 
+
+***Real use case:***
+I use `dd` to make bootable usb drives for setting up new mashines fast. 
+
+***Example:***
+Creating a bootable USB from an `.iso`:
+
+```bash
+sudo dd if=/path/to/image.iso of=/dev/sdX bs=4M status=progress
+sync
+```
+
+Replace `sdX` with your actual USB device (not a partition like `sdX1`).  
+`sync` ensures everything is fully written before you remove it. 
+
+***Tip:***
+- Be **absolutely sure** about your `of=` target — `dd` will happily overwrite your entire system without asking.  
+- You can also use `dd` to clone drives (`if=/dev/sda of=/dev/sdb`) or back up partitions to image files.  
+- Adjust `bs=` (block size) for speed; `4M` or `8M` are safe defaults.  
+- Combine it with `gzip` or `pv` for compression or progress display. Example:
+
+```bash
+sudo dd if=/dev/sda | pv | gzip > backup.img.gz
+```
+
 
 ---
 
