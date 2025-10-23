@@ -1027,6 +1027,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dd" class="md-nav__link">
+    <span class="md-ellipsis">
+      dd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#du" class="md-nav__link">
     <span class="md-ellipsis">
       du
@@ -3082,6 +3091,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dd" class="md-nav__link">
+    <span class="md-ellipsis">
+      dd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#du" class="md-nav__link">
     <span class="md-ellipsis">
       du
@@ -3279,7 +3297,7 @@
 <h2 id="dangerous-but-useful">Dangerous but Useful</h2>
 <ul>
 <li><code>rm -rf</code></li>
-<li><code>dd</code></li>
+<li><a href="#dd"><code>dd</code></a></li>
 <li><code>mkfs</code></li>
 <li><code>mount</code></li>
 <li><code>umount</code></li>
@@ -3343,6 +3361,27 @@ Whenever you make a script so you are actually able to run it. </p>
 In the example above, making a file executable, it would like that <code>chmod -x [file]</code></p>
 <p><strong><em>Tip:</em></strong><br />
 Learning the numbercodes is extremly helpful. First number for the user, second for the group, and last for others. Each digit represents a combination of read (4), write (2), and execute (1). </p>
+<hr />
+<h4 id="dd">dd</h4>
+<p><strong><em>What it does:</em></strong><br />
+Used to copy data from one place to another. The interesting about it is that is does that raw - byte by byte. 
+That is why it is often used for cloning drives, making bootable usb drives, or secure deletion by overwriting existing data. </p>
+<p><strong><em>Real use case:</em></strong>
+I use <code>dd</code> to make bootable usb drives for setting up new mashines fast. </p>
+<p><strong><em>Example:</em></strong>
+Creating a bootable USB from an <code>.iso</code>:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/path/to/image.iso<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/sdX<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>4M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress
+sync
+</code></pre></div>
+<p>Replace <code>sdX</code> with your actual USB device (not a partition like <code>sdX1</code>).<br />
+<code>sync</code> ensures everything is fully written before you remove it. </p>
+<p><strong><em>Tip:</em></strong>
+- Be <strong>absolutely sure</strong> about your <code>of=</code> target — <code>dd</code> will happily overwrite your entire system without asking.<br />
+- You can also use <code>dd</code> to clone drives (<code>if=/dev/sda of=/dev/sdb</code>) or back up partitions to image files.<br />
+- Adjust <code>bs=</code> (block size) for speed; <code>4M</code> or <code>8M</code> are safe defaults.<br />
+- Combine it with <code>gzip</code> or <code>pv</code> for compression or progress display. Example:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/sda<span class="w"> </span><span class="p">|</span><span class="w"> </span>pv<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>&gt;<span class="w"> </span>backup.img.gz
+</code></pre></div>
 <hr />
 <h4 id="du">du</h4>
 <p><strong><em>What it does:</em></strong><br />
