@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+set -e 
+
+echo "Checking for git"
+
+if command -v git &>/dev/null; then 
+  echo "Git found"
+else
+  echo "Installing git"
+  sudo pacman -Syu --noconfirm git
+fi
+
+
+echo "Checking for pyhton"
+
+if command -v python3 &>/dev/null; then 
+  echo "Phython found"
+else
+  echo "Installing python"
+  sudo pacman -Syu --noconfirm python
+fi
+
+
+echo "Checking for MkDocs environment..."
+
+VENV_DIR="$HOME/.mkdocs-env"
+
+if [[ ! -d "$VENV_DIR" ]]; then
+    echo "Creating virtual environment at $VENV_DIR"
+    python3 -m venv "$VENV_DIR"
+fi
+
+source "$VENV_DIR/bin/activate"
+
+if ! python -m mkdocs --version &>/dev/null; then
+    echo "Installing mkdocs and mkdocs-material..."
+    pip install --upgrade pip
+    pip install mkdocs mkdocs-material
+else
+    echo "MkDocs already installed."
+fi
+
+
+echo "Requirements installed"
+
