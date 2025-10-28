@@ -6,13 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A Linux & Cybersecurity notebook forged in fire.">
+        <meta name="description" content="From user to root — the art of climbing the permission ladder.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
+        <link rel="prev" href="../exploits/sqli/">
+      
+      
+        <link rel="next" href="../toolbelt/overview/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>Footprinting - Voidex</title>
+        <title>Privilege Escalation - Voidex</title>
       
     
     
@@ -137,7 +141,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#footprinting" class="md-skip">
+        <a href="#privilege-escalation" class="md-skip">
           Skip to content
         </a>
       
@@ -171,7 +175,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Footprinting
+              Privilege Escalation
             
           </span>
         </div>
@@ -311,10 +315,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../overview/" class="md-tabs__link">
           
   
@@ -1270,24 +1276,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -1300,7 +1311,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Security
@@ -1708,10 +1719,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../privilege-escalation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Privilege Escalation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1722,6 +1755,119 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Goal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertical-vs-horizontal-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertical vs. Horizontal Escalation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-principle-of-least-privilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Principle of Least Privilege
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Methodology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defense-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defense &amp; Mitigation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2746,9 +2892,93 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#the-goal" class="md-nav__link">
     <span class="md-ellipsis">
+      The Goal
+    </span>
+  </a>
+  
+</li>
       
+        <li class="md-nav__item">
+  <a href="#core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vertical-vs-horizontal-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vertical vs. Horizontal Escalation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-principle-of-least-privilege" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Principle of Least Privilege
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Methodology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Vectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defense-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defense &amp; Mitigation
     </span>
   </a>
   
@@ -2770,11 +3000,65 @@
 
 
 
-<h1 id="footprinting">Footprinting</h1>
-<p>Stands for recon unsing scans and third-party providers. 
-Mostly activ enumeration.
-And for that, it should be performed seperatly from OSINT. </p>
-<h2 id="_1"></h2>
+<h1 id="privilege-escalation">Privilege Escalation</h1>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>Privilege Escalation is the art of exploiting a bug, design flaw, or configuration oversight in an operating system or software application to gain elevated access to resources that are normally protected from an application or user. The result is that an application with more privileges than intended by the developer or system administrator can perform unauthorized actions.</p>
+</div>
+<hr />
+<h2 id="the-goal">The Goal</h2>
+<p>The goal is simple: start as a low-level user, and end up with the highest possible privileges on a system. On Linux, this is <code>root</code>. On Windows, this is <code>NT AUTHORITY\SYSTEM</code>.</p>
+<p>This phase of an attack is often the difference between seeing a small part of a system and owning it completely.</p>
+<hr />
+<h2 id="core-concepts">Core Concepts</h2>
+<p>Before hunting for exploits, it’s crucial to understand the underlying mechanics of privilege.</p>
+<h3 id="vertical-vs-horizontal-escalation">Vertical vs. Horizontal Escalation</h3>
+<ul>
+<li><strong>Vertical Privilege Escalation:</strong> The most common form, where a lower-privilege user or application gains higher privileges. This is our focus.</li>
+<li><strong>Horizontal Privilege Escalation:</strong> When a user gains access to the resources of another user with the same level of privileges.</li>
+</ul>
+<h3 id="the-principle-of-least-privilege">The Principle of Least Privilege</h3>
+<p>This is the defensive principle we seek to exploit. It states that a user or process should only have the minimum privileges necessary to perform its function. When this principle is violated, we find our opportunities.</p>
+<hr />
+<h2 id="the-methodology">The Methodology</h2>
+<p>A structured approach is more effective than running random exploits.</p>
+<ol>
+<li><strong>Enumerate:</strong> Collect as much information about the system as possible. Kernel version, running services, scheduled tasks, user permissions, etc. This is the most critical step.</li>
+<li><strong>Identify Vectors:</strong> Based on the enumeration, identify potential paths to escalation.</li>
+<li><strong>Exploit:</strong> Execute the chosen exploit, carefully.</li>
+<li><strong>Stabilize &amp; Document:</strong> Secure your new access and document the path you took.</li>
+</ol>
+<hr />
+<h2 id="common-vectors">Common Vectors</h2>
+<h3 id="linux">Linux</h3>
+<ul>
+<li><strong>Kernel Exploits:</strong> Leveraging vulnerabilities in the OS kernel itself. Often risky, but powerful.</li>
+<li><strong>Misconfigured Services:</strong> Services running as <code>root</code> that can be manipulated.</li>
+<li><strong>SUID/GUID Binaries:</strong> Executables that run with the permissions of the owner (e.g., <code>root</code>) rather than the user who is running them.</li>
+<li><strong>Weak File Permissions:</strong> Being able to read or write files you shouldn't have access to, like <code>/etc/shadow</code>.</li>
+<li><strong>Cron Jobs:</strong> Hijacking scripts that are scheduled to run as a higher-privileged user.</li>
+</ul>
+<h3 id="windows">Windows</h3>
+<ul>
+<li><strong>Unquoted Service Paths:</strong> If a service path is not wrapped in quotes and contains spaces, Windows may execute a malicious binary placed in a parent directory.</li>
+<li><strong>Insecure Service Permissions:</strong> Services where a low-privilege user has been granted permissions to modify or restart the service.</li>
+<li><strong>Registry Abuse:</strong> Finding weak permissions in the registry that allow for modification of service binaries or other system components.</li>
+<li><strong>AlwaysInstallElevated:</strong> A policy that, if enabled, allows any user to install <code>.msi</code> packages with elevated privileges.</li>
+<li><strong>DLL Hijacking:</strong> Placing a malicious DLL in a location where an application will load it with high privileges.</li>
+</ul>
+<hr />
+<h2 id="defense-mitigation">Defense &amp; Mitigation</h2>
+<p>Understanding the attack is only half the battle.</p>
+<ul>
+<li><strong>Patch Regularly:</strong> The simplest defense against kernel exploits.</li>
+<li><strong>Enforce Least Privilege:</strong> Don't run services as <code>root</code> if they don't need to be. Use dedicated service accounts.</li>
+<li><strong>Monitor:</strong> Look for anomalous behavior, such as a user suddenly gaining new privileges.</li>
+<li><strong>Harden Configurations:</strong> Use tools to audit your systems for common misconfigurations.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>From a defensive perspective, your goal is to make the enumeration phase as difficult as possible for an attacker. The less they know, the harder it is for them to find a path to escalation.</p>
+</div>
 
 
 
@@ -2808,6 +3092,44 @@ And for that, it should be performed seperatly from OSINT. </p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../exploits/sqli/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SQLI">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                SQLI
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../toolbelt/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
