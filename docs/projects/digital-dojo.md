@@ -5,6 +5,9 @@ description: Short tutorial style explaination how I build this page, what probl
 
 # Building a Digital Dojo
 
+!!! info "Project Evolution"
+    This page documents the initial setup of the Digital Dojo. For details on the recent upgrade to the scripting and automation workflow, see the [Scripting Upgrade](./script-upgrade.md) page.
+
 ## How I Built My Digital Dojo Using MkDocs
 
 ### 1. Installing Python

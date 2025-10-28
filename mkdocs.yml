@@ -135,6 +135,7 @@ nav:
   - Projects:
     - Overview: projects/overview.md
     - Digital Dojo: projects/digital-dojo.md
+    - Scripting Upgrade: projects/script-upgrade.md
     - EchoSnare: projects/echosnare.md
     - Void Linux: projects/void_linux.md
   - Notes:
