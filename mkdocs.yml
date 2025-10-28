@@ -108,6 +108,7 @@ nav:
       - IDOR: security/exploits/idor.md
       - SSRF: security/exploits/ssrf.md
       - SQLI: security/exploits/sqli.md
+    - Privilege Escalation: security/privilege-escalation.md
     - Toolbelt:
       - Overview: security/toolbelt/overview.md
       - Nmap: security/toolbelt/nmap.md
