@@ -1,6 +1,6 @@
 ---
 title: EchoSnare
-description: Personal Wifi Sniffer Project using a ESP32 with MicroPhyton
+description: Personal Wifi Sniffer Project using an ESP32 with MicroPython
 ---
 
 # EchoSnare
@@ -15,8 +15,8 @@ Can I find out where it differs.
 And I already have a few good Ideas of how to start mapping out the cables I am using all day long to talk, game, and watch stuff. 
 
 --- 
-Now it also happend that I came across something special. 
-Something that probably always peaked my interest, but I have never really felt ready to dive deeper. 
+Now it also happened that I came across something special. 
+Something that probably always piqued my interest, but I have never really felt ready to dive deeper. 
 Well I am ready. 
 I have learned a lot, and I feel ready to get my feet wet trying to **really** understand what IoT means, what it is and what it can do. 
 I found an ESP32 Dev board with battery, case, Oled Display and LoRa Modul. 
@@ -48,8 +48,7 @@ Here are the tools I plan to use for this project.
 
 This is the first real move in the direction of actually doing something after the planning phase.
 I need to get my Nvim setup for MicroPython.
-For that I need to install all the dependicies I will need to finish this projcet.
-Then I set up my Nvim to have Highlighting, etc. 
+For that I need to install all the dependencies I will need to finish this project. Then I set up my Nvim to have Highlighting, etc. 
 
 ### Flash and Burn
 
@@ -66,7 +65,7 @@ And last I would need to figure out good settings and control over the scanning 
 
 ### OLED Display 
 
-Next I will be considering what to do with the already integreted display. 
+Next I will be considering what to do with the already integrated display. 
 Thinking about it there should probably be some way to display the battery level. 
 And also maybe a count of how many SSID/MAC adresses I have found and saved. 
 Maybe I can do a percentage of how full the storage is or something like it. 

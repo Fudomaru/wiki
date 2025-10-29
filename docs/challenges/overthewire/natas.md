@@ -1,6 +1,6 @@
 ---
 title: Natas
-description: Aimed at Beginners. Basic WebApp with a white box approch, showcasing the most common bugs and how to abuse them.
+description: Aimed at Beginners. Basic WebApp with a white box approach, showcasing the most common bugs and how to abuse them.
 ---
 
 
@@ -83,7 +83,7 @@ curl -i -H "Authorization: Basic bmF0YXMwOm5hdGFzMA==" http://natas0.natas.labs.
 ### Getting the flag
 
 For all that work, and understanding that happened in these steps, 
-there is thing that makes it a clear win: 
+there are things that make it a clear win: 
 If you get this request and authorization to work in curl, 
 you get the flag right in front of you,
 since it is in the html file, as a comment. 
@@ -670,7 +670,7 @@ curl -u natas9:natas9password -d "needle=aa; cat /etc/natas_webpass/natas10 # " 
 ```
 
 Server response (relevant part) shows the command output inside the page.
-Whit this I got the password for natas10 and cloud move on to the next level. 
+With this I got the password for natas10 and could move on to the next level. 
 
 
 ### Lessons learned (concise)

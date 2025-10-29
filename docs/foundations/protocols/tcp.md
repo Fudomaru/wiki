@@ -34,7 +34,7 @@ It handles retransmissions, acknowledgments, and flow control.
 
 TCP is one of two protocols that almost all others 
 on higher levels of the OSI Model use. 
-It is foundametal to the core funktionallity of the internet. 
+It is fundamental to the core functionality of the internet. 
 
 ---
 

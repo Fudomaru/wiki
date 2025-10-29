@@ -1,6 +1,6 @@
 ---
 title: Windows CLI Magic
-description: This is a page to garther all the most used windows cli tools to know in windows.
+description: This is a page to gather all the most used Windows CLI tools to know in Windows.
 --- 
 
 # Windows CLI Magic

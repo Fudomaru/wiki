@@ -1,6 +1,6 @@
 ---
 title: Windows Event Log Deep Dive  
-Description: This is a deep dive into how Windows logs system activity, how to interact with it, and why it matters for defenders and attackers alike.  
+description: This is a deep dive into how Windows logs system activity, how to interact with it, and why it matters for defenders and attackers alike.  
 ---
 
 # Windows Event Log Deep Dive

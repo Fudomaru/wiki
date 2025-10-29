@@ -1,12 +1,12 @@
 ---
-title: Cybersec Fundamenals
-description: Explaing the fundamentals of Cybersecurity, how to use them, abuse and defend against them.
+title: Cybersec Fundamentals
+description: Explaining the fundamentals of Cybersecurity, how to use them, abuse and defend against them.
 ---
 
 ## What is this Page
 
 This is my personal crash course into cybersecurity.  
-I use it to track concepts, tools and tactis I pick up and get to use efficantly in CTFs and during my learning.  
+I use it to track concepts, tools and tactics I pick up and get to use efficiently in CTFs and during my learning.  
 
 !!! info ""
     It evolves as I learn!
@@ -16,7 +16,7 @@ I use it to track concepts, tools and tactis I pick up and get to use efficantly
 
 - Thinking outside the box: Try to find as many ways to use tools and systems as you can. There is never the right way, there are only endless possibilities.  
 
-- The Why is more important then the How: Understanding why something is done, the motivation and psychologie behind it, you find the weak points.  
+- The Why is more important then the How: Understanding why something is done, the motivation and psychology behind it, you find the weak points.  
 
 - No is not an option: You often get the best results, after nothing works and you have to get creative.  
 
@@ -30,7 +30,7 @@ I use it to track concepts, tools and tactis I pick up and get to use efficantly
 
 - CIA Triade: The three core parts to make things secure. Look at this on every level, from singel packages to complete infrastructures. If any is missing, that is where things go wrong.  
 
-- OWASP Top 10: The most commen vulnarbilities found in the wild. Learn them, know them, and look for them everywhere.  
+- OWASP Top 10: The most common vulnerabilities found in the wild. Learn them, know them, and look for them everywhere.  
 
 - Defense in depth: Layering security strategies, always know that every layer will be breached. So configure every layer like it is the first and last defence.  
 

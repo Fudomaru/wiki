@@ -1,6 +1,6 @@
 ---
 title: bandit
-description: Aimed at Beginners. Teaching the basics of linux commands and system structur. 
+description: Aimed at Beginners. Teaching the basics of linux commands and system structure. 
 ---
 
 
@@ -63,10 +63,10 @@ ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 
 
 #### My Solutions
-I am always suprised on how easy it is to make regular things seam special.  
+I am always surprised on how easy it is to make regular things seem special.  
 It was practically the same thing then the level before.  
 This time the file just wasn't called "readme", but "-".  
-So just tiping in the normal command wouldn't work.  
+So just typing in the normal command wouldn't work.  
 But this time I actually had the problem before. So I did the following:  
 `cat ./-`
 
@@ -77,7 +77,7 @@ But this time I actually had the problem before. So I did the following:
 ## Level 2 → Level 3
 
 #### My Solutions
-Since there where no new commands, and in the level description it told me the file name with the flag, I just went on trying `cat` again.  
+Since there were no new commands, and in the level description it told me the file name with the flag, I just went on trying `cat` again.  
 This time went pretty easy for me, since I accidently found the right answer.  
 Sometimes I am pretty lazy, so I use tab to autocomplete a lot.  
 And here it saved me from figuring out on my own how to deal with spaces in filenames.  
@@ -111,13 +111,13 @@ Then it was just the now typical `cat` to get to the flag.
 
 #### My Solutions
 So again: No new commands, so I guess I can just `cat` all the files in there.  
-Or so I tought.  
+Or so I thought.  
 I was really surprised to find output in front of my bash setup. It wasn't too bad, and just brute forcing my way though all 10 files, it was easy to find the human readable file and the flag.  
 
 #### but
 I couldn't let it be. So I started searching for to figure out if a file is human readable first.  
 It felt like that would be the **right** solution.  
-So after thinking about it, and trying to find a clear path to "human readable" in the help of different commands, I setteled on the file command.  
+So after thinking about it, and trying to find a clear path to "human readable" in the help of different commands, I settled on the file command.  
 It tells me what something is, and maybe I can tell from the type which is the right one.  
 This is what I ended up using, and it only put one file as ASCII instead of data or a PGP Secret Sub-Key. 
 `file ./*`
@@ -164,7 +164,7 @@ So first I had to try the same thing I did Level 5:
 `find / -size 33c`  
 This found me a whole lot of different stuff.  
 So I had to go to the next step and figure out how to search for ownership.  
-Back to the `man` page for me. But I didn't wanted to try to read though everything again.  
+Back to the `man` page for me. But I didn't want to try to read through everything again.  
 So I thought to be really clever figured out how to search on the `man` pages.  
 This is done with `/ WhatYouWantToSearch`.  
 With this it was a lot easier to find out the right command to find the user and group.  
@@ -185,7 +185,7 @@ morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 grep, strings, base64
 
 #### My Solutions  
-So for this level there where a whole lot of new commands.  
+So for this level there were a whole lot of new commands.  
 The Info for this was as follows:  
 The password for the next level is stored in the file data.txt next to the word millionth  
 That meant I now what to do:  
@@ -202,7 +202,7 @@ sort, [uniq](/linux/cli-magic/#uniq)
 
 #### My Solutions  
 So same set up, but the only line of text that occurs only once.  
-For this I imidiatly went to the `sort` command.  
+For this I immediately went to the `sort` command.  
 I thought that would make it easy.  
 But I was wrong.  
 Probably I could just go though the output and find the line that only occurs once.  
@@ -229,7 +229,7 @@ string
 So I have a data.txt, but it is all gibberish.  
 Again needing to go back to the description.  
 It is supposed to be the only human readable string preceded by several =.  
-For me the imidiat problem is that several is not very specific.  
+For me the immediate problem is that several is not very specific.  
 But leaving that for the end, I needed to find some good way to look for the right part. I though for the equal sign I can just use `qrep`.  
 Sadly that wouldn't want to work.  
 Back to the commands.  
@@ -248,7 +248,7 @@ base64
 #### My Solutions  
 Going though the description first this time I learned, that the data this time  is base64 encoded.  
 So it seams it was pretty straight forward.  
-Reading though the docu for `base64` and building a functioning command to use it.  
+Reading through the docu for `base64` and building a functioning command to use it.  
 `base64 -d data.txt`
 
 <!--
@@ -282,7 +282,7 @@ tar, gzip, bzip2, xxd
 #### My Solutions  
 So for this the info for the level recomanded to make a directory to work at.  
 I did as I was told.  
-Then I started working my way though everything saving every step of the way.  
+Then I started working my way through everything saving every step of the way.  
 First I converted the hex dump back with:  
 `xxd -d data`  
 Afterwards I always look what conversion was used with `file`, then changed the name to have the apropriat ending with `mv` and used the fitting decompression command.  
@@ -302,7 +302,7 @@ ssh, telnet, nc, openssl, s_client, nmap
 This was pretty exciting for me.  
 I am a big fan of using keys and what happens when it gets into the wrong hands.  
 This might be why I never saved the password for level 14.  
-I copied the privat key and used it to connect directly to the bandit14 account.  
+I copied the private key and used it to connect directly to the bandit14 account.  
 But I do know you are supposed to connect to bandit14 from your bandit13 account.  
 The command for that would be:  
 `ssh -i sshkey.private -p 2220 bandit14@localhost`
@@ -326,7 +326,7 @@ And found out that I can use netcat for it.
 So I connected to the port using  
 `nc localhost 30000`  
 and send the password. 
-And promt I got the new password for bandit15.  
+And prompt I got the new password for bandit15.  
 
 <!--
 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
@@ -340,7 +340,7 @@ openssl, s_client
 #### My Solutions  
 I used the openSSL s_client to connect to localhost Port 30001. 
 It worked very smoothly and I send the password for the level.  
-`opelssl s_client -connect localhost:30001`
+`openssl s_client -connect localhost:30001`
 
 <!--
 kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
@@ -356,12 +356,12 @@ First I scanned the given portspace with nmap also trying to find out the servic
 `nmap -p 31000-32000 --open -sV localhost`  
 The options made the port I needed pretty clear.  
 Next I thought to pretty much just do what I did in the last level.  
-First it did not work and made me really scatch my head.  
+First it did not work and made me really scratch my head.  
 ---
 So after I quite literally smashed my head against the keyboard I finally stumbled upon a solution.  
 I got the connection to the port.  
 I also seam to have the right password, since if I put anything else in, I got the message "wrong password" and it kicked me of the connection.  
-But for my password, I only got KEYUPDATED and not the actuall key.  
+But for my password, I only got KEYUPDATED and not the actual key.  
 I do not know why, but for some reason I could not find out how to look at the key.  
 My solution finally was this:  
 `openssl s_client -nocommands -connect localhost:31790`  
@@ -396,11 +396,11 @@ Instead of just logging in and finding the password, you are actually logged out
 Or at least something like it.  
 When you log in you are imidiatly kicked back out.  
 ---  
-So I logged back unto level 17 to see if I can just open the readme file from there.  
+So I logged back into level 17 to see if I can just open the readme file from there.  
 But of course I did not have the permissions to do so.  
 Also I looked at the .bashrc file to see if I can figure out how exactly it works, and how I can get around it.  
 But while looking at it, I had another idea.  
-And so I used folling command to copy the readme file to my own mashine.  
+And so I used following command to copy the readme file to my own machine.  
 `scp -P 2220 bandit18@bandit.labs.overthewire.org:/home/readme ./bandit18pass`
 
 <!--
@@ -421,9 +421,9 @@ But it is made to teach about setuid and what that means, so I need to learn mor
 ## Level 20 → Level 21
 
 #### My Solutions  
-This I found also really interessting. I couldn't get tmux to work, which is why I will not put it as a new command here.  
+This I found also really interesting. I couldn't get tmux to work, which is why I will not put it as a new command here.  
 But I do need to learn how to use it.  
-Instead I connected twice, the old fashen way. I just opened two terminals, and connected both over SSH.  
+Instead I connected twice, the old fashioned way. I just opened two terminals, and connected both over SSH.  
 After that it was just a matter of knowing what to do.  
 On the one side I opened a nc listener, and connected to it with the setuid from the other side.  
 Then I gave the setuid the password, and got the next one out.  
@@ -436,7 +436,7 @@ EeoULMCra2q0dSkYj561DX7s1CpBuOBt
 
 #### My Solutions  
 For this I got to see cronjobs for the first time, at least in this game.  
-I went to look at the bandit22 job in /etc/con.d/ folder.  
+I went to look at the bandit22 job in /etc/cron.d/ folder.  
 Here I found a script, and looking at it I just needed to cat the file the password got saved in.  
 
 <!--
@@ -487,7 +487,7 @@ gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
 ## Level 24 → Level 25
 
 #### My Solutions  
-For this I could either try all 10.000 possiblities by hand, or I had to come up with a script.  
+For this I could either try all 10.000 possibilities by hand, or I had to come up with a script.  
 So the script it was:  
 ```
 #!/bin/bash
@@ -508,7 +508,7 @@ iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
 
 #### My Solutions  
 So I guess this one I can easily just skip. You get a SSL Key for level 26.  
-That is why it wasnt ever important for me not having a normal shell.  
+That is why it wasn't ever important for me not having a normal shell.  
 I just grabbed the key to the next level and was out of there.    
 
 <!--
@@ -524,7 +524,7 @@ Small Window to get `more`.
 Use V to get into vim.  
 Use `:term shell` to normally get a shell in the top half of the terminal.  
 
-With that you can get a shell and take what you need, like the password for bandat26 just to be sure to have it.  
+With that you can get a shell and take what you need, like the password for bandit26 just to be sure to have it.  
 It is saved in the same spot all the other passwords are saved, and can just be read out:  
 `cat /ect/bandit_pass/bandit26`  
 ---  
@@ -560,7 +560,7 @@ The description for this level was the same as the last one.
 So I went the same way and cloned the repo, and looked at the readme file.  
 It displayed the credentials of Bandit29, but the password was **xxxxxxxx**.  
 Since I know git is a version control, I thought that is probably *the* feature for me to learn about.  
-So I looked at the perviouse commits with:  
+So I looked at the previous commits with:  
 `git log`  
 And in one of them I found the comment **fix info leak** and in the one before it read **add missing data**.  
 So of course I needed to look at the **add missing data** commit just to see what that meant.  
@@ -578,7 +578,7 @@ And now it was just a matter of looking at the readme file, and copying the pass
 Same steps as in the last two levels. But no results.  
 So I looked at the different branches.  
 `git branch -r`  
-There were several branches, but the one that immediatly took my interest was *origin/sploits-dev*.  
+There were several branches, but the one that immediately took my interest was *origin/sploits-dev*.  
 So I got to work.  
 `git pull origin sploits-dev`  
 Pulled the branch I wanted to take a look at.  
@@ -622,7 +622,7 @@ So I got to work.
 ```
 echo 'May I come in?' > key.txt
 ```
-I also needed to delete the `*.txt` from the .gitignor file to get everything to work. 
+I also needed to delete the `*.txt` from the .gitignore file to get everything to work. 
 Then it was just:  
 ```
 git add .
@@ -641,19 +641,18 @@ And I got the next password back.
 This was a lot of fun.  
 When I arrived, I found this:  
 `WELCOME TO THE UPPERCASE SHELL`  
-So I tought, that should not make too much of a difference.  
+So I thought, that should not make too much of a difference.  
 But I was very wrong.  
-Non of the previously learned commands worked.  
+None of the previously learned commands worked.  
 But I could try around and see if I find something good to do.  
-After searching though the web for shell commands that only use uppercase, I pretty much only found the variables.  
+After searching through the web for shell commands that only use uppercase, I pretty much only found the variables.  
 So I looked though them to see what there is.  
 Maybe I can use one of them to escape this uppercase shell, just like the level desciption suggested.  
-I found one: `$0`  
-With that I was back to something more usefull.  
-But for convinence I wanted more.  
+I found one: `$0`
+With that I was back to something more useful.  But for convenience I wanted more.  
 `/bin/bash` got me to something I was used too.  
 But there was still the problem with getting the next level password.  
-At least until I noticed that I am already bandit33, so I just went to the usuall place and get my password. 
+At least until I noticed that I am already bandit33, so I just went to the usual place and get my password. 
 `cat /etc/bandit_pass/bandit33`
 
 <!--

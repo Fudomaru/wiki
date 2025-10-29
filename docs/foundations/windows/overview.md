@@ -1,6 +1,6 @@
 ---
 title: Windows Overview
-description: General explaination of how Windows is build up.
+description: General explanation of how Windows is built up.
 ---
 
 # Overview
@@ -26,7 +26,7 @@ to chart the territory.
 
 ## Phase 1 - Firmware & Boot Manager
 
-### UEFI frimware 
+### UEFI firmware 
 
 Initializes hardware, reads the EFI System Partition,
 and launches Windows Boot Manager 
@@ -45,7 +45,7 @@ so nothing unsigned runs before the kernel.
 
 ### BitLocker pre-boot (optional)
 
-If the OS volum is encrypted, 
+If the OS volume is encrypted, 
 TPM/pin/unlock happens here so the loader 
 can read \windows\System32\drivers\... .
 
@@ -57,7 +57,7 @@ the HAL and BOOT_START drivers from
 
 ### Early driver class
 
-Only minial storage, filesystem, 
+Only minimal storage, filesystem, 
 and bus drivers load now, 
 just enough to mount the system volume.
 

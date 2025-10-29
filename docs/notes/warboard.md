@@ -1,14 +1,14 @@
 ---
 title: Warboard
-description: List of my planes for furtur write ups and general project ideas.  
+description: List of my plans for future write ups and general project ideas.  
 ---
 
 # WARBOARD
 
 ??? info "What is this for?"
-    This is a plan for me to keep myself real.  
+    This is a plan for me to keep myself on track.  
     I write down what I am currently working on,  
-    what is planed next,  
+    what is planned next,  
     and what are general ideas for the future.  
 
 ---
@@ -24,11 +24,11 @@ description: List of my planes for furtur write ups and general project ideas.
 ## STAGING ZONE
 ??? info 
     Mental RAM.  
-    The stuff I am activly thinking on how to put them in.  
+    The stuff I am actively thinking on how to put them in.  
 
 - Doing a DeepDive with practice of `schtaks`
-- Write secontion on setuid, openssl, permissions in linux
-- Explaining where I stand in my Nvim Journy
+- Write section on setuid, openssl, permissions in linux
+- Explaining where I stand in my Nvim Journey
 - Building CAIDO Overview page
 - Building PEASS Overview page
 - DeepDive into WinRegistry
@@ -36,19 +36,19 @@ description: List of my planes for furtur write ups and general project ideas.
 ---
 ## STRATEGIC BACKLOG
 ??? info
-    Goals for the long time and bigger projects befor I actually start working on them.  
+    Goals for the long term and bigger projects before I actually start working on them.  
 
-- Page with better explaination on DMZs. 
+- Page with better explanation on DMZs. 
 - Getting picture documentation to work
 - List of file formats and what it means and you can do with it. 
 - Working on building some Visual Charts
-- Talking a loot at OWASP Juice Shop, etc. 
+- Talking a look at OWASP Juice Shop, etc. 
 - Work on underthewire.tech for the Windows version of Overthewire
 
 ---
 ## COMPLETED STRIKES
 ??? info
-    Trying to keep a brief history and show of what the newes pages are.  
+    Trying to keep a brief history and show of what the newest pages are.  
 
 - Deep-dive into privilege escalation (2025-10)
 - Adding ARP, ICMP and SNMP Protocol pages (2025-10)
@@ -70,9 +70,9 @@ description: List of my planes for furtur write ups and general project ideas.
 - Making an Overview of the different Sections (2025-08)
 - Creating an Overview of the Startup process of the main operating systems (2025-08)
 - Restructure considering my current knowledge (2025-08)
-- Create automation script for deployment and dokumenting it (2025-05)
-- Using Warboard as a way to stay acountable (2025-05)
-- Bandit dokumetation (2025-04)
+- Create automation script for deployment and documenting it (2025-05)
+- Using Warboard as a way to stay accountable (2025-05)
+- Bandit documentation (2025-04)
 - Adding a Logo (2025-04)
 - First draft Cyber Fundamentals (2025-04)
 - Adding Filestructure, Home and About Page (2025-04)

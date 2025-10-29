@@ -1,6 +1,6 @@
 ---
 title: void_linux 
-description: This is the journey of me setting up my new Laptop as a minimal VoidStation.
+description: This is the journey of me setting up my new Laptop as a minimal Voidstation.
 ---
 
 # Void_Station_Setup
@@ -42,14 +42,14 @@ I do not expect to actually be able to just comprehend the whole linux kernal li
 But the less I have on top, the less there is to abstract and keep me from actually knowing what is going on. 
 
 There are a lot more fun things to learn using Void Linux. 
-But these I figured out after already choosing it, and so I don't want to clame them as my reason. 
+But these I figured out after already choosing it, and so I don't want to claim them as my reason. 
 
 
 ## Pre-Install Decisions
 
 So there had to be a few decisions I had to make before, and for me also during the installation. 
 The first was choosing the ISO. 
-But this was relativly easy. 
+But this was relatively easy. 
 I wanted a clean install without anything. 
 So even if I would choose a Window Manager later on, I did now want anything like that on my ISO. 
 Next was the boot method.

@@ -19,7 +19,7 @@ that reveal how systems break and how they hold.
 ## What belongs here
 
 - [**Fundamentals**](/security/fundamentals/) → core security principles, models, and mental frameworks.  
-- [**Pentesting**](/security/pentesting/fundamentals/) → full explainations of everything I need to know about pentesting, the ethic, rules, stucture, and everything else important. 
+- [**Pentesting**](/security/pentesting/fundamentals/) → full explanations of everything I need to know about pentesting, the ethics, rules, structure, and everything else important. 
 - [**Toolbelt**](/security/toolbelt/overview/) → the utilities I train with: scanners, proxies, sniffers, exploit frameworks.  
 - [**Playbooks**](/security/playbooks/overview/) → practical flows: recon, enumeration, exploitation, post-exploitation, and the obstacles that shut each down.  
 - [**Exploits**](/security/exploits/overview/) → small Overview of Vulnerability types that I try to understand to build up general knowledge, and learn mitigations to what happens often.

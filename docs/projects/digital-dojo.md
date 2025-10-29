@@ -1,6 +1,6 @@
 ---
 title: Building a Digital Dojo
-description: Short tutorial style explaination how I build this page, what problems I had, and what I learned from it.
+description: Short tutorial style explanation how I build this page, what problems I had, and what I learned from it.
 ---
 
 # Building a Digital Dojo

@@ -6,10 +6,10 @@ description: This page I made to have an overview to my CCNA Training.
 # CCNA Training
 
 This is going to be my training for the CCNA.  
-I want the cert for the knowledge, the recognizion of my knowledge comes last.  
+I want the cert for the knowledge, the recognition of my knowledge comes last.  
 The best way to show you knowledge, is by knowing.  
 
-Since I don't want to scip anything important, I am going to write a paragraphe about every topic mentioned: 
+Since I don't want to skip anything important, I am going to write a paragraph about every topic mentioned: 
 
 ---
 
@@ -1013,7 +1013,7 @@ Example:
 
 ```
 
-JSON is the lingua franka of modern APIs. 
+JSON is the lingua franca of modern APIs. 
 
 
 ---
