@@ -2856,8 +2856,8 @@
 <h1 id="mkdocs-auto-deploy-script-powershell">MkDocs Auto-Deploy Script (Powershell)</h1>
 <h2 id="overview">Overview</h2>
 <p>Automates committing and deploying changes to my Digital Dojo.<br />
-I build this as a first step to understanding and using a real CI/CD for this project. 
-For that I needed to solve going to every command by hand.<br />
+I built this as a first step to understanding and using a real CI/CD for this project. 
+For that I needed to solve running every command by hand.<br />
 But I didn't want to start using any fancy tool for this simple task. So I decided to make this simple script to automate it.  </p>
 <h2 id="functional-breakdown">Functional Breakdown</h2>
 <p>Here I am going to break down what I put into this script: </p>
@@ -2865,7 +2865,7 @@ But I didn't want to start using any fancy tool for this simple task. So I decid
 <p>I wanted this to be portable and usable without much of a hustle.
 So I put the script right into the repo of this page.<br />
 This way I can always use it as long as I pulled the repo to work on it. 
-I needed to make sure it runs from the right place: the rood of my repo.<br />
+I needed to make sure it runs from the right place: the root of my repo.<br />
 To get this location in Powershell I used the following:  </p>
 <div class="highlight"><pre><span></span><code>$ScriptPath = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
 $WikiRoot = Join-Path $ScriptPath &quot;..&quot; | Resolve-Path
@@ -2873,7 +2873,7 @@ Set-Location $WikiRoot
 </code></pre></div>
 <hr />
 <h3 id="2-git-commit-comment">2. Git Commit Comment</h3>
-<p>To actually use git commit I have to have a comment of what I am commiting.<br />
+<p>To actually use git commit I have to have a comment of what I am committing.<br />
 I wanted to solve this by using an argument I can just put in after the script to make it feel like a real command.<br />
 That wasn't good enough. When I tried it and it worked, I thought it would be enough. 
 But even the second try I just forgot about the comment. So I needed a fallback method.<br />
@@ -2886,7 +2886,7 @@ $message = Read-Host &quot;Enter commit message&quot;
 </code></pre></div>
 <hr />
 <h3 id="3-git-operations">3. Git Operations</h3>
-<p>This is actually the most straight forward. Just the git commands I normally use by hand. But I did not want to make it quite as easy for myself. So I tried myself with some error catching and outputting what was successful and what failed. All in all I just used a simple try catch with an output of what was currently running when it failed ($_). This gives always gives me a good idea of where the error happend, and let me look at the right thing to try to figure out what went wrong. Also I put the $message variable I got in the previouse part as the commit message.  </p>
+<p>This is actually the most straight forward. Just the git commands I normally use by hand. But I did not want to make it quite as easy for myself. So I tried myself with some error catching and outputting what was successful and what failed. All in all I just used a simple try catch with an output of what was currently running when it failed ($_). This gives always gives me a good idea of where the error happend, and let me look at the right thing to try to figure out what went wrong. Also I put the $message variable I got in the previous part as the commit message.  </p>
 <div class="highlight"><pre><span></span><code>try {
     git add .
     git commit -m &quot;$message&quot;
@@ -2916,7 +2916,7 @@ That would be the same as running <code>mkdocs build</code>.
 Then it pushes this build to a seperate branch in my repo. 
 This way I do not have to have the build site in my main branch, 
 and just tell GitHub to use the seperate branch to deploy from. 
-This works like a charme, without a lot of hassle so far. 
+This works like a charm, without a lot of hassle so far. 
 I put this right after my git operations.  </p>
 <div class="highlight"><pre><span></span><code>mkdocs gh-deploy
     if ($?) {
@@ -2931,7 +2931,7 @@ I put this right after my git operations.  </p>
 <p>Building in local logging to get more information and maintain everything cleanly for building a full CI/CD. </p>
 </li>
 <li>
-<p>Timestemping inside the commit message and log output. </p>
+<p>Timestamping inside the commit message and log output. </p>
 </li>
 </ul>
 

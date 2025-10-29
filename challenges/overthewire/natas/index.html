@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Aimed at Beginners. Basic WebApp with a white box approch, showcasing the most common bugs and how to abuse them.">
+        <meta name="description" content="Aimed at Beginners. Basic WebApp with a white box approach, showcasing the most common bugs and how to abuse them.">
       
       
         <meta name="author" content="Fudomaru">
@@ -4429,7 +4429,7 @@ That single line is the server spelling out the rules of the game:<br />
 <hr />
 <h3 id="getting-the-flag">Getting the flag</h3>
 <p>For all that work, and understanding that happened in these steps, 
-there is thing that makes it a clear win: 
+there are things that make it a clear win: 
 If you get this request and authorization to work in curl, 
 you get the flag right in front of you,
 since it is in the html file, as a comment. </p>
@@ -4829,7 +4829,7 @@ Example I used:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>natas9:natas9password<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;needle=aa; cat /etc/natas_webpass/natas10 # &quot;</span><span class="w"> </span>http://natas9.natas.labs.overthewire.org/
 </code></pre></div>
 <p>Server response (relevant part) shows the command output inside the page.
-Whit this I got the password for natas10 and cloud move on to the next level. </p>
+With this I got the password for natas10 and could move on to the next level. </p>
 <h3 id="lessons-learned-concise_2">Lessons learned (concise)</h3>
 <ul>
 <li>Never pass raw user input into shell commands. Use escapeshellarg/escapeshellcmd, or better yet avoid shelling out with user data.  </li>

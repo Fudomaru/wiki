@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Aimed at Beginners. Teaching the basics of linux commands and system structur.">
+        <meta name="description" content="Aimed at Beginners. Teaching the basics of linux commands and system structure.">
       
       
         <meta name="author" content="Fudomaru">
@@ -4860,10 +4860,10 @@ ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 <h4 id="new-commands_1">New Commands</h4>
 <p><a href="/linux/cli-magic/#ls">ls</a> , <a href="/linux/cli-magic/#cd">cd</a> , <a href="/linux/cli-magic/#cat">cat</a>  </p>
 <h4 id="my-solutions_1">My Solutions</h4>
-<p>I am always suprised on how easy it is to make regular things seam special.<br />
+<p>I am always surprised on how easy it is to make regular things seem special.<br />
 It was practically the same thing then the level before.<br />
 This time the file just wasn't called "readme", but "-".<br />
-So just tiping in the normal command wouldn't work.<br />
+So just typing in the normal command wouldn't work.<br />
 But this time I actually had the problem before. So I did the following:<br />
 <code>cat ./-</code></p>
 <!--
@@ -4872,7 +4872,7 @@ But this time I actually had the problem before. So I did the following:<br />
 
 <h2 id="level-2-level-3">Level 2 → Level 3</h2>
 <h4 id="my-solutions_2">My Solutions</h4>
-<p>Since there where no new commands, and in the level description it told me the file name with the flag, I just went on trying <code>cat</code> again.<br />
+<p>Since there were no new commands, and in the level description it told me the file name with the flag, I just went on trying <code>cat</code> again.<br />
 This time went pretty easy for me, since I accidently found the right answer.<br />
 Sometimes I am pretty lazy, so I use tab to autocomplete a lot.<br />
 And here it saved me from figuring out on my own how to deal with spaces in filenames.<br />
@@ -4901,12 +4901,12 @@ Helped me a lot for all these flags.</p>
 <p><a href="">file</a></p>
 <h4 id="my-solutions_4">My Solutions</h4>
 <p>So again: No new commands, so I guess I can just <code>cat</code> all the files in there.<br />
-Or so I tought.<br />
+Or so I thought.<br />
 I was really surprised to find output in front of my bash setup. It wasn't too bad, and just brute forcing my way though all 10 files, it was easy to find the human readable file and the flag.  </p>
 <h4 id="but">but</h4>
 <p>I couldn't let it be. So I started searching for to figure out if a file is human readable first.<br />
 It felt like that would be the <strong>right</strong> solution.<br />
-So after thinking about it, and trying to find a clear path to "human readable" in the help of different commands, I setteled on the file command.<br />
+So after thinking about it, and trying to find a clear path to "human readable" in the help of different commands, I settled on the file command.<br />
 It tells me what something is, and maybe I can tell from the type which is the right one.<br />
 This is what I ended up using, and it only put one file as ASCII instead of data or a PGP Secret Sub-Key. 
 <code>file ./*</code></p>
@@ -4946,7 +4946,7 @@ The clues this time:<br />
 <code>find / -size 33c</code><br />
 This found me a whole lot of different stuff.<br />
 So I had to go to the next step and figure out how to search for ownership.<br />
-Back to the <code>man</code> page for me. But I didn't wanted to try to read though everything again.<br />
+Back to the <code>man</code> page for me. But I didn't want to try to read through everything again.<br />
 So I thought to be really clever figured out how to search on the <code>man</code> pages.<br />
 This is done with <code>/ WhatYouWantToSearch</code>.<br />
 With this it was a lot easier to find out the right command to find the user and group.<br />
@@ -4964,7 +4964,7 @@ morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 <h4 id="new-commands_4">New Commands</h4>
 <p>grep, strings, base64</p>
 <h4 id="my-solutions_7">My Solutions</h4>
-<p>So for this level there where a whole lot of new commands.<br />
+<p>So for this level there were a whole lot of new commands.<br />
 The Info for this was as follows:<br />
 The password for the next level is stored in the file data.txt next to the word millionth<br />
 That meant I now what to do:<br />
@@ -4978,7 +4978,7 @@ dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
 <p>sort, <a href="/linux/cli-magic/#uniq">uniq</a>  </p>
 <h4 id="my-solutions_8">My Solutions</h4>
 <p>So same set up, but the only line of text that occurs only once.<br />
-For this I imidiatly went to the <code>sort</code> command.<br />
+For this I immediately went to the <code>sort</code> command.<br />
 I thought that would make it easy.<br />
 But I was wrong.<br />
 Probably I could just go though the output and find the line that only occurs once.<br />
@@ -5002,7 +5002,7 @@ In the end it looked something like that:<br />
 <p>So I have a data.txt, but it is all gibberish.<br />
 Again needing to go back to the description.<br />
 It is supposed to be the only human readable string preceded by several =.<br />
-For me the imidiat problem is that several is not very specific.<br />
+For me the immediate problem is that several is not very specific.<br />
 But leaving that for the end, I needed to find some good way to look for the right part. I though for the equal sign I can just use <code>qrep</code>.<br />
 Sadly that wouldn't want to work.<br />
 Back to the commands.<br />
@@ -5018,7 +5018,7 @@ FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 <h4 id="my-solutions_10">My Solutions</h4>
 <p>Going though the description first this time I learned, that the data this time  is base64 encoded.<br />
 So it seams it was pretty straight forward.<br />
-Reading though the docu for <code>base64</code> and building a functioning command to use it.<br />
+Reading through the docu for <code>base64</code> and building a functioning command to use it.<br />
 <code>base64 -d data.txt</code></p>
 <!--
 dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
@@ -5046,7 +5046,7 @@ Delete every letter with the corresponding one.<br />
 <h4 id="my-solutions_12">My Solutions</h4>
 <p>So for this the info for the level recomanded to make a directory to work at.<br />
 I did as I was told.<br />
-Then I started working my way though everything saving every step of the way.<br />
+Then I started working my way through everything saving every step of the way.<br />
 First I converted the hex dump back with:<br />
 <code>xxd -d data</code><br />
 Afterwards I always look what conversion was used with <code>file</code>, then changed the name to have the apropriat ending with <code>mv</code> and used the fitting decompression command.<br />
@@ -5063,7 +5063,7 @@ FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 <p>This was pretty exciting for me.<br />
 I am a big fan of using keys and what happens when it gets into the wrong hands.<br />
 This might be why I never saved the password for level 14.<br />
-I copied the privat key and used it to connect directly to the bandit14 account.<br />
+I copied the private key and used it to connect directly to the bandit14 account.<br />
 But I do know you are supposed to connect to bandit14 from your bandit13 account.<br />
 The command for that would be:<br />
 <code>ssh -i sshkey.private -p 2220 bandit14@localhost</code></p>
@@ -5084,7 +5084,7 @@ And found out that I can use netcat for it.<br />
 So I connected to the port using<br />
 <code>nc localhost 30000</code><br />
 and send the password. 
-And promt I got the new password for bandit15.  </p>
+And prompt I got the new password for bandit15.  </p>
 <!--
 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
 -->
@@ -5095,7 +5095,7 @@ And promt I got the new password for bandit15.  </p>
 <h4 id="my-solutions_15">My Solutions</h4>
 <p>I used the openSSL s_client to connect to localhost Port 30001. 
 It worked very smoothly and I send the password for the level.<br />
-<code>opelssl s_client -connect localhost:30001</code></p>
+<code>openssl s_client -connect localhost:30001</code></p>
 <!--
 kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
 -->
@@ -5108,12 +5108,12 @@ kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
 <code>nmap -p 31000-32000 --open -sV localhost</code><br />
 The options made the port I needed pretty clear.<br />
 Next I thought to pretty much just do what I did in the last level.<br />
-First it did not work and made me really scatch my head.  </p>
+First it did not work and made me really scratch my head.  </p>
 <hr />
 <p>So after I quite literally smashed my head against the keyboard I finally stumbled upon a solution.<br />
 I got the connection to the port.<br />
 I also seam to have the right password, since if I put anything else in, I got the message "wrong password" and it kicked me of the connection.<br />
-But for my password, I only got KEYUPDATED and not the actuall key.<br />
+But for my password, I only got KEYUPDATED and not the actual key.<br />
 I do not know why, but for some reason I could not find out how to look at the key.<br />
 My solution finally was this:<br />
 <code>openssl s_client -nocommands -connect localhost:31790</code><br />
@@ -5142,11 +5142,11 @@ Instead of just logging in and finding the password, you are actually logged out
 Or at least something like it.<br />
 When you log in you are imidiatly kicked back out.  </p>
 <hr />
-<p>So I logged back unto level 17 to see if I can just open the readme file from there.<br />
+<p>So I logged back into level 17 to see if I can just open the readme file from there.<br />
 But of course I did not have the permissions to do so.<br />
 Also I looked at the .bashrc file to see if I can figure out how exactly it works, and how I can get around it.<br />
 But while looking at it, I had another idea.<br />
-And so I used folling command to copy the readme file to my own mashine.<br />
+And so I used following command to copy the readme file to my own machine.<br />
 <code>scp -P 2220 bandit18@bandit.labs.overthewire.org:/home/readme ./bandit18pass</code></p>
 <!--
 cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
@@ -5163,9 +5163,9 @@ But it is made to teach about setuid and what that means, so I need to learn mor
 
 <h2 id="level-20-level-21">Level 20 → Level 21</h2>
 <h4 id="my-solutions_20">My Solutions</h4>
-<p>This I found also really interessting. I couldn't get tmux to work, which is why I will not put it as a new command here.<br />
+<p>This I found also really interesting. I couldn't get tmux to work, which is why I will not put it as a new command here.<br />
 But I do need to learn how to use it.<br />
-Instead I connected twice, the old fashen way. I just opened two terminals, and connected both over SSH.<br />
+Instead I connected twice, the old fashioned way. I just opened two terminals, and connected both over SSH.<br />
 After that it was just a matter of knowing what to do.<br />
 On the one side I opened a nc listener, and connected to it with the setuid from the other side.<br />
 Then I gave the setuid the password, and got the next one out.  </p>
@@ -5176,7 +5176,7 @@ EeoULMCra2q0dSkYj561DX7s1CpBuOBt
 <h2 id="level-21-level-22">Level 21 → Level 22</h2>
 <h4 id="my-solutions_21">My Solutions</h4>
 <p>For this I got to see cronjobs for the first time, at least in this game.<br />
-I went to look at the bandit22 job in /etc/con.d/ folder.<br />
+I went to look at the bandit22 job in /etc/cron.d/ folder.<br />
 Here I found a script, and looking at it I just needed to cat the file the password got saved in.  </p>
 <!--
 tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
@@ -5219,7 +5219,7 @@ gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
 
 <h2 id="level-24-level-25">Level 24 → Level 25</h2>
 <h4 id="my-solutions_24">My Solutions</h4>
-<p>For this I could either try all 10.000 possiblities by hand, or I had to come up with a script.<br />
+<p>For this I could either try all 10.000 possibilities by hand, or I had to come up with a script.<br />
 So the script it was:<br />
 <div class="highlight"><pre><span></span><code>#!/bin/bash
 
@@ -5237,7 +5237,7 @@ iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
 <h2 id="level-25-level-26">Level 25 → Level 26</h2>
 <h4 id="my-solutions_25">My Solutions</h4>
 <p>So I guess this one I can easily just skip. You get a SSL Key for level 26.<br />
-That is why it wasnt ever important for me not having a normal shell.<br />
+That is why it wasn't ever important for me not having a normal shell.<br />
 I just grabbed the key to the next level and was out of there.    </p>
 <!--
 s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
@@ -5249,7 +5249,7 @@ s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
 <p>Small Window to get <code>more</code>.
 Use V to get into vim.<br />
 Use <code>:term shell</code> to normally get a shell in the top half of the terminal.  </p>
-<p>With that you can get a shell and take what you need, like the password for bandat26 just to be sure to have it.<br />
+<p>With that you can get a shell and take what you need, like the password for bandit26 just to be sure to have it.<br />
 It is saved in the same spot all the other passwords are saved, and can just be read out:<br />
 <code>cat /ect/bandit_pass/bandit26</code>  </p>
 <hr />
@@ -5280,7 +5280,7 @@ Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
 So I went the same way and cloned the repo, and looked at the readme file.<br />
 It displayed the credentials of Bandit29, but the password was <strong>xxxxxxxx</strong>.<br />
 Since I know git is a version control, I thought that is probably <em>the</em> feature for me to learn about.<br />
-So I looked at the perviouse commits with:<br />
+So I looked at the previous commits with:<br />
 <code>git log</code><br />
 And in one of them I found the comment <strong>fix info leak</strong> and in the one before it read <strong>add missing data</strong>.<br />
 So of course I needed to look at the <strong>add missing data</strong> commit just to see what that meant.<br />
@@ -5296,7 +5296,7 @@ And now it was just a matter of looking at the readme file, and copying the pass
 <p>Same steps as in the last two levels. But no results.<br />
 So I looked at the different branches.<br />
 <code>git branch -r</code><br />
-There were several branches, but the one that immediatly took my interest was <em>origin/sploits-dev</em>.<br />
+There were several branches, but the one that immediately took my interest was <em>origin/sploits-dev</em>.<br />
 So I got to work.<br />
 <code>git pull origin sploits-dev</code><br />
 Pulled the branch I wanted to take a look at.<br />
@@ -5335,7 +5335,7 @@ I had to upload a file with specific conditions.<br />
 So I got to work. 
 <div class="highlight"><pre><span></span><code>echo &#39;May I come in?&#39; &gt; key.txt
 </code></pre></div>
-I also needed to delete the <code>*.txt</code> from the .gitignor file to get everything to work. 
+I also needed to delete the <code>*.txt</code> from the .gitignore file to get everything to work. 
 Then it was just:<br />
 <div class="highlight"><pre><span></span><code>git add .
 git commit &quot;something clever&quot;
@@ -5351,19 +5351,18 @@ And I got the next password back. </p>
 <p>This was a lot of fun.<br />
 When I arrived, I found this:<br />
 <code>WELCOME TO THE UPPERCASE SHELL</code><br />
-So I tought, that should not make too much of a difference.<br />
+So I thought, that should not make too much of a difference.<br />
 But I was very wrong.<br />
-Non of the previously learned commands worked.<br />
+None of the previously learned commands worked.<br />
 But I could try around and see if I find something good to do.<br />
-After searching though the web for shell commands that only use uppercase, I pretty much only found the variables.<br />
+After searching through the web for shell commands that only use uppercase, I pretty much only found the variables.<br />
 So I looked though them to see what there is.<br />
 Maybe I can use one of them to escape this uppercase shell, just like the level desciption suggested.<br />
-I found one: <code>$0</code><br />
-With that I was back to something more usefull.<br />
-But for convinence I wanted more.<br />
+I found one: <code>$0</code>
+With that I was back to something more useful.  But for convenience I wanted more.<br />
 <code>/bin/bash</code> got me to something I was used too.<br />
 But there was still the problem with getting the next level password.<br />
-At least until I noticed that I am already bandit33, so I just went to the usuall place and get my password. 
+At least until I noticed that I am already bandit33, so I just went to the usual place and get my password. 
 <code>cat /etc/bandit_pass/bandit33</code></p>
 <!--
 tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0

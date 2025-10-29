@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="General explaination of how Windows is build up.">
+        <meta name="description" content="General explanation of how Windows is built up.">
       
       
         <meta name="author" content="Fudomaru">
@@ -710,9 +710,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uefi-frimware" class="md-nav__link">
+  <a href="#uefi-firmware" class="md-nav__link">
     <span class="md-ellipsis">
-      UEFI frimware
+      UEFI firmware
     </span>
   </a>
   
@@ -3233,9 +3233,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#uefi-frimware" class="md-nav__link">
+  <a href="#uefi-firmware" class="md-nav__link">
     <span class="md-ellipsis">
-      UEFI frimware
+      UEFI firmware
     </span>
   </a>
   
@@ -3633,7 +3633,7 @@ back to its roots.  </p>
 It doesn’t mean I know every corner of Windows — only that I’ve started 
 to chart the territory.  </p>
 <h2 id="phase-1-firmware-boot-manager">Phase 1 - Firmware &amp; Boot Manager</h2>
-<h3 id="uefi-frimware">UEFI frimware</h3>
+<h3 id="uefi-firmware">UEFI firmware</h3>
 <p>Initializes hardware, reads the EFI System Partition,
 and launches Windows Boot Manager 
 (\EFI\Microsoft\Boot\bootmgfw.efi).</p>
@@ -3645,7 +3645,7 @@ and how (debug flags, Safe Mode, etc.).</p>
 <p>UEFI verifies Microsoft-signed boot components 
 so nothing unsigned runs before the kernel.</p>
 <h3 id="bitlocker-pre-boot-optional">BitLocker pre-boot (optional)</h3>
-<p>If the OS volum is encrypted, 
+<p>If the OS volume is encrypted, 
 TPM/pin/unlock happens here so the loader 
 can read \windows\System32\drivers... .</p>
 <h3 id="winloadefi">winload.efi</h3>
@@ -3653,7 +3653,7 @@ can read \windows\System32\drivers... .</p>
 the HAL and BOOT_START drivers from 
 \Windows\System32\drivers\ into memory.</p>
 <h3 id="early-driver-class">Early driver class</h3>
-<p>Only minial storage, filesystem, 
+<p>Only minimal storage, filesystem, 
 and bus drivers load now, 
 just enough to mount the system volume.</p>
 <h3 id="kernel-handoff">Kernel handoff</h3>
