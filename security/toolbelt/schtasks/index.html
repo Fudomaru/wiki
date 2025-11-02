@@ -6,32 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A place for thoughts, fragments, and work-in-progress that don’t yet have a home.">
+        <meta name="description" content="A deep dive into the Windows Task Scheduler.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../../projects/void_linux/">
+        <link rel="prev" href="../searchsploit/">
       
       
-        <link rel="next" href="../ccna/">
+        <link rel="next" href="../overview/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Notes Overview - Voidex</title>
+        <title>Schtasks - Voidex</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -115,7 +115,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -141,7 +141,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#notes-overview" class="md-skip">
+        <a href="#schtasks" class="md-skip">
           Skip to content
         </a>
       
@@ -155,7 +155,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -175,7 +175,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Notes Overview
+              Schtasks
             
           </span>
         </div>
@@ -278,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -299,7 +299,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../foundations/overview/" class="md-tabs__link">
+        <a href="../../../foundations/overview/" class="md-tabs__link">
           
   
   
@@ -315,11 +315,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../security/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -339,7 +341,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../homelab/overview/" class="md-tabs__link">
+        <a href="../../../homelab/overview/" class="md-tabs__link">
           
   
   
@@ -359,7 +361,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../challenges/overview/" class="md-tabs__link">
+        <a href="../../../challenges/overview/" class="md-tabs__link">
           
   
   
@@ -379,7 +381,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../projects/overview/" class="md-tabs__link">
+        <a href="../../../projects/overview/" class="md-tabs__link">
           
   
   
@@ -395,13 +397,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../notes/overview/" class="md-tabs__link">
           
   
   
@@ -419,7 +419,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -454,7 +454,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -484,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -547,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/overview/" class="md-nav__link">
+      <a href="../../../foundations/overview/" class="md-nav__link">
         
   
   
@@ -570,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/networking/" class="md-nav__link">
+      <a href="../../../foundations/networking/" class="md-nav__link">
         
   
   
@@ -634,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/overview/" class="md-nav__link">
+      <a href="../../../foundations/windows/overview/" class="md-nav__link">
         
   
   
@@ -657,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/uefi/" class="md-nav__link">
+      <a href="../../../foundations/windows/uefi/" class="md-nav__link">
         
   
   
@@ -680,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/eventviewer/" class="md-nav__link">
+      <a href="../../../foundations/windows/eventviewer/" class="md-nav__link">
         
   
   
@@ -703,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/winregistry/" class="md-nav__link">
+      <a href="../../../foundations/windows/winregistry/" class="md-nav__link">
         
   
   
@@ -726,7 +726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/cli-magic/" class="md-nav__link">
+      <a href="../../../foundations/windows/cli-magic/" class="md-nav__link">
         
   
   
@@ -798,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/macos/overview/" class="md-nav__link">
+      <a href="../../../foundations/macos/overview/" class="md-nav__link">
         
   
   
@@ -870,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/overview/" class="md-nav__link">
+      <a href="../../../foundations/linux/overview/" class="md-nav__link">
         
   
   
@@ -893,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/cli-magic/" class="md-nav__link">
+      <a href="../../../foundations/linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -916,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/system-internals/" class="md-nav__link">
+      <a href="../../../foundations/linux/system-internals/" class="md-nav__link">
         
   
   
@@ -988,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/overview/" class="md-nav__link">
+      <a href="../../../foundations/protocols/overview/" class="md-nav__link">
         
   
   
@@ -1011,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/arp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/arp/" class="md-nav__link">
         
   
   
@@ -1034,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/icmp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/icmp/" class="md-nav__link">
         
   
   
@@ -1057,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/tcp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/tcp/" class="md-nav__link">
         
   
   
@@ -1080,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/udp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/udp/" class="md-nav__link">
         
   
   
@@ -1103,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/tls/" class="md-nav__link">
+      <a href="../../../foundations/protocols/tls/" class="md-nav__link">
         
   
   
@@ -1126,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/dns/" class="md-nav__link">
+      <a href="../../../foundations/protocols/dns/" class="md-nav__link">
         
   
   
@@ -1149,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/smtp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/smtp/" class="md-nav__link">
         
   
   
@@ -1172,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/snmp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/snmp/" class="md-nav__link">
         
   
   
@@ -1195,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ftp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/ftp/" class="md-nav__link">
         
   
   
@@ -1218,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ssh/" class="md-nav__link">
+      <a href="../../../foundations/protocols/ssh/" class="md-nav__link">
         
   
   
@@ -1241,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/smb/" class="md-nav__link">
+      <a href="../../../foundations/protocols/smb/" class="md-nav__link">
         
   
   
@@ -1264,7 +1264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/dhcp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/dhcp/" class="md-nav__link">
         
   
   
@@ -1299,24 +1299,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -1329,7 +1334,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Security
@@ -1343,7 +1348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
@@ -1366,7 +1371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/fundamentals/" class="md-nav__link">
+      <a href="../../fundamentals/" class="md-nav__link">
         
   
   
@@ -1430,7 +1435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/fundamentals/" class="md-nav__link">
+      <a href="../../pentesting/fundamentals/" class="md-nav__link">
         
   
   
@@ -1453,7 +1458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/types/" class="md-nav__link">
+      <a href="../../pentesting/types/" class="md-nav__link">
         
   
   
@@ -1476,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/structure/" class="md-nav__link">
+      <a href="../../pentesting/structure/" class="md-nav__link">
         
   
   
@@ -1499,7 +1504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/skills/" class="md-nav__link">
+      <a href="../../pentesting/skills/" class="md-nav__link">
         
   
   
@@ -1522,7 +1527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/methodologies/" class="md-nav__link">
+      <a href="../../pentesting/methodologies/" class="md-nav__link">
         
   
   
@@ -1594,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/overview/" class="md-nav__link">
+      <a href="../../exploits/overview/" class="md-nav__link">
         
   
   
@@ -1617,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/xss/" class="md-nav__link">
+      <a href="../../exploits/xss/" class="md-nav__link">
         
   
   
@@ -1640,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/hardcoded_secrets/" class="md-nav__link">
+      <a href="../../exploits/hardcoded_secrets/" class="md-nav__link">
         
   
   
@@ -1663,7 +1668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/idor/" class="md-nav__link">
+      <a href="../../exploits/idor/" class="md-nav__link">
         
   
   
@@ -1686,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/ssrf/" class="md-nav__link">
+      <a href="../../exploits/ssrf/" class="md-nav__link">
         
   
   
@@ -1709,7 +1714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/sqli/" class="md-nav__link">
+      <a href="../../exploits/sqli/" class="md-nav__link">
         
   
   
@@ -1740,7 +1745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/privilege-escalation/" class="md-nav__link">
+      <a href="../../privilege-escalation/" class="md-nav__link">
         
   
   
@@ -1760,6 +1765,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1770,11 +1777,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
         
           
           <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
@@ -1790,7 +1797,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             Toolbelt
@@ -1804,7 +1811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -1827,7 +1834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/nmap/" class="md-nav__link">
+      <a href="../nmap/" class="md-nav__link">
         
   
   
@@ -1850,7 +1857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/searchsploit/" class="md-nav__link">
+      <a href="../searchsploit/" class="md-nav__link">
         
   
   
@@ -1870,10 +1877,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../security/toolbelt/schtasks/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Schtasks
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1884,6 +1913,155 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-schtasks-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Schtasks Matters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-functions-of-schtasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Functions of Schtasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Functions of Schtasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Create a Task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-query-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Query Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Run a Task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-delete-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Delete a Task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-change-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Change a Task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-think-about-schtasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Think About Schtasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Think About Schtasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#offensive-perspective-red-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      Offensive Perspective (Red Team)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defensive-perspective-blue-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defensive Perspective (Blue Team)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1945,7 +2123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -1968,7 +2146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/recon/" class="md-nav__link">
+      <a href="../../playbooks/recon/" class="md-nav__link">
         
   
   
@@ -1991,7 +2169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/js-deobfuscation/" class="md-nav__link">
+      <a href="../../playbooks/js-deobfuscation/" class="md-nav__link">
         
   
   
@@ -2070,7 +2248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/overview/" class="md-nav__link">
+      <a href="../../../homelab/overview/" class="md-nav__link">
         
   
   
@@ -2093,7 +2271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/proxmox/" class="md-nav__link">
+      <a href="../../../homelab/proxmox/" class="md-nav__link">
         
   
   
@@ -2116,7 +2294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/pfsense/" class="md-nav__link">
+      <a href="../../../homelab/pfsense/" class="md-nav__link">
         
   
   
@@ -2139,7 +2317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/pihole/" class="md-nav__link">
+      <a href="../../../homelab/pihole/" class="md-nav__link">
         
   
   
@@ -2162,7 +2340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/gitea/" class="md-nav__link">
+      <a href="../../../homelab/gitea/" class="md-nav__link">
         
   
   
@@ -2233,7 +2411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overview/" class="md-nav__link">
+      <a href="../../../challenges/overview/" class="md-nav__link">
         
   
   
@@ -2297,7 +2475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overthewire/bandit/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -2320,7 +2498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overthewire/natas/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/natas/" class="md-nav__link">
         
   
   
@@ -2351,7 +2529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/htb/" class="md-nav__link">
+      <a href="../../../challenges/htb/" class="md-nav__link">
         
   
   
@@ -2415,7 +2593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/thm/overview/" class="md-nav__link">
+      <a href="../../../challenges/thm/overview/" class="md-nav__link">
         
   
   
@@ -2438,7 +2616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/thm/billing/" class="md-nav__link">
+      <a href="../../../challenges/thm/billing/" class="md-nav__link">
         
   
   
@@ -2517,7 +2695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/overview/" class="md-nav__link">
+      <a href="../../../projects/overview/" class="md-nav__link">
         
   
   
@@ -2540,7 +2718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/digital-dojo/" class="md-nav__link">
+      <a href="../../../projects/digital-dojo/" class="md-nav__link">
         
   
   
@@ -2563,7 +2741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/script-upgrade/" class="md-nav__link">
+      <a href="../../../projects/script-upgrade/" class="md-nav__link">
         
   
   
@@ -2586,7 +2764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/echosnare/" class="md-nav__link">
+      <a href="../../../projects/echosnare/" class="md-nav__link">
         
   
   
@@ -2609,7 +2787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/void_linux/" class="md-nav__link">
+      <a href="../../../projects/void_linux/" class="md-nav__link">
         
   
   
@@ -2636,29 +2814,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -2671,7 +2844,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Notes
@@ -2682,32 +2855,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../notes/overview/" class="md-nav__link">
         
   
   
@@ -2718,53 +2869,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
-    <span class="md-ellipsis">
-      Purpose
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-ill-use-it" class="md-nav__link">
-    <span class="md-ellipsis">
-      How I’ll use it
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#closing-thought" class="md-nav__link">
-    <span class="md-ellipsis">
-      Closing thought
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2777,7 +2881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ccna/" class="md-nav__link">
+      <a href="../../../notes/ccna/" class="md-nav__link">
         
   
   
@@ -2800,7 +2904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../media/" class="md-nav__link">
+      <a href="../../../notes/media/" class="md-nav__link">
         
   
   
@@ -2823,7 +2927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../warboard/" class="md-nav__link">
+      <a href="../../../notes/warboard/" class="md-nav__link">
         
   
   
@@ -2853,7 +2957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -2895,27 +2999,129 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
+  <a href="#why-schtasks-matters" class="md-nav__link">
     <span class="md-ellipsis">
-      Purpose
+      Why Schtasks Matters
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-ill-use-it" class="md-nav__link">
+  <a href="#core-functions-of-schtasks" class="md-nav__link">
     <span class="md-ellipsis">
-      How I’ll use it
+      Core Functions of Schtasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Functions of Schtasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Create a Task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-query-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Query Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Run a Task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-delete-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Delete a Task
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-change-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Change a Task
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-think-about-schtasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Think About Schtasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Think About Schtasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#offensive-perspective-red-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      Offensive Perspective (Red Team)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defensive-perspective-blue-team" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defensive Perspective (Blue Team)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-with-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration with Workflow
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#closing-thought" class="md-nav__link">
+  <a href="#key-takeaway" class="md-nav__link">
     <span class="md-ellipsis">
-      Closing thought
+      Key Takeaway
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration
     </span>
   </a>
   
@@ -2937,34 +3143,76 @@
 
 
 
-<h1 id="notes-overview">Notes Overview</h1>
-<p>Not everything I touch fits cleanly into my categories.<br />
-Some things are half-formed, others experimental, others just fragments I don’t want to lose.<br />
-This section is where I drop them.  </p>
-<p>I don’t filter for polish here — I filter for honesty.<br />
-If I’m exploring, struggling, or unsure, it belongs here until I find a better place for it.<br />
-Sometimes it will grow into a full page under Foundations, Tools, or Projects.<br />
-Other times, it will stay here as a reminder of where I’ve been.  </p>
-<h2 id="purpose">Purpose</h2>
+<h1 id="schtasks">Schtasks</h1>
+<p><code>schtasks.exe</code> is a Windows command-line utility used to manage scheduled tasks on a local or remote computer. It allows users to create, delete, query, change, run, and end scheduled tasks. </p>
+<p>While it is a legitimate and powerful tool for system administration, it is also frequently abused by malicious actors for persistence, privilege escalation, and lateral movement. This dual-use nature makes it a critical tool to understand for both offensive and defensive security practitioners.</p>
+<details class="info">
+<summary>Note on spelling</summary>
+<p>The term "schtaks" was used in the warboard, which is a common misspelling of <code>schtasks</code>. This page uses the correct spelling.</p>
+</details>
+<hr />
+<h2 id="why-schtasks-matters">Why Schtasks Matters</h2>
 <ul>
-<li><strong>Catch-all</strong>: Anything that doesn’t fit elsewhere, or not yet.  </li>
-<li><strong>Work-in-progress</strong>: Drafts, fragments, experiments.  </li>
-<li><strong>Honesty</strong>: Shows what I’m learning, not just what I’ve mastered.  </li>
-<li><strong>Trace</strong>: Keeps a record of what I touched, even if it never became a full page.  </li>
-</ul>
-<h2 id="how-ill-use-it">How I’ll use it</h2>
-<ul>
-<li>Write first, sort later.  </li>
-<li>Keep entries short and clear, but don’t worry if they’re incomplete.  </li>
-<li>Revisit regularly: some notes will migrate, others will stay.  </li>
-<li>Accept that this section is messy by design.  </li>
+<li><strong>Red Teaming / Pentesting:</strong> <code>schtasks</code> is a go-to tool for establishing persistence on a compromised host. A reverse shell can be scheduled to run at regular intervals, ensuring continued access.</li>
+<li><strong>Blue Teaming / Defense:</strong> Monitoring <code>schtasks</code> usage is crucial for detecting malicious activity. Unusual task creation or modification can be an indicator of compromise.</li>
+<li><strong>Living Off The Land (LOLBAS):</strong> As a built-in Windows utility, <code>schtasks</code> is a prime example of a LOLBAS. Attackers can use it to blend in with normal administrative activity, making detection more difficult.</li>
 </ul>
 <hr />
-<h2 id="closing-thought">Closing thought</h2>
-<p>This section is proof that I’m human.<br />
-It shows the edges of my learning, not just the polished center.<br />
-By keeping it open, I leave myself no excuse to avoid writing things down.<br />
-Every fragment here is better than silence, because silence forgets.  </p>
+<h2 id="core-functions-of-schtasks">Core Functions of Schtasks</h2>
+<h3 id="1-create-a-task">1. Create a Task</h3>
+<ul>
+<li>Creates a new scheduled task.</li>
+<li>Command example: <code>schtasks /create /sc minute /mo 1 /tn "My Task" /tr "C:\path\to\my.exe"</code></li>
+</ul>
+<h3 id="2-query-tasks">2. Query Tasks</h3>
+<ul>
+<li>Displays all scheduled tasks on the system.</li>
+<li>Command example: <code>schtasks /query</code></li>
+</ul>
+<h3 id="3-run-a-task">3. Run a Task</h3>
+<ul>
+<li>Manually runs a scheduled task.</li>
+<li>Command example: <code>schtasks /run /tn "My Task"</code></li>
+</ul>
+<h3 id="4-delete-a-task">4. Delete a Task</h3>
+<ul>
+<li>Deletes a scheduled task.</li>
+<li>Command example: <code>schtasks /delete /tn "My Task"</code></li>
+</ul>
+<h3 id="5-change-a-task">5. Change a Task</h3>
+<ul>
+<li>Modifies the properties of a task, such as the program it runs or the schedule.</li>
+<li>Command example: <code>schtasks /change /tn "My Task" /tr "C:\new\path\to\my.exe"</code></li>
+</ul>
+<hr />
+<h2 id="how-to-think-about-schtasks">How to Think About Schtasks</h2>
+<h3 id="offensive-perspective-red-team">Offensive Perspective (Red Team)</h3>
+<ul>
+<li><strong>Persistence:</strong> Create a scheduled task to run a payload at system startup or on a recurring basis.</li>
+<li><strong>Privilege Escalation:</strong> If you have administrative privileges, you can create tasks that run with <code>SYSTEM</code> privileges.</li>
+<li><strong>Lateral Movement:</strong> Use <code>schtasks</code> to create tasks on remote systems, allowing you to execute code and spread through a network.</li>
+</ul>
+<h3 id="defensive-perspective-blue-team">Defensive Perspective (Blue Team)</h3>
+<ul>
+<li><strong>Monitor Task Creation:</strong> Look for suspicious task creation events in the Windows Event Logs (Event ID 4698).</li>
+<li><strong>Analyze Task Properties:</strong> Regularly review scheduled tasks for suspicious names, executables, or run times.</li>
+<li><strong>Harden Configurations:</strong> Use Group Policy to restrict who can create scheduled tasks.</li>
+</ul>
+<hr />
+<h2 id="integration-with-workflow">Integration with Workflow</h2>
+<ul>
+<li><strong>SIEM:</strong> Forward <code>schtasks</code> related events to your SIEM for correlation and alerting.</li>
+<li><strong>Automation:</strong> Use scripts to automate the review of scheduled tasks across your environment.</li>
+</ul>
+<hr />
+<h2 id="key-takeaway">Key Takeaway</h2>
+<p><code>schtasks</code> is a powerful and versatile tool that can be used for both good and evil. Understanding its capabilities and how it can be abused is essential for any security professional. Whether you are on the offensive or defensive side, <code>schtasks</code> is a tool that you need to have in your arsenal.</p>
+<hr />
+<h2 id="integration">Integration</h2>
+<ul>
+<li><a href="/wiki/foundations/windows/cli-magic">Windows CLI Magic</a></li>
+<li><a href="/wiki/security/privilege-escalation">Privilege Escalation</a></li>
+</ul>
 
 
 
@@ -3003,7 +3251,7 @@ Every fragment here is better than silence, because silence forgets.  </p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../projects/void_linux/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Void Linux">
+          <a href="../searchsploit/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Searchsploit">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3013,20 +3261,20 @@ Every fragment here is better than silence, because silence forgets.  </p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Void Linux
+                Searchsploit
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ccna/" class="md-footer__link md-footer__link--next" aria-label="Next: CCNA Training">
+          <a href="../overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                CCNA Training
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3075,10 +3323,10 @@ Every fragment here is better than silence, because silence forgets.  </p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>

@@ -6,32 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A place for thoughts, fragments, and work-in-progress that don’t yet have a home.">
+        <meta name="description" content="A deep dive into the Windows Registry — the central nervous system of the OS.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../../projects/void_linux/">
+        <link rel="prev" href="../eventviewer/">
       
       
-        <link rel="next" href="../ccna/">
+        <link rel="next" href="../cli-magic/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Notes Overview - Voidex</title>
+        <title>Windows Registry - Voidex</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -115,7 +115,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -141,7 +141,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#notes-overview" class="md-skip">
+        <a href="#windows-registry" class="md-skip">
           Skip to content
         </a>
       
@@ -155,7 +155,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -175,7 +175,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Notes Overview
+              Windows Registry
             
           </span>
         </div>
@@ -278,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -295,11 +295,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../foundations/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -319,7 +321,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../security/overview/" class="md-tabs__link">
+        <a href="../../../security/overview/" class="md-tabs__link">
           
   
   
@@ -339,7 +341,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../homelab/overview/" class="md-tabs__link">
+        <a href="../../../homelab/overview/" class="md-tabs__link">
           
   
   
@@ -359,7 +361,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../challenges/overview/" class="md-tabs__link">
+        <a href="../../../challenges/overview/" class="md-tabs__link">
           
   
   
@@ -379,7 +381,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../projects/overview/" class="md-tabs__link">
+        <a href="../../../projects/overview/" class="md-tabs__link">
           
   
   
@@ -395,13 +397,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../notes/overview/" class="md-tabs__link">
           
   
   
@@ -419,7 +419,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -454,7 +454,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -484,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -503,24 +503,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -533,7 +538,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Foundations
@@ -547,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
@@ -570,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/networking/" class="md-nav__link">
+      <a href="../../networking/" class="md-nav__link">
         
   
   
@@ -590,6 +595,8 @@
                 
   
   
+    
+  
   
   
     
@@ -600,11 +607,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -620,7 +627,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Windows
@@ -634,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -657,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/uefi/" class="md-nav__link">
+      <a href="../uefi/" class="md-nav__link">
         
   
   
@@ -680,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/eventviewer/" class="md-nav__link">
+      <a href="../eventviewer/" class="md-nav__link">
         
   
   
@@ -700,10 +707,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../foundations/windows/winregistry/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Registry
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -714,6 +743,137 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#root-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Root Keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-registry-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Registry Paths
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Registry Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persistence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Activity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Implications
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Closing Note
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -726,7 +886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/cli-magic/" class="md-nav__link">
+      <a href="../cli-magic/" class="md-nav__link">
         
   
   
@@ -798,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/macos/overview/" class="md-nav__link">
+      <a href="../../macos/overview/" class="md-nav__link">
         
   
   
@@ -870,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/overview/" class="md-nav__link">
+      <a href="../../linux/overview/" class="md-nav__link">
         
   
   
@@ -893,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/cli-magic/" class="md-nav__link">
+      <a href="../../linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -916,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/system-internals/" class="md-nav__link">
+      <a href="../../linux/system-internals/" class="md-nav__link">
         
   
   
@@ -988,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/overview/" class="md-nav__link">
+      <a href="../../protocols/overview/" class="md-nav__link">
         
   
   
@@ -1011,7 +1171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/arp/" class="md-nav__link">
+      <a href="../../protocols/arp/" class="md-nav__link">
         
   
   
@@ -1034,7 +1194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/icmp/" class="md-nav__link">
+      <a href="../../protocols/icmp/" class="md-nav__link">
         
   
   
@@ -1057,7 +1217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/tcp/" class="md-nav__link">
+      <a href="../../protocols/tcp/" class="md-nav__link">
         
   
   
@@ -1080,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/udp/" class="md-nav__link">
+      <a href="../../protocols/udp/" class="md-nav__link">
         
   
   
@@ -1103,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/tls/" class="md-nav__link">
+      <a href="../../protocols/tls/" class="md-nav__link">
         
   
   
@@ -1126,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/dns/" class="md-nav__link">
+      <a href="../../protocols/dns/" class="md-nav__link">
         
   
   
@@ -1149,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/smtp/" class="md-nav__link">
+      <a href="../../protocols/smtp/" class="md-nav__link">
         
   
   
@@ -1172,7 +1332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/snmp/" class="md-nav__link">
+      <a href="../../protocols/snmp/" class="md-nav__link">
         
   
   
@@ -1195,7 +1355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ftp/" class="md-nav__link">
+      <a href="../../protocols/ftp/" class="md-nav__link">
         
   
   
@@ -1218,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ssh/" class="md-nav__link">
+      <a href="../../protocols/ssh/" class="md-nav__link">
         
   
   
@@ -1241,7 +1401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/smb/" class="md-nav__link">
+      <a href="../../protocols/smb/" class="md-nav__link">
         
   
   
@@ -1264,7 +1424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/dhcp/" class="md-nav__link">
+      <a href="../../protocols/dhcp/" class="md-nav__link">
         
   
   
@@ -1343,7 +1503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/overview/" class="md-nav__link">
+      <a href="../../../security/overview/" class="md-nav__link">
         
   
   
@@ -1366,7 +1526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/fundamentals/" class="md-nav__link">
+      <a href="../../../security/fundamentals/" class="md-nav__link">
         
   
   
@@ -1430,7 +1590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/fundamentals/" class="md-nav__link">
+      <a href="../../../security/pentesting/fundamentals/" class="md-nav__link">
         
   
   
@@ -1453,7 +1613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/types/" class="md-nav__link">
+      <a href="../../../security/pentesting/types/" class="md-nav__link">
         
   
   
@@ -1476,7 +1636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/structure/" class="md-nav__link">
+      <a href="../../../security/pentesting/structure/" class="md-nav__link">
         
   
   
@@ -1499,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/skills/" class="md-nav__link">
+      <a href="../../../security/pentesting/skills/" class="md-nav__link">
         
   
   
@@ -1522,7 +1682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/methodologies/" class="md-nav__link">
+      <a href="../../../security/pentesting/methodologies/" class="md-nav__link">
         
   
   
@@ -1594,7 +1754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/overview/" class="md-nav__link">
+      <a href="../../../security/exploits/overview/" class="md-nav__link">
         
   
   
@@ -1617,7 +1777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/xss/" class="md-nav__link">
+      <a href="../../../security/exploits/xss/" class="md-nav__link">
         
   
   
@@ -1640,7 +1800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/hardcoded_secrets/" class="md-nav__link">
+      <a href="../../../security/exploits/hardcoded_secrets/" class="md-nav__link">
         
   
   
@@ -1663,7 +1823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/idor/" class="md-nav__link">
+      <a href="../../../security/exploits/idor/" class="md-nav__link">
         
   
   
@@ -1686,7 +1846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/ssrf/" class="md-nav__link">
+      <a href="../../../security/exploits/ssrf/" class="md-nav__link">
         
   
   
@@ -1709,7 +1869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/sqli/" class="md-nav__link">
+      <a href="../../../security/exploits/sqli/" class="md-nav__link">
         
   
   
@@ -1740,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/privilege-escalation/" class="md-nav__link">
+      <a href="../../../security/privilege-escalation/" class="md-nav__link">
         
   
   
@@ -1804,7 +1964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -1827,7 +1987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/nmap/" class="md-nav__link">
+      <a href="../../../security/toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -1850,7 +2010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/searchsploit/" class="md-nav__link">
+      <a href="../../../security/toolbelt/searchsploit/" class="md-nav__link">
         
   
   
@@ -1873,7 +2033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/schtasks/" class="md-nav__link">
+      <a href="../../../security/toolbelt/schtasks/" class="md-nav__link">
         
   
   
@@ -1945,7 +2105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -1968,7 +2128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/recon/" class="md-nav__link">
+      <a href="../../../security/playbooks/recon/" class="md-nav__link">
         
   
   
@@ -1991,7 +2151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/js-deobfuscation/" class="md-nav__link">
+      <a href="../../../security/playbooks/js-deobfuscation/" class="md-nav__link">
         
   
   
@@ -2070,7 +2230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/overview/" class="md-nav__link">
+      <a href="../../../homelab/overview/" class="md-nav__link">
         
   
   
@@ -2093,7 +2253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/proxmox/" class="md-nav__link">
+      <a href="../../../homelab/proxmox/" class="md-nav__link">
         
   
   
@@ -2116,7 +2276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/pfsense/" class="md-nav__link">
+      <a href="../../../homelab/pfsense/" class="md-nav__link">
         
   
   
@@ -2139,7 +2299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/pihole/" class="md-nav__link">
+      <a href="../../../homelab/pihole/" class="md-nav__link">
         
   
   
@@ -2162,7 +2322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/gitea/" class="md-nav__link">
+      <a href="../../../homelab/gitea/" class="md-nav__link">
         
   
   
@@ -2233,7 +2393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overview/" class="md-nav__link">
+      <a href="../../../challenges/overview/" class="md-nav__link">
         
   
   
@@ -2297,7 +2457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overthewire/bandit/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -2320,7 +2480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overthewire/natas/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/natas/" class="md-nav__link">
         
   
   
@@ -2351,7 +2511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/htb/" class="md-nav__link">
+      <a href="../../../challenges/htb/" class="md-nav__link">
         
   
   
@@ -2415,7 +2575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/thm/overview/" class="md-nav__link">
+      <a href="../../../challenges/thm/overview/" class="md-nav__link">
         
   
   
@@ -2438,7 +2598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/thm/billing/" class="md-nav__link">
+      <a href="../../../challenges/thm/billing/" class="md-nav__link">
         
   
   
@@ -2517,7 +2677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/overview/" class="md-nav__link">
+      <a href="../../../projects/overview/" class="md-nav__link">
         
   
   
@@ -2540,7 +2700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/digital-dojo/" class="md-nav__link">
+      <a href="../../../projects/digital-dojo/" class="md-nav__link">
         
   
   
@@ -2563,7 +2723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/script-upgrade/" class="md-nav__link">
+      <a href="../../../projects/script-upgrade/" class="md-nav__link">
         
   
   
@@ -2586,7 +2746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/echosnare/" class="md-nav__link">
+      <a href="../../../projects/echosnare/" class="md-nav__link">
         
   
   
@@ -2609,7 +2769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/void_linux/" class="md-nav__link">
+      <a href="../../../projects/void_linux/" class="md-nav__link">
         
   
   
@@ -2636,29 +2796,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -2671,7 +2826,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Notes
@@ -2682,32 +2837,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../notes/overview/" class="md-nav__link">
         
   
   
@@ -2718,53 +2851,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
-    <span class="md-ellipsis">
-      Purpose
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-ill-use-it" class="md-nav__link">
-    <span class="md-ellipsis">
-      How I’ll use it
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#closing-thought" class="md-nav__link">
-    <span class="md-ellipsis">
-      Closing thought
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2777,7 +2863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ccna/" class="md-nav__link">
+      <a href="../../../notes/ccna/" class="md-nav__link">
         
   
   
@@ -2800,7 +2886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../media/" class="md-nav__link">
+      <a href="../../../notes/media/" class="md-nav__link">
         
   
   
@@ -2823,7 +2909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../warboard/" class="md-nav__link">
+      <a href="../../../notes/warboard/" class="md-nav__link">
         
   
   
@@ -2853,7 +2939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -2895,27 +2981,111 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#purpose" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Purpose
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-ill-use-it" class="md-nav__link">
+  <a href="#core-concepts" class="md-nav__link">
     <span class="md-ellipsis">
-      How I’ll use it
+      Core Concepts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Concepts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#root-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Root Keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-registry-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Registry Paths
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Registry Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Persistence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Activity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-implications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Implications
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#closing-thought" class="md-nav__link">
+  <a href="#closing-note" class="md-nav__link">
     <span class="md-ellipsis">
-      Closing thought
+      Closing Note
     </span>
   </a>
   
@@ -2937,34 +3107,87 @@
 
 
 
-<h1 id="notes-overview">Notes Overview</h1>
-<p>Not everything I touch fits cleanly into my categories.<br />
-Some things are half-formed, others experimental, others just fragments I don’t want to lose.<br />
-This section is where I drop them.  </p>
-<p>I don’t filter for polish here — I filter for honesty.<br />
-If I’m exploring, struggling, or unsure, it belongs here until I find a better place for it.<br />
-Sometimes it will grow into a full page under Foundations, Tools, or Projects.<br />
-Other times, it will stay here as a reminder of where I’ve been.  </p>
-<h2 id="purpose">Purpose</h2>
+<h1 id="windows-registry">Windows Registry</h1>
+<h2 id="introduction">Introduction</h2>
+<p>The Windows Registry is not just a configuration database. It is the operating system’s central nervous system. It dictates how Windows starts, what hardware it trusts, what software is installed, and who can do what. To understand the Registry is to understand how Windows thinks.</p>
+<p>This is my map of that territory. It is not a complete reference, but a guide to the key structures, concepts, and locations that matter for system administration, security analysis, and troubleshooting.</p>
+<h2 id="core-concepts">Core Concepts</h2>
+<h3 id="hives">Hives</h3>
+<p>The Registry is not a single monolithic file. It is a collection of files called <strong>hives</strong>. Each hive is a self-contained database that corresponds to a top-level key. Hives are loaded into memory at boot or when a user logs in.</p>
 <ul>
-<li><strong>Catch-all</strong>: Anything that doesn’t fit elsewhere, or not yet.  </li>
-<li><strong>Work-in-progress</strong>: Drafts, fragments, experiments.  </li>
-<li><strong>Honesty</strong>: Shows what I’m learning, not just what I’ve mastered.  </li>
-<li><strong>Trace</strong>: Keeps a record of what I touched, even if it never became a full page.  </li>
+<li><strong>SYSTEM:</strong> <code>\Windows\System32\config\SYSTEM</code> - Critical system settings, services, and boot configuration.</li>
+<li><strong>SOFTWARE:</strong> <code>\Windows\System32\config\SOFTWARE</code> - Software and application settings for all users.</li>
+<li><strong>SAM:</strong> <code>\Windows\System32\config\SAM</code> - Local user account and group information (Security Accounts Manager).</li>
+<li><strong>SECURITY:</strong> <code>\Windows\System32\config\SECURITY</code> - Security policies and user rights assignments.</li>
+<li><strong>DEFAULT:</strong> <code>\Windows\System32\config\DEFAULT</code> - Default settings for new user profiles.</li>
+<li><strong>NTUSER.DAT:</strong> <code>\Users\&lt;username&gt;\NTUSER.DAT</code> - User-specific settings for a logged-in user.</li>
 </ul>
-<h2 id="how-ill-use-it">How I’ll use it</h2>
+<h3 id="root-keys">Root Keys</h3>
+<p>The Registry is organized into a hierarchical structure of keys, subkeys, and values. There are several root keys, each providing a different view into the hives.</p>
 <ul>
-<li>Write first, sort later.  </li>
-<li>Keep entries short and clear, but don’t worry if they’re incomplete.  </li>
-<li>Revisit regularly: some notes will migrate, others will stay.  </li>
-<li>Accept that this section is messy by design.  </li>
+<li><strong>HKEY_LOCAL_MACHINE (HKLM):</strong> Contains machine-specific settings that apply to all users. This is a view into the SAM, SECURITY, SOFTWARE, and SYSTEM hives.</li>
+<li><strong>HKEY_CURRENT_USER (HKCU):</strong> Contains the settings for the currently logged-in user. This is a view into the <code>NTUSER.DAT</code> file of the current user.</li>
+<li><strong>HKEY_USERS (HKU):</strong> Contains the <code>NTUSER.DAT</code> for all loaded user profiles, including the default profile.</li>
+<li><strong>HKEY_CLASSES_ROOT (HKCR):</strong> Provides a view of file associations and COM object registrations. It's a merged view of <code>HKLM\Software\Classes</code> and <code>HKCU\Software\Classes</code>.</li>
+<li><strong>HKEY_CURRENT_CONFIG (HKCC):</strong> Contains information about the current hardware profile. This is a view of <code>HKLM\System\CurrentControlSet\Hardware Profiles\Current</code>.</li>
 </ul>
-<hr />
-<h2 id="closing-thought">Closing thought</h2>
-<p>This section is proof that I’m human.<br />
-It shows the edges of my learning, not just the polished center.<br />
-By keeping it open, I leave myself no excuse to avoid writing things down.<br />
-Every fragment here is better than silence, because silence forgets.  </p>
+<h3 id="values">Values</h3>
+<p>Each key can contain values, which store the actual configuration data. There are several types of values:</p>
+<ul>
+<li><strong>REG_SZ:</strong> A fixed-length string.</li>
+<li><strong>REG_EXPAND_SZ:</strong> A variable-length string that can contain environment variables.</li>
+<li><strong>REG_BINARY:</strong> Raw binary data.</li>
+<li><strong>REG_DWORD:</strong> A 32-bit number.</li>
+<li><strong>REG_QWORD:</strong> A 64-bit number.</li>
+<li><strong>REG_MULTI_SZ:</strong> A multi-line string.</li>
+</ul>
+<h2 id="key-registry-paths">Key Registry Paths</h2>
+<p>Certain Registry paths are critical for understanding system behavior.</p>
+<h3 id="persistence">Persistence</h3>
+<ul>
+<li><strong>Run Keys:</strong> These keys are a common place for programs to register themselves to run at startup.<ul>
+<li><code>HKLM\Software\Microsoft\Windows\CurrentVersion\Run</code></li>
+<li><code>HKCU\Software\Microsoft\Windows\CurrentVersion\Run</code></li>
+<li><code>HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce</code></li>
+<li><code>HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce</code></li>
+</ul>
+</li>
+<li><strong>Services:</strong> The configuration for all system services.<ul>
+<li><code>HKLM\System\CurrentControlSet\Services</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="system-information">System Information</h3>
+<ul>
+<li><strong>Operating System:</strong> Information about the OS version, build, and installation date.<ul>
+<li><code>HKLM\Software\Microsoft\Windows NT\CurrentVersion</code></li>
+</ul>
+</li>
+<li><strong>Hardware:</strong> Information about the system's hardware.<ul>
+<li><code>HKLM\HARDWARE</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="user-activity">User Activity</h3>
+<ul>
+<li><strong>TypedURLs:</strong> A history of URLs typed into Internet Explorer.<ul>
+<li><code>HKCU\Software\Microsoft\Internet Explorer\TypedURLs</code></li>
+</ul>
+</li>
+<li><strong>UserAssist:</strong> A record of programs launched by the user.<ul>
+<li><code>HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="security-implications">Security Implications</h2>
+<p>The Registry is a primary target for both attackers and defenders.</p>
+<ul>
+<li><strong>Attackers:</strong> Use the Registry for persistence, privilege escalation, and to store malicious configuration data.</li>
+<li><strong>Defenders:</strong> Monitor the Registry for unauthorized changes, hunt for malware, and harden system configurations.</li>
+</ul>
+<p>Understanding the Registry is not optional for serious security work on Windows. It is a fundamental skill.</p>
+<h2 id="closing-note">Closing Note</h2>
+<p>The Registry is vast and complex, but it is not unknowable. By focusing on the core concepts and key locations, I can build a mental model that allows me to navigate it effectively. This page is the start of that model. It is a map that I will continue to refine as I explore this critical part of the Windows operating system.</p>
 
 
 
@@ -3003,7 +3226,7 @@ Every fragment here is better than silence, because silence forgets.  </p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../projects/void_linux/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Void Linux">
+          <a href="../eventviewer/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Event Log">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3013,20 +3236,20 @@ Every fragment here is better than silence, because silence forgets.  </p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Void Linux
+                Event Log
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ccna/" class="md-footer__link md-footer__link--next" aria-label="Next: CCNA Training">
+          <a href="../cli-magic/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                CCNA Training
+                CLI
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3075,10 +3298,10 @@ Every fragment here is better than silence, because silence forgets.  </p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
