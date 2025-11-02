@@ -31,7 +31,6 @@ description: List of my plans for future write ups and general project ideas.
 - Explaining where I stand in my Nvim Journey
 - Building CAIDO Overview page
 - Building PEASS Overview page
-- DeepDive into WinRegistry
 
 ---
 ## STRATEGIC BACKLOG
@@ -50,6 +49,7 @@ description: List of my plans for future write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newest pages are.  
 
+- DeepDive into WinRegistry (2025-11)
 - Deep-dive into privilege escalation (2025-10)
 - Adding ARP, ICMP and SNMP Protocol pages (2025-10)
 - Building Section for protocols into foundations (2025-10)

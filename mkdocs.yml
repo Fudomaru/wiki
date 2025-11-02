@@ -71,6 +71,7 @@ nav:
       - Overview: foundations/windows/overview.md
       - UEFI: foundations/windows/uefi.md
       - Event Log: foundations/windows/eventviewer.md
+      - Registry: foundations/windows/winregistry.md
       - CLI: foundations/windows/cli-magic.md
     - MacOS: 
       - Overview: foundations/macos/overview.md
