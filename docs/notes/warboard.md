@@ -16,6 +16,7 @@ description: List of my plans for future write ups and general project ideas.
 ??? info
     Tasks that I am currently working on.
 
+- Building my own RSS Aggregator to stay up to day on Security.
 - Working though OWT Natas and documenting it.
 - DeepDive Page for Metasploit
 - DeepDive Page for Netcat
