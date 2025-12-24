@@ -37,4 +37,77 @@ to get the data to my storage: Borgbackup and Proxmox Backup Server.
 
 ## Foundation - ZFS Pool setup
 
+#### What is ZFS: 
+
+After a bit of research I decided to use ZFS.
+With ZFS you have don't have as many layers to administrate. 
+It treats the partitions, the volumes and the filesystem as one thing. 
+ZFS uses copy-on-write when data is written to the disk. 
+That means it is always saved somewhere else, and later only points to the new files. 
+Doing it that way eliminates a lot of things that can go wrong when writing data to the disk. 
+There is also data corruption checks build into it. 
+It has also snapshot capabilities, which I can later use to expand on what I am doing. 
+
+#### My Structure 
+
+I decided to use what I have, and finally get startet. 
+This is why I am using one disk for now. 
+I created one zfs storage pool, 
+and two datasets for the two different backups I am going to use. 
+
+'''bash
+zpool create vault /dev/sdX #creating the zfs storage pool
+zfs create vault/borg       #creating a dataset for borg repo
+zfs create vault/pbs        #creating a dataset for pbs datastore
+'''
+
+
+## Borg Backup for Proxmox Hosts
+
+#### Borg LXC Setup
+
+
+
+#### Borg Installation and User Setup
+
+
+
+#### Backup Script for Main Proxmox Host
+
+
+
+#### Systemd Automation
+
+
+#### What gets backed up?
+
+
+
+## Proxmox Backup Server
+
+#### PBS LXC Container Setup
+
+
+
+#### PBS Installation
+
+
+
+#### PBS Datastore Configuration
+
+
+
+#### Configure Proxmox Hosts to use PBS
+
+
+
+#### Backup Jobs
+
+
+
+#### Testing Restores 
+
+
+
+## Future Plans - Offsite Backup Strategy 
 
