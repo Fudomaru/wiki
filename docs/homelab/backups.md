@@ -1,6 +1,6 @@
 ---
 title: Backups
-description: I will try to lay out what I have already done for backups, why I have done it that way, and what will likly be the next step. 
+description: I will try to lay out what I have already done for backups, why I have done it that way, and what will likely be the next step. 
 ---
 
 # Backups
@@ -14,131 +14,134 @@ and especially what I have struggled with the most.
 
 There are some clear caveats to this. 
 
-First I am on a budget. 
-I do not want to spend a lot of money, 
-and since all of that is mostly for training and learning, 
-and I will most likely never actually have to restore from backup, 
-and considering my homelab's lack of redundancy,
-I think it is okay to not be perfect with my backup setup. 
-Secondly I have a constantly shifting setup, moving things around, 
-creating new and/or deleting old, breaking things and rebuilding, 
-or trying something completely random just to see if it works. 
+First, I am on a budget. 
+I do not want to spend a lot of money, and since this is all mostly for training and learning, I will most likely never have a critical need to restore from backup. 
+Considering my homelab's lack of redundancy, I think it is okay to not be perfect with my backup setup. 
+Secondly, I have a constantly shifting setup: moving things around, creating new services, deleting old ones, breaking things and rebuilding, or trying something completely random just to see if it works. 
 That also influences my backup system. 
-In my lab there is nothing staying the same for very long, 
-and therefor I will most like have to change the backup system
-regularly to actually have any realist reason to believe
-I could ever restore anything. 
+In my lab, there is nothing that stays the same for very long, and therefore I will most likely have to change the backup system
+regularly to have any realistic reason to believe I could ever restore anything. 
 
-I will go over the creating of the storage,
+I will go over the creation of the storage,
 where it lives in my lab right now,
-and the to different systems I implemented
-to get the data to my storage: Borgbackup and Proxmox Backup Server. 
+and the two different systems I implemented
+to get the data to my storage: BorgBackup and Proxmox Backup Server. 
 
 
-## Foundation - ZFS Pool setup
+## Foundation - ZFS Pool Setup
 
-#### What is ZFS: 
+#### What is ZFS?
 
-After a bit of research I decided to use ZFS.
-With ZFS you have don't have as many layers to administrate. 
-It treats the partitions, the volumes and the filesystem as one thing. 
-ZFS uses copy-on-write when data is written to the disk. 
-That means it is always saved somewhere else, and later only points to the new files. 
-Doing it that way eliminates a lot of things that can go wrong when writing data to the disk. 
-There is also data corruption checks build into it. 
-It has also snapshot capabilities, which I can later use to expand on what I am doing. 
+After a bit of research, I decided to use ZFS.
+With ZFS, you don't have as many layers to administer; it treats partitions, volumes, and the filesystem as a single entity. 
+ZFS uses copy-on-write, which means new data is written to a different block before the original pointers are updated. 
+This atomic operation eliminates many common issues that can occur during data writes and ensures the filesystem is always in a consistent state.
+It also has built-in data corruption checks and snapshot capabilities, which I can use to expand on this system later.
 
 #### My Structure 
 
-I decided to use what I have, and finally get startet. 
-This is why I am using one disk for now. 
-I created one zfs storage pool, 
-and two datasets for the two different backups I am going to use. 
+I decided to use what I have and finally get started. 
+This is why I am using a single disk for now. 
+I created one ZFS storage pool named `vault` and two datasets within it for the two different backup systems I am going to use.
 
-'''bash
-zpool create vault /dev/sdX #creating the zfs storage pool
-zfs create vault/borg       #creating a dataset for borg repo
-zfs create vault/pbs        #creating a dataset for pbs datastore
-'''
+```bash
+# Create the ZFS storage pool on a specific disk
+zpool create vault /dev/sdX
 
-This way I have both ways to backup on in one zfs pool
-and will be able to backup all of it to an external storage. 
+# Create a dataset for BorgBackup repositories
+zfs create vault/borg
+
+# Create a dataset for the Proxmox Backup Server datastore
+zfs create vault/pbs
+```
+
+This way, I have both backup methods organized in one ZFS pool, which will make it simpler to back up the entire pool to an external drive in the future.
 
 
 ## Borg Backup for Proxmox Hosts
 
 #### Borg LXC Setup
 
-I want to use one central point of control for my backups. 
-For that I using a Debian Bookworm LXC. 
-I created it manually with 1 core, 512mb RAM, since it wont need a lot of power. 
-It gets a static IP, and a mount point with the zfs Pool. 
+I wanted a central point of control for my backups, so I created a Debian Bookworm LXC container to act as my backup repository server.
+I created it manually with 1 core and 512MB RAM, since it won't need a lot of power. 
+It gets a static IP and a mount point that passes the ZFS pool from the Proxmox host into the container.
 
-'''bash
+```ini
+# /etc/pve/lxc/100.conf
 arch: amd64
 cores: 1
 features: nesting=1
 hostname: borg
 memory: 512
-mp1: /path/to/zfs/pool/,mp=/path/to/mountpoint
+# This maps the host's ZFS dataset into the container's filesystem
+mp0: /vault/borg,mp=/mnt/borg
 net0: name=eth0,bridge=vmbr0,firewall=1,ip=10.0.0.10/24,ip6=dhcp,type=veth
 ostype: debian
 rootfs: local-lvm:vm-100-disk-0,size=8G
 swap: 512
 unprivileged: 1
-'''
+```
 
 #### Borg Installation and User Setup
 
-First of all, like always, it is important to 
-run all of the updates.
-Then I also installed borgbackup, since that is what I am using. 
-I also created a user that I can use to run it,
-to make sure I dont have anything to run as root. 
-I also set up passwordless access over ssh to the borg user. 
+First, as always, it's important to update the system inside the LXC.
+Then, I installed BorgBackup and created a dedicated `borg` user to manage the repository. This avoids running anything as root.
+I also set up passwordless SSH access to this user from the Proxmox hosts that will be backed up.
 
-'''bash
-apt update && apt upgrade -y  #Update the system
-apt install borgupdate        #Installation of borgupdate
-useradd borg                  #Adding service account
-'''
+```bash
+# Update the system
+apt update && apt upgrade -y
 
+# Installation of BorgBackup
+apt install borgbackup
 
-#### Borg Repo initialisation
+# Add a dedicated service account
+useradd borg
 
-To use borg you first have to initialize a repo. 
-This is the place where borg backups are being saved to. 
-Since there are two proxmox host systems I want to backup
-I initialized two repos from the lxc container. 
+# ... (Then, set up authorized_keys for the borg user) ...
+```
 
-'''bash
-borg init --encryption=repokey-blake2 /path/to/zfs/mountpoint/proxmox01
-borg init --encryption=repokey-blake2 /path/to/zfs/mountpoint/proxmox02
-'''
+#### Borg Repo Initialization
 
+To use Borg, you first have to initialize a repository. 
+This is the location where Borg saves the backup data. 
+Since I have two Proxmox hosts to back up, I initialized two separate repositories inside the LXC container. I am running this command *inside the LXC container*.
 
-#### Backup Script for Main Proxmox Host
+```bash
+# Remember, these paths are inside the LXC, from the mount point we set up
+borg init --encryption=repokey-blake2 /mnt/borg/proxmox01
+borg init --encryption=repokey-blake2 /mnt/borg/proxmox02
+```
 
-Now everything is setup almost correctly. 
-But I needed to install borg on the hostsystems too.
-And I know that kinda makes the lcx container a bit useless, 
-but I still wanted to have a centralized system. 
-So I needed to install borg to my proxmox hosts, 
-create a user there that would be able to use it properly. 
-After doing that, and a single manual backupjob worked,
-I went after automation. 
-And the first step to automation is having a reliable script
-that can be run to make the complete task without other input. 
-And happily the borgbackup documentation already provides an example: 
+#### Backup Script for Proxmox Hosts
 
-'''bash
+Now for the client-side setup. I needed to install Borg on the Proxmox hosts themselves so they could send backups *to* the Borg LXC container.
+This clarifies the client-server relationship: the LXC container acts as a central repository, and the hosts are clients that connect to it.
+
+After installing Borg on the hosts and creating a user to run the backups, I worked on automation. The first step is a reliable script that can run without user input. The BorgBackup documentation provides an excellent example script to start with.
+
+A critical part of an automated script is handling the repository passphrase securely. Storing it in plain text is a risk. A much safer method is to store the passphrase in a root-owned file with strict permissions and tell Borg to read it from there using the `BORG_PASSCOMMAND` variable.
+
+```bash
+# On the Proxmox host, create a file to hold the passphrase
+vim /root/.borg_pass
+
+# Set permissions so only root can read it
+chmod 400 /root/.borg_pass
+```
+
+Here is the script, which I saved as `/usr/local/bin/borg_backup.sh` on each Proxmox host.
+
+```bash
 #!/bin/sh
 
-# Setting this, so the repo does not need to be given on the commandline:
-export BORG_REPO=ssh://username@example.com:2022/~/backup/main
+# Setting this, so the repo does not need to be given on the commandline.
+# The repository is located on our Borg LXC server.
+export BORG_REPO='ssh://borg@10.0.0.10:22/mnt/borg/proxmox01'
 
-# See the section "Passphrase notes" for more infos.
-export BORG_PASSPHRASE='XYZl0ngandsecurepa_55_phrasea&&123'
+# Setting the command to securely get the passphrase from a protected file.
+# This file should be owned by root with 400 permissions.
+export BORG_PASSCOMMAND='cat /root/.borg_pass'
 
 # some helpers and error handling:
 info() { printf "\n%s %s\n\n" "$( date )" "$*" >&2; }
@@ -148,7 +151,6 @@ info "Starting backup"
 
 # Backup the most important directories into an archive named after
 # the machine this script is currently running on:
-
 borg create                         \
     --verbose                       \
     --filter AME                    \
@@ -162,9 +164,6 @@ borg create                         \
                                     \
     ::'{hostname}-{now}'            \
     /etc                            \
-    /home                           \
-    /root                           \
-    /var
 
 backup_exit=$?
 
@@ -174,7 +173,6 @@ info "Pruning repository"
 # archives of THIS machine. The '{hostname}-*' matching is very important to
 # limit prune's operation to this machine's archives and not apply to
 # other machines' archives also:
-
 borg prune                          \
     --list                          \
     --glob-archives '{hostname}-*'  \
@@ -186,11 +184,8 @@ borg prune                          \
 prune_exit=$?
 
 # actually free repo disk space by compacting segments
-
 info "Compacting repository"
-
 borg compact
-
 compact_exit=$?
 
 # use highest exit code as global exit code
@@ -206,49 +201,56 @@ else
 fi
 
 exit ${global_exit}
-'''
+```
 
-Using this, there was not too much to do. 
-I changed out the repo location, adjusted to passphrase to make it save, 
-and made the exclusions and backup folder to the that fit my needs. 
-After running it, I saved it to /usr/local/bin/ to start the next step. 
+I adapted the script from the Borg documentation. The key changes I made were:
+1.  Set the `BORG_REPO` variable to point to the correct repository on my Borg LXC server.
+2.  Used `BORG_PASSCOMMAND` to securely read the passphrase from the file at `/root/.borg_pass` instead of exposing it in the script.
+3.  Adjusted the backed-up paths and exclusions to fit the needs of a Proxmox host.
 
 
 #### Systemd Automation
 
-So to be honest, this is my first automation 
-using systemd, and systemd timers. 
-And for that I had to read up a bit. 
-But in the end i decided that it is not really to complicated to implement, 
-at least not this time.
-I used a simple oneshot service, that runs onces, and then exits cleanly, 
-waiting for the next time it is run. 
-Together with a timer unit that is persistent and runs the service once a day, 
-I am pretty much set. 
-Important is to do a systemctl daemon-reload and enable to timer 
-to make sure it actually runs. 
+This was my first time automating a task with systemd timers, but it wasn't too complicated.
+I created two files in `/etc/systemd/system/`: a `.service` file to define the backup job and a `.timer` file to schedule it.
 
-'''bash 
-[Unit]
-  Description=Borg Backup Service
-  
-  [Service]
-  Type=oneshot
-  ExecStart=/usr/local/bin/borg_backup.sh
-  User=borgbackup
-'''
+The service file is a simple `oneshot` service, which means it runs a command once and then stops. Note that the `User` is `root`, as the script needs to execute the `BORG_PASSCOMMAND` to read the secret file in `/root/`.
 
-'''bash 
+```ini
+# /etc/systemd/system/borg-backup.service
 [Unit]
-  Description=Borg Backup Timer 
-  
-  [Timer]
-  OnCalendar=daily
-  Persistent=true
-  
-  [Install]
-  WantedBy=timers.target
-'''
+Description=Borg Backup Service
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/usr/local/bin/borg_backup.sh
+```
+
+The timer file schedules the service to run daily and ensures the timer is re-activated after a reboot (`Persistent=true`).
+
+```ini
+# /etc/systemd/system/borg-backup.timer
+[Unit]
+Description=Run borg-backup.service daily
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+After creating these two files, I reloaded the systemd daemon and enabled the timer to start the schedule.
+
+```bash
+# Reload systemd to recognize the new files
+systemctl daemon-reload
+
+# Enable and start the timer
+systemctl enable --now borg-backup.timer
+```
 
 
 ## Proxmox Backup Server
