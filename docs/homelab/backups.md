@@ -61,14 +61,47 @@ zfs create vault/borg       #creating a dataset for borg repo
 zfs create vault/pbs        #creating a dataset for pbs datastore
 '''
 
+This way I have both ways to backup on in one zfs pool
+and will be able to backup all of it to an external storage. 
+
 
 ## Borg Backup for Proxmox Hosts
 
 #### Borg LXC Setup
 
+I want to use one central point of control for my backups. 
+For that I using a Debian Bookworm LXC. 
+I created it manually with 1 core, 512mb RAM, since it wont need a lot of power. 
+It gets a static IP, and a mount point with the zfs Pool. 
 
+'''bash
+arch: amd64
+cores: 1
+features: nesting=1
+hostname: borg
+memory: 512
+mp1: /path/to/zfs/pool/,mp=/path/to/mountpoint
+net0: name=eth0,bridge=vmbr0,firewall=1,ip=10.0.0.10/24,ip6=dhcp,type=veth
+ostype: debian
+rootfs: local-lvm:vm-100-disk-0,size=8G
+swap: 512
+unprivileged: 1
+'''
 
 #### Borg Installation and User Setup
+
+First of all, like always, it is important to 
+run all of the updates.
+Then I also installed borgbackup, since that is what I am using. 
+I also created a user that I can use to run it,
+to make sure I dont have anything to run as root. 
+I also set up passwordless access over ssh to the borg user. 
+
+'''bash
+apt update && apt upgrade -y  #Update the system
+apt install borgupdate        #Installation of borgupdate
+useradd borg                  #Adding service account
+'''
 
 
 
