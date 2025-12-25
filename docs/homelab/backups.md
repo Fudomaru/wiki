@@ -104,16 +104,151 @@ useradd borg                  #Adding service account
 '''
 
 
+#### Borg Repo initialisation
+
+To use borg you first have to initialize a repo. 
+This is the place where borg backups are being saved to. 
+Since there are two proxmox host systems I want to backup
+I initialized two repos from the lxc container. 
+
+'''bash
+borg init --encryption=repokey-blake2 /path/to/zfs/mountpoint/proxmox01
+borg init --encryption=repokey-blake2 /path/to/zfs/mountpoint/proxmox02
+'''
+
 
 #### Backup Script for Main Proxmox Host
 
+Now everything is setup almost correctly. 
+But I needed to install borg on the hostsystems too.
+And I know that kinda makes the lcx container a bit useless, 
+but I still wanted to have a centralized system. 
+So I needed to install borg to my proxmox hosts, 
+create a user there that would be able to use it properly. 
+After doing that, and a single manual backupjob worked,
+I went after automation. 
+And the first step to automation is having a reliable script
+that can be run to make the complete task without other input. 
+And happily the borgbackup documentation already provides an example: 
+
+'''bash
+#!/bin/sh
+
+# Setting this, so the repo does not need to be given on the commandline:
+export BORG_REPO=ssh://username@example.com:2022/~/backup/main
+
+# See the section "Passphrase notes" for more infos.
+export BORG_PASSPHRASE='XYZl0ngandsecurepa_55_phrasea&&123'
+
+# some helpers and error handling:
+info() { printf "\n%s %s\n\n" "$( date )" "$*" >&2; }
+trap 'echo $( date ) Backup interrupted >&2; exit 2' INT TERM
+
+info "Starting backup"
+
+# Backup the most important directories into an archive named after
+# the machine this script is currently running on:
+
+borg create                         \
+    --verbose                       \
+    --filter AME                    \
+    --list                          \
+    --stats                         \
+    --show-rc                       \
+    --compression lz4               \
+    --exclude-caches                \
+    --exclude 'home/*/.cache/*'     \
+    --exclude 'var/tmp/*'           \
+                                    \
+    ::'{hostname}-{now}'            \
+    /etc                            \
+    /home                           \
+    /root                           \
+    /var
+
+backup_exit=$?
+
+info "Pruning repository"
+
+# Use the `prune` subcommand to maintain 7 daily, 4 weekly and 6 monthly
+# archives of THIS machine. The '{hostname}-*' matching is very important to
+# limit prune's operation to this machine's archives and not apply to
+# other machines' archives also:
+
+borg prune                          \
+    --list                          \
+    --glob-archives '{hostname}-*'  \
+    --show-rc                       \
+    --keep-daily    7               \
+    --keep-weekly   4               \
+    --keep-monthly  6
+
+prune_exit=$?
+
+# actually free repo disk space by compacting segments
+
+info "Compacting repository"
+
+borg compact
+
+compact_exit=$?
+
+# use highest exit code as global exit code
+global_exit=$(( backup_exit > prune_exit ? backup_exit : prune_exit ))
+global_exit=$(( compact_exit > global_exit ? compact_exit : global_exit ))
+
+if [ ${global_exit} -eq 0 ]; then
+    info "Backup, Prune, and Compact finished successfully"
+elif [ ${global_exit} -eq 1 ]; then
+    info "Backup, Prune, and/or Compact finished with warnings"
+else
+    info "Backup, Prune, and/or Compact finished with errors"
+fi
+
+exit ${global_exit}
+'''
+
+Using this, there was not too much to do. 
+I changed out the repo location, adjusted to passphrase to make it save, 
+and made the exclusions and backup folder to the that fit my needs. 
+After running it, I saved it to /usr/local/bin/ to start the next step. 
 
 
 #### Systemd Automation
 
+So to be honest, this is my first automation 
+using systemd, and systemd timers. 
+And for that I had to read up a bit. 
+But in the end i decided that it is not really to complicated to implement, 
+at least not this time.
+I used a simple oneshot service, that runs onces, and then exits cleanly, 
+waiting for the next time it is run. 
+Together with a timer unit that is persistent and runs the service once a day, 
+I am pretty much set. 
+Important is to do a systemctl daemon-reload and enable to timer 
+to make sure it actually runs. 
 
-#### What gets backed up?
+'''bash 
+[Unit]
+  Description=Borg Backup Service
+  
+  [Service]
+  Type=oneshot
+  ExecStart=/usr/local/bin/borg_backup.sh
+  User=borgbackup
+'''
 
+'''bash 
+[Unit]
+  Description=Borg Backup Timer 
+  
+  [Timer]
+  OnCalendar=daily
+  Persistent=true
+  
+  [Install]
+  WantedBy=timers.target
+'''
 
 
 ## Proxmox Backup Server
