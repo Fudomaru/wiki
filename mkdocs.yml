@@ -85,7 +85,7 @@ nav:
       - ICMP: foundations/protocols/icmp.md
       - TCP: foundations/protocols/tcp.md
       - UDP: foundations/protocols/udp.md
-      - TSL: foundations/protocols/tls.md
+      - TLS: foundations/protocols/tls.md
       - DNS: foundations/protocols/dns.md
       - SMTP: foundations/protocols/smtp.md
       - SNMP: foundations/protocols/snmp.md
@@ -93,6 +93,7 @@ nav:
       - SSH: foundations/protocols/ssh.md
       - SMB: foundations/protocols/smb.md
       - DHCP: foundations/protocols/dhcp.md
+      - HTTP: foundations/protocols/http.md
   - Security:
     - Overview: security/overview.md
     - Fundamentals: security/fundamentals.md
@@ -109,6 +110,7 @@ nav:
       - IDOR: security/exploits/idor.md
       - SSRF: security/exploits/ssrf.md
       - SQLI: security/exploits/sqli.md
+      - Missing Auth: security/exploits/missing_authorization.md
     - Privilege Escalation: security/privilege-escalation.md
     - Toolbelt:
       - Overview: security/toolbelt/overview.md
@@ -116,7 +118,7 @@ nav:
       - Searchsploit: security/toolbelt/searchsploit.md
       - Schtasks: security/toolbelt/schtasks.md
     - Playbooks:
-      - Overview: security/toolbelt/overview.md
+      - Overview: security/playbooks/overview.md
       - Recon: security/playbooks/recon.md
       - JS Deobfuscation: security/playbooks/js-deobfuscation.md
   - Homelab:
