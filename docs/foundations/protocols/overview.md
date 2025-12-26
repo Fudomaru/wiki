@@ -31,31 +31,31 @@ how it’s used, and how it can be abused or defended.
 - Ethernet (as framing standard)
 
 ### Layer 2 - Data Link
-- [ARP](/foundations/protocols/arp.md) - Address Resolution Protocol
+- [ARP](arp.md) - Address Resolution Protocol
 
 ### Layer 3 - Network
-- [IP](/foundations/protocols/ip.md) - Internet Protocol
-- [ICMP](/foundations/protocols/icmp.md) - Internet Control Message Protocol
+- [IP](ip.md) - Internet Protocol
+- [ICMP](icmp.md) - Internet Control Message Protocol
 
 ### Layer 4 - Transport
-- [TCP](/foundations/protocols/tcp.md) - Transmission Control Protocol
-- [UDP](/foundations/protocols/udp.md) - User Datagram Protocol
+- [TCP](tcp.md) - Transmission Control Protocol
+- [UDP](udp.md) - User Datagram Protocol
 
 ### Layer 5 - Session
-- [NetBIOS](/foundations/protocols/netbios.md)
+- [NetBIOS](netbios.md)
 
 ### Layer 6 - Presentation
-- [TLS](/foundations/protocols/tls.md) - Transport Layer Security
+- [TLS](tls.md) - Transport Layer Security
 
 ### Layer 7 - Application
-- [HTTP](/foundations/protocols/http.md)
-- [DNS](/foundations/protocols/dns.md)
-- [SMTP](/foundations/protocols/smtp.md)
-- [SNMP](/foundations/protocols/snmp.md)
-- [FTP](/foundations/protocols/ftp.md)
-- [SSH](/foundations/protocols/ssh.md)
-- [SMB](/foundations/protocols/smb.md)
-- [DHCP](/foundations/protocols/dhcp.md)
+- [HTTP](http.md)
+- [DNS](dns.md)
+- [SMTP](smtp.md)
+- [SNMP](snmp.md)
+- [FTP](ftp.md)
+- [SSH](ssh.md)
+- [SMB](smb.md)
+- [DHCP](dhcp.md)
 
 ---
 

@@ -24,7 +24,7 @@ I don't really want to miss out with the Linux experience, so I use WSL2 on my W
 It worked like a charm. 
 
 #### New Commands  
-For this there was only one command given: [**SSH**](/linux/cli-magic/#ssh)  
+For this there was only one command given: [**SSH**](../../foundations/linux/cli-magic.md#ssh)  
 This is used to get a secure remote access to another machine. You use this general format:  
 `ssh username@connection.address`  
 In this case that would look like this:  
@@ -59,7 +59,7 @@ ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 ## Level 1 → Level 2
 
 #### New Commands
-[ls](/linux/cli-magic/#ls) , [cd](/linux/cli-magic/#cd) , [cat](/linux/cli-magic/#cat)  
+[ls](../../foundations/linux/cli-magic.md#ls) , [cd](../../foundations/linux/cli-magic.md#cd) , [cat](../../foundations/linux/cli-magic.md#cat)  
 
 
 #### My Solutions
@@ -129,7 +129,7 @@ This is what I ended up using, and it only put one file as ASCII instead of data
 ## Level 5 → Level 6
 
 #### New Commands  
-[find](/linux/cli-magic/#find)
+[find](../../foundations/linux/cli-magic.md#find)
 
 #### My Solutions  
 So for this I had to do a bit more reading.  
@@ -198,7 +198,7 @@ dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
 ## Level 8 → Level 9
 
 #### New Commands  
-sort, [uniq](/linux/cli-magic/#uniq)  
+sort, [uniq](../../foundations/linux/cli-magic.md#uniq)  
 
 #### My Solutions  
 So same set up, but the only line of text that occurs only once.  
