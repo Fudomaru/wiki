@@ -257,25 +257,57 @@ systemctl enable --now borg-backup.timer
 
 #### PBS LXC Container Setup
 
+Here I used the Proxmox VE Helper Script for easy installation. 
+I build a 2 core, 2GB RAM lxc Container to have pbs running. 
+All of that worked really great, and afterwards I only had to mount the 
+second zfs dataset to make it complete. 
 
 
 #### PBS Installation
 
+If you have never tested the [Helperscripts]("https://community-scripts.github.io/ProxmoxVE/") then you should take a longer look at it. 
+They are really helpful if you are ever planing to run proxmox 
+in a homelab setting. 
+I still often try to refuse myself this option, 
+because i think you learn a lot more by doing it from scatch, 
+but here I decided to go with it. 
 
 
 #### PBS Datastore Configuration
 
+Afterward it was as simple as browsing to the IP 
+I set up and logging into the WebUI. 
+Going through that I setup the datastore,
+using the mountpoint to my zfs dataset i created previously. 
 
 
 #### Configure Proxmox Hosts to use PBS
 
-
-
-#### Backup Jobs
-
+Now the last thing was to implement it into my setup. 
+Here I again decided to use the webUi, this time the one from Proxmox.
+Under the Datacenter you can add Storage options, 
+and here is where you can choose PBS, click yourself though the settings, 
+and there you are. 
+Same with the actual backups. 
+For that you stay in the datacenter settings 
+to choose the backup for all or some containers or VMs, 
+or you can go to the VM or container directly. 
+You now only have to choose the PBS as the storage location,
+and everything else is handled for you. 
 
 
 #### Testing Restores 
+
+This is really important. 
+Your best backup is no help at all
+if you cant restore from it. 
+Therefor I tested a few things at once. 
+First I set everything up, and then waited for a few days. 
+I also wanted to make sure the backups where running as they should. 
+Then I shut down one of my two proxmox nodes, 
+and tried to restore the containers 
+of the now "not working" node to the one still online. 
+
 
 
 
