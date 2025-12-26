@@ -125,6 +125,7 @@ nav:
     - pfSense: homelab/pfsense.md
     - PiHole: homelab/pihole.md
     - Gitea: homelab/gitea.md
+    - Backup: homelab/backups.md
   - Challenges:
     - Overview: challenges/overview.md
     - OverTheWire:
