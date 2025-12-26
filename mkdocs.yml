@@ -103,8 +103,8 @@ nav:
       - Structure: security/pentesting/structure.md
       - Skills: security/pentesting/skills.md
       - Methodolgies: security/pentesting/methodologies.md
-    - Exploits: security/exploits/overview.md
-      children:  
+    - Exploits:
+      - Overview: security/exploits/overview.md
       - XSS: security/exploits/xss.md
       - Hardcoded Secrets: security/exploits/hardcoded_secrets.md
       - IDOR: security/exploits/idor.md
