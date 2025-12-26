@@ -104,7 +104,7 @@ nav:
       - Skills: security/pentesting/skills.md
       - Methodolgies: security/pentesting/methodologies.md
     - Exploits: security/exploits/overview.md
-      Children:  
+      children:  
       - XSS: security/exploits/xss.md
       - Hardcoded Secrets: security/exploits/hardcoded_secrets.md
       - IDOR: security/exploits/idor.md
