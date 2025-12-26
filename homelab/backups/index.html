@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="List of my most liked Readings and Videos on the topic of Information Technology.">
+        <meta name="description" content="I will try to lay out what I have already done for backups, why I have done it that way, and what will likely be the next step.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../ccna/">
+        <link rel="prev" href="../gitea/">
       
       
-        <link rel="next" href="../warboard/">
+        <link rel="next" href="../../challenges/overview/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Readings and Videos - Voidex</title>
+        <title>Backups - Voidex</title>
       
     
     
@@ -140,6 +140,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#backups" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -170,7 +175,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Readings and Videos
+              Backups
             
           </span>
         </div>
@@ -330,11 +335,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../homelab/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
           
   
   
@@ -390,13 +397,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../notes/overview/" class="md-tabs__link">
           
   
   
@@ -2021,24 +2026,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -2051,7 +2061,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Homelab
@@ -2065,7 +2075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -2088,7 +2098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/proxmox/" class="md-nav__link">
+      <a href="../proxmox/" class="md-nav__link">
         
   
   
@@ -2111,7 +2121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/pfsense/" class="md-nav__link">
+      <a href="../pfsense/" class="md-nav__link">
         
   
   
@@ -2134,7 +2144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/pihole/" class="md-nav__link">
+      <a href="../pihole/" class="md-nav__link">
         
   
   
@@ -2157,7 +2167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/gitea/" class="md-nav__link">
+      <a href="../gitea/" class="md-nav__link">
         
   
   
@@ -2177,10 +2187,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../homelab/backups/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Backup
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2191,6 +2223,263 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foundation-zfs-pool-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foundation - ZFS Pool Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Foundation - ZFS Pool Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-zfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is ZFS?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      My Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#borg-backup-for-proxmox-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borg Backup for Proxmox Hosts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Borg Backup for Proxmox Hosts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#borg-lxc-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borg LXC Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borg-installation-and-user-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borg Installation and User Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borg-repo-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borg Repo Initialization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-script-for-proxmox-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backup Script for Proxmox Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Systemd Automation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxmox-backup-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox Backup Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxmox Backup Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pbs-lxc-container-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      PBS LXC Container Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pbs-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      PBS Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pbs-datastore-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      PBS Datastore Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-proxmox-hosts-to-use-pbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Proxmox Hosts to use PBS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-restores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Restores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-plans-offsite-backup-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Plans - Offsite Backup Strategy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Future Plans - Offsite Backup Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-sanctuary-for-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing a Sanctuary for Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-offsite-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Offsite Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned-future-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lessons Learned &amp; Future Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lessons Learned &amp; Future Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Insights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-setup-achieves" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Setup Achieves
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Questions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2654,29 +2943,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -2689,7 +2973,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Notes
@@ -2703,7 +2987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../notes/overview/" class="md-nav__link">
         
   
   
@@ -2726,7 +3010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ccna/" class="md-nav__link">
+      <a href="../../notes/ccna/" class="md-nav__link">
         
   
   
@@ -2746,17 +3030,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../notes/media/" class="md-nav__link">
         
   
   
@@ -2767,7 +3044,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -2780,7 +3056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../warboard/" class="md-nav__link">
+      <a href="../../notes/warboard/" class="md-nav__link">
         
   
   
@@ -2842,6 +3118,253 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foundation-zfs-pool-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Foundation - ZFS Pool Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Foundation - ZFS Pool Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-zfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is ZFS?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#my-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      My Structure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#borg-backup-for-proxmox-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borg Backup for Proxmox Hosts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Borg Backup for Proxmox Hosts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#borg-lxc-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borg LXC Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borg-installation-and-user-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borg Installation and User Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#borg-repo-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Borg Repo Initialization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backup-script-for-proxmox-hosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backup Script for Proxmox Hosts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemd-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Systemd Automation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxmox-backup-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxmox Backup Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proxmox Backup Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pbs-lxc-container-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      PBS LXC Container Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pbs-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      PBS Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pbs-datastore-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      PBS Datastore Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-proxmox-hosts-to-use-pbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Proxmox Hosts to use PBS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-restores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Restores
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-plans-offsite-backup-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Plans - Offsite Backup Strategy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Future Plans - Offsite Backup Strategy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-sanctuary-for-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing a Sanctuary for Data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-offsite-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Offsite Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned-future-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lessons Learned &amp; Future Questions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lessons Learned &amp; Future Questions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Insights
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-setup-achieves" class="md-nav__link">
+    <span class="md-ellipsis">
+      What This Setup Achieves
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Questions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2857,9 +3380,328 @@
 
 
 
-  <h1>Media</h1>
+<h1 id="backups">Backups</h1>
+<h3 id="introduction">Introduction</h3>
+<p>This will be my story of building out my personal backup system. 
+I will try to explain the reason behind my choices,
+how I set it up, 
+and especially what I have struggled with the most. </p>
+<p>There are some clear caveats to this. </p>
+<p>First, I am on a budget. 
+I do not want to spend a lot of money, and since this is all mostly for training and learning, I will most likely never have a critical need to restore from backup. 
+Considering my homelab's lack of redundancy, I think it is okay to not be perfect with my backup setup. 
+Secondly, I have a constantly shifting setup: moving things around, creating new services, deleting old ones, breaking things and rebuilding, or trying something completely random just to see if it works. 
+That also influences my backup system. 
+In my lab, there is nothing that stays the same for very long, and therefore I will most likely have to change the backup system
+regularly to have any realistic reason to believe I could ever restore anything. </p>
+<p>I will go over the creation of the storage,
+where it lives in my lab right now,
+and the two different systems I implemented
+to get the data to my storage: BorgBackup and Proxmox Backup Server. </p>
+<h2 id="foundation-zfs-pool-setup">Foundation - ZFS Pool Setup</h2>
+<h4 id="what-is-zfs">What is ZFS?</h4>
+<p>After a bit of research, I decided to use ZFS.
+With ZFS, you don't have as many layers to administer; it treats partitions, volumes, and the filesystem as a single entity. 
+ZFS uses copy-on-write, which means new data is written to a different block before the original pointers are updated. 
+This atomic operation eliminates many common issues that can occur during data writes and ensures the filesystem is always in a consistent state.
+It also has built-in data corruption checks and snapshot capabilities, which I can use to expand on this system later.</p>
+<h4 id="my-structure">My Structure</h4>
+<p>I decided to use what I have and finally get started. 
+This is why I am using a single disk for now. 
+I created one ZFS storage pool named <code>vault</code> and two datasets within it for the two different backup systems I am going to use.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create the ZFS storage pool on a specific disk</span>
+zpool<span class="w"> </span>create<span class="w"> </span>vault<span class="w"> </span>/dev/sdX
 
+<span class="c1"># Create a dataset for BorgBackup repositories</span>
+zfs<span class="w"> </span>create<span class="w"> </span>vault/borg
 
+<span class="c1"># Create a dataset for the Proxmox Backup Server datastore</span>
+zfs<span class="w"> </span>create<span class="w"> </span>vault/pbs
+</code></pre></div>
+<p>This way, I have both backup methods organized in one ZFS pool, which will make it simpler to back up the entire pool to an external drive in the future.</p>
+<h2 id="borg-backup-for-proxmox-hosts">Borg Backup for Proxmox Hosts</h2>
+<h4 id="borg-lxc-setup">Borg LXC Setup</h4>
+<p>I wanted a central point of control for my backups, so I created a Debian Bookworm LXC container to act as my backup repository server.
+I created it manually with 1 core and 512MB RAM, since it won't need a lot of power. 
+It gets a static IP and a mount point that passes the ZFS pool from the Proxmox host into the container.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># /etc/pve/lxc/100.conf</span>
+<span class="na">arch</span><span class="o">:</span><span class="w"> </span><span class="s">amd64</span>
+<span class="na">cores</span><span class="o">:</span><span class="w"> </span><span class="s">1</span>
+<span class="na">features</span><span class="o">:</span><span class="w"> </span><span class="s">nesting=1</span>
+<span class="na">hostname</span><span class="o">:</span><span class="w"> </span><span class="s">borg</span>
+<span class="na">memory</span><span class="o">:</span><span class="w"> </span><span class="s">512</span>
+<span class="c1"># This maps the host&#39;s ZFS dataset into the container&#39;s filesystem</span>
+<span class="na">mp0</span><span class="o">:</span><span class="w"> </span><span class="s">/vault/borg,mp=/mnt/borg</span>
+<span class="na">net0</span><span class="o">:</span><span class="w"> </span><span class="s">name=eth0,bridge=vmbr0,firewall=1,ip=10.0.0.10/24,ip6=dhcp,type=veth</span>
+<span class="na">ostype</span><span class="o">:</span><span class="w"> </span><span class="s">debian</span>
+<span class="na">rootfs</span><span class="o">:</span><span class="w"> </span><span class="s">local-lvm:vm-100-disk-0,size=8G</span>
+<span class="na">swap</span><span class="o">:</span><span class="w"> </span><span class="s">512</span>
+<span class="na">unprivileged</span><span class="o">:</span><span class="w"> </span><span class="s">1</span>
+</code></pre></div>
+<h4 id="borg-installation-and-user-setup">Borg Installation and User Setup</h4>
+<p>First, as always, it's important to update the system inside the LXC.
+Then, I installed BorgBackup and created a dedicated <code>borg</code> user to manage the repository. This avoids running anything as root.
+I also set up passwordless SSH access to this user from the Proxmox hosts that will be backed up.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Update the system</span>
+apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+
+<span class="c1"># Installation of BorgBackup</span>
+apt<span class="w"> </span>install<span class="w"> </span>borgbackup
+
+<span class="c1"># Add a dedicated service account</span>
+useradd<span class="w"> </span>borg
+
+<span class="c1"># ... (Then, set up authorized_keys for the borg user) ...</span>
+</code></pre></div>
+<h4 id="borg-repo-initialization">Borg Repo Initialization</h4>
+<p>To use Borg, you first have to initialize a repository. 
+This is the location where Borg saves the backup data. 
+Since I have two Proxmox hosts to back up, I initialized two separate repositories inside the LXC container. I am running this command <em>inside the LXC container</em>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Remember, these paths are inside the LXC, from the mount point we set up</span>
+borg<span class="w"> </span>init<span class="w"> </span>--encryption<span class="o">=</span>repokey-blake2<span class="w"> </span>/mnt/borg/proxmox01
+borg<span class="w"> </span>init<span class="w"> </span>--encryption<span class="o">=</span>repokey-blake2<span class="w"> </span>/mnt/borg/proxmox02
+</code></pre></div>
+<h4 id="backup-script-for-proxmox-hosts">Backup Script for Proxmox Hosts</h4>
+<p>Now for the client-side setup. I needed to install Borg on the Proxmox hosts themselves so they could send backups <em>to</em> the Borg LXC container.
+This clarifies the client-server relationship: the LXC container acts as a central repository, and the hosts are clients that connect to it.</p>
+<p>After installing Borg on the hosts and creating a user to run the backups, I worked on automation. The first step is a reliable script that can run without user input. The BorgBackup documentation provides an excellent example script to start with.</p>
+<p>A critical part of an automated script is handling the repository passphrase securely. Storing it in plain text is a risk. A much safer method is to store the passphrase in a root-owned file with strict permissions and tell Borg to read it from there using the <code>BORG_PASSCOMMAND</code> variable.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># On the Proxmox host, create a file to hold the passphrase</span>
+vim<span class="w"> </span>/root/.borg_pass
+
+<span class="c1"># Set permissions so only root can read it</span>
+chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>/root/.borg_pass
+</code></pre></div>
+<p>Here is the script, which I saved as <code>/usr/local/bin/borg_backup.sh</code> on each Proxmox host.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+
+<span class="c1"># Setting this, so the repo does not need to be given on the commandline.</span>
+<span class="c1"># The repository is located on our Borg LXC server.</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">BORG_REPO</span><span class="o">=</span><span class="s1">&#39;ssh://borg@10.0.0.10:22/mnt/borg/proxmox01&#39;</span>
+
+<span class="c1"># Setting the command to securely get the passphrase from a protected file.</span>
+<span class="c1"># This file should be owned by root with 400 permissions.</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">BORG_PASSCOMMAND</span><span class="o">=</span><span class="s1">&#39;cat /root/.borg_pass&#39;</span>
+
+<span class="c1"># some helpers and error handling:</span>
+info<span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s2">&quot;\n%s %s\n\n&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="w"> </span>date<span class="w"> </span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$*</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
+<span class="nb">trap</span><span class="w"> </span><span class="s1">&#39;echo $( date ) Backup interrupted &gt;&amp;2; exit 2&#39;</span><span class="w"> </span>INT<span class="w"> </span>TERM
+
+info<span class="w"> </span><span class="s2">&quot;Starting backup&quot;</span>
+
+<span class="c1"># Backup the most important directories into an archive named after</span>
+<span class="c1"># the machine this script is currently running on:</span>
+borg<span class="w"> </span>create<span class="w">                         </span><span class="se">\</span>
+<span class="w">    </span>--verbose<span class="w">                       </span><span class="se">\</span>
+<span class="w">    </span>--filter<span class="w"> </span>AME<span class="w">                    </span><span class="se">\</span>
+<span class="w">    </span>--list<span class="w">                          </span><span class="se">\</span>
+<span class="w">    </span>--stats<span class="w">                         </span><span class="se">\</span>
+<span class="w">    </span>--show-rc<span class="w">                       </span><span class="se">\</span>
+<span class="w">    </span>--compression<span class="w"> </span>lz4<span class="w">               </span><span class="se">\</span>
+<span class="w">    </span>--exclude-caches<span class="w">                </span><span class="se">\</span>
+<span class="w">    </span>--exclude<span class="w"> </span><span class="s1">&#39;home/*/.cache/*&#39;</span><span class="w">     </span><span class="se">\</span>
+<span class="w">    </span>--exclude<span class="w"> </span><span class="s1">&#39;var/tmp/*&#39;</span><span class="w">           </span><span class="se">\</span>
+<span class="w">                                    </span><span class="se">\</span>
+<span class="w">    </span>::<span class="s1">&#39;{hostname}-{now}&#39;</span><span class="w">            </span><span class="se">\</span>
+<span class="w">    </span>/etc<span class="w">                            </span><span class="se">\</span>
+
+<span class="nv">backup_exit</span><span class="o">=</span><span class="nv">$?</span>
+
+info<span class="w"> </span><span class="s2">&quot;Pruning repository&quot;</span>
+
+<span class="c1"># Use the `prune` subcommand to maintain 7 daily, 4 weekly and 6 monthly</span>
+<span class="c1"># archives of THIS machine. The &#39;{hostname}-*&#39; matching is very important to</span>
+<span class="c1"># limit prune&#39;s operation to this machine&#39;s archives and not apply to</span>
+<span class="c1"># other machines&#39; archives also:</span>
+borg<span class="w"> </span>prune<span class="w">                          </span><span class="se">\</span>
+<span class="w">    </span>--list<span class="w">                          </span><span class="se">\</span>
+<span class="w">    </span>--glob-archives<span class="w"> </span><span class="s1">&#39;{hostname}-*&#39;</span><span class="w">  </span><span class="se">\</span>
+<span class="w">    </span>--show-rc<span class="w">                       </span><span class="se">\</span>
+<span class="w">    </span>--keep-daily<span class="w">    </span><span class="m">7</span><span class="w">               </span><span class="se">\</span>
+<span class="w">    </span>--keep-weekly<span class="w">   </span><span class="m">4</span><span class="w">               </span><span class="se">\</span>
+<span class="w">    </span>--keep-monthly<span class="w">  </span><span class="m">6</span>
+
+<span class="nv">prune_exit</span><span class="o">=</span><span class="nv">$?</span>
+
+<span class="c1"># actually free repo disk space by compacting segments</span>
+info<span class="w"> </span><span class="s2">&quot;Compacting repository&quot;</span>
+borg<span class="w"> </span>compact
+<span class="nv">compact_exit</span><span class="o">=</span><span class="nv">$?</span>
+
+<span class="c1"># use highest exit code as global exit code</span>
+<span class="nv">global_exit</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="nv">backup_exit</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">prune_exit</span><span class="w"> </span>?<span class="w"> </span><span class="nv">backup_exit</span><span class="w"> </span>:<span class="w"> </span><span class="nv">prune_exit</span><span class="w"> </span><span class="k">))</span>
+<span class="nv">global_exit</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="nv">compact_exit</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">global_exit</span><span class="w"> </span>?<span class="w"> </span><span class="nv">compact_exit</span><span class="w"> </span>:<span class="w"> </span><span class="nv">global_exit</span><span class="w"> </span><span class="k">))</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="si">${</span><span class="nv">global_exit</span><span class="si">}</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>info<span class="w"> </span><span class="s2">&quot;Backup, Prune, and Compact finished successfully&quot;</span>
+<span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="si">${</span><span class="nv">global_exit</span><span class="si">}</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span>info<span class="w"> </span><span class="s2">&quot;Backup, Prune, and/or Compact finished with warnings&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span>info<span class="w"> </span><span class="s2">&quot;Backup, Prune, and/or Compact finished with errors&quot;</span>
+<span class="k">fi</span>
+
+<span class="nb">exit</span><span class="w"> </span><span class="si">${</span><span class="nv">global_exit</span><span class="si">}</span>
+</code></pre></div>
+<p>I adapted the script from the Borg documentation. The key changes I made were:
+1.  Set the <code>BORG_REPO</code> variable to point to the correct repository on my Borg LXC server.
+2.  Used <code>BORG_PASSCOMMAND</code> to securely read the passphrase from the file at <code>/root/.borg_pass</code> instead of exposing it in the script.
+3.  Adjusted the backed-up paths and exclusions to fit the needs of a Proxmox host.</p>
+<h4 id="systemd-automation">Systemd Automation</h4>
+<p>This was my first time automating a task with systemd timers, but it wasn't too complicated.
+I created two files in <code>/etc/systemd/system/</code>: a <code>.service</code> file to define the backup job and a <code>.timer</code> file to schedule it.</p>
+<p>The service file is a simple <code>oneshot</code> service, which means it runs a command once and then stops. Note that the <code>User</code> is <code>root</code>, as the script needs to execute the <code>BORG_PASSCOMMAND</code> to read the secret file in <code>/root/</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># /etc/systemd/system/borg-backup.service</span>
+<span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Borg Backup Service</span>
+
+<span class="k">[Service]</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">oneshot</span>
+<span class="na">User</span><span class="o">=</span><span class="s">root</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/local/bin/borg_backup.sh</span>
+</code></pre></div>
+<p>The timer file schedules the service to run daily and ensures the timer is re-activated after a reboot (<code>Persistent=true</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># /etc/systemd/system/borg-backup.timer</span>
+<span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Run borg-backup.service daily</span>
+
+<span class="k">[Timer]</span>
+<span class="na">OnCalendar</span><span class="o">=</span><span class="s">daily</span>
+<span class="na">Persistent</span><span class="o">=</span><span class="s">true</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">timers.target</span>
+</code></pre></div>
+<p>After creating these two files, I reloaded the systemd daemon and enabled the timer to start the schedule.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Reload systemd to recognize the new files</span>
+systemctl<span class="w"> </span>daemon-reload
+
+<span class="c1"># Enable and start the timer</span>
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>borg-backup.timer
+</code></pre></div>
+<h2 id="proxmox-backup-server">Proxmox Backup Server</h2>
+<h4 id="pbs-lxc-container-setup">PBS LXC Container Setup</h4>
+<p>Here I used the Proxmox VE Helper Script for easy installation. 
+I build a 2 core, 2GB RAM lxc Container to have pbs running. 
+All of that worked really great, and afterwards I only had to mount the 
+second zfs dataset to make it complete. </p>
+<h4 id="pbs-installation">PBS Installation</h4>
+<p>If you have never tested the <a href="" title="https://community-scripts.github.io/ProxmoxVE/">Helperscripts</a> then you should take a longer look at it. 
+They are really helpful if you are ever planing to run proxmox 
+in a homelab setting. 
+I still often try to refuse myself this option, 
+because i think you learn a lot more by doing it from scatch, 
+but here I decided to go with it. </p>
+<h4 id="pbs-datastore-configuration">PBS Datastore Configuration</h4>
+<p>Afterward it was as simple as browsing to the IP 
+I set up and logging into the WebUI. 
+Going through that I setup the datastore,
+using the mountpoint to my zfs dataset i created previously. </p>
+<h4 id="configure-proxmox-hosts-to-use-pbs">Configure Proxmox Hosts to use PBS</h4>
+<p>Now the last thing was to implement it into my setup. 
+Here I again decided to use the webUi, this time the one from Proxmox.
+Under the Datacenter you can add Storage options, 
+and here is where you can choose PBS, click yourself though the settings, 
+and there you are. 
+Same with the actual backups. 
+For that you stay in the datacenter settings 
+to choose the backup for all or some containers or VMs, 
+or you can go to the VM or container directly. 
+You now only have to choose the PBS as the storage location,
+and everything else is handled for you. </p>
+<h4 id="testing-restores">Testing Restores</h4>
+<p>This is really important. 
+Your best backup is no help at all
+if you cant restore from it. 
+Therefor I tested a few things at once. 
+First I set everything up, and then waited for a few days. 
+I also wanted to make sure the backups where running as they should. 
+Then I shut down one of my two proxmox nodes, 
+and tried to restore the containers 
+of the now "not working" node to the one still online. </p>
+<h2 id="future-plans-offsite-backup-strategy">Future Plans - Offsite Backup Strategy</h2>
+<p>My current setup protects against hardware failure within the lab, 
+but it has a single, critical point of failure: 
+the lab itself. 
+A fire, theft, or catastrophic power event 
+would take out both the live data and the local backups. 
+This is where the final piece of the classic <strong>3-2-1 backup rule</strong> comes into play.</p>
+<ul>
+<li><strong>3 Copies:</strong> My live data, the local backup, and an <em>offsite</em> backup.</li>
+<li><strong>2 Media:</strong> The disks running the services, and the ZFS pool holding the backups.</li>
+<li><strong>1 Offsite Location:</strong> A physically separate location to ensure true disaster recovery.</li>
+</ul>
+<h4 id="choosing-a-sanctuary-for-data">Choosing a Sanctuary for Data</h4>
+<p>The goal was to find a provider that met a few strict requirements:
+1.  <strong>Data Sovereignty:</strong> Must be based in Germany to align with GDPR and my preference for local data privacy.
+2.  <strong>Compatibility:</strong> Must work seamlessly with Borg, ideally with native support over SSH.
+3.  <strong>Affordability:</strong> The cost had to be reasonable for a homelab budget, without complex pricing or surprise retrieval fees.</p>
+<p>After some research, I settled on a Hetzner Storage Box. 
+It's a simple, affordable block of storage accessible via SSH, 
+offered by a German company. 
+This avoids the complexity 
+and egress costs of larger cloud providers 
+and feels perfectly suited for this project's scale.</p>
+<h4 id="the-offsite-implementation">The Offsite Implementation</h4>
+<p>The plan is to create a new, encrypted Borg repository on the Hetzner storage. 
+The process is nearly identical to the local setup, 
+reinforcing the simplicity of the tool.</p>
+<p>A script, scheduled with a new systemd timer, will handle the synchronization. 
+To start, this script will run weekly or monthly, 
+focusing only on syncing the backup data: the local zfs pool as a whole. </p>
+<h2 id="lessons-learned-future-questions">Lessons Learned &amp; Future Questions</h2>
+<p>This project was never just about building a backup system; 
+it was about understanding the friction points in a real-world deployment.</p>
+<h4 id="key-insights">Key Insights</h4>
+<ul>
+<li><strong>Systemd is Superior to Cron:</strong> 
+For services, the declarative nature, dependency management, 
+and superior logging (<code>journalctl</code>) make systemd timers 
+a more robust choice for automation. 
+The <code>Persistent=true</code> setting alone is a significant improvement, 
+ensuring a timer runs if the system was down during its scheduled time.</li>
+<li><strong>Test Restores Are Not Optional:</strong> 
+A backup is just a theory until a restore has been successfully tested. 
+My first attempts immediately revealed gaps in my process, 
+reinforcing that this is the most critical step.</li>
+<li><strong>Simplicity is a Feature:</strong> 
+The combination of ZFS, Borg, and PBS provides immense power, 
+but each adds a layer of complexity. 
+The initial setup was a reminder 
+that the simplest path to a working solution 
+is often the best one to start with.</li>
+<li><strong>Offsite Backups Don't Have to Be Expensive:</strong> 
+For just a few euros a month, 
+I can achieve a resilient disaster recovery plan. 
+The peace of mind is worth far more than the cost.</li>
+</ul>
+<h4 id="what-this-setup-achieves">What This Setup Achieves</h4>
+<ul>
+<li><strong>3-2-1 Rule:</strong> 
+Fulfilled with live data, local ZFS backups, and encrypted offsite copies.</li>
+<li><strong>Rapid Local Recovery:</strong> 
+PBS allows for the quick restoration of entire VMs and containers.</li>
+<li><strong>Host Configuration Safety:</strong> 
+Borg protects the essential <code>/etc</code> configurations of the Proxmox hosts.</li>
+<li><strong>Disaster Recovery:</strong> 
+The offsite repository provides a last line of defense against total site failure.</li>
+</ul>
+<hr />
+<h3 id="questions">Questions</h3>
+<p>As the overview page states, this lab is a diary of questions. 
+This backup project has raised several new ones that will shape its future:</p>
+<ul>
+<li>At what point does the cost of storing large PBS snapshots offsite justify the expense? 
+Is there a more selective way to back up VM data for disaster recovery?</li>
+<li>Is a weekly or monthly offsite sync frequent enough? 
+How do I define "critical data" 
+and what is my true recovery point objective?</li>
+<li>How can I automate the <em>testing</em> of my restores, 
+so that I have continuous, provable confidence in my backups?</li>
+<li>What is the blind spot of this system? 
+If the NAS host failed completely, 
+what is the exact, step-by-step process to rebuild the backup system itself 
+from the offsite repository?</li>
+</ul>
 
 
 
@@ -2898,7 +3740,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../ccna/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CCNA Training">
+          <a href="../gitea/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Gitea">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2908,20 +3750,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                CCNA Training
+                Gitea
               </div>
             </div>
           </a>
         
         
           
-          <a href="../warboard/" class="md-footer__link md-footer__link--next" aria-label="Next: Warboard">
+          <a href="../../challenges/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Warboard
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
