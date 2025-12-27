@@ -3605,7 +3605,7 @@ I created two files in <code>/etc/systemd/system/</code>: a <code>.service</code
 <span class="na">User</span><span class="o">=</span><span class="s">root</span>
 <span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/local/bin/borg_backup.sh</span>
 </code></pre></div>
-<p>The timer file schedules the service to run daily and ensures the timer is re-activated after a reboot (<code>Persistent=true</code>).</p>
+<p>The timer file schedules the service to run daily and ensures reactivation after a reboot (<code>Persistent=true</code>).</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># /etc/systemd/system/borg-backup.timer</span>
 <span class="k">[Unit]</span>
 <span class="na">Description</span><span class="o">=</span><span class="s">Run borg-backup.service daily</span>
