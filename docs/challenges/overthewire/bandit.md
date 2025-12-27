@@ -263,11 +263,11 @@ tr
 #### My Solutions  
 With this I had a bit more problems.  
 I feel like I have heared it somewhere before, so I search online for what this actually is.  
-This is how I found [ROT13](#level-11--level-12).  
+This is how I found ROT13.  
 With that knowledge I just tried looking at the next command.  
 `tr` is for translating or deleting charaters in a text.  
 So I knew what I had to do.  
-Delete every letter with the corresponding one.  
+Switch every character with the one moved 13 positions to eighter side in the alphabeth.  
 `cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'`  
 
 <!--

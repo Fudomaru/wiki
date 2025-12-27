@@ -147,13 +147,13 @@ By the end of this stage this is what you should have:
 
 - Discovering open ports and determine their state
 - Understanding exposed surface area
-- Tools: [nmap](/cybersec/toolbelt/nmap/), rustscan, masscan
+- Tools: [nmap](../toolbelt/nmap.md), rustscan, masscan
 
 ## Service Enumation
 
 - Idenfy running services and versions
 - Fingerprint protocols, grab banners, test endpoints
-- Tools: nmap, netcat, telnet, whatweb, httpx
+- Tools: [nmap](../toolbelt/nmap.md), netcat, telnet, whatweb, httpx
 
 ## Authentication & Access Points
 
@@ -240,7 +240,7 @@ Now that you have loads of information, it is time to look where you can actuall
 #### Tools to use:
 
 - Nikto
-- Searchsploit
+- [Searchsploit](../toolbelt/searchsploit.md)
 - CVE search
 
 ---

@@ -227,7 +227,7 @@ User=root
 ExecStart=/usr/local/bin/borg_backup.sh
 ```
 
-The timer file schedules the service to run daily and ensures the timer is re-activated after a reboot (`Persistent=true`).
+The timer file schedules the service to run daily and ensures reactivation after a reboot (`Persistent=true`).
 
 ```ini
 # /etc/systemd/system/borg-backup.timer

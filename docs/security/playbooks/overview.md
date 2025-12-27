@@ -11,7 +11,7 @@ They’re not static recipes. They’re living tactics.
 
 ## What belongs here
 
-- [Recon](/security/playbooks/recon/)  
+- [Recon](recon.md)  
   How I scan, fingerprint, and map a target — quietly or loudly.
 
 - Enumeration  

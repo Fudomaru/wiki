@@ -11,7 +11,7 @@ Each one earns its place here through use, not hype.
 ## What belongs here
 
 - Scanners  
-  [Nmap](/security/toolbelt/nmap/), RustScan, and others — how I map the terrain.
+  [Nmap](nmap.md), RustScan, and others — how I map the terrain.
 
 - Proxies  
   Burp Suite, ZAP — intercepting and modifying traffic.

@@ -108,4 +108,4 @@ That is the foundation on which everything else in cybersecurity is built.
 
 ## Integration
 
-- [Recon](/wiki/cybersec/playbooks/recon)
+- [Recon](../playbooks/recon.md)

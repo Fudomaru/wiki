@@ -77,5 +77,5 @@ While it is a legitimate and powerful tool for system administration, it is also
 
 ## Integration
 
-- [Windows CLI Magic](/wiki/foundations/windows/cli-magic)
-- [Privilege Escalation](/wiki/security/privilege-escalation)
+- [Windows CLI Magic](../../foundations/windows/cli-magic.md)
+- [Privilege Escalation](../privilege-escalation.md)

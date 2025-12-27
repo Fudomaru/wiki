@@ -21,7 +21,7 @@ description: This is the journey of me setting up my new Laptop as a minimal Voi
 
 * [`Final Touches`](#final-touches)
 
-* [`Lessons learned`](#lessons-lerned)
+* [`Lessons learned`](#lessons-learned)
 
 * [`Replication Checklist`](#replication-checklist)
 

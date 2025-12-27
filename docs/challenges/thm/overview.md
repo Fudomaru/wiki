@@ -34,11 +34,9 @@ Each module I complete will be linked below if I write it up.
 
 ## Documented Rooms
 
-- [Room Name](/challenges/thm/room-name.md)  
-  Summary of the challenge, tools used, and key takeaways.
+- [Room Name](billing.md)  
+  Focused on exploiting MagnusBilling through unauthenticated remote command execution and privilege escalation via Fail2Ban.
 
-- [Another Room](/challenges/thm/another-room.md)  
-  Focused on privilege escalation and enumeration techniques.
 
 ## Reporting Practice
 
