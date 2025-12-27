@@ -141,8 +141,10 @@ nav:
       - Billing: challenges/thm/billing.md
   - Projects:
     - Overview: projects/overview.md
-    - Digital Dojo: projects/digital-dojo.md
-    - Scripting Upgrade: projects/script-upgrade.md
+    - Digital Dojo:
+      - Overview: projects/digital-dojo/overview.md
+      - PowerShell Autodeploy: projects/digital-dojo/01-powershell-autodeploy.md
+      - Scripting Upgrade: projects/digital-dojo/02-scripting-upgrade.md
     - EchoSnare: projects/echosnare.md
     - Void Linux: projects/void_linux.md
   - Notes:
