@@ -6,28 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Simple scripts used to automate the deployment and updating of this digital Dojo.">
+        <meta name="description" content="Documenting the refactor of the project's automation scripts to improve maintainability and ease of use.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
+        <link rel="prev" href="../01-powershell-autodeploy/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+        <link rel="next" href="../../echosnare/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Deployment - Voidex</title>
+        <title>Scripting Upgrade: A Modular Workflow - Voidex</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -111,7 +115,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -137,7 +141,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mkdocs-auto-deploy-script-powershell" class="md-skip">
+        <a href="#scripting-upgrade-a-modular-workflow" class="md-skip">
           Skip to content
         </a>
       
@@ -151,7 +155,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -171,7 +175,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deployment
+              Scripting Upgrade: A Modular Workflow
             
           </span>
         </div>
@@ -274,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -295,7 +299,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../foundations/overview/" class="md-tabs__link">
+        <a href="../../../foundations/overview/" class="md-tabs__link">
           
   
   
@@ -315,7 +319,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../security/overview/" class="md-tabs__link">
+        <a href="../../../security/overview/" class="md-tabs__link">
           
   
   
@@ -335,7 +339,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../homelab/overview/" class="md-tabs__link">
+        <a href="../../../homelab/overview/" class="md-tabs__link">
           
   
   
@@ -355,7 +359,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../challenges/overview/" class="md-tabs__link">
+        <a href="../../../challenges/overview/" class="md-tabs__link">
           
   
   
@@ -371,11 +375,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../projects/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -395,7 +401,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../notes/overview/" class="md-tabs__link">
+        <a href="../../../notes/overview/" class="md-tabs__link">
           
   
   
@@ -413,7 +419,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -448,7 +454,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -478,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -541,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/overview/" class="md-nav__link">
+      <a href="../../../foundations/overview/" class="md-nav__link">
         
   
   
@@ -564,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/networking/" class="md-nav__link">
+      <a href="../../../foundations/networking/" class="md-nav__link">
         
   
   
@@ -628,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/overview/" class="md-nav__link">
+      <a href="../../../foundations/windows/overview/" class="md-nav__link">
         
   
   
@@ -651,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/uefi/" class="md-nav__link">
+      <a href="../../../foundations/windows/uefi/" class="md-nav__link">
         
   
   
@@ -674,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/eventviewer/" class="md-nav__link">
+      <a href="../../../foundations/windows/eventviewer/" class="md-nav__link">
         
   
   
@@ -697,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/winregistry/" class="md-nav__link">
+      <a href="../../../foundations/windows/winregistry/" class="md-nav__link">
         
   
   
@@ -720,7 +726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/cli-magic/" class="md-nav__link">
+      <a href="../../../foundations/windows/cli-magic/" class="md-nav__link">
         
   
   
@@ -792,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/macos/overview/" class="md-nav__link">
+      <a href="../../../foundations/macos/overview/" class="md-nav__link">
         
   
   
@@ -864,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/overview/" class="md-nav__link">
+      <a href="../../../foundations/linux/overview/" class="md-nav__link">
         
   
   
@@ -887,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/cli-magic/" class="md-nav__link">
+      <a href="../../../foundations/linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -910,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/system-internals/" class="md-nav__link">
+      <a href="../../../foundations/linux/system-internals/" class="md-nav__link">
         
   
   
@@ -982,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/overview/" class="md-nav__link">
+      <a href="../../../foundations/protocols/overview/" class="md-nav__link">
         
   
   
@@ -1005,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/arp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/arp/" class="md-nav__link">
         
   
   
@@ -1028,7 +1034,30 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/icmp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/ip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../foundations/protocols/icmp/" class="md-nav__link">
         
   
   
@@ -1051,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/tcp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/tcp/" class="md-nav__link">
         
   
   
@@ -1074,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/udp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/udp/" class="md-nav__link">
         
   
   
@@ -1097,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/tls/" class="md-nav__link">
+      <a href="../../../foundations/protocols/tls/" class="md-nav__link">
         
   
   
@@ -1120,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/dns/" class="md-nav__link">
+      <a href="../../../foundations/protocols/dns/" class="md-nav__link">
         
   
   
@@ -1143,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/smtp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/smtp/" class="md-nav__link">
         
   
   
@@ -1166,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/snmp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/snmp/" class="md-nav__link">
         
   
   
@@ -1189,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ftp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/ftp/" class="md-nav__link">
         
   
   
@@ -1212,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ssh/" class="md-nav__link">
+      <a href="../../../foundations/protocols/ssh/" class="md-nav__link">
         
   
   
@@ -1235,7 +1264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/smb/" class="md-nav__link">
+      <a href="../../../foundations/protocols/smb/" class="md-nav__link">
         
   
   
@@ -1258,7 +1287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/dhcp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/dhcp/" class="md-nav__link">
         
   
   
@@ -1281,12 +1310,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/http/" class="md-nav__link">
+      <a href="../../../foundations/protocols/http/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     HTTP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../foundations/protocols/netbios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NetBIOS
     
   </span>
   
@@ -1360,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/overview/" class="md-nav__link">
+      <a href="../../../security/overview/" class="md-nav__link">
         
   
   
@@ -1383,7 +1435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/fundamentals/" class="md-nav__link">
+      <a href="../../../security/fundamentals/" class="md-nav__link">
         
   
   
@@ -1447,7 +1499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/fundamentals/" class="md-nav__link">
+      <a href="../../../security/pentesting/fundamentals/" class="md-nav__link">
         
   
   
@@ -1470,7 +1522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/types/" class="md-nav__link">
+      <a href="../../../security/pentesting/types/" class="md-nav__link">
         
   
   
@@ -1493,7 +1545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/structure/" class="md-nav__link">
+      <a href="../../../security/pentesting/structure/" class="md-nav__link">
         
   
   
@@ -1516,7 +1568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/skills/" class="md-nav__link">
+      <a href="../../../security/pentesting/skills/" class="md-nav__link">
         
   
   
@@ -1539,7 +1591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/methodologies/" class="md-nav__link">
+      <a href="../../../security/pentesting/methodologies/" class="md-nav__link">
         
   
   
@@ -1611,7 +1663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/overview/" class="md-nav__link">
+      <a href="../../../security/exploits/overview/" class="md-nav__link">
         
   
   
@@ -1634,7 +1686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/xss/" class="md-nav__link">
+      <a href="../../../security/exploits/xss/" class="md-nav__link">
         
   
   
@@ -1657,7 +1709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/hardcoded_secrets/" class="md-nav__link">
+      <a href="../../../security/exploits/hardcoded_secrets/" class="md-nav__link">
         
   
   
@@ -1680,7 +1732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/idor/" class="md-nav__link">
+      <a href="../../../security/exploits/idor/" class="md-nav__link">
         
   
   
@@ -1703,7 +1755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/ssrf/" class="md-nav__link">
+      <a href="../../../security/exploits/ssrf/" class="md-nav__link">
         
   
   
@@ -1726,7 +1778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/sqli/" class="md-nav__link">
+      <a href="../../../security/exploits/sqli/" class="md-nav__link">
         
   
   
@@ -1749,7 +1801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/missing_authorization/" class="md-nav__link">
+      <a href="../../../security/exploits/missing_authorization/" class="md-nav__link">
         
   
   
@@ -1780,7 +1832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/privilege-escalation/" class="md-nav__link">
+      <a href="../../../security/privilege-escalation/" class="md-nav__link">
         
   
   
@@ -1844,7 +1896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -1867,7 +1919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/nmap/" class="md-nav__link">
+      <a href="../../../security/toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -1890,7 +1942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/searchsploit/" class="md-nav__link">
+      <a href="../../../security/toolbelt/searchsploit/" class="md-nav__link">
         
   
   
@@ -1913,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/schtasks/" class="md-nav__link">
+      <a href="../../../security/toolbelt/schtasks/" class="md-nav__link">
         
   
   
@@ -1985,7 +2037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/overview/" class="md-nav__link">
+      <a href="../../../security/playbooks/overview/" class="md-nav__link">
         
   
   
@@ -2008,7 +2060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/recon/" class="md-nav__link">
+      <a href="../../../security/playbooks/recon/" class="md-nav__link">
         
   
   
@@ -2031,7 +2083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/js-deobfuscation/" class="md-nav__link">
+      <a href="../../../security/playbooks/js-deobfuscation/" class="md-nav__link">
         
   
   
@@ -2110,7 +2162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/overview/" class="md-nav__link">
+      <a href="../../../homelab/overview/" class="md-nav__link">
         
   
   
@@ -2133,7 +2185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/proxmox/" class="md-nav__link">
+      <a href="../../../homelab/proxmox/" class="md-nav__link">
         
   
   
@@ -2156,7 +2208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/pfsense/" class="md-nav__link">
+      <a href="../../../homelab/pfsense/" class="md-nav__link">
         
   
   
@@ -2179,7 +2231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/pihole/" class="md-nav__link">
+      <a href="../../../homelab/pihole/" class="md-nav__link">
         
   
   
@@ -2202,7 +2254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/gitea/" class="md-nav__link">
+      <a href="../../../homelab/gitea/" class="md-nav__link">
         
   
   
@@ -2225,7 +2277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/backups/" class="md-nav__link">
+      <a href="../../../homelab/backups/" class="md-nav__link">
         
   
   
@@ -2296,7 +2348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overview/" class="md-nav__link">
+      <a href="../../../challenges/overview/" class="md-nav__link">
         
   
   
@@ -2360,7 +2412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overthewire/bandit/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -2383,7 +2435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overthewire/natas/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/natas/" class="md-nav__link">
         
   
   
@@ -2414,7 +2466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/htb/" class="md-nav__link">
+      <a href="../../../challenges/htb/" class="md-nav__link">
         
   
   
@@ -2478,7 +2530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/thm/overview/" class="md-nav__link">
+      <a href="../../../challenges/thm/overview/" class="md-nav__link">
         
   
   
@@ -2501,7 +2553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/thm/billing/" class="md-nav__link">
+      <a href="../../../challenges/thm/billing/" class="md-nav__link">
         
   
   
@@ -2536,24 +2588,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2566,7 +2623,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Projects
@@ -2580,7 +2637,73 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Digital Dojo
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Digital Dojo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -2603,12 +2726,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/digital-dojo/" class="md-nav__link">
+      <a href="../01-powershell-autodeploy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Digital Dojo
+    PowerShell Autodeploy
     
   </span>
   
@@ -2623,10 +2746,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../projects/script-upgrade/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Scripting Upgrade
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2637,6 +2782,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Goal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-before-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      The "Before" State
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-after-state-a-modular-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      The "After" State: A Modular System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Benefits
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2649,7 +2858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/echosnare/" class="md-nav__link">
+      <a href="../../echosnare/" class="md-nav__link">
         
   
   
@@ -2672,7 +2881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/void_linux/" class="md-nav__link">
+      <a href="../../void_linux/" class="md-nav__link">
         
   
   
@@ -2743,7 +2952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/overview/" class="md-nav__link">
+      <a href="../../../notes/overview/" class="md-nav__link">
         
   
   
@@ -2766,7 +2975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/ccna/" class="md-nav__link">
+      <a href="../../../notes/ccna/" class="md-nav__link">
         
   
   
@@ -2789,7 +2998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/media/" class="md-nav__link">
+      <a href="../../../notes/media/" class="md-nav__link">
         
   
   
@@ -2812,7 +3021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/warboard/" class="md-nav__link">
+      <a href="../../../notes/warboard/" class="md-nav__link">
         
   
   
@@ -2842,7 +3051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -2884,69 +3093,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#the-goal" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      The Goal
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#functional-breakdown" class="md-nav__link">
+  <a href="#the-before-state" class="md-nav__link">
     <span class="md-ellipsis">
-      Functional Breakdown
+      The "Before" State
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Functional Breakdown">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-location" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Location
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-git-commit-comment" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Git Commit Comment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-git-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Git Operations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-githup-pages" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. GitHup Pages
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#future-ideas" class="md-nav__link">
+  <a href="#the-after-state-a-modular-system" class="md-nav__link">
     <span class="md-ellipsis">
-      Future Ideas
+      The "After" State: A Modular System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Benefits
     </span>
   </a>
   
@@ -2968,87 +3144,47 @@
 
 
 
-<h1 id="mkdocs-auto-deploy-script-powershell">MkDocs Auto-Deploy Script (Powershell)</h1>
-<h2 id="overview">Overview</h2>
-<p>Automates committing and deploying changes to my Digital Dojo.<br />
-I built this as a first step to understanding and using a real CI/CD for this project. 
-For that I needed to solve running every command by hand.<br />
-But I didn't want to start using any fancy tool for this simple task. So I decided to make this simple script to automate it.  </p>
-<h2 id="functional-breakdown">Functional Breakdown</h2>
-<p>Here I am going to break down what I put into this script: </p>
-<h3 id="1-location">1. Location</h3>
-<p>I wanted this to be portable and usable without much of a hustle.
-So I put the script right into the repo of this page.<br />
-This way I can always use it as long as I pulled the repo to work on it. 
-I needed to make sure it runs from the right place: the root of my repo.<br />
-To get this location in Powershell I used the following:  </p>
-<div class="highlight"><pre><span></span><code>$ScriptPath = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
-$WikiRoot = Join-Path $ScriptPath &quot;..&quot; | Resolve-Path
-Set-Location $WikiRoot 
-</code></pre></div>
-<hr />
-<h3 id="2-git-commit-comment">2. Git Commit Comment</h3>
-<p>To actually use git commit I have to have a comment of what I am committing.<br />
-I wanted to solve this by using an argument I can just put in after the script to make it feel like a real command.<br />
-That wasn't good enough. When I tried it and it worked, I thought it would be enough. 
-But even the second try I just forgot about the comment. So I needed a fallback method.<br />
-And what better option then just let the script ask the user for the Commit Message. That would look like that: </p>
-<div class="highlight"><pre><span></span><code>if ($args.Length -gt 0 -and -not [string]::IsNullOrWhiteSpace($args[0])) {
-$message = $args[0]
-} else {
-$message = Read-Host &quot;Enter commit message&quot;
-}
-</code></pre></div>
-<hr />
-<h3 id="3-git-operations">3. Git Operations</h3>
-<p>This is actually the most straight forward. Just the git commands I normally use by hand. But I did not want to make it quite as easy for myself. So I tried myself with some error catching and outputting what was successful and what failed. All in all I just used a simple try catch with an output of what was currently running when it failed ($_). This gives always gives me a good idea of where the error happend, and let me look at the right thing to try to figure out what went wrong. Also I put the $message variable I got in the previous part as the commit message.  </p>
-<div class="highlight"><pre><span></span><code>try {
-    git add .
-    git commit -m &quot;$message&quot;
-    if ($?) {
-        Write-Host &quot;Commit successful&quot;
-    } else {
-        Write-Host &quot;Commit failed&quot;
-    }
-
-    git push
-    if ($?) {
-        Write-Host &quot;Push successful&quot;
-    } else {
-        Write-Host &quot;Push failed&quot;
-    }
-}
-catch {
-    $errorMessage = &quot;An error occurred at $(Get-Date): $_&quot;
-    Write-Host $errorMessage
-}
-</code></pre></div>
-<h3 id="4-githup-pages">4. GitHup Pages</h3>
-<p>Here I used MkDocs own command gh-deploy. 
-This command pretty much handels everything I need for me. 
-First it builds the actual site. 
-That would be the same as running <code>mkdocs build</code>. 
-Then it pushes this build to a seperate branch in my repo. 
-This way I do not have to have the build site in my main branch, 
-and just tell GitHub to use the seperate branch to deploy from. 
-This works like a charm, without a lot of hassle so far. 
-I put this right after my git operations.  </p>
-<div class="highlight"><pre><span></span><code>mkdocs gh-deploy
-    if ($?) {
-        Write-Host &quot;Deployment successful&quot;
-    } else {
-        Write-Host &quot;Deployment failed&quot;
-    }
-</code></pre></div>
-<h2 id="future-ideas">Future Ideas</h2>
+<h1 id="scripting-upgrade-a-modular-workflow">Scripting Upgrade: A Modular Workflow</h1>
+<p>This document outlines the recent refactoring of this project's automation scripts. It's a practical step towards building a more robust and professional development workflow.</p>
+<h2 id="the-goal">The Goal</h2>
+<p>The primary goal was to improve my personal workflow and to better understand and learn how to build out real-world projects, using what I learned when exploring other projects. The focus was on moving away from monolithic scripts towards a more modular, maintainable, and user-friendly system, guided by the single-purpose principle of good software design.</p>
+<h2 id="the-before-state">The "Before" State</h2>
+<p>Previously, the project used a single <code>deploy.sh</code> script that handled multiple responsibilities:</p>
+<ul>
+<li>Staging and committing all changes with <code>git</code>.</li>
+<li>Pushing the changes to the remote repository.</li>
+<li>Activating a Python virtual environment.</li>
+<li>Deploying the site using <code>mkdocs gh-deploy</code>.</li>
+</ul>
+<p>While functional, this monolithic approach made the script harder to read, maintain, and extend.</p>
+<h2 id="the-after-state-a-modular-system">The "After" State: A Modular System</h2>
+<p>The scripting infrastructure was completely redesigned into a more logical and powerful system:</p>
 <ul>
 <li>
-<p>Building in local logging to get more information and maintain everything cleanly for building a full CI/CD. </p>
+<p><strong><code>bin/bootstrap.sh</code></strong>: A new, powerful "one-liner" script that can set up the entire project on a fresh machine. It handles cloning the repository and running all necessary setup steps. This embodies the goal of "ease of use."</p>
 </li>
 <li>
-<p>Timestamping inside the commit message and log output. </p>
+<p><strong><code>bin/deploy.sh</code></strong>: The main deployment script is now much cleaner. Its sole responsibility is to orchestrate the git workflow (<code>add</code>, <code>commit</code>, <code>push</code>) and then call the dedicated deployment script.</p>
+</li>
+<li>
+<p><strong><code>bin/lib/</code></strong>: A new directory that houses a collection of single-purpose helper scripts, each doing one job well:</p>
+<ul>
+<li><code>check-git.sh</code>: Verifies that <code>git</code> is installed.</li>
+<li><code>check-python.sh</code>: Verifies that <code>python3</code> is installed.</li>
+<li><code>install-mkdocs.sh</code>: Sets up the Python virtual environment and installs all required packages.</li>
+<li><code>deploy-site.sh</code>: Handles the logic of running <code>mkdocs gh-deploy</code> from the correct virtual environment.</li>
+</ul>
 </li>
 </ul>
+<h2 id="the-benefits">The Benefits</h2>
+<p>This new structure provides several key advantages:</p>
+<ul>
+<li><strong>Maintainability:</strong> Each script is small, focused, and easy to understand. If the deployment logic changes, I only need to edit <code>deploy-site.sh</code>.</li>
+<li><strong>Reusability:</strong> The helper scripts in <code>lib/</code> can be reused and combined in new ways for future automation tasks.</li>
+<li><strong>Robustness:</strong> The <code>bootstrap.sh</code> script makes setting up the project on a new computer a reliable and repeatable one-step process.</li>
+<li><strong>Clarity:</strong> The entire scripting workflow is now more explicit and easier to follow, which is a hallmark of a professional project.</li>
+</ul>
+<p>This refactor was a valuable exercise in applying software engineering principles to a personal project, resulting in a significantly improved development experience.</p>
 
 
 
@@ -3082,6 +3218,44 @@ I put this right after my git operations.  </p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-powershell-autodeploy/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PowerShell Autodeploy">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                PowerShell Autodeploy
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../echosnare/" class="md-footer__link md-footer__link--next" aria-label="Next: EchoSnare">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                EchoSnare
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -3121,10 +3295,10 @@ I put this right after my git operations.  </p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
