@@ -6,17 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The language of systems. A layered map of how machines talk, fail, and defend.">
+        <meta name="description" content="Naming and sessions on a local network. The protocol for legacy Windows neighborhood services.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../../linux/system-internals/">
-      
-      
-        <link rel="next" href="../arp/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Protocols - Voidex</title>
+        <title>NetBIOS - Network Basic Input/Output System - Voidex</title>
       
     
     
@@ -141,7 +137,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#protocols" class="md-skip">
+        <a href="#netbios-network-basic-inputoutput-system" class="md-skip">
           Skip to content
         </a>
       
@@ -175,7 +171,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Protocols
+              NetBIOS - Network Basic Input/Output System
             
           </span>
         </div>
@@ -295,12 +291,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../../overview/" class="md-tabs__link">
           
   
@@ -503,29 +497,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -538,7 +527,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Foundations
@@ -949,8 +938,6 @@
                 
   
   
-    
-  
   
   
     
@@ -961,11 +948,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
         
           
           <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
@@ -981,7 +968,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_6">
             <span class="md-nav__icon md-icon"></span>
             Protocols
@@ -992,32 +979,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Overview
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -1028,122 +993,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#how-this-section-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How this section works
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#osi-layer-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      OSI Layer Map
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="OSI Layer Map">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#layer-1-physical" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layer 1 - Physical
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layer-2-data-link" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layer 2 - Data Link
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layer-3-network" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layer 3 - Network
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layer-4-transport" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layer 4 - Transport
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layer-5-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layer 5 - Session
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layer-6-presentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layer 6 - Presentation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layer-7-application" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layer 7 - Application
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-protocols-matter-to-me" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why protocols matter to me
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3035,82 +2884,91 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-this-section-works" class="md-nav__link">
+  <a href="#what-this-page-covers" class="md-nav__link">
     <span class="md-ellipsis">
-      How this section works
+      What this page covers
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#osi-layer-map" class="md-nav__link">
+  <a href="#what-netbios-actually-is" class="md-nav__link">
     <span class="md-ellipsis">
-      OSI Layer Map
+      What NetBIOS Actually Is
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="OSI Layer Map">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-netbios-lives-in-the-tcpip-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      How NetBIOS Lives in the TCP/IP Stack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-netbios-data-comes-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where NetBIOS Data Comes From
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-netbios-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How NetBIOS Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#netbios-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      NetBIOS and Security
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-i-use-to-explore-netbios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools I Use to Explore NetBIOS
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools I Use to Explore NetBIOS">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#layer-1-physical" class="md-nav__link">
+  <a href="#nbtstat-windows" class="md-nav__link">
     <span class="md-ellipsis">
-      Layer 1 - Physical
+      nbtstat (Windows)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#layer-2-data-link" class="md-nav__link">
+  <a href="#nmap" class="md-nav__link">
     <span class="md-ellipsis">
-      Layer 2 - Data Link
+      nmap
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#layer-3-network" class="md-nav__link">
+  <a href="#enum4linux" class="md-nav__link">
     <span class="md-ellipsis">
-      Layer 3 - Network
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layer-4-transport" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layer 4 - Transport
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layer-5-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layer 5 - Session
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layer-6-presentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layer 6 - Presentation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#layer-7-application" class="md-nav__link">
-    <span class="md-ellipsis">
-      Layer 7 - Application
+      enum4linux
     </span>
   </a>
   
@@ -3122,9 +2980,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-protocols-matter-to-me" class="md-nav__link">
+  <a href="#final-thought" class="md-nav__link">
     <span class="md-ellipsis">
-      Why protocols matter to me
+      Final Thought
     </span>
   </a>
   
@@ -3146,67 +3004,105 @@
 
 
 
-<h1 id="protocols">Protocols</h1>
-<p>Every system speaks.<br />
-Protocols are the grammar that shape how data moves, 
-how trust is built, and how services connect.<br />
-This section is where I learn that language.</p>
+<h1 id="netbios-network-basic-inputoutput-system">NetBIOS - Network Basic Input/Output System</h1>
+<p>Some protocols cross the globe.<br />
+NetBIOS talks to its neighbors.<br />
+It is not about the internet. 
+It is about discovering and speaking with devices on a single local network.</p>
 <hr />
-<h2 id="how-this-section-works">How this section works</h2>
-<p>I organize protocols by the <strong>OSI model</strong>, 
-from physical transmission to application logic.<br />
-Each protocol gets its own page, 
-linked below, with explanations and notes.<br />
-Some entries will be deep dives. 
-Others will be quick references.<br />
-The goal is clarity: Enough to understand how the protocol works, 
-how it’s used, and how it can be abused or defended.</p>
+<h2 id="what-this-page-covers">What this page covers</h2>
+<ul>
+<li>What NetBIOS is and what it does</li>
+<li>How it fits into the TCP/IP stack</li>
+<li>Where its data comes from</li>
+<li>How it is structured and used</li>
+<li>How it can be abused or defended</li>
+<li>Tools I use to explore it</li>
+</ul>
+<p>This page is my reference for understanding NetBIOS 
+as a legacy API, a local discovery service, and a treasure trove for reconnaissance.</p>
 <hr />
-<h2 id="osi-layer-map">OSI Layer Map</h2>
-<h3 id="layer-1-physical">Layer 1 - Physical</h3>
+<h2 id="what-netbios-actually-is">What NetBIOS Actually Is</h2>
+<p>NetBIOS is an API that provides services 
+allowing applications on separate computers 
+to communicate over a local area network (LAN). 
+It is not a networking protocol itself, 
+but a framework for how applications can identify and connect to each other.</p>
+<p>It is heavily associated with early Windows networking 
+and was the foundation for file and printer sharing. 
+It provides three key services:</p>
 <ul>
-<li>Ethernet (as framing standard)</li>
-</ul>
-<h3 id="layer-2-data-link">Layer 2 - Data Link</h3>
-<ul>
-<li><a href="../arp/">ARP</a> - Address Resolution Protocol</li>
-</ul>
-<h3 id="layer-3-network">Layer 3 - Network</h3>
-<ul>
-<li><a href="../ip/">IP</a> - Internet Protocol</li>
-<li><a href="../icmp/">ICMP</a> - Internet Control Message Protocol</li>
-</ul>
-<h3 id="layer-4-transport">Layer 4 - Transport</h3>
-<ul>
-<li><a href="../tcp/">TCP</a> - Transmission Control Protocol</li>
-<li><a href="../udp/">UDP</a> - User Datagram Protocol</li>
-</ul>
-<h3 id="layer-5-session">Layer 5 - Session</h3>
-<ul>
-<li><a href="../netbios/">NetBIOS</a></li>
-</ul>
-<h3 id="layer-6-presentation">Layer 6 - Presentation</h3>
-<ul>
-<li><a href="../tls/">TLS</a> - Transport Layer Security</li>
-</ul>
-<h3 id="layer-7-application">Layer 7 - Application</h3>
-<ul>
-<li><a href="../http/">HTTP</a></li>
-<li><a href="../dns/">DNS</a></li>
-<li><a href="../smtp/">SMTP</a></li>
-<li><a href="../snmp/">SNMP</a></li>
-<li><a href="../ftp/">FTP</a></li>
-<li><a href="../ssh/">SSH</a></li>
-<li><a href="../smb/">SMB</a></li>
-<li><a href="../dhcp/">DHCP</a></li>
+<li><strong>Name Service</strong>: For name registration and resolution.</li>
+<li><strong>Session Service</strong>: For reliable, connection-oriented communication.</li>
+<li><strong>Datagram Service</strong>: For unreliable, connectionless communication.</li>
 </ul>
 <hr />
-<h2 id="why-protocols-matter-to-me">Why protocols matter to me</h2>
-<p>Protocols are the <strong>terrain</strong> of every network.<br />
-If I want to understand how systems communicate, how attackers pivot, or how defenders intercept — I need to understand the protocols.</p>
-<p>This section is my map.<br />
-Not just of what each protocol does, but how it fits into the bigger picture.</p>
+<h2 id="how-netbios-lives-in-the-tcpip-stack">How NetBIOS Lives in the TCP/IP Stack</h2>
+<ul>
+<li><strong>OSI Layer</strong>: Session Layer (Layer 5)</li>
+<li><strong>Transport</strong>: In modern networks, NetBIOS runs over TCP/IP. This is known as <strong>NBT</strong> or NetBIOS over TCP/IP.</li>
+<li><strong>Ports</strong>:</li>
+<li><code>137/udp</code>: NetBIOS Name Service (NBNS)</li>
+<li><code>138/udp</code>: NetBIOS Datagram Service (NBDGM)</li>
+<li><code>139/tcp</code>: NetBIOS Session Service (NBSSN)</li>
+</ul>
+<p>Historically, NetBIOS ran on its own protocol (NBF), but its integration with TCP/IP is what kept it relevant in modern networks, often alongside SMB.</p>
 <hr />
+<h2 id="where-netbios-data-comes-from">Where NetBIOS Data Comes From</h2>
+<p>NetBIOS traffic is generated by operating system services, especially in Windows environments, that need to interact with other devices on the LAN. This is triggered by:</p>
+<ul>
+<li>A computer starting up and announcing its name.</li>
+<li>Windows Explorer browsing the "Network" neighborhood.</li>
+<li>Applications attempting to access file shares or network printers by name.</li>
+<li>Legacy applications that rely on NetBIOS for session management.</li>
+</ul>
+<hr />
+<h2 id="how-netbios-works">How NetBIOS Works</h2>
+<p>NetBIOS provides its three services through distinct mechanisms:</p>
+<ul>
+<li><strong>Name Service (Port 137)</strong>: Allows a device to "claim" a unique 15-character name on the network. When one computer wants to find another, it broadcasts a query, asking "Who has this name?" The owner of the name then replies with its IP address.</li>
+<li><strong>Datagram Service (Port 138)</strong>: Provides a fast but unreliable way to send small messages to a single name or broadcast them to a group. There is no acknowledgment of receipt.</li>
+<li><strong>Session Service (Port 139)</strong>: Creates a reliable, connection-oriented link between two NetBIOS names, allowing for a stable conversation and larger data transfers. It handles error detection and recovery, much like a TCP connection.</li>
+</ul>
+<hr />
+<h2 id="netbios-and-security">NetBIOS and Security</h2>
+<p>NetBIOS is notoriously insecure and is a primary target during the internal reconnaissance phase of a penetration test.</p>
+<ul>
+<li><strong>Information Leakage</strong>: It is a very "chatty" protocol. Through simple queries, an attacker can discover computer names, workgroups/domains, and logged-in usernames.</li>
+<li><strong>Spoofing</strong>: Because name resolution is often done via unauthenticated broadcasts, it's possible for an attacker to impersonate a legitimate host.</li>
+<li><strong>Null Sessions</strong>: Older systems allowed attackers to connect to the Session Service without credentials (a "null session"), which could be used to enumerate even more sensitive information.</li>
+</ul>
+<p>Defenses include:</p>
+<ul>
+<li><strong>Disable it</strong>: If not strictly required for a legacy application, NetBIOS over TCP/IP should be disabled. Modern networks can use DNS for all name resolution.</li>
+<li><strong>Firewalls</strong>: Block ports 137, 138, and 139 at the network perimeter and between internal network segments where it's not needed.</li>
+<li><strong>Host-based Firewalls</strong>: Configure personal firewalls on endpoints to restrict inbound NetBIOS traffic.</li>
+</ul>
+<hr />
+<h2 id="tools-i-use-to-explore-netbios">Tools I Use to Explore NetBIOS</h2>
+<h3 id="nbtstat-windows"><code>nbtstat</code> (Windows)</h3>
+<ul>
+<li>A built-in Windows utility to display the NetBIOS name table and cache.</li>
+<li>Example: <code>nbtstat -A 192.168.1.100</code></li>
+</ul>
+<h3 id="nmap"><code>nmap</code></h3>
+<ul>
+<li>The Nmap scripting engine has powerful scripts for NetBIOS enumeration.</li>
+<li>Example: <code>nmap -sU -p 137 --script nbstat.nse 192.168.1.0/24</code></li>
+</ul>
+<h3 id="enum4linux"><code>enum4linux</code></h3>
+<ul>
+<li>A tool designed to enumerate information from Windows and Samba systems, which heavily leverages NetBIOS queries.</li>
+<li>Example: <code>enum4linux -a 192.168.1.100</code></li>
+</ul>
+<p>These tools help me quickly map out the Windows systems on a local network and identify potentially valuable information.</p>
+<hr />
+<h2 id="final-thought">Final Thought</h2>
+<p>NetBIOS is the town crier of a local network.<br />
+It loudly announces the name of every resident to anyone who will listen.<br />
+Useful in a trusted village, but a dangerous liability in a modern city full of strangers.</p>
+<p>This page is my study of that voice.<br />
+Not just how NetBIOS works, but the secrets it tells and why it should usually be silenced.</p>
 
 
 
@@ -3240,44 +3136,6 @@ Not just of what each protocol does, but how it fits into the bigger picture.</p
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../../linux/system-internals/" class="md-footer__link md-footer__link--prev" aria-label="Previous: System">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                System
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../arp/" class="md-footer__link md-footer__link--next" aria-label="Next: ARP">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                ARP
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
