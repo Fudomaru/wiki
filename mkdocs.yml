@@ -82,6 +82,7 @@ nav:
     - Protocols:
       - Overview: foundations/protocols/overview.md
       - ARP: foundations/protocols/arp.md
+      - IP: foundations/protocols/ip.md
       - ICMP: foundations/protocols/icmp.md
       - TCP: foundations/protocols/tcp.md
       - UDP: foundations/protocols/udp.md
@@ -94,6 +95,7 @@ nav:
       - SMB: foundations/protocols/smb.md
       - DHCP: foundations/protocols/dhcp.md
       - HTTP: foundations/protocols/http.md
+      - NetBIOS: foundations/protocols/netbios.md
   - Security:
     - Overview: security/overview.md
     - Fundamentals: security/fundamentals.md

@@ -51,6 +51,7 @@ description: List of my plans for future write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newest pages are.  
 
+- Adding NetBios Protocol Page (2025-12)
 - Adding IP Protocol page (2025-12)
 - Backup System implementation and write up (2025-12)
 - DeepDive into WinRegistry (2025-11)
