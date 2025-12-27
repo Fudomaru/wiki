@@ -6,32 +6,28 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="List of my plans for future write ups and general project ideas.">
+        <meta name="description" content="The global addressing system. The protocol that gives every packet a destination.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../media/">
       
       
-        <link rel="next" href="../../about/">
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Warboard - Voidex</title>
+        <title>IP - Internet Protocol - Voidex</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -115,7 +111,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -141,7 +137,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#warboard" class="md-skip">
+        <a href="#ip-internet-protocol" class="md-skip">
           Skip to content
         </a>
       
@@ -155,7 +151,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -175,7 +171,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Warboard
+              IP - Internet Protocol
             
           </span>
         </div>
@@ -278,7 +274,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -299,7 +295,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../foundations/overview/" class="md-tabs__link">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -319,7 +315,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../security/overview/" class="md-tabs__link">
+        <a href="../../../security/overview/" class="md-tabs__link">
           
   
   
@@ -339,7 +335,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../homelab/overview/" class="md-tabs__link">
+        <a href="../../../homelab/overview/" class="md-tabs__link">
           
   
   
@@ -359,7 +355,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../challenges/overview/" class="md-tabs__link">
+        <a href="../../../challenges/overview/" class="md-tabs__link">
           
   
   
@@ -379,7 +375,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../projects/overview/" class="md-tabs__link">
+        <a href="../../../projects/overview/" class="md-tabs__link">
           
   
   
@@ -395,13 +391,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../notes/overview/" class="md-tabs__link">
           
   
   
@@ -419,7 +413,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -454,7 +448,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -484,7 +478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -547,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
@@ -570,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/networking/" class="md-nav__link">
+      <a href="../../networking/" class="md-nav__link">
         
   
   
@@ -634,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/overview/" class="md-nav__link">
+      <a href="../../windows/overview/" class="md-nav__link">
         
   
   
@@ -657,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/uefi/" class="md-nav__link">
+      <a href="../../windows/uefi/" class="md-nav__link">
         
   
   
@@ -680,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/eventviewer/" class="md-nav__link">
+      <a href="../../windows/eventviewer/" class="md-nav__link">
         
   
   
@@ -703,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/winregistry/" class="md-nav__link">
+      <a href="../../windows/winregistry/" class="md-nav__link">
         
   
   
@@ -726,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/cli-magic/" class="md-nav__link">
+      <a href="../../windows/cli-magic/" class="md-nav__link">
         
   
   
@@ -798,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/macos/overview/" class="md-nav__link">
+      <a href="../../macos/overview/" class="md-nav__link">
         
   
   
@@ -870,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/overview/" class="md-nav__link">
+      <a href="../../linux/overview/" class="md-nav__link">
         
   
   
@@ -893,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/cli-magic/" class="md-nav__link">
+      <a href="../../linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -916,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/system-internals/" class="md-nav__link">
+      <a href="../../linux/system-internals/" class="md-nav__link">
         
   
   
@@ -988,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -1011,7 +1005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/arp/" class="md-nav__link">
+      <a href="../arp/" class="md-nav__link">
         
   
   
@@ -1034,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/icmp/" class="md-nav__link">
+      <a href="../icmp/" class="md-nav__link">
         
   
   
@@ -1057,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/tcp/" class="md-nav__link">
+      <a href="../tcp/" class="md-nav__link">
         
   
   
@@ -1080,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/udp/" class="md-nav__link">
+      <a href="../udp/" class="md-nav__link">
         
   
   
@@ -1103,7 +1097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/tls/" class="md-nav__link">
+      <a href="../tls/" class="md-nav__link">
         
   
   
@@ -1126,7 +1120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/dns/" class="md-nav__link">
+      <a href="../dns/" class="md-nav__link">
         
   
   
@@ -1149,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/smtp/" class="md-nav__link">
+      <a href="../smtp/" class="md-nav__link">
         
   
   
@@ -1172,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/snmp/" class="md-nav__link">
+      <a href="../snmp/" class="md-nav__link">
         
   
   
@@ -1195,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ftp/" class="md-nav__link">
+      <a href="../ftp/" class="md-nav__link">
         
   
   
@@ -1218,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ssh/" class="md-nav__link">
+      <a href="../ssh/" class="md-nav__link">
         
   
   
@@ -1241,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/smb/" class="md-nav__link">
+      <a href="../smb/" class="md-nav__link">
         
   
   
@@ -1264,7 +1258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/dhcp/" class="md-nav__link">
+      <a href="../dhcp/" class="md-nav__link">
         
   
   
@@ -1287,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/http/" class="md-nav__link">
+      <a href="../http/" class="md-nav__link">
         
   
   
@@ -1366,7 +1360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/overview/" class="md-nav__link">
+      <a href="../../../security/overview/" class="md-nav__link">
         
   
   
@@ -1389,7 +1383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/fundamentals/" class="md-nav__link">
+      <a href="../../../security/fundamentals/" class="md-nav__link">
         
   
   
@@ -1453,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/fundamentals/" class="md-nav__link">
+      <a href="../../../security/pentesting/fundamentals/" class="md-nav__link">
         
   
   
@@ -1476,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/types/" class="md-nav__link">
+      <a href="../../../security/pentesting/types/" class="md-nav__link">
         
   
   
@@ -1499,7 +1493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/structure/" class="md-nav__link">
+      <a href="../../../security/pentesting/structure/" class="md-nav__link">
         
   
   
@@ -1522,7 +1516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/skills/" class="md-nav__link">
+      <a href="../../../security/pentesting/skills/" class="md-nav__link">
         
   
   
@@ -1545,7 +1539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/methodologies/" class="md-nav__link">
+      <a href="../../../security/pentesting/methodologies/" class="md-nav__link">
         
   
   
@@ -1617,7 +1611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/overview/" class="md-nav__link">
+      <a href="../../../security/exploits/overview/" class="md-nav__link">
         
   
   
@@ -1640,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/xss/" class="md-nav__link">
+      <a href="../../../security/exploits/xss/" class="md-nav__link">
         
   
   
@@ -1663,7 +1657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/hardcoded_secrets/" class="md-nav__link">
+      <a href="../../../security/exploits/hardcoded_secrets/" class="md-nav__link">
         
   
   
@@ -1686,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/idor/" class="md-nav__link">
+      <a href="../../../security/exploits/idor/" class="md-nav__link">
         
   
   
@@ -1709,7 +1703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/ssrf/" class="md-nav__link">
+      <a href="../../../security/exploits/ssrf/" class="md-nav__link">
         
   
   
@@ -1732,7 +1726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/sqli/" class="md-nav__link">
+      <a href="../../../security/exploits/sqli/" class="md-nav__link">
         
   
   
@@ -1755,7 +1749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/missing_authorization/" class="md-nav__link">
+      <a href="../../../security/exploits/missing_authorization/" class="md-nav__link">
         
   
   
@@ -1786,7 +1780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/privilege-escalation/" class="md-nav__link">
+      <a href="../../../security/privilege-escalation/" class="md-nav__link">
         
   
   
@@ -1850,7 +1844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -1873,7 +1867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/nmap/" class="md-nav__link">
+      <a href="../../../security/toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -1896,7 +1890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/searchsploit/" class="md-nav__link">
+      <a href="../../../security/toolbelt/searchsploit/" class="md-nav__link">
         
   
   
@@ -1919,7 +1913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/schtasks/" class="md-nav__link">
+      <a href="../../../security/toolbelt/schtasks/" class="md-nav__link">
         
   
   
@@ -1991,7 +1985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/overview/" class="md-nav__link">
+      <a href="../../../security/playbooks/overview/" class="md-nav__link">
         
   
   
@@ -2014,7 +2008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/recon/" class="md-nav__link">
+      <a href="../../../security/playbooks/recon/" class="md-nav__link">
         
   
   
@@ -2037,7 +2031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/js-deobfuscation/" class="md-nav__link">
+      <a href="../../../security/playbooks/js-deobfuscation/" class="md-nav__link">
         
   
   
@@ -2116,7 +2110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/overview/" class="md-nav__link">
+      <a href="../../../homelab/overview/" class="md-nav__link">
         
   
   
@@ -2139,7 +2133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/proxmox/" class="md-nav__link">
+      <a href="../../../homelab/proxmox/" class="md-nav__link">
         
   
   
@@ -2162,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/pfsense/" class="md-nav__link">
+      <a href="../../../homelab/pfsense/" class="md-nav__link">
         
   
   
@@ -2185,7 +2179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/pihole/" class="md-nav__link">
+      <a href="../../../homelab/pihole/" class="md-nav__link">
         
   
   
@@ -2208,7 +2202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/gitea/" class="md-nav__link">
+      <a href="../../../homelab/gitea/" class="md-nav__link">
         
   
   
@@ -2231,7 +2225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/backups/" class="md-nav__link">
+      <a href="../../../homelab/backups/" class="md-nav__link">
         
   
   
@@ -2302,7 +2296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overview/" class="md-nav__link">
+      <a href="../../../challenges/overview/" class="md-nav__link">
         
   
   
@@ -2366,7 +2360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overthewire/bandit/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -2389,7 +2383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overthewire/natas/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/natas/" class="md-nav__link">
         
   
   
@@ -2420,7 +2414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/htb/" class="md-nav__link">
+      <a href="../../../challenges/htb/" class="md-nav__link">
         
   
   
@@ -2484,7 +2478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/thm/overview/" class="md-nav__link">
+      <a href="../../../challenges/thm/overview/" class="md-nav__link">
         
   
   
@@ -2507,7 +2501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/thm/billing/" class="md-nav__link">
+      <a href="../../../challenges/thm/billing/" class="md-nav__link">
         
   
   
@@ -2586,7 +2580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/overview/" class="md-nav__link">
+      <a href="../../../projects/overview/" class="md-nav__link">
         
   
   
@@ -2609,7 +2603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/digital-dojo/" class="md-nav__link">
+      <a href="../../../projects/digital-dojo/" class="md-nav__link">
         
   
   
@@ -2632,7 +2626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/script-upgrade/" class="md-nav__link">
+      <a href="../../../projects/script-upgrade/" class="md-nav__link">
         
   
   
@@ -2655,7 +2649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/echosnare/" class="md-nav__link">
+      <a href="../../../projects/echosnare/" class="md-nav__link">
         
   
   
@@ -2678,7 +2672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/void_linux/" class="md-nav__link">
+      <a href="../../../projects/void_linux/" class="md-nav__link">
         
   
   
@@ -2705,29 +2699,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -2740,7 +2729,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Notes
@@ -2754,7 +2743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../../notes/overview/" class="md-nav__link">
         
   
   
@@ -2777,7 +2766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ccna/" class="md-nav__link">
+      <a href="../../../notes/ccna/" class="md-nav__link">
         
   
   
@@ -2800,7 +2789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../media/" class="md-nav__link">
+      <a href="../../../notes/media/" class="md-nav__link">
         
   
   
@@ -2820,32 +2809,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Warboard
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../notes/warboard/" class="md-nav__link">
         
   
   
@@ -2856,62 +2823,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#active-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      ACTIVE OPERATIONS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#staging-zone" class="md-nav__link">
-    <span class="md-ellipsis">
-      STAGING ZONE
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#strategic-backlog" class="md-nav__link">
-    <span class="md-ellipsis">
-      STRATEGIC BACKLOG
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#completed-strikes" class="md-nav__link">
-    <span class="md-ellipsis">
-      COMPLETED STRIKES
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2931,7 +2842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -2973,36 +2884,105 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#active-operations" class="md-nav__link">
+  <a href="#what-this-page-covers" class="md-nav__link">
     <span class="md-ellipsis">
-      ACTIVE OPERATIONS
+      What this page covers
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#staging-zone" class="md-nav__link">
+  <a href="#what-ip-actually-is" class="md-nav__link">
     <span class="md-ellipsis">
-      STAGING ZONE
+      What IP Actually Is
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#strategic-backlog" class="md-nav__link">
+  <a href="#how-ip-lives-in-the-tcpip-stack" class="md-nav__link">
     <span class="md-ellipsis">
-      STRATEGIC BACKLOG
+      How IP Lives in the TCP/IP Stack
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#completed-strikes" class="md-nav__link">
+  <a href="#where-ip-data-comes-from" class="md-nav__link">
     <span class="md-ellipsis">
-      COMPLETED STRIKES
+      Where IP Data Comes From
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-ip-is-structured" class="md-nav__link">
+    <span class="md-ellipsis">
+      How IP Is Structured
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      IP and Security
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-i-use-to-explore-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools I Use to Explore IP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tools I Use to Explore IP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ping" class="md-nav__link">
+    <span class="md-ellipsis">
+      ping
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traceroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      traceroute
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcpdump-wireshark" class="md-nav__link">
+    <span class="md-ellipsis">
+      tcpdump / wireshark
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Thought
     </span>
   </a>
   
@@ -3024,93 +3004,102 @@
 
 
 
-<h1 id="warboard">WARBOARD</h1>
-<details class="info">
-<summary>What is this for?</summary>
-<p>This is a plan for me to keep myself on track.<br />
-I write down what I am currently working on,<br />
-what is planned next,<br />
-and what are general ideas for the future.  </p>
-</details>
+<h1 id="ip-internet-protocol">IP - Internet Protocol</h1>
+<p>Some protocols build conversations.<br />
+IP builds the roads they travel on.<br />
+It is not about the message. 
+It is about the address on the envelope.</p>
 <hr />
-<h2 id="active-operations">ACTIVE OPERATIONS</h2>
-<details class="info">
-<summary>Info</summary>
-<p>Tasks that I am currently working on.</p>
-</details>
+<h2 id="what-this-page-covers">What this page covers</h2>
 <ul>
-<li>Building my own RSS Aggregator to stay up to day on Security.</li>
-<li>Restructure of my Automation for updating this page.</li>
-<li>Working though OWT Natas and documenting it.</li>
-<li>DeepDive Page for Metasploit</li>
-<li>DeepDive Page for Netcat</li>
+<li>What IP is and what it does</li>
+<li>How it fits into the TCP/IP stack</li>
+<li>Where its data comes from</li>
+<li>How it is structured and used</li>
+<li>How it can be abused or defended</li>
+<li>Tools I use to explore it</li>
+</ul>
+<p>This page is my reference for understanding IP 
+as the internet's postal service, a routing mechanism, and a fundamental layer of communication.</p>
+<hr />
+<h2 id="what-ip-actually-is">What IP Actually Is</h2>
+<p>The Internet Protocol is the principal communications protocol for relaying datagrams across network boundaries. 
+Its primary function is to deliver packets from a source host to a destination host based on their addresses.</p>
+<p>IP is the core of the internet. 
+It’s what makes inter-networking possible, 
+allowing different networks to connect and exchange data globally.</p>
+<hr />
+<h2 id="how-ip-lives-in-the-tcpip-stack">How IP Lives in the TCP/IP Stack</h2>
+<ul>
+<li><strong>OSI Layer</strong>: Network Layer (Layer 3)</li>
+<li><strong>Encapsulation</strong>:</li>
+<li>IP wraps segments from the Transport Layer (like TCP or UDP).</li>
+<li>It is, in turn, wrapped by frames from the Data Link Layer (like Ethernet).</li>
+<li><strong>Flow</strong>:</li>
+<li>The IP layer takes a data segment and adds a header containing source and destination IP addresses.</li>
+<li>Routers across the internet read this header to forward the packet to its final destination.</li>
+</ul>
+<p>IP is connectionless, meaning it sends packets without first creating a connection. 
+It offers no guarantees of delivery, order, or integrity; 
+that is the job of higher-level protocols like TCP.</p>
+<hr />
+<h2 id="where-ip-data-comes-from">Where IP Data Comes From</h2>
+<p>The data payload of an IP packet comes from the Transport Layer (Layer 4). 
+IP itself does not generate user data. 
+It simply takes the segments provided by TCP or UDP 
+and attaches the necessary addressing information to route them.</p>
+<hr />
+<h2 id="how-ip-is-structured">How IP Is Structured</h2>
+<ul>
+<li><strong>IP Header</strong>: This contains all the routing information, including:</li>
+<li><strong>Source IP Address</strong>: Where the packet came from.</li>
+<li><strong>Destination IP Address</strong>: Where the packet is going.</li>
+<li><strong>Time To Live (TTL)</strong>: A counter that prevents packets from looping endlessly.</li>
+<li><strong>Protocol</strong>: A number that identifies the next-level protocol (e.g., 6 for TCP, 17 for UDP).</li>
+<li><strong>Versions</strong>:</li>
+<li><strong>IPv4</strong>: The legacy 32-bit addressing scheme (e.g., <code>192.168.1.1</code>).</li>
+<li><strong>IPv6</strong>: The modern 128-bit addressing scheme, created to solve IPv4 address exhaustion.</li>
+</ul>
+<p>IP works on a "best-effort" delivery model. It does its best to deliver the packet but doesn't handle retransmissions for lost packets.</p>
+<hr />
+<h2 id="ip-and-security">IP and Security</h2>
+<p>IP itself offers no encryption or authentication, which exposes it to several risks:</p>
+<ul>
+<li><strong>IP Spoofing</strong>: An attacker forges the source IP address of a packet to hide their identity or impersonate another system.</li>
+<li><strong>Packet Sniffing</strong>: An attacker on the same local network can intercept and read unencrypted IP packets.</li>
+<li><strong>Denial of Service (DoS)</strong>: Attackers can use fragmentation attacks or IP address spoofing to overwhelm a target system.</li>
+</ul>
+<p>Defenses include:</p>
+<ul>
+<li><strong>IPsec</strong>: A suite of protocols that provides encryption and authentication at the IP layer (often used in VPNs).</li>
+<li><strong>Firewalls</strong>: To filter incoming and outgoing packets based on IP addresses and ports.</li>
+<li><strong>Ingress/Egress Filtering</strong>: Network edge routers check if packets have a legitimate source IP address, helping to prevent spoofing.</li>
 </ul>
 <hr />
-<h2 id="staging-zone">STAGING ZONE</h2>
-<details class="info">
-<summary>Info</summary>
-<p>Mental RAM.<br />
-The stuff I am actively thinking on how to put them in.  </p>
-</details>
+<h2 id="tools-i-use-to-explore-ip">Tools I Use to Explore IP</h2>
+<h3 id="ping"><code>ping</code></h3>
 <ul>
-<li>Doing a DeepDive with practice of <code>schtaks</code></li>
-<li>Write section on setuid, openssl, permissions in linux</li>
-<li>Explaining where I stand in my Nvim Journey</li>
-<li>Building CAIDO Overview page</li>
-<li>Building PEASS Overview page</li>
+<li>Sends ICMP packets to an IP address to test reachability and latency.</li>
+<li>Example: <code>ping 8.8.8.8</code></li>
 </ul>
+<h3 id="traceroute"><code>traceroute</code></h3>
+<ul>
+<li>Traces the route that packets take to a destination IP, showing each router (hop) along the way.</li>
+<li>Example: <code>traceroute 1.1.1.1</code></li>
+</ul>
+<h3 id="tcpdump-wireshark"><code>tcpdump</code> / <code>wireshark</code></h3>
+<ul>
+<li>Powerful packet analyzers that can capture and display IP packet headers and payloads for deep inspection.</li>
+<li>Example: <code>tcpdump host 8.8.8.8</code></li>
+</ul>
+<p>These tools help me see how IP packets move, where they go, and what information they carry.</p>
 <hr />
-<h2 id="strategic-backlog">STRATEGIC BACKLOG</h2>
-<details class="info">
-<summary>Info</summary>
-<p>Goals for the long term and bigger projects before I actually start working on them.  </p>
-</details>
-<ul>
-<li>Page with better explanation on DMZs. </li>
-<li>Getting picture documentation to work</li>
-<li>List of file formats and what it means and you can do with it. </li>
-<li>Working on building some Visual Charts</li>
-<li>Talking a look at OWASP Juice Shop, etc. </li>
-<li>Work on underthewire.tech for the Windows version of Overthewire</li>
-</ul>
-<hr />
-<h2 id="completed-strikes">COMPLETED STRIKES</h2>
-<details class="info">
-<summary>Info</summary>
-<p>Trying to keep a brief history and show of what the newest pages are.  </p>
-</details>
-<ul>
-<li>Adding IP Protocol page (2025-12)</li>
-<li>Backup System implementation and write up (2025-12)</li>
-<li>DeepDive into WinRegistry (2025-11)</li>
-<li>Deep-dive into privilege escalation (2025-10)</li>
-<li>Adding ARP, ICMP and SNMP Protocol pages (2025-10)</li>
-<li>Building Section for protocols into foundations (2025-10)</li>
-<li>Starting with the first Vulns in the Exploits Seciton (2025-10)</li>
-<li>Building an Exploits section in Security (2025-10)</li>
-<li>Building a Pentesting secution in security (2025-09)</li>
-<li>DeepDive into WinEventLog (2025-09)</li>
-<li>Building a CLI Overview for Windows Systems (2025-09)</li>
-<li>Building an Overview page for the Cybersecurtiy tools (2025-09)</li>
-<li>Building an Overview page for the Playbook Section (2025-09)</li>
-<li>DeepDive Page for searchsploit (2025-09)</li>
-<li>JS Deobfuscation page added to playbooks (2025-09)</li>
-<li>Overview for the Networking Section (2025-09)</li>
-<li>DeepDive Page for UEFI (2025-09)</li>
-<li>DeepDive Page for nmap (2025-09)</li>
-<li>Working though the learning material of the CCNA (2025-09)</li>
-<li>Building out a Page for my Homelab Components (2025-08)</li>
-<li>Making an Overview of the different Sections (2025-08)</li>
-<li>Creating an Overview of the Startup process of the main operating systems (2025-08)</li>
-<li>Restructure considering my current knowledge (2025-08)</li>
-<li>Create automation script for deployment and documenting it (2025-05)</li>
-<li>Using Warboard as a way to stay accountable (2025-05)</li>
-<li>Bandit documentation (2025-04)</li>
-<li>Adding a Logo (2025-04)</li>
-<li>First draft Cyber Fundamentals (2025-04)</li>
-<li>Adding Filestructure, Home and About Page (2025-04)</li>
-<li>Adding Digital Dojo Project (2025-04)</li>
-</ul>
+<h2 id="final-thought">Final Thought</h2>
+<p>IP is the postal service of the internet.<br />
+It doesn't care what is in the envelope, only that it has an address to deliver to.<br />
+It is the protocol of addressing, of routing, and of global connection.</p>
+<p>This page is my study of that system.<br />
+Not just how IP works, but how it routes the world's data and where its trust can be broken.</p>
 
 
 
@@ -3144,44 +3133,6 @@ The stuff I am actively thinking on how to put them in.  </p>
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../media/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Media">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Media
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../../about/" class="md-footer__link md-footer__link--next" aria-label="Next: About">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                About
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -3221,10 +3172,10 @@ The stuff I am actively thinking on how to put them in.  </p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
