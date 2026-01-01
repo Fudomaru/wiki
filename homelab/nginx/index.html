@@ -6,32 +6,28 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="My method for analyzing and reversing obfuscated JavaScript — from locating code to decoding payloads.">
+        <meta name="description" content="The gateway to my lab, and my first lesson in structured routing.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../recon/">
       
       
-        <link rel="next" href="../../../homelab/overview/">
-      
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>JavaScript Deobfuscation - Voidex</title>
+        <title>NGINX - Voidex</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -115,7 +111,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -141,7 +137,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#javascript-deobfuscation" class="md-skip">
+        <a href="#nginx-reverse-proxy" class="md-skip">
           Skip to content
         </a>
       
@@ -155,7 +151,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -175,7 +171,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              JavaScript Deobfuscation
+              NGINX
             
           </span>
         </div>
@@ -278,7 +274,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -299,7 +295,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../foundations/overview/" class="md-tabs__link">
+        <a href="../../foundations/overview/" class="md-tabs__link">
           
   
   
@@ -315,13 +311,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../security/overview/" class="md-tabs__link">
           
   
   
@@ -341,7 +335,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../homelab/overview/" class="md-tabs__link">
+        <a href="../overview/" class="md-tabs__link">
           
   
   
@@ -361,7 +355,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../challenges/overview/" class="md-tabs__link">
+        <a href="../../challenges/overview/" class="md-tabs__link">
           
   
   
@@ -381,7 +375,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../projects/overview/" class="md-tabs__link">
+        <a href="../../projects/overview/" class="md-tabs__link">
           
   
   
@@ -401,7 +395,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../notes/overview/" class="md-tabs__link">
+        <a href="../../notes/overview/" class="md-tabs__link">
           
   
   
@@ -419,7 +413,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
@@ -454,7 +448,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -484,7 +478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -547,7 +541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/overview/" class="md-nav__link">
+      <a href="../../foundations/overview/" class="md-nav__link">
         
   
   
@@ -570,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/networking/" class="md-nav__link">
+      <a href="../../foundations/networking/" class="md-nav__link">
         
   
   
@@ -634,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/windows/overview/" class="md-nav__link">
+      <a href="../../foundations/windows/overview/" class="md-nav__link">
         
   
   
@@ -657,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/windows/uefi/" class="md-nav__link">
+      <a href="../../foundations/windows/uefi/" class="md-nav__link">
         
   
   
@@ -680,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/windows/eventviewer/" class="md-nav__link">
+      <a href="../../foundations/windows/eventviewer/" class="md-nav__link">
         
   
   
@@ -703,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/windows/winregistry/" class="md-nav__link">
+      <a href="../../foundations/windows/winregistry/" class="md-nav__link">
         
   
   
@@ -726,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/windows/cli-magic/" class="md-nav__link">
+      <a href="../../foundations/windows/cli-magic/" class="md-nav__link">
         
   
   
@@ -798,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/macos/overview/" class="md-nav__link">
+      <a href="../../foundations/macos/overview/" class="md-nav__link">
         
   
   
@@ -870,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/linux/overview/" class="md-nav__link">
+      <a href="../../foundations/linux/overview/" class="md-nav__link">
         
   
   
@@ -893,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/linux/cli-magic/" class="md-nav__link">
+      <a href="../../foundations/linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -916,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/linux/system-internals/" class="md-nav__link">
+      <a href="../../foundations/linux/system-internals/" class="md-nav__link">
         
   
   
@@ -988,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/overview/" class="md-nav__link">
+      <a href="../../foundations/protocols/overview/" class="md-nav__link">
         
   
   
@@ -1011,7 +1005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/arp/" class="md-nav__link">
+      <a href="../../foundations/protocols/arp/" class="md-nav__link">
         
   
   
@@ -1034,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/ip/" class="md-nav__link">
+      <a href="../../foundations/protocols/ip/" class="md-nav__link">
         
   
   
@@ -1057,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/icmp/" class="md-nav__link">
+      <a href="../../foundations/protocols/icmp/" class="md-nav__link">
         
   
   
@@ -1080,7 +1074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/tcp/" class="md-nav__link">
+      <a href="../../foundations/protocols/tcp/" class="md-nav__link">
         
   
   
@@ -1103,7 +1097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/udp/" class="md-nav__link">
+      <a href="../../foundations/protocols/udp/" class="md-nav__link">
         
   
   
@@ -1126,7 +1120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/tls/" class="md-nav__link">
+      <a href="../../foundations/protocols/tls/" class="md-nav__link">
         
   
   
@@ -1149,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/dns/" class="md-nav__link">
+      <a href="../../foundations/protocols/dns/" class="md-nav__link">
         
   
   
@@ -1172,7 +1166,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/smtp/" class="md-nav__link">
+      <a href="../../foundations/protocols/smtp/" class="md-nav__link">
         
   
   
@@ -1195,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/snmp/" class="md-nav__link">
+      <a href="../../foundations/protocols/snmp/" class="md-nav__link">
         
   
   
@@ -1218,7 +1212,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/ftp/" class="md-nav__link">
+      <a href="../../foundations/protocols/ftp/" class="md-nav__link">
         
   
   
@@ -1241,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/ssh/" class="md-nav__link">
+      <a href="../../foundations/protocols/ssh/" class="md-nav__link">
         
   
   
@@ -1264,7 +1258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/smb/" class="md-nav__link">
+      <a href="../../foundations/protocols/smb/" class="md-nav__link">
         
   
   
@@ -1287,7 +1281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/dhcp/" class="md-nav__link">
+      <a href="../../foundations/protocols/dhcp/" class="md-nav__link">
         
   
   
@@ -1310,7 +1304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/http/" class="md-nav__link">
+      <a href="../../foundations/protocols/http/" class="md-nav__link">
         
   
   
@@ -1333,7 +1327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/netbios/" class="md-nav__link">
+      <a href="../../foundations/protocols/netbios/" class="md-nav__link">
         
   
   
@@ -1368,29 +1362,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -1403,7 +1392,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Security
@@ -1417,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../security/overview/" class="md-nav__link">
         
   
   
@@ -1440,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fundamentals/" class="md-nav__link">
+      <a href="../../security/fundamentals/" class="md-nav__link">
         
   
   
@@ -1504,7 +1493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pentesting/fundamentals/" class="md-nav__link">
+      <a href="../../security/pentesting/fundamentals/" class="md-nav__link">
         
   
   
@@ -1527,7 +1516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pentesting/types/" class="md-nav__link">
+      <a href="../../security/pentesting/types/" class="md-nav__link">
         
   
   
@@ -1550,7 +1539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pentesting/structure/" class="md-nav__link">
+      <a href="../../security/pentesting/structure/" class="md-nav__link">
         
   
   
@@ -1573,7 +1562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pentesting/skills/" class="md-nav__link">
+      <a href="../../security/pentesting/skills/" class="md-nav__link">
         
   
   
@@ -1596,7 +1585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pentesting/methodologies/" class="md-nav__link">
+      <a href="../../security/pentesting/methodologies/" class="md-nav__link">
         
   
   
@@ -1668,7 +1657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/overview/" class="md-nav__link">
+      <a href="../../security/exploits/overview/" class="md-nav__link">
         
   
   
@@ -1691,7 +1680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/xss/" class="md-nav__link">
+      <a href="../../security/exploits/xss/" class="md-nav__link">
         
   
   
@@ -1714,7 +1703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/hardcoded_secrets/" class="md-nav__link">
+      <a href="../../security/exploits/hardcoded_secrets/" class="md-nav__link">
         
   
   
@@ -1737,7 +1726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/idor/" class="md-nav__link">
+      <a href="../../security/exploits/idor/" class="md-nav__link">
         
   
   
@@ -1760,7 +1749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/ssrf/" class="md-nav__link">
+      <a href="../../security/exploits/ssrf/" class="md-nav__link">
         
   
   
@@ -1783,7 +1772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/sqli/" class="md-nav__link">
+      <a href="../../security/exploits/sqli/" class="md-nav__link">
         
   
   
@@ -1806,7 +1795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/missing_authorization/" class="md-nav__link">
+      <a href="../../security/exploits/missing_authorization/" class="md-nav__link">
         
   
   
@@ -1837,7 +1826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../privilege-escalation/" class="md-nav__link">
+      <a href="../../security/privilege-escalation/" class="md-nav__link">
         
   
   
@@ -1901,7 +1890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../toolbelt/overview/" class="md-nav__link">
+      <a href="../../security/toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -1924,7 +1913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../toolbelt/nmap/" class="md-nav__link">
+      <a href="../../security/toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -1947,7 +1936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../toolbelt/searchsploit/" class="md-nav__link">
+      <a href="../../security/toolbelt/searchsploit/" class="md-nav__link">
         
   
   
@@ -1970,7 +1959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../toolbelt/schtasks/" class="md-nav__link">
+      <a href="../../security/toolbelt/schtasks/" class="md-nav__link">
         
   
   
@@ -1998,8 +1987,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2010,11 +1997,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
         
           
           <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
@@ -2030,7 +2017,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             Playbooks
@@ -2044,7 +2031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../security/playbooks/overview/" class="md-nav__link">
         
   
   
@@ -2067,7 +2054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recon/" class="md-nav__link">
+      <a href="../../security/playbooks/recon/" class="md-nav__link">
         
   
   
@@ -2087,32 +2074,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    JS Deobfuscation
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../security/playbooks/js-deobfuscation/" class="md-nav__link">
         
   
   
@@ -2123,71 +2088,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why This Matters
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#my-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      My Workflow
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#encoding-techniques-i-watch-for" class="md-nav__link">
-    <span class="md-ellipsis">
-      Encoding Techniques I Watch For
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tools-i-use" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tools I Use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      What’s Next
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2256,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -2279,7 +2179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/proxmox/" class="md-nav__link">
+      <a href="../proxmox/" class="md-nav__link">
         
   
   
@@ -2302,7 +2202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/pfsense/" class="md-nav__link">
+      <a href="../pfsense/" class="md-nav__link">
         
   
   
@@ -2325,7 +2225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/pihole/" class="md-nav__link">
+      <a href="../pihole/" class="md-nav__link">
         
   
   
@@ -2348,7 +2248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/nging.md" class="md-nav__link">
+      <a href="../nging.md" class="md-nav__link">
         
   
   
@@ -2371,7 +2271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/gitea/" class="md-nav__link">
+      <a href="../gitea/" class="md-nav__link">
         
   
   
@@ -2394,7 +2294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/backups/" class="md-nav__link">
+      <a href="../backups/" class="md-nav__link">
         
   
   
@@ -2465,7 +2365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/overview/" class="md-nav__link">
+      <a href="../../challenges/overview/" class="md-nav__link">
         
   
   
@@ -2529,7 +2429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/overthewire/bandit/" class="md-nav__link">
+      <a href="../../challenges/overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -2552,7 +2452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/overthewire/natas/" class="md-nav__link">
+      <a href="../../challenges/overthewire/natas/" class="md-nav__link">
         
   
   
@@ -2583,7 +2483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/htb/" class="md-nav__link">
+      <a href="../../challenges/htb/" class="md-nav__link">
         
   
   
@@ -2647,7 +2547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/thm/overview/" class="md-nav__link">
+      <a href="../../challenges/thm/overview/" class="md-nav__link">
         
   
   
@@ -2670,7 +2570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/thm/billing/" class="md-nav__link">
+      <a href="../../challenges/thm/billing/" class="md-nav__link">
         
   
   
@@ -2749,7 +2649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/overview/" class="md-nav__link">
+      <a href="../../projects/overview/" class="md-nav__link">
         
   
   
@@ -2813,7 +2713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/digital-dojo/overview/" class="md-nav__link">
+      <a href="../../projects/digital-dojo/overview/" class="md-nav__link">
         
   
   
@@ -2836,7 +2736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/digital-dojo/01-powershell-autodeploy/" class="md-nav__link">
+      <a href="../../projects/digital-dojo/01-powershell-autodeploy/" class="md-nav__link">
         
   
   
@@ -2859,7 +2759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/digital-dojo/02-scripting-upgrade/" class="md-nav__link">
+      <a href="../../projects/digital-dojo/02-scripting-upgrade/" class="md-nav__link">
         
   
   
@@ -2890,7 +2790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/echosnare/" class="md-nav__link">
+      <a href="../../projects/echosnare/" class="md-nav__link">
         
   
   
@@ -2913,7 +2813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/void_linux/" class="md-nav__link">
+      <a href="../../projects/void_linux/" class="md-nav__link">
         
   
   
@@ -2984,7 +2884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/overview/" class="md-nav__link">
+      <a href="../../notes/overview/" class="md-nav__link">
         
   
   
@@ -3007,7 +2907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/ccna/" class="md-nav__link">
+      <a href="../../notes/ccna/" class="md-nav__link">
         
   
   
@@ -3030,7 +2930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/media/" class="md-nav__link">
+      <a href="../../notes/media/" class="md-nav__link">
         
   
   
@@ -3053,7 +2953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/warboard/" class="md-nav__link">
+      <a href="../../notes/warboard/" class="md-nav__link">
         
   
   
@@ -3083,7 +2983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
@@ -3125,45 +3025,69 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
+  <a href="#purpose-and-design" class="md-nav__link">
     <span class="md-ellipsis">
-      Why This Matters
+      Purpose and Design
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#my-workflow" class="md-nav__link">
+  <a href="#setup-and-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      My Workflow
+      Setup and Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup and Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-default-server-a-critical-defense" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Default Server: A Critical Defense
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-proxy-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Proxy Template
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lessons Learned
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#encoding-techniques-i-watch-for" class="md-nav__link">
+  <a href="#future-plans" class="md-nav__link">
     <span class="md-ellipsis">
-      Encoding Techniques I Watch For
+      Future Plans
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tools-i-use" class="md-nav__link">
+  <a href="#value-in-my-lab" class="md-nav__link">
     <span class="md-ellipsis">
-      Tools I Use
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
-    <span class="md-ellipsis">
-      What’s Next
+      Value in My Lab
     </span>
   </a>
   
@@ -3185,100 +3109,123 @@
 
 
 
-<h1 id="javascript-deobfuscation">JavaScript Deobfuscation</h1>
-<p>This page is part of my playbook.<br />
-It’s where I document how I approach obfuscated JavaScript. 
-Whether it’s hiding logic, encoding payloads, 
-or trying to confuse me during a challenge.</p>
-<h2 id="why-this-matters">Why This Matters</h2>
-<p>Obfuscated JavaScript shows up in phishing kits, 
-shady login pages, payload droppers, and even legitimate apps.<br />
-If I can’t read the code, I can’t understand what it’s doing, 
-and that means I can’t exploit it, defend against it, or learn from it.</p>
-<p>This technique helps me:</p>
+<h1 id="nginx-reverse-proxy">NGINX Reverse Proxy</h1>
+<p>Nginx is the front door to my entire homelab. 
+It started as a simple experiment to expose a single service 
+without revealing an IP address and port, 
+but it quickly became one of the most critical components in my infrastructure. 
+It acts as the central gateway, 
+directing traffic cleanly and providing a layer of isolation 
+between the outside world and my internal services.</p>
+<p>It enforces a critical design principle for me: 
+backend services should never have to know they are on the internet. 
+They just run, and Nginx handles the rest.</p>
+<hr />
+<h2 id="purpose-and-design">Purpose and Design</h2>
+<p>In any real network, you don't just expose services directly. 
+You put a proxy in front. 
+I wanted to replicate that discipline here.</p>
+<p>The purpose of my Nginx setup is to:
+- <strong>Act as a single ingress point:</strong> All web traffic enters through this one container.
+- <strong>Route traffic with hostnames:</strong> Instead of messy IPs and ports, I can use clean subdomains like 'gitea.voidex.me'.
+- <strong>Terminate connections:</strong> It handles the initial HTTP request, so backend services don't have to.
+- <strong>Isolate my services:</strong> No service needs a public-facing IP address. They all live safely on an internal network.</p>
+<p>The architecture is straightforward:
+1. A dedicated LXC container runs Nginx on Debian.
+2. My DNS (Pi-hole) points all my subdomains to the Nginx container's IP.
+3. Nginx reads the 'Host' header of the incoming request.
+4. It forwards the request to the correct internal service (e.g., Gitea, Paperless) based on that hostname.</p>
+<p>This keeps the setup predictable and easy to manage.</p>
+<hr />
+<h2 id="setup-and-configuration">Setup and Configuration</h2>
+<p>I created a standard Debian LXC container to house Nginx. 
+The installation itself was simple (<code>apt install nginx</code>), 
+but the real work is in the configuration.</p>
+<p>My philosophy is to keep the global <code>/etc/nginx/nginx.conf</code> 
+as close to the default as possible. 
+This makes it predictable. 
+The only change I made was adding <code>server_tokens off;</code> 
+to prevent Nginx from advertising its version number.</p>
+<p>All the routing logic lives in individual configuration files 
+inside <code>/etc/nginx/sites-available/</code>, 
+which are then symlinked into <code>/etc/nginx/sites-enabled/</code>.</p>
+<h4 id="the-default-server-a-critical-defense">The Default Server: A Critical Defense</h4>
+<p>One of the first lessons I learned was the danger of accidental exposure. What happens if a request comes in for a hostname Nginx doesn't recognize? To prevent it from forwarding the request to a default backend, I implemented a catch-all server block that simply drops the connection.</p>
+<div class="highlight"><pre><span></span><code>server {
+    listen 80 default_server;
+    server_name _;
+    return 444; # Drops the connection without a response
+}
+</code></pre></div>
+<p>This is a vital security measure. It ensures that only explicitly defined services are accessible.</p>
+<h4 id="the-proxy-template">The Proxy Template</h4>
+<p>To keep things consistent, every backend service uses the same proxy template. This ensures that the backend services get the information they need about the original request.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">server</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kn">listen</span><span class="w"> </span><span class="mi">80</span><span class="p">;</span>
+<span class="w">    </span><span class="kn">server_name</span><span class="w"> </span><span class="s">service.voidex.me</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://10.0.0.X:PORT</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">Host</span><span class="w"> </span><span class="nv">$host</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Real-IP</span><span class="w"> </span><span class="nv">$remote_addr</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-For</span><span class="w"> </span><span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+<span class="w">        </span><span class="kn">proxy_set_header</span><span class="w"> </span><span class="s">X-Forwarded-Proto</span><span class="w"> </span><span class="nv">$scheme</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+These headers are not just boilerplate. 
+They are essential for applications to work correctly behind a proxy, 
+especially for logging real client IPs and generating correct redirect URLs.</p>
+<hr />
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>Setting up Nginx was a deep dive into how web traffic actually flows. 
+It was less about the tool itself and more about the protocols it manages.</p>
 <ul>
-<li>Reveal hidden functionality  </li>
-<li>Extract encoded payloads  </li>
-<li>Understand client-side logic  </li>
-<li>Spot malicious behavior  </li>
+<li><strong>A Proxy is a Gatekeeper and a Translator:</strong> 
+Nginx isn't just passing traffic. 
+It's rewriting parts of it (like the headers) so the backend application isn't confused. 
+The <code>X-Forwarded-For</code> header was my first real lesson in this; 
+without it, all my application logs just showed Nginx's IP address.</li>
+<li><strong>Defense in Depth Starts Here:</strong> 
+The <code>default_server</code> config was a major insight. 
+It's a simple rule that prevents a whole class of potential security issues. 
+It taught me to think defensively, even at the routing layer.</li>
+<li><strong>Discipline over Complexity:</strong> 
+It's tempting to put all sorts of logic into Nginx (authentication, complex rewrites). 
+I’ve learned to resist that. 
+Keeping Nginx as a pure routing layer makes the entire system easier to debug. 
+If there's an application problem, it's likely in the application, 
+not hidden in some obscure Nginx rule.</li>
 </ul>
-<h2 id="my-workflow">My Workflow</h2>
-<ol>
-<li>
-<p>Locate the JavaScript<br />
-   I inspect the page source or use browser tools to find embedded or linked scripts.</p>
-</li>
-<li>
-<p>Identify Obfuscation<br />
-   I look for signs like long single-line code, packed functions, strange variable names, or encoded strings.</p>
-</li>
-<li>
-<p>Beautify the Code<br />
-   I reformat the code to make it readable — usually the first step before deeper analysis.</p>
-</li>
-<li>
-<p>Deobfuscate<br />
-   I use tools or manual tracing to unpack the logic and reveal what the code is actually doing.</p>
-</li>
-<li>
-<p>Analyze the Functionality<br />
-   I walk through the code line by line to understand its behavior and purpose.</p>
-</li>
-<li>
-<p>Replicate the Behavior<br />
-   I use tools to mimic what the script is doing and test server-side responses.</p>
-</li>
-<li>
-<p>Decode the Output<br />
-   I identify and decode any encoded strings — base64, hex, rot13, or custom formats.</p>
-</li>
-<li>
-<p>Reverse Engineer if Needed<br />
-   If the code is custom-obfuscated or encrypted, I manually trace execution flow and rebuild the logic.</p>
-</li>
-</ol>
-<h2 id="encoding-techniques-i-watch-for">Encoding Techniques I Watch For</h2>
+<hr />
+<h2 id="future-plans">Future Plans</h2>
+<p>Right now, my Nginx setup handles HTTP only and is not exposed directly to the internet. 
+The next steps are about hardening and expanding its capabilities.</p>
 <ul>
-<li>
-<p>Base64<br />
-  Often padded with equal signs and uses only alphanumeric characters plus a few symbols.</p>
-</li>
-<li>
-<p>Hex<br />
-  Uses only digits and lowercase letters a to f, often easy to spot in encoded strings.</p>
-</li>
-<li>
-<p>Rot13<br />
-  A simple Caesar cipher that shifts letters by 13 positions, recognizable by patterns.</p>
-</li>
-<li>
-<p>Other<br />
-  Custom encodings or encryption may require manual analysis or external tools to identify.</p>
-</li>
+<li><strong>TLS Termination:</strong> 
+While my external access is handled by a Cloudflare Tunnel, 
+I plan to learn how to manage TLS certificates directly on Nginx using Let's Encrypt. 
+This is a fundamental skill.</li>
+<li><strong>Centralized Logging:</strong> 
+Nginx access logs are a goldmine of data. 
+I want to ship them to a central logging server (like Graylog or an ELK stack) 
+to monitor traffic patterns and potential security events.</li>
+<li><strong>Authentication Layer:</strong> 
+For some internal services, 
+I want to add an authentication layer directly at the proxy level, 
+using something like <code>authelia</code> or <code>oauth2-proxy</code>.</li>
 </ul>
-<h2 id="tools-i-use">Tools I Use</h2>
-<p>This list will evolve as I refine my workflow:</p>
-<ul>
-<li>Browser DevTools  </li>
-<li>JSBeautifier or js-beautify  </li>
-<li>UnPacker  </li>
-<li>CyberChef  </li>
-<li>Node.js  </li>
-<li>curl  </li>
-<li>Cipher Identifier  </li>
-<li>rot13 online tools  </li>
-<li>JStillery (experimental)</li>
-</ul>
-<h2 id="whats-next">What’s Next</h2>
-<p>This page will grow with:</p>
-<ul>
-<li>Annotated examples from challenges  </li>
-<li>Custom obfuscation patterns I’ve seen  </li>
-<li>Scripts and snippets I use to automate parts of the workflow</li>
-</ul>
-<p>Deobfuscation is not just fun. 
-It is important. 
-It’s where I sharpen my ability to read what others try to hide Turning confusion into clarity.</p>
+<hr />
+<h2 id="value-in-my-lab">Value in My Lab</h2>
+<p>Nginx is more than just a proxy. 
+It’s a control point. 
+It forces me to be intentional about my network architecture. 
+By sitting in the middle of everything, 
+it provides a perfect vantage point for monitoring, security, and traffic management.</p>
+<p>It taught me that a well-configured boundary 
+is the first step toward a secure and scalable system. 
+It's an intentionally "boring" but stable foundation 
+upon which I can build more complex services.</p>
 
 
 
@@ -3312,44 +3259,6 @@ It’s where I sharpen my ability to read what others try to hide Turning confus
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../recon/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Recon">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Recon
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../../../homelab/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Overview
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -3389,10 +3298,10 @@ It’s where I sharpen my ability to read what others try to hide Turning confus
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
