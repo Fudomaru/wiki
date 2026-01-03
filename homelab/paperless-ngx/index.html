@@ -6,32 +6,32 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A deep dive into the Windows Task Scheduler.">
+        <meta name="description" content="Bringing order to my personal digital documents.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../searchsploit/">
+        <link rel="prev" href="../nginx/">
       
       
-        <link rel="next" href="../../playbooks/overview/">
+        <link rel="next" href="../gitea/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Schtasks - Voidex</title>
+        <title>Paperless-ngx - Voidex</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -115,7 +115,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -141,7 +141,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#schtasks" class="md-skip">
+        <a href="#paperless-ngx" class="md-skip">
           Skip to content
         </a>
       
@@ -155,7 +155,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../.." title="Voidex" class="md-header__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -175,7 +175,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Schtasks
+              Paperless-ngx
             
           </span>
         </div>
@@ -278,7 +278,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -299,11 +299,31 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../foundations/overview/" class="md-tabs__link">
+        <a href="../../foundations/overview/" class="md-tabs__link">
           
   
   
   Foundations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../security/overview/" class="md-tabs__link">
+          
+  
+  
+  Security
 
         </a>
       </li>
@@ -321,27 +341,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../overview/" class="md-tabs__link">
-          
-  
-  
-  Security
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../homelab/overview/" class="md-tabs__link">
+        <a href="../overview/" class="md-tabs__link">
           
   
   
@@ -361,7 +361,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../challenges/overview/" class="md-tabs__link">
+        <a href="../../challenges/overview/" class="md-tabs__link">
           
   
   
@@ -381,7 +381,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../projects/overview/" class="md-tabs__link">
+        <a href="../../projects/overview/" class="md-tabs__link">
           
   
   
@@ -401,7 +401,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../notes/overview/" class="md-tabs__link">
+        <a href="../../notes/overview/" class="md-tabs__link">
           
   
   
@@ -419,7 +419,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../about/" class="md-tabs__link">
+      <a href="../../about/" class="md-tabs__link">
         
   
   
@@ -454,7 +454,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
+    <a href="../.." title="Voidex" class="md-nav__button md-logo" aria-label="Voidex" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg>
@@ -484,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -547,7 +547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/overview/" class="md-nav__link">
+      <a href="../../foundations/overview/" class="md-nav__link">
         
   
   
@@ -570,7 +570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/networking/" class="md-nav__link">
+      <a href="../../foundations/networking/" class="md-nav__link">
         
   
   
@@ -634,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/windows/overview/" class="md-nav__link">
+      <a href="../../foundations/windows/overview/" class="md-nav__link">
         
   
   
@@ -657,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/windows/uefi/" class="md-nav__link">
+      <a href="../../foundations/windows/uefi/" class="md-nav__link">
         
   
   
@@ -680,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/windows/eventviewer/" class="md-nav__link">
+      <a href="../../foundations/windows/eventviewer/" class="md-nav__link">
         
   
   
@@ -703,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/windows/winregistry/" class="md-nav__link">
+      <a href="../../foundations/windows/winregistry/" class="md-nav__link">
         
   
   
@@ -726,7 +726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/windows/cli-magic/" class="md-nav__link">
+      <a href="../../foundations/windows/cli-magic/" class="md-nav__link">
         
   
   
@@ -798,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/macos/overview/" class="md-nav__link">
+      <a href="../../foundations/macos/overview/" class="md-nav__link">
         
   
   
@@ -870,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/linux/overview/" class="md-nav__link">
+      <a href="../../foundations/linux/overview/" class="md-nav__link">
         
   
   
@@ -893,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/linux/cli-magic/" class="md-nav__link">
+      <a href="../../foundations/linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -916,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/linux/system-internals/" class="md-nav__link">
+      <a href="../../foundations/linux/system-internals/" class="md-nav__link">
         
   
   
@@ -988,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/overview/" class="md-nav__link">
+      <a href="../../foundations/protocols/overview/" class="md-nav__link">
         
   
   
@@ -1011,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/arp/" class="md-nav__link">
+      <a href="../../foundations/protocols/arp/" class="md-nav__link">
         
   
   
@@ -1034,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/ip/" class="md-nav__link">
+      <a href="../../foundations/protocols/ip/" class="md-nav__link">
         
   
   
@@ -1057,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/icmp/" class="md-nav__link">
+      <a href="../../foundations/protocols/icmp/" class="md-nav__link">
         
   
   
@@ -1080,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/tcp/" class="md-nav__link">
+      <a href="../../foundations/protocols/tcp/" class="md-nav__link">
         
   
   
@@ -1103,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/udp/" class="md-nav__link">
+      <a href="../../foundations/protocols/udp/" class="md-nav__link">
         
   
   
@@ -1126,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/tls/" class="md-nav__link">
+      <a href="../../foundations/protocols/tls/" class="md-nav__link">
         
   
   
@@ -1149,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/dns/" class="md-nav__link">
+      <a href="../../foundations/protocols/dns/" class="md-nav__link">
         
   
   
@@ -1172,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/smtp/" class="md-nav__link">
+      <a href="../../foundations/protocols/smtp/" class="md-nav__link">
         
   
   
@@ -1195,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/snmp/" class="md-nav__link">
+      <a href="../../foundations/protocols/snmp/" class="md-nav__link">
         
   
   
@@ -1218,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/ftp/" class="md-nav__link">
+      <a href="../../foundations/protocols/ftp/" class="md-nav__link">
         
   
   
@@ -1241,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/ssh/" class="md-nav__link">
+      <a href="../../foundations/protocols/ssh/" class="md-nav__link">
         
   
   
@@ -1264,7 +1264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/smb/" class="md-nav__link">
+      <a href="../../foundations/protocols/smb/" class="md-nav__link">
         
   
   
@@ -1287,7 +1287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/dhcp/" class="md-nav__link">
+      <a href="../../foundations/protocols/dhcp/" class="md-nav__link">
         
   
   
@@ -1310,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/http/" class="md-nav__link">
+      <a href="../../foundations/protocols/http/" class="md-nav__link">
         
   
   
@@ -1333,7 +1333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../foundations/protocols/netbios/" class="md-nav__link">
+      <a href="../../foundations/protocols/netbios/" class="md-nav__link">
         
   
   
@@ -1368,29 +1368,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -1403,7 +1398,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Security
@@ -1417,7 +1412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../security/overview/" class="md-nav__link">
         
   
   
@@ -1440,7 +1435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fundamentals/" class="md-nav__link">
+      <a href="../../security/fundamentals/" class="md-nav__link">
         
   
   
@@ -1504,7 +1499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pentesting/fundamentals/" class="md-nav__link">
+      <a href="../../security/pentesting/fundamentals/" class="md-nav__link">
         
   
   
@@ -1527,7 +1522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pentesting/types/" class="md-nav__link">
+      <a href="../../security/pentesting/types/" class="md-nav__link">
         
   
   
@@ -1550,7 +1545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pentesting/structure/" class="md-nav__link">
+      <a href="../../security/pentesting/structure/" class="md-nav__link">
         
   
   
@@ -1573,7 +1568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pentesting/skills/" class="md-nav__link">
+      <a href="../../security/pentesting/skills/" class="md-nav__link">
         
   
   
@@ -1596,7 +1591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pentesting/methodologies/" class="md-nav__link">
+      <a href="../../security/pentesting/methodologies/" class="md-nav__link">
         
   
   
@@ -1668,7 +1663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/overview/" class="md-nav__link">
+      <a href="../../security/exploits/overview/" class="md-nav__link">
         
   
   
@@ -1691,7 +1686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/xss/" class="md-nav__link">
+      <a href="../../security/exploits/xss/" class="md-nav__link">
         
   
   
@@ -1714,7 +1709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/hardcoded_secrets/" class="md-nav__link">
+      <a href="../../security/exploits/hardcoded_secrets/" class="md-nav__link">
         
   
   
@@ -1737,7 +1732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/idor/" class="md-nav__link">
+      <a href="../../security/exploits/idor/" class="md-nav__link">
         
   
   
@@ -1760,7 +1755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/ssrf/" class="md-nav__link">
+      <a href="../../security/exploits/ssrf/" class="md-nav__link">
         
   
   
@@ -1783,7 +1778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/sqli/" class="md-nav__link">
+      <a href="../../security/exploits/sqli/" class="md-nav__link">
         
   
   
@@ -1806,7 +1801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exploits/missing_authorization/" class="md-nav__link">
+      <a href="../../security/exploits/missing_authorization/" class="md-nav__link">
         
   
   
@@ -1837,7 +1832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../privilege-escalation/" class="md-nav__link">
+      <a href="../../security/privilege-escalation/" class="md-nav__link">
         
   
   
@@ -1857,8 +1852,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1869,11 +1862,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
         
           
           <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
@@ -1889,7 +1882,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             Toolbelt
@@ -1903,7 +1896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../security/toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -1926,7 +1919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nmap/" class="md-nav__link">
+      <a href="../../security/toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -1949,7 +1942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../searchsploit/" class="md-nav__link">
+      <a href="../../security/toolbelt/searchsploit/" class="md-nav__link">
         
   
   
@@ -1969,32 +1962,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Schtasks
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../security/toolbelt/schtasks/" class="md-nav__link">
         
   
   
@@ -2005,155 +1976,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-schtasks-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why Schtasks Matters
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#core-functions-of-schtasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Functions of Schtasks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Core Functions of Schtasks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-create-a-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Create a Task
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-query-tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Query Tasks
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-run-a-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Run a Task
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-delete-a-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Delete a Task
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-change-a-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Change a Task
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-think-about-schtasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Think About Schtasks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How to Think About Schtasks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#offensive-perspective-red-team" class="md-nav__link">
-    <span class="md-ellipsis">
-      Offensive Perspective (Red Team)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#defensive-perspective-blue-team" class="md-nav__link">
-    <span class="md-ellipsis">
-      Defensive Perspective (Blue Team)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-with-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Integration with Workflow
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-takeaway" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Takeaway
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Integration
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2215,7 +2037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../playbooks/overview/" class="md-nav__link">
+      <a href="../../security/playbooks/overview/" class="md-nav__link">
         
   
   
@@ -2238,7 +2060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../playbooks/recon/" class="md-nav__link">
+      <a href="../../security/playbooks/recon/" class="md-nav__link">
         
   
   
@@ -2261,7 +2083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../playbooks/js-deobfuscation/" class="md-nav__link">
+      <a href="../../security/playbooks/js-deobfuscation/" class="md-nav__link">
         
   
   
@@ -2296,24 +2118,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -2326,7 +2153,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Homelab
@@ -2340,7 +2167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -2363,7 +2190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/proxmox/" class="md-nav__link">
+      <a href="../proxmox/" class="md-nav__link">
         
   
   
@@ -2386,7 +2213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/pfsense/" class="md-nav__link">
+      <a href="../pfsense/" class="md-nav__link">
         
   
   
@@ -2409,7 +2236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/pihole/" class="md-nav__link">
+      <a href="../pihole/" class="md-nav__link">
         
   
   
@@ -2432,7 +2259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/nginx/" class="md-nav__link">
+      <a href="../nginx/" class="md-nav__link">
         
   
   
@@ -2452,10 +2279,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../homelab/paperless-ngx/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Paperless
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2466,6 +2315,104 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-paperless-ngx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Paperless-ngx?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation &amp; Integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation &amp; Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storage-and-backup-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage and Backup Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nginx-integration-a-standard-operating-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      NGINX Integration: A Standard Operating Procedure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Approach
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-learned" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lessons Learned
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#value-in-my-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Value in My Lab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Future Plans
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2478,7 +2425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/gitea/" class="md-nav__link">
+      <a href="../gitea/" class="md-nav__link">
         
   
   
@@ -2501,7 +2448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../homelab/backups/" class="md-nav__link">
+      <a href="../backups/" class="md-nav__link">
         
   
   
@@ -2572,7 +2519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/overview/" class="md-nav__link">
+      <a href="../../challenges/overview/" class="md-nav__link">
         
   
   
@@ -2636,7 +2583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/overthewire/bandit/" class="md-nav__link">
+      <a href="../../challenges/overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -2659,7 +2606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/overthewire/natas/" class="md-nav__link">
+      <a href="../../challenges/overthewire/natas/" class="md-nav__link">
         
   
   
@@ -2690,7 +2637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/htb/" class="md-nav__link">
+      <a href="../../challenges/htb/" class="md-nav__link">
         
   
   
@@ -2754,7 +2701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/thm/overview/" class="md-nav__link">
+      <a href="../../challenges/thm/overview/" class="md-nav__link">
         
   
   
@@ -2777,7 +2724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/thm/billing/" class="md-nav__link">
+      <a href="../../challenges/thm/billing/" class="md-nav__link">
         
   
   
@@ -2856,7 +2803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/overview/" class="md-nav__link">
+      <a href="../../projects/overview/" class="md-nav__link">
         
   
   
@@ -2920,7 +2867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/digital-dojo/overview/" class="md-nav__link">
+      <a href="../../projects/digital-dojo/overview/" class="md-nav__link">
         
   
   
@@ -2943,7 +2890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/digital-dojo/01-powershell-autodeploy/" class="md-nav__link">
+      <a href="../../projects/digital-dojo/01-powershell-autodeploy/" class="md-nav__link">
         
   
   
@@ -2966,7 +2913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/digital-dojo/02-scripting-upgrade/" class="md-nav__link">
+      <a href="../../projects/digital-dojo/02-scripting-upgrade/" class="md-nav__link">
         
   
   
@@ -2997,7 +2944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/echosnare/" class="md-nav__link">
+      <a href="../../projects/echosnare/" class="md-nav__link">
         
   
   
@@ -3020,7 +2967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/void_linux/" class="md-nav__link">
+      <a href="../../projects/void_linux/" class="md-nav__link">
         
   
   
@@ -3091,7 +3038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/overview/" class="md-nav__link">
+      <a href="../../notes/overview/" class="md-nav__link">
         
   
   
@@ -3114,7 +3061,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/ccna/" class="md-nav__link">
+      <a href="../../notes/ccna/" class="md-nav__link">
         
   
   
@@ -3137,7 +3084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/media/" class="md-nav__link">
+      <a href="../../notes/media/" class="md-nav__link">
         
   
   
@@ -3160,7 +3107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/warboard/" class="md-nav__link">
+      <a href="../../notes/warboard/" class="md-nav__link">
         
   
   
@@ -3190,7 +3137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/" class="md-nav__link">
+      <a href="../../about/" class="md-nav__link">
         
   
   
@@ -3232,64 +3179,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-schtasks-matters" class="md-nav__link">
+  <a href="#why-paperless-ngx" class="md-nav__link">
     <span class="md-ellipsis">
-      Why Schtasks Matters
+      Why Paperless-ngx?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-functions-of-schtasks" class="md-nav__link">
+  <a href="#implementation-integration" class="md-nav__link">
     <span class="md-ellipsis">
-      Core Functions of Schtasks
+      Implementation &amp; Integration
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Core Functions of Schtasks">
+    <nav class="md-nav" aria-label="Implementation &amp; Integration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-create-a-task" class="md-nav__link">
+  <a href="#storage-and-backup-architecture" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Create a Task
+      Storage and Backup Architecture
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-query-tasks" class="md-nav__link">
+  <a href="#nginx-integration-a-standard-operating-procedure" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Query Tasks
+      NGINX Integration: A Standard Operating Procedure
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-run-a-task" class="md-nav__link">
+  <a href="#installation-approach" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Run a Task
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-delete-a-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Delete a Task
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-change-a-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Change a Task
+      Installation Approach
     </span>
   </a>
   
@@ -3301,60 +3230,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-think-about-schtasks" class="md-nav__link">
+  <a href="#lessons-learned" class="md-nav__link">
     <span class="md-ellipsis">
-      How to Think About Schtasks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How to Think About Schtasks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#offensive-perspective-red-team" class="md-nav__link">
-    <span class="md-ellipsis">
-      Offensive Perspective (Red Team)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#defensive-perspective-blue-team" class="md-nav__link">
-    <span class="md-ellipsis">
-      Defensive Perspective (Blue Team)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-with-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Integration with Workflow
+      Lessons Learned
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-takeaway" class="md-nav__link">
+  <a href="#value-in-my-lab" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Takeaway
+      Value in My Lab
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#integration" class="md-nav__link">
+  <a href="#future-plans" class="md-nav__link">
     <span class="md-ellipsis">
-      Integration
+      Future Plans
     </span>
   </a>
   
@@ -3376,75 +3272,129 @@
 
 
 
-<h1 id="schtasks">Schtasks</h1>
-<p><code>schtasks.exe</code> is a Windows command-line utility used to manage scheduled tasks on a local or remote computer. It allows users to create, delete, query, change, run, and end scheduled tasks. </p>
-<p>While it is a legitimate and powerful tool for system administration, it is also frequently abused by malicious actors for persistence, privilege escalation, and lateral movement. This dual-use nature makes it a critical tool to understand for both offensive and defensive security practitioners.</p>
-<details class="info">
-<summary>Note on spelling</summary>
-<p>The term "schtaks" was used in the warboard, which is a common misspelling of <code>schtasks</code>. This page uses the correct spelling.</p>
-</details>
+<h1 id="paperless-ngx">Paperless-ngx</h1>
+<p>Paperless-ngx is my solution for tackling personal document sprawl. 
+It's a self-hosted document management system 
+designed to scan, index, and archive my personal letters and correspondences, 
+turning chaotic piles of paper and 
+disorganized digital files into an easily searchable and well-structured archive. 
+It serves as a crucial step towards digitalizing 
+and organizing parts of my life that extend beyond 
+the homelab's infrastructure itself.</p>
 <hr />
-<h2 id="why-schtasks-matters">Why Schtasks Matters</h2>
+<h2 id="why-paperless-ngx">Why Paperless-ngx?</h2>
+<p>My primary motivation for adopting Paperless-ngx 
+was a need to bring order to my personal documentation.
+Being a bit unorganized in this area, 
+I recognized the significant value in having 
+an accessible, searchable repository 
+for all personal letters and correspondences. 
+I specifically chose Paperless-ngx for several key reasons:</p>
 <ul>
-<li><strong>Red Teaming / Pentesting:</strong> <code>schtasks</code> is a go-to tool for establishing persistence on a compromised host. A reverse shell can be scheduled to run at regular intervals, ensuring continued access.</li>
-<li><strong>Blue Teaming / Defense:</strong> Monitoring <code>schtasks</code> usage is crucial for detecting malicious activity. Unusual task creation or modification can be an indicator of compromise.</li>
-<li><strong>Living Off The Land (LOLBAS):</strong> As a built-in Windows utility, <code>schtasks</code> is a prime example of a LOLBAS. Attackers can use it to blend in with normal administrative activity, making detection more difficult.</li>
-</ul>
-<hr />
-<h2 id="core-functions-of-schtasks">Core Functions of Schtasks</h2>
-<h3 id="1-create-a-task">1. Create a Task</h3>
-<ul>
-<li>Creates a new scheduled task.</li>
-<li>Command example: <code>schtasks /create /sc minute /mo 1 /tn "My Task" /tr "C:\path\to\my.exe"</code></li>
-</ul>
-<h3 id="2-query-tasks">2. Query Tasks</h3>
-<ul>
-<li>Displays all scheduled tasks on the system.</li>
-<li>Command example: <code>schtasks /query</code></li>
-</ul>
-<h3 id="3-run-a-task">3. Run a Task</h3>
-<ul>
-<li>Manually runs a scheduled task.</li>
-<li>Command example: <code>schtasks /run /tn "My Task"</code></li>
-</ul>
-<h3 id="4-delete-a-task">4. Delete a Task</h3>
-<ul>
-<li>Deletes a scheduled task.</li>
-<li>Command example: <code>schtasks /delete /tn "My Task"</code></li>
-</ul>
-<h3 id="5-change-a-task">5. Change a Task</h3>
-<ul>
-<li>Modifies the properties of a task, such as the program it runs or the schedule.</li>
-<li>Command example: <code>schtasks /change /tn "My Task" /tr "C:\new\path\to\my.exe"</code></li>
+<li><strong>Community Support:</strong> 
+Its widespread adoption within the homelab community 
+provides a valuable resource for troubleshooting and new ideas.</li>
+<li><strong>Intuitive UI:</strong> 
+I found the user interface to be straightforward and effective, 
+allowing for an easy entry point into document management.</li>
+<li><strong>Data Ownership &amp; Portability:</strong> 
+Crucially, Paperless-ngx stores documents separately from its database, 
+ensuring that I retain direct access to all my files 
+even without the application running. 
+This aligns perfectly with my philosophy 
+of control and data independence.</li>
 </ul>
 <hr />
-<h2 id="how-to-think-about-schtasks">How to Think About Schtasks</h2>
-<h3 id="offensive-perspective-red-team">Offensive Perspective (Red Team)</h3>
+<h2 id="implementation-integration">Implementation &amp; Integration</h2>
+<p>To integrate Paperless-ngx into my homelab, 
+I deployed it within a dedicated, small LXC container. 
+This container runs Paperless-ngx via Docker, 
+allowing for efficient resource usage and easy management.</p>
+<h3 id="storage-and-backup-architecture">Storage and Backup Architecture</h3>
+<p>A core design principle for this service was robust data handling:</p>
 <ul>
-<li><strong>Persistence:</strong> Create a scheduled task to run a payload at system startup or on a recurring basis.</li>
-<li><strong>Privilege Escalation:</strong> If you have administrative privileges, you can create tasks that run with <code>SYSTEM</code> privileges.</li>
-<li><strong>Lateral Movement:</strong> Use <code>schtasks</code> to create tasks on remote systems, allowing you to execute code and spread through a network.</li>
+<li><strong>Direct Mounted Storage:</strong> 
+All Paperless-ngx data (documents and database) 
+has storage mounted directly onto the LXC container.</li>
+<li><strong>Proxmox Host Storage:</strong> 
+This mounted storage resides on the Proxmox host 
+where the LXC is running.</li>
+<li><strong>PBS Integration:</strong> 
+Proxmox Backup Server (PBS) flawlessly backs up the entire LXC container, 
+including its mounted storage.</li>
+<li><strong>Redundancy:</strong> 
+These PBS backups are then duplicated 
+to a second physical machine for local redundancy.</li>
+<li><strong>Off-site Backup:</strong> 
+For ultimate disaster recovery, a complete backup of this data 
+is performed via BorgBackup to a private NAS located at another physical location. 
+This multi-layered approach ensures the longevity and safety of my digital archives.</li>
 </ul>
-<h3 id="defensive-perspective-blue-team">Defensive Perspective (Blue Team)</h3>
+<h3 id="nginx-integration-a-standard-operating-procedure">NGINX Integration: A Standard Operating Procedure</h3>
+<p>Integrating a new service like Paperless-ngx 
+into my network follows a repeatable and disciplined procedure, 
+using NGINX as the central gateway. 
+This serves as a perfect example of that process:</p>
+<ol>
+<li><strong>DNS Entry:</strong> 
+First, a new DNS record is created in my Pi-hole instance. 
+A subdomain (e.g., <code>paperless.voidex.me</code>) is set to point 
+to the static IP address of my NGINX container. 
+This ensures that all traffic for this service is directed to the reverse proxy.</li>
+<li><strong>Configuration from Template:</strong> 
+I maintain a base template for my NGINX proxy configurations. 
+I create a new configuration file for Paperless-ngx (e.g., <code>paperless.conf</code>) 
+inside <code>/etc/nginx/sites-available/</code> based on this template, 
+updating the <code>server_name</code> and the <code>proxy_pass</code> URL 
+to point to the internal IP and port of the Paperless-ngx LXC container.</li>
+<li><strong>Enabling the Site:</strong> 
+Once the configuration file is saved, 
+I create a symbolic link to it in the <code>/etc/nginx/sites-enabled/</code> directory. 
+This adheres to the standard NGINX practice 
+of cleanly enabling and disabling sites without deleting the core configuration.</li>
+<li><strong>Testing and Reloading:</strong> 
+Before committing the changes, I run <code>nginx -t</code> to test 
+the configuration for any syntax errors. 
+Upon success, a quick <code>systemctl reload nginx</code> applies the new configuration, 
+making the Paperless-ngx instance securely accessible via its subdomain.</li>
+</ol>
+<p>This standardized workflow makes adding new services predictable and secure, 
+reinforcing NGINX's role as the disciplined front door to my homelab.</p>
+<h3 id="installation-approach">Installation Approach</h3>
+<p>While the installation of Paperless-ngx was facilitated 
+by the official script (<code>bash -c "$(curl --location --silent --show-error https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/main/install-paperless-ngx.sh)"</code>), 
+my focus was on integrating its functionality and data management, 
+rather than the procedural steps of installation.</p>
+<hr />
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>The deployment of Paperless-ngx provided an interesting case study in my homelab:</p>
 <ul>
-<li><strong>Monitor Task Creation:</strong> Look for suspicious task creation events in the Windows Event Logs (Event ID 4698).</li>
-<li><strong>Analyze Task Properties:</strong> Regularly review scheduled tasks for suspicious names, executables, or run times.</li>
-<li><strong>Harden Configurations:</strong> Use Group Policy to restrict who can create scheduled tasks.</li>
+<li><strong>Docker in LXC Efficiency:</strong> 
+I was pleasantly surprised by the minimal overhead 
+involved in running Docker inside an LXC container. 
+This reinforced my preference for separating services into individual LXCs, 
+offering a balance between isolation and efficiency.</li>
+<li><strong>Control vs. VM Monolith:</strong> 
+This experience solidified my decision 
+to favor separated LXCs for single services (each potentially running Docker) 
+over a larger VM consolidating multiple Docker containers. 
+This approach offers greater control, 
+easier restoration points, and better isolation for individual services.</li>
 </ul>
 <hr />
-<h2 id="integration-with-workflow">Integration with Workflow</h2>
-<ul>
-<li><strong>SIEM:</strong> Forward <code>schtasks</code> related events to your SIEM for correlation and alerting.</li>
-<li><strong>Automation:</strong> Use scripts to automate the review of scheduled tasks across your environment.</li>
-</ul>
+<h2 id="value-in-my-lab">Value in My Lab</h2>
+<p>Paperless-ngx marks a significant milestone in my homelab journey. 
+It's the first tangible service that I am actively using 
+for a personal, non-homelab-infrastructure purpose. 
+This direct application of my homelab's capabilities 
+to streamline a real-world personal need 
+is incredibly satisfying and motivates further exploration.</p>
 <hr />
-<h2 id="key-takeaway">Key Takeaway</h2>
-<p><code>schtasks</code> is a powerful and versatile tool that can be used for both good and evil. Understanding its capabilities and how it can be abused is essential for any security professional. Whether you are on the offensive or defensive side, <code>schtasks</code> is a tool that you need to have in your arsenal.</p>
-<hr />
-<h2 id="integration">Integration</h2>
+<h2 id="future-plans">Future Plans</h2>
 <ul>
-<li><a href="../../../foundations/windows/cli-magic/">Windows CLI Magic</a></li>
-<li><a href="../../privilege-escalation/">Privilege Escalation</a></li>
+<li>Further exploration of Paperless-ngx's advanced features, such as workflows and custom document types.</li>
+<li>Integration with other personal systems or automation tools, potentially leveraging its API.</li>
+<li>Continuous refinement of my document tagging and organizational structure to maximize searchability and efficiency.</li>
 </ul>
 
 
@@ -3484,7 +3434,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../searchsploit/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Searchsploit">
+          <a href="../nginx/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Nginx">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3494,20 +3444,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Searchsploit
+                Nginx
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../playbooks/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+          <a href="../gitea/" class="md-footer__link md-footer__link--next" aria-label="Next: Gitea">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Overview
+                Gitea
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3556,10 +3506,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
