@@ -129,6 +129,7 @@ nav:
     - pfSense: homelab/pfsense.md
     - PiHole: homelab/pihole.md
     - Nginx: homelab/nginx.md
+    - Paperless: homelab/paperless-ngx.md
     - Gitea: homelab/gitea.md
     - Backup: homelab/backups.md
   - Challenges:
