@@ -50,7 +50,8 @@ description: List of my plans for future write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newest pages are.  
 
-- Adding Paperless writeup (2026-12)
+- Deepdive into Metasploit (2026-01)
+- Adding Paperless writeup (2026-01)
 - Adding Nginx writeup (2025-12)
 - Adding NetBios Protocol Page (2025-12)
 - Adding IP Protocol page (2025-12)

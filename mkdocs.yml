@@ -119,6 +119,7 @@ nav:
       - Nmap: security/toolbelt/nmap.md
       - Searchsploit: security/toolbelt/searchsploit.md
       - Schtasks: security/toolbelt/schtasks.md
+      - Metasploit: security/toolbelt/metasploit.md
     - Playbooks:
       - Overview: security/playbooks/overview.md
       - Recon: security/playbooks/recon.md
