@@ -18,6 +18,16 @@ This is not a datacenter.
 It is not meant to impress with scale or hardware.  
 It is meant to expose me to the complexity of real systems, the tension between stability and change, and the truth that every configuration choice carries both benefits and risks.  
 
+## Services & Systems
+
+- [Backups](./backups.md)
+- [Gitea](./gitea.md)
+- [NGINX](./nginx.md)
+- [Paperless-NGX](./paperless-ngx.md)
+- [pfSense](./pfsense.md)
+- [Pi-hole](./pihole.md)
+- [Proxmox](./proxmox.md)
+
 ## Why I Build
 
 I build this lab because control is not given, it is taken.  
