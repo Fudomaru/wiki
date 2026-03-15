@@ -1,13 +1,13 @@
-site_name: Voidex
+site_name: Digital Dojo
 site_description: "A Linux & Cybersecurity notebook forged in fire."
 site_author: "Fudomaru"
 
 theme:
 
   name: material
+  logo: assets/Logonew.png
 
   icon: 
-    logo: material/brain
 
     admonition:
       note: fontawesome/solid/note-sticky
