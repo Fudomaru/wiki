@@ -153,7 +153,9 @@ nav:
   - Notes:
     - Overview: notes/overview.md
     - CCNA Training: notes/ccna.md
-    - Media: notes/media.md
+    - Media:
+      - Overview: notes/media.md
+      - How to Talk to Anyone: notes/media/how-to-talk-to-anyone.md
     - Warboard: notes/warboard.md
   - About: about.md
 
