@@ -14,3 +14,4 @@ Books, articles, and other resources worth committing to memory. Each entry is a
 | Title | Author | Genre | Rating |
 |-------|--------|-------|--------|
 | [How to Talk to Anyone](media/how-to-talk-to-anyone.md) | Leil Lowndes | Social Skills | ⭐⭐⭐⭐⭐ |
+| [Algorithms to Live By](media/algorithms-to-live-by.md) | Brian Christian & Tom Griffiths | Decision-Making | ⭐⭐⭐⭐⭐ |

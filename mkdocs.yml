@@ -154,8 +154,9 @@ nav:
     - Overview: notes/overview.md
     - CCNA Training: notes/ccna.md
     - Media:
-      - Overview: notes/media.md
+      - Overview: notes/media/overview.md
       - How to Talk to Anyone: notes/media/how-to-talk-to-anyone.md
+      - Algorithms to Live By: notes/media/algorithms-to-live-by.md
     - Warboard: notes/warboard.md
   - About: about.md
 
