@@ -49,6 +49,8 @@ description: List of my plans for future write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newest pages are.  
 
+- Adding "Algorithms to live by" (2026-03)
+- Adding "How to talk to Anyone" (2026-03)
 - Deepdive into Metasploit (2026-01)
 - Adding Paperless writeup (2026-01)
 - Adding Nginx writeup (2025-12)
