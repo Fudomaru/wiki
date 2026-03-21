@@ -15,3 +15,4 @@ Books, articles, and other resources worth committing to memory. Each entry is a
 |-------|--------|-------|--------|
 | [How to Talk to Anyone](how-to-talk-to-anyone.md) | Leil Lowndes | Social Skills | ⭐⭐⭐⭐⭐ |
 | [Algorithms to Live By](algorithms-to-live-by.md) | Brian Christian & Tom Griffiths | Decision-Making | ⭐⭐⭐⭐⭐ |
+| [12 Rules for Life](12-rules-for-life.md) | Jordan B. Peterson | Philosophy / Self-Development | ⭐⭐⭐⭐⭐ |

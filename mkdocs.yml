@@ -157,6 +157,10 @@ nav:
       - Overview: notes/media/overview.md
       - How to Talk to Anyone: notes/media/how-to-talk-to-anyone.md
       - Algorithms to Live By: notes/media/algorithms-to-live-by.md
+      - 12 Rules for Life: notes/media/12-rules-for-life.md
     - Warboard: notes/warboard.md
+    - Unfinished:
+      - Bash Course (YSAP): notes/unfinished/bash-course-ysap.md
+      - Footprinting: notes/unfinished/footprinting.md
   - About: about.md
 
