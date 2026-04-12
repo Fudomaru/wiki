@@ -46,3 +46,13 @@ They are my battleground for exploration and growth.
 Each write-up is a trace of the fight, the frustration, 
 and the moment when the lock finally turned.
 
+---
+
+## Platforms
+
+| Platform | Focus |
+|----------|-------|
+| [Hack The Box](htb/overview.md) | Lab machines, realistic environments, full attack chains |
+| [TryHackMe](thm/overview.md) | Guided rooms, structured learning paths |
+| [OverTheWire](overthewire/bandit.md) | Wargames, Linux fundamentals, CTF basics |
+
