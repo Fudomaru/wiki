@@ -138,7 +138,9 @@ nav:
     - OverTheWire:
       - Bandit: challenges/overthewire/bandit.md
       - Natas: challenges/overthewire/natas.md
-    - HTB: challenges/htb.md
+    - HTB:
+      - Overview: challenges/htb/overview.md
+      - TwoMillion: challenges/htb/twomillion.md
     - THM: 
       - Overview: challenges/thm/overview.md
       - Billing: challenges/thm/billing.md

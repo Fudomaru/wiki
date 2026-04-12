@@ -49,6 +49,7 @@ description: List of my plans for future write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newest pages are.  
 
+- Setting up HTB lab box section (2026-04)
 - Adding "12 Rules for Life" (2026-03)
 - Adding "Algorithms to live by" (2026-03)
 - Adding "How to talk to Anyone" (2026-03)
