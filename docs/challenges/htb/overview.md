@@ -20,4 +20,4 @@ The struggle is the point.
 
 | Machine | Difficulty | OS | Status |
 |---------|------------|----|--------|
-| [TwoMillion](twomillion.md) | Easy | Linux | In Progress |
+| [TwoMillion](twomillion.md) | Easy | Linux | Completed |
