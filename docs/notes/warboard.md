@@ -49,6 +49,8 @@ description: List of my plans for future write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newest pages are.  
 
+- Blue HTB box completed (2026-04)
+- Adding skeleton write-ups for Netmon, Jerry (2026-04)
 - TwoMillion HTB box completed (2026-04)
 - Setting up HTB lab box section (2026-04)
 - Adding "12 Rules for Life" (2026-03)

@@ -21,3 +21,4 @@ The struggle is the point.
 | Machine | Difficulty | OS | Status |
 |---------|------------|----|--------|
 | [TwoMillion](twomillion.md) | Easy | Linux | Completed |
+| [Blue](blue.md) | Easy | Windows | Completed |
