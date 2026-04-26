@@ -141,6 +141,7 @@ nav:
     - HTB:
       - Overview: challenges/htb/overview.md
       - TwoMillion: challenges/htb/twomillion.md
+      - Blue: challenges/htb/blue.md
     - THM: 
       - Overview: challenges/thm/overview.md
       - Billing: challenges/thm/billing.md
@@ -164,5 +165,7 @@ nav:
     - Unfinished:
       - Bash Course (YSAP): notes/unfinished/bash-course-ysap.md
       - Footprinting: notes/unfinished/footprinting.md
+      - HTB Netmon: notes/unfinished/netmon.md
+      - HTB Jerry: notes/unfinished/jerry.md
   - About: about.md
 
