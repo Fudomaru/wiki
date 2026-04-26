@@ -4474,6 +4474,24 @@ done
 <p>This will loop though the list of things and echo whatever the thing is at the moment, making it list everything on the list. </p>
 <p>bash -n - This is a syntex checker. It will only check if the if there is a syntex error, it will not run the script. 
 Whit "$?" you can check the error code of the last command. Everything exept a 0 is an error. </p>
+<h3 id="user-input">User Input</h3>
+<p>read : this will take user Input. Using -p 'prompt here' will use the prompt before asking for the name. After you give it the name of the variable to save it to. </p>
+<p>If you now pip something into the script it will use that as the answer to the read command, without even showing the prompt. </p>
+<p>excurse: This is why the 'yes' command exists, that only gives out 'y' over and over to help with this in certain situations. </p>
+<p>'$1' will give you the first argument someone puts behind the script when executing. </p>
+<p>if ...; then ... else : This is how a if syntex looks like in bash. </p>
+<p>if [[ -n $1 ]] will check if the there is a first argument give. </p>
+<p>Remember that you can use "help "["" for example to get information about almost all the things used in a bash script. </p>
+<p>Instead of using $1, $2, etc. you can use $@ and it will expand into an array with all the arguments that have been give, even if there is non, then it will be an empty array. </p>
+<h3 id="funktions">Funktions</h3>
+<p>´´´bash
+for name in "$@"; do
+  ./hello "$name"
+done
+´´´</p>
+<p>With this we take all the arguments and do a for loop for each one running the script hello that lives in the same directory. </p>
+<p>funktion() {} This is what a funktion looks like in bash. You should think about them like there own scripts you can call inside the script you are working on. Make sure to rememeber to use the "local" prefix for variables, since they are global even in funktions for bash. </p>
+<h3 id="conditionals">Conditionals</h3>
 
 
 
