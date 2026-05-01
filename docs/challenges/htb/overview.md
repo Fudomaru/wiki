@@ -22,3 +22,4 @@ The struggle is the point.
 |---------|------------|----|--------|
 | [TwoMillion](twomillion.md) | Easy | Linux | Completed |
 | [Blue](blue.md) | Easy | Windows | Completed |
+| [Jerry](jerry.md) | Easy | Windows | Completed |
