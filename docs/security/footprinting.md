@@ -1430,3 +1430,428 @@ hashcat -m 7300 ipmi.txt <wordlist>
 :::
 
 ---
+
+## Remote Management Protocols
+
+Remote management protocols let you control servers over the network without physical access. On Linux, the three main ones you'll encounter are SSH (the modern standard), Rsync (file sync that can leak data), and R-Services (legacy Unix protocols that are dangerously easy to abuse).
+
+---
+
+### SSH (Port 22)
+
+SSH (Secure Shell) establishes an encrypted tunnel between two hosts over TCP 22. The modern standard for remote access on Linux/macOS — it replaced everything insecure that came before it (Telnet, R-Services, FTP).
+
+**Port:** 22/tcp
+
+**Two protocol versions:**
+- **SSH-1** — outdated, vulnerable to MITM attacks
+- **SSH-2** — current standard: better encryption, speed, stability, no MITM vulnerability
+
+#### Authentication Methods
+
+OpenSSH supports six methods (ordered from most to least common in practice):
+
+| Method | How it works |
+|--------|-------------|
+| Password | User types password — server checks hash |
+| **Public key** | Client proves ownership of private key by solving a server-generated challenge |
+| Host-based | Trust based on source hostname |
+| Keyboard-interactive | Server sends custom prompt (MFA, OTP, etc.) |
+| Challenge-response | Cryptographic challenge (e.g. TOTP) |
+| GSSAPI | Kerberos/enterprise SSO integration |
+
+**Public key authentication (most important):**
+The server sends a cryptographic challenge encrypted with the client's public key. Only the holder of the matching private key can decrypt it and send back the correct response. Once authenticated, the user can connect to multiple servers in a session without re-entering credentials — only the passphrase for the local private key.
+
+#### Dangerous Settings (`/etc/ssh/sshd_config`)
+
+| Setting | Risk |
+|---------|------|
+| `PasswordAuthentication yes` | Enables brute-force against known usernames |
+| `PermitEmptyPasswords yes` | Accounts with no password are directly accessible |
+| `PermitRootLogin yes` | Root shell directly over SSH — no privilege escalation needed |
+| `Protocol 1` | Obsolete, vulnerable to MITM |
+| `X11Forwarding yes` | CVE-2016-3115 — command injection in OpenSSH 7.2p1 |
+| `AllowTcpForwarding yes` | Can be used for port tunneling into internal networks |
+
+#### Enumeration — ssh-audit
+
+`ssh-audit` fingerprints the server's supported algorithms and flags weak/deprecated ones:
+
+```bash
+git clone https://github.com/jtesta/ssh-audit.git && cd ssh-audit
+./ssh-audit.py <IP>
+```
+
+Returns: banner (version + OS build), supported key exchange algorithms, host key types, ciphers, MACs — any marked `[fail]` are weak.
+
+**Banner reading:**
+- `SSH-1.99-OpenSSH_3.9p1` → supports SSH-1 and SSH-2
+- `SSH-2.0-OpenSSH_8.2p1` → SSH-2 only
+
+**Version intel:** The OpenSSH version in the banner maps to a specific OS and patch level. Older versions carry known CVEs (e.g. CVE-2020-14145 in early SSH-2 implementations).
+
+#### Check Available Auth Methods
+
+```bash
+ssh -v cry0l1t3@<IP>
+# Look for: Authentications that can continue: publickey,password,keyboard-interactive
+```
+
+**Force password auth (for brute-force):**
+```bash
+ssh -v cry0l1t3@<IP> -o PreferredAuthentications=password
+```
+
+:::info CJCA Exam — SSH Must-Know
+**Port:** 22/tcp
+
+**Fingerprint the server:**
+```bash
+./ssh-audit.py <IP>
+```
+Look at: banner (version + OS), weak algorithms marked `[fail]`.
+
+**Check available auth methods:**
+```bash
+ssh -v <user>@<IP>
+```
+
+**Force password auth for brute-force:**
+```bash
+ssh -v <user>@<IP> -o PreferredAuthentications=password
+```
+
+**Dangerous settings to check:** `PasswordAuthentication yes` + `PermitRootLogin yes` = direct root brute-force possible.
+
+**SSH-1 vs SSH-2:** SSH-1 is MITM-vulnerable. Banner `SSH-2.0-*` = SSH-2 only. Banner `SSH-1.99-*` = both versions supported.
+
+**Attack path:** Banner grab → ssh-audit → check for password auth enabled → brute-force (or try defaults) → if root login allowed → game over.
+:::
+
+---
+
+### Rsync (Port 873)
+
+Rsync is a fast file synchronisation tool used for backups and mirroring. Its **delta-transfer algorithm** only sends the changed parts of files, making it very efficient. It runs on TCP 873 by default but can also run over SSH.
+
+**Port:** 873/tcp
+
+The key attack angle: Rsync **shares** (named directories) can sometimes be listed and downloaded **without authentication**. Backup systems are common Rsync targets — they often contain SSH keys, config files, and credential stores.
+
+#### Enumeration
+
+**Nmap — detect Rsync:**
+```bash
+sudo nmap -sV -p 873 <IP>
+```
+
+**Netcat — list available shares:**
+```bash
+nc -nv <IP> 873
+# After connection, type:
+#list
+```
+
+Returns a list of share names with descriptions — no authentication needed.
+
+**List contents of a specific share:**
+```bash
+rsync -av --list-only rsync://<IP>/<share>
+```
+
+Shows all files and directories in the share including permissions and timestamps.
+
+**Download everything from a share:**
+```bash
+rsync -av rsync://<IP>/<share> ./local_copy/
+```
+
+**Over SSH (non-standard port):**
+```bash
+rsync -av -e "ssh -p 2222" rsync://<IP>/<share> ./
+```
+
+#### What to Look For
+
+In directory listings, immediately check for:
+- `.ssh/` directories — private keys, authorized_keys
+- `*.yaml`, `*.conf`, `*.env` files — credentials, connection strings
+- Backup files — database dumps, config archives
+
+:::info CJCA Exam — Rsync Must-Know
+**Port:** 873/tcp
+
+**List shares (no auth required):**
+```bash
+nc -nv <IP> 873
+# then type: #list
+```
+
+**List share contents:**
+```bash
+rsync -av --list-only rsync://<IP>/<share>
+```
+
+**Download share:**
+```bash
+rsync -av rsync://<IP>/<share> ./loot/
+```
+
+**Red flags in directory listing:** `.ssh/` directory → grab private keys → use for SSH access. Config/yaml files → credentials → password reuse.
+
+**Attack path:** nmap 873 → nc list shares → rsync --list-only → spot .ssh/ or secrets → download → use credentials/keys elsewhere.
+:::
+
+---
+
+### R-Services (Ports 512 / 513 / 514)
+
+R-Services are a legacy suite of Unix remote management tools developed at UC Berkeley. Replaced by SSH because they transmit everything — including passwords — **in plaintext** and rely on trust files instead of real authentication.
+
+**Ports:** 512/tcp (`rexec`), 513/tcp (`rlogin`), 514/tcp (`rsh`/`rcp`)
+
+Still found in commercial Unix environments (Solaris, HP-UX, AIX) and occasionally on old internal Linux boxes.
+
+#### The Commands
+
+| Command | Daemon | Port | Description |
+|---------|--------|------|-------------|
+| `rlogin` | rlogind | 513 | Login to remote host — like Telnet but Unix-only |
+| `rsh` | rshd | 514 | Run commands on remote host — no login prompt |
+| `rcp` | rshd | 514 | Copy files bidirectionally — no overwrite warning |
+| `rexec` | rexecd | 512 | Execute commands — requires username/password over **unencrypted** socket |
+| `rwho` | rwhod | 513/UDP | List all logged-in users on local network |
+| `rusers` | — | — | Detailed user listing across network hosts |
+
+#### Trust Files — The Core Vulnerability
+
+R-Services bypass password authentication entirely using two trust files:
+
+**`/etc/hosts.equiv`** — system-wide trust (any user on a trusted host can log in):
+```
+# <hostname> <local username>
+pwnbox cry0l1t3
+```
+
+**`~/.rhosts`** — per-user trust:
+```
+htb-student  10.0.17.5
++            10.0.17.10   # any user from this IP
++            +            # any user from any host — completely open
+```
+
+The `+` wildcard is the critical misconfiguration. `+ +` in `.rhosts` = anyone can log in as this user from anywhere, with no credentials.
+
+#### Enumeration
+
+**Nmap:**
+```bash
+sudo nmap -sV -p 512,513,514 <IP>
+```
+
+**Login via rlogin (no password if .rhosts allows it):**
+```bash
+rlogin <IP> -l <username>
+```
+
+**List logged-in users across the network:**
+```bash
+rwho
+rusers -al <IP>
+```
+
+`rwho` periodically broadcasts user info on the network — passive sniffing can also collect this.
+
+:::info CJCA Exam — R-Services Must-Know
+**Ports:** 512/tcp (rexec) · 513/tcp (rlogin) · 514/tcp (rsh/rcp)
+
+**Scan:**
+```bash
+sudo nmap -sV -p 512,513,514 <IP>
+```
+
+**Login attempt (exploits .rhosts misconfiguration):**
+```bash
+rlogin <IP> -l <username>
+```
+
+**Key vulnerability:** `.rhosts` and `/etc/hosts.equiv` with `+ +` entries → no password required → instant shell.
+
+**Recon after login:**
+```bash
+rwho          # who's logged in on the network
+rusers -al <IP>  # detailed user info
+```
+
+**Why they matter:** Transmit everything in plaintext. Trust files can grant authentication bypass with zero credentials. Rare but worth checking — instantly exploitable when found.
+
+**Attack path:** nmap 512/513/514 → rlogin with target username → check if .rhosts grants access → shell without credentials → rwho/rusers for lateral movement targets.
+:::
+
+---
+
+### RDP (Port 3389)
+
+Remote Desktop Protocol — Microsoft's GUI remote access protocol. Gives you a full graphical desktop session on a remote Windows host. Built into every Windows version, enabled by default on Windows Server 2016+.
+
+**Port:** 3389/tcp (also 3389/udp for some admin tasks)
+
+RDP has used TLS/SSL encryption since Windows Vista. The problem: certificates are **self-signed by default**, so the client can't distinguish a real certificate from a forged one — it just warns the user. Many environments also still accept legacy RDP Security (unencrypted) even when TLS is configured.
+
+**NLA (Network Level Authentication):** Forces authentication before the full RDP session is established. Hardens the service by reducing the attack surface — unauthenticated attackers can't get to the Windows login screen. When NLA is enabled, credential-stuffing attacks must go through CredSSP rather than the GUI login prompt.
+
+#### Enumeration
+
+**Nmap with RDP scripts:**
+```bash
+nmap -sV -sC <IP> -p3389 --script rdp*
+```
+
+Returns from the nmap output:
+- NLA status (CredSSP supported = NLA enabled)
+- Hostname, domain name (from NTLM negotiation)
+- Windows version (`Product_Version: 10.0.17763` = Windows Server 2019)
+- System time
+
+**Note on detection:** Nmap uses `mstshash=nmap` in its RDP cookie. EDR and threat hunting tools can identify this. On hardened networks, the nmap scan itself may trigger alerts.
+
+**rdp-sec-check — enumerate supported security protocols:**
+```bash
+git clone https://github.com/CiscoCXSecurity/rdp-sec-check.git && cd rdp-sec-check
+./rdp-sec-check.pl <IP>
+```
+
+Returns whether the server supports PROTOCOL_RDP (legacy unencrypted), PROTOCOL_SSL (TLS), or PROTOCOL_HYBRID (NLA/CredSSP), and which encryption methods are accepted.
+
+#### Connect from Linux
+
+```bash
+xfreerdp /u:<user> /p:"<password>" /v:<IP>
+```
+
+Self-signed certificate warning is normal — type `y` to accept and proceed. Other options: `rdesktop`, `Remmina` (GUI).
+
+:::info CJCA Exam — RDP Must-Know
+**Port:** 3389/tcp
+
+**Enumerate:**
+```bash
+nmap -sV -sC <IP> -p3389 --script rdp*
+```
+Key intel from output: NLA enabled/disabled, hostname, Windows version.
+
+**Security check:**
+```bash
+./rdp-sec-check.pl <IP>
+```
+If `PROTOCOL_RDP: TRUE` → legacy unencrypted RDP is accepted — weaker target.
+
+**Connect from Linux:**
+```bash
+xfreerdp /u:<user> /p:"<password>" /v:<IP>
+```
+
+**NLA:** If enabled → authentication required before session starts → can't get to login screen without valid credentials. If disabled → login screen is exposed to brute-force.
+
+**Self-signed certs:** Default RDP uses self-signed certificates — certificate warnings are normal, not an indicator of MITM.
+
+**Attack path:** nmap rdp* → check NLA → brute-force if password auth enabled → xfreerdp to connect → full GUI desktop.
+:::
+
+---
+
+### WinRM (Ports 5985 / 5986)
+
+Windows Remote Management — Microsoft's command-line remote management protocol. Based on WS-Management (SOAP over HTTP/HTTPS). Primarily used for PowerShell remoting, remote script execution, and event log management.
+
+**Ports:**
+- **5985/tcp** — HTTP (most common in practice)
+- **5986/tcp** — HTTPS
+
+Must be explicitly enabled on Windows 10 and older servers. **Enabled by default from Windows Server 2012 onward.**
+
+#### Enumeration
+
+**Nmap:**
+```bash
+nmap -sV -sC <IP> -p5985,5986 --disable-arp-ping -n
+```
+
+A response on 5985 confirms WinRM is active. The service banner (`Microsoft HTTPAPI httpd 2.0`) also reveals the OS.
+
+**PowerShell (internal network — check reachability):**
+```powershell
+Test-WsMan <hostname>
+```
+
+#### Connect with evil-winrm (Linux)
+
+```bash
+evil-winrm -i <IP> -u <user> -p <password>
+```
+
+Drops you into a PowerShell prompt on the remote host:
+```
+*Evil-WinRM* PS C:\Users\<user>\Documents>
+```
+
+From here you have a full interactive PowerShell session — enumerate, execute commands, upload/download files.
+
+:::info CJCA Exam — WinRM Must-Know
+**Ports:** 5985/tcp (HTTP) · 5986/tcp (HTTPS)
+
+**Enumerate:**
+```bash
+nmap -sV -sC <IP> -p5985,5986
+```
+
+**Connect (Linux):**
+```bash
+evil-winrm -i <IP> -u <user> -p <password>
+```
+
+**What you get:** Interactive PowerShell session on the remote host.
+
+**Default on:** Windows Server 2012+. Must be enabled manually on Windows 10 and older servers.
+
+**Attack path:** nmap 5985/5986 → credentials found elsewhere (password reuse, dump) → evil-winrm → PowerShell shell.
+:::
+
+---
+
+### WMI (Port 135 + dynamic)
+
+Windows Management Instrumentation — Microsoft's primary interface for reading and writing almost any configuration on a Windows system. Runs on every Windows machine. Accessed via PowerShell, VBScript, or WMIC locally; over the network via port 135 (initial connection) + a random high port (actual communication).
+
+**Port:** 135/tcp (initial), then random high port for data transfer
+
+WMI gives read/write access to processes, services, registry, hardware state, event logs, users, network config, installed software — nearly everything. For a pentester with valid credentials, it's a direct path to command execution.
+
+#### Remote Execution with wmiexec.py
+
+```bash
+impacket-wmiexec <user>:"<password>"@<IP> "<command>"
+
+# Example:
+impacket-wmiexec Cry0l1t3:"P455w0rD!"@10.129.201.248 "hostname"
+```
+
+Returns the command output directly. Uses SMBv3 under the hood. Useful for single-command execution when you have credentials but don't need a full interactive shell.
+
+:::info CJCA Exam — WMI Must-Know
+**Port:** 135/tcp initial, then random port
+
+**Remote command execution:**
+```bash
+impacket-wmiexec <user>:"<password>"@<IP> "<command>"
+```
+
+**What it gives you:** Authenticated command execution on any Windows host where WMI is reachable and credentials are valid.
+
+**Why it matters:** No dedicated service to enable — WMI runs on every Windows machine. If you have credentials + network access to port 135, you have remote code execution.
+
+**Attack path:** Credentials found → wmiexec.py → command execution → enumerate/escalate.
+:::
+
+---

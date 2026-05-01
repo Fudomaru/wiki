@@ -99,12 +99,13 @@ nav:
   - Security:
     - Overview: security/overview.md
     - Fundamentals: security/fundamentals.md
-    - Pentesting: 
+    - Pentesting:
       - Fundamentals: security/pentesting/fundamentals.md
       - Types: security/pentesting/types.md
       - Structure: security/pentesting/structure.md
       - Skills: security/pentesting/skills.md
       - Methodolgies: security/pentesting/methodologies.md
+    - Footprinting: security/footprinting.md
     - Exploits:
       - Overview: security/exploits/overview.md
       - XSS: security/exploits/xss.md
@@ -164,7 +165,6 @@ nav:
     - Warboard: notes/warboard.md
     - Unfinished:
       - Bash Course (YSAP): notes/unfinished/bash-course-ysap.md
-      - Footprinting: notes/unfinished/footprinting.md
       - HTB Netmon: notes/unfinished/netmon.md
       - HTB Jerry: notes/unfinished/jerry.md
   - About: about.md

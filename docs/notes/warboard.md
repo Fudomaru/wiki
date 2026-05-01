@@ -49,6 +49,7 @@ description: List of my plans for future write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newest pages are.  
 
+- HTB Footprinting module full write-up completed (2026-05)
 - Blue HTB box completed (2026-04)
 - Adding skeleton write-ups for Netmon, Jerry (2026-04)
 - TwoMillion HTB box completed (2026-04)

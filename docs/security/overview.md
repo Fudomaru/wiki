@@ -19,7 +19,8 @@ that reveal how systems break and how they hold.
 ## What belongs here
 
 - [**Fundamentals**](fundamentals.md) → core security principles, models, and mental frameworks.  
-- [**Pentesting**](pentesting/fundamentals.md) → full explanations of everything I need to know about pentesting, the ethics, rules, structure, and everything else important. 
+- [**Pentesting**](pentesting/fundamentals.md) → full explanations of everything I need to know about pentesting, the ethics, rules, structure, and everything else important.  
+- [**Footprinting**](footprinting.md) → deep-dive into the full enumeration methodology: infrastructure, host, and OS enumeration covering all major services and protocols.  
 - [**Toolbelt**](toolbelt/overview.md) → the utilities I train with: scanners, proxies, sniffers, exploit frameworks.  
 - [**Playbooks**](playbooks/overview.md) → practical flows: recon, enumeration, exploitation, post-exploitation, and the obstacles that shut each down.  
 - [**Exploits**](exploits/overview.md) → small Overview of Vulnerability types that I try to understand to build up general knowledge, and learn mitigations to what happens often.
