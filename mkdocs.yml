@@ -145,7 +145,8 @@ nav:
       - Blue: challenges/htb/blue.md
       - Jerry: challenges/htb/jerry.md
       - Netmon: challenges/htb/netmon.md
-    - THM: 
+      - Devel: challenges/htb/devel.md
+    - THM:
       - Overview: challenges/thm/overview.md
       - Billing: challenges/thm/billing.md
   - Projects:

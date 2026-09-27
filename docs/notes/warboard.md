@@ -26,7 +26,6 @@ description: List of my plans for future write ups and general project ideas.
     Mental RAM.  
     The stuff I am actively thinking on how to put them in.  
 
-- Doing a DeepDive with practice of `schtaks`
 - Write section on setuid, openssl, permissions in linux
 - Explaining where I stand in my Nvim Journey
 - Building CAIDO Overview page
@@ -49,6 +48,8 @@ description: List of my plans for future write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newest pages are.  
 
+- Schtasks deep-dive completed with practice (2026-08)
+- Devel HTB box completed (2026-06)
 - Netmon HTB box completed (2026-05)
 - Jerry HTB box completed (2026-05)
 - HTB Footprinting module full write-up completed (2026-05)
