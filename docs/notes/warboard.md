@@ -48,6 +48,7 @@ description: List of my plans for future write ups and general project ideas.
 ??? info
     Trying to keep a brief history and show of what the newest pages are.  
 
+- Connected HTB box completed (2026-09)
 - Schtasks deep-dive completed with practice (2026-08)
 - Devel HTB box completed (2026-06)
 - Netmon HTB box completed (2026-05)

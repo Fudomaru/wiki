@@ -146,6 +146,7 @@ nav:
       - Jerry: challenges/htb/jerry.md
       - Netmon: challenges/htb/netmon.md
       - Devel: challenges/htb/devel.md
+      - Connected: challenges/htb/connected.md
     - THM:
       - Overview: challenges/thm/overview.md
       - Billing: challenges/thm/billing.md

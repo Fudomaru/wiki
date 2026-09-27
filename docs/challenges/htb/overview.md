@@ -25,3 +25,4 @@ The struggle is the point.
 | [Jerry](jerry.md) | Easy | Windows | Completed |
 | [Netmon](netmon.md) | Easy | Windows | Completed |
 | [Devel](devel.md) | Easy | Windows | Completed |
+| [Connected](connected.md) | Easy | Linux | Completed |
