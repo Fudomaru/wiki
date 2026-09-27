@@ -1,43 +1,45 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# === Step 1: Define base directory relative to script ===
-SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+# ---
+# Deploy Script
+#
+# Orchestrates a full publish:
+#   1. validate the site builds in strict mode (fail loud, before anything else)
+#   2. commit and push the source to GitHub
+#   3. publish the built site to GitHub Pages
+# ---
+
+set -euo pipefail
+
+# === Locate the wiki root relative to this script ===
+SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &>/dev/null && pwd )"
 WIKI_ROOT="$( realpath "$SCRIPT_PATH/.." )"
-cd "$WIKI_ROOT" || { echo "❌ Could not cd to wiki root"; exit 1; }
+cd "$WIKI_ROOT"
+
+# === Step 1: Validate the build BEFORE touching git (strict, fail-fast) ===
+"$WIKI_ROOT/bin/lib/check-build.sh"
 
 # === Step 2: Handle commit message ===
-if [[ -n "$1" && ! "$1" =~ ^[[:space:]]*$ ]]; then
+if [[ -n "${1:-}" && ! "$1" =~ ^[[:space:]]*$ ]]; then
     message="$1"
 else
     read -rp "Enter commit message: " message
 fi
 
-# === Step 3: Git commit and push ===
-echo "📦 Adding changes..."
+# === Step 3: Commit (only if there is something to commit) and push ===
+echo "📦 Staging changes..."
 git add .
-git commit -m "$message"
-if [[ $? -eq 0 ]]; then
-    echo "✅ Commit successful"
+if git diff --cached --quiet; then
+    echo "ℹ️  No changes to commit — deploying current state."
 else
-    echo "⚠️ Commit failed or nothing to commit"
+    git commit -m "$message"
+    echo "✅ Commit successful"
 fi
 
 echo "🚀 Pushing to GitHub..."
 git push
-if [[ $? -eq 0 ]]; then
-    echo "✅ Push successful"
-else
-    echo "❌ Push failed"
-    exit 1
-fi
+echo "✅ Push successful"
 
-# === Step 4: Deploy with MkDocs ===
+# === Step 4: Publish to GitHub Pages ===
 "$WIKI_ROOT/bin/lib/deploy-site.sh"
-
-if [[ $? -eq 0 ]]; then
-    echo "✅ Deployment successful"
-else
-    echo "❌ Deployment failed"
-    exit 1
-fi
-
+echo "✅ Deployment successful"

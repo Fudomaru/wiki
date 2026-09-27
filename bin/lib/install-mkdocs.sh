@@ -4,6 +4,11 @@
 
 set -euo pipefail
 
+# Resolve the repo root from this script's own location, so the installer
+# works no matter what directory it is invoked from.
+SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &>/dev/null && pwd )"
+WIKI_ROOT="$( realpath "$SCRIPT_PATH/../.." )"
+
 VENV_DIR="$HOME/.mkdocs-env"
 
 if [[ ! -d "$VENV_DIR" ]]; then
@@ -17,7 +22,7 @@ echo "Activating virtual environment and installing/upgrading dependencies..."
 source "$VENV_DIR/bin/activate"
 
 pip install --upgrade pip
-pip install mkdocs mkdocs-material
+pip install -r "$WIKI_ROOT/requirements.txt"
 
 deactivate
 

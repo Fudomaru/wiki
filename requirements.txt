@@ -1,0 +1,10 @@
+# Pinned build dependencies for the Digital Dojo (MkDocs + Material).
+#
+# Why exact pins: reproducible builds across machines, and protection from
+# the incompatible MkDocs 2.0 rewrite. Material for MkDocs does NOT run on
+# MkDocs 2.0 — keep this on the 1.x line until migrating to Zensical.
+# Bump these deliberately (test `mkdocs build --strict` after), never blindly.
+
+mkdocs==1.6.1
+mkdocs-material==9.7.5
+pymdown-extensions==10.21

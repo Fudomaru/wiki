@@ -27,43 +27,45 @@ command_exists() {
 }
 
 # --- Main Functions ---
-check_for_git() {
-  print_header "Step 1: Checking for Git"
-  if ! command_exists "git"; then
-    echo "Error: Git is not installed. Please install Git and run this script again." >&2
-    exit 1
-  fi
-  echo "✅ Git is installed."
-}
-
 clone_repository() {
-  print_header "Step 2: Cloning Repository"
+  print_header "Step 1: Cloning Repository"
   if [ -d "$INSTALL_DIR" ]; then
     echo "✅ Directory '$INSTALL_DIR' already exists. Skipping clone."
   else
+    # Git is required to fetch the repo. The formal check lives in
+    # bin/lib/check-git.sh, but that file is inside the repo we have not
+    # cloned yet — so this single precondition has to be inline.
+    if ! command_exists "git"; then
+      echo "Error: Git is not installed. Please install Git and run this script again." >&2
+      exit 1
+    fi
     echo "Cloning repository from '$REPO_URL' into '$INSTALL_DIR'..."
     git clone "$REPO_URL" "$INSTALL_DIR"
     echo "✅ Repository cloned successfully."
   fi
 }
 
-setup_project() {
-  print_header "Step 3: Setting Up Project Dependencies"
+verify_toolchain() {
+  print_header "Step 2: Verifying Toolchain"
   cd "$INSTALL_DIR"
-
-  echo "🔎 Checking for Python..."
+  echo "🔎 Verifying required tools..."
+  ./bin/lib/check-git.sh
   ./bin/lib/check-python.sh
-  echo "✅ Python check passed."
+  echo "✅ Toolchain present (git, python3)."
+}
 
-  echo "🐍 Installing MkDocs and dependencies..."
+install_dependencies() {
+  print_header "Step 3: Installing Dependencies"
+  cd "$INSTALL_DIR"
+  echo "🐍 Installing MkDocs and pinned dependencies..."
   ./bin/lib/install-mkdocs.sh
 }
 
 # --- Main Execution ---
 main() {
-  check_for_git
   clone_repository
-  setup_project
+  verify_toolchain
+  install_dependencies
 
   print_header "🎉 Bootstrap Complete! 🎉"
   echo "The project is now set up in '$INSTALL_DIR'."
