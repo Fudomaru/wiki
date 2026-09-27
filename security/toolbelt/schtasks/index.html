@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A deep dive into the Windows Task Scheduler.">
+        <meta name="description" content="A deep dive into the Windows Task Scheduler from the command line — anatomy, core operations, why it is abused, and the events that give it away.">
       
       
         <meta name="author" content="Fudomaru">
@@ -2382,66 +2382,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-functions-of-schtasks" class="md-nav__link">
+  <a href="#anatomy-of-a-task" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Functions of Schtasks
+        Anatomy of a Task
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Core Functions of Schtasks">
+    <nav class="md-nav" aria-label="Anatomy of a Task">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-create-a-task" class="md-nav__link">
+  <a href="#where-tasks-actually-live" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Create a Task
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-query-tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Query Tasks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-run-a-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Run a Task
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-delete-a-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Delete a Task
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-change-a-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Change a Task
+        Where tasks actually live
       
     </span>
   </a>
@@ -2454,22 +2410,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-think-about-schtasks" class="md-nav__link">
+  <a href="#core-operations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to Think About Schtasks
+        Core Operations
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How to Think About Schtasks">
+    <nav class="md-nav" aria-label="Core Operations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#offensive-perspective-red-team" class="md-nav__link">
+  <a href="#create" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Offensive Perspective (Red Team)
+        Create
       
     </span>
   </a>
@@ -2477,10 +2433,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#defensive-perspective-blue-team" class="md-nav__link">
+  <a href="#query" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Defensive Perspective (Blue Team)
+        Query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-change-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run, Change, Delete
       
     </span>
   </a>
@@ -2493,13 +2460,80 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integration-with-workflow" class="md-nav__link">
+  <a href="#offensive-practice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Integration with Workflow
+        Offensive Practice
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Offensive Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof-of-mechanism-harmless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proof of mechanism (harmless)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defensive-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defensive Practice
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defensive Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hunt-the-task-store-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hunt the task store directly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Harden
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3369,6 +3403,34 @@
     
   
     Netmon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../challenges/htb/devel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Devel
   
 
     
@@ -4256,66 +4318,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-functions-of-schtasks" class="md-nav__link">
+  <a href="#anatomy-of-a-task" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Functions of Schtasks
+        Anatomy of a Task
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Core Functions of Schtasks">
+    <nav class="md-nav" aria-label="Anatomy of a Task">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-create-a-task" class="md-nav__link">
+  <a href="#where-tasks-actually-live" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Create a Task
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-query-tasks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Query Tasks
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-run-a-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Run a Task
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-delete-a-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Delete a Task
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-change-a-task" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Change a Task
+        Where tasks actually live
       
     </span>
   </a>
@@ -4328,22 +4346,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-think-about-schtasks" class="md-nav__link">
+  <a href="#core-operations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How to Think About Schtasks
+        Core Operations
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How to Think About Schtasks">
+    <nav class="md-nav" aria-label="Core Operations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#offensive-perspective-red-team" class="md-nav__link">
+  <a href="#create" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Offensive Perspective (Red Team)
+        Create
       
     </span>
   </a>
@@ -4351,10 +4369,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#defensive-perspective-blue-team" class="md-nav__link">
+  <a href="#query" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Defensive Perspective (Blue Team)
+        Query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-change-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run, Change, Delete
       
     </span>
   </a>
@@ -4367,13 +4396,80 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integration-with-workflow" class="md-nav__link">
+  <a href="#offensive-practice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Integration with Workflow
+        Offensive Practice
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Offensive Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proof-of-mechanism-harmless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proof of mechanism (harmless)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defensive-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defensive Practice
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defensive Practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hunt-the-task-store-directly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hunt the task store directly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#harden" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Harden
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4483,74 +4579,204 @@
 
 
 <h1 id="schtasks">Schtasks</h1>
-<p><code>schtasks.exe</code> is a Windows command-line utility used to manage scheduled tasks on a local or remote computer. It allows users to create, delete, query, change, run, and end scheduled tasks. </p>
-<p>While it is a legitimate and powerful tool for system administration, it is also frequently abused by malicious actors for persistence, privilege escalation, and lateral movement. This dual-use nature makes it a critical tool to understand for both offensive and defensive security practitioners.</p>
-<details class="info">
-<summary>Note on spelling</summary>
-<p>The term "schtaks" was used in the warboard, which is a common misspelling of <code>schtasks</code>. This page uses the correct spelling.</p>
-</details>
+<p><code>schtasks.exe</code> is the command-line front end to the Windows Task Scheduler. It creates, queries, changes, runs, ends, and deletes scheduled tasks on a local or remote machine. Every Windows box ships with it, every administrator relies on it, and it shows up constantly in incident reports.</p>
+<p>That last point is why it earns a page here. <code>schtasks</code> is a textbook <strong>LOLBAS</strong> — Living Off The Land Binary. It is signed, trusted, and already present, so a task it launches blends into the noise of normal administration. Understanding it in depth means understanding one of the most common persistence primitives on Windows — and, more usefully for the defender, knowing exactly where it leaves fingerprints.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td>Built-in Windows utility (LOLBAS)</td>
+</tr>
+<tr>
+<td><strong>Binary</strong></td>
+<td><code>C:\Windows\System32\schtasks.exe</code></td>
+</tr>
+<tr>
+<td><strong>ATT&amp;CK</strong></td>
+<td><a href="https://attack.mitre.org/techniques/T1053/005/">T1053.005 — Scheduled Task</a></td>
+</tr>
+<tr>
+<td><strong>Task store</strong></td>
+<td><code>C:\Windows\System32\Tasks\</code> + registry</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="why-schtasks-matters">Why Schtasks Matters</h2>
 <ul>
-<li><strong>Red Teaming / Pentesting:</strong> <code>schtasks</code> is a go-to tool for establishing persistence on a compromised host. A reverse shell can be scheduled to run at regular intervals, ensuring continued access.</li>
-<li><strong>Blue Teaming / Defense:</strong> Monitoring <code>schtasks</code> usage is crucial for detecting malicious activity. Unusual task creation or modification can be an indicator of compromise.</li>
-<li><strong>Living Off The Land (LOLBAS):</strong> As a built-in Windows utility, <code>schtasks</code> is a prime example of a LOLBAS. Attackers can use it to blend in with normal administrative activity, making detection more difficult.</li>
+<li><strong>Persistence:</strong> A task that fires at logon, at boot, or on a timer survives reboots without touching a service or an autorun key everyone already watches. This is the single most common reason it appears in intrusions.</li>
+<li><strong>Privilege context:</strong> Tasks can be registered to run as <code>SYSTEM</code>, so an admin-level foothold can schedule work at the highest privilege on the box.</li>
+<li><strong>Remote reach:</strong> <code>schtasks /s</code> targets another host, which is why it turns up in lateral-movement chains alongside tools like PsExec.</li>
+<li><strong>Detection:</strong> Task creation and execution are logged, and every task lands on disk and in the registry. Knowing where to look turns this from a blind spot into a hunting surface — the heart of this page.</li>
 </ul>
+<p><code>schtasks</code> doesn't break anything on its own. It is a scheduler. The security weight is entirely in <em>what</em> gets scheduled and <em>as whom</em> — which is precisely what a defender inspects.</p>
 <hr />
-<h2 id="core-functions-of-schtasks">Core Functions of Schtasks</h2>
-<h3 id="1-create-a-task">1. Create a Task</h3>
+<h2 id="anatomy-of-a-task">Anatomy of a Task</h2>
+<p>Most of the power lives in a handful of flags on <code>/create</code>. These are the ones worth knowing on sight — as much for reading a suspicious task as for writing a legitimate one:</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/tn</code></td>
+<td><strong>T</strong>ask <strong>n</strong>ame (can include a folder path, e.g. <code>\Backups\Nightly</code>)</td>
+</tr>
+<tr>
+<td><code>/tr</code></td>
+<td><strong>T</strong>ask <strong>r</strong>un — the program or command line to execute</td>
+</tr>
+<tr>
+<td><code>/sc</code></td>
+<td><strong>Sc</strong>hedule type: <code>MINUTE</code>, <code>HOURLY</code>, <code>DAILY</code>, <code>ONLOGON</code>, <code>ONSTART</code>, <code>ONIDLE</code></td>
+</tr>
+<tr>
+<td><code>/mo</code></td>
+<td><strong>Mo</strong>difier — the interval (e.g. <code>/sc MINUTE /mo 5</code> = every 5 minutes)</td>
+</tr>
+<tr>
+<td><code>/st</code></td>
+<td><strong>S</strong>tart <strong>t</strong>ime (<code>HH:MM</code>)</td>
+</tr>
+<tr>
+<td><code>/ru</code></td>
+<td><strong>R</strong>un as <strong>u</strong>ser — a named account, a service account, or <code>SYSTEM</code></td>
+</tr>
+<tr>
+<td><code>/rp</code></td>
+<td><strong>R</strong>un <strong>p</strong>assword for that user</td>
+</tr>
+<tr>
+<td><code>/rl</code></td>
+<td><strong>R</strong>un <strong>l</strong>evel — <code>LIMITED</code> or <code>HIGHEST</code></td>
+</tr>
+<tr>
+<td><code>/s</code></td>
+<td>Target <strong>s</strong>ystem — a remote host</td>
+</tr>
+<tr>
+<td><code>/u</code> <code>/p</code></td>
+<td>Credentials to authenticate to the remote <code>/s</code> host</td>
+</tr>
+<tr>
+<td><code>/f</code></td>
+<td><strong>F</strong>orce — overwrite an existing task without prompting</td>
+</tr>
+</tbody>
+</table>
+<h3 id="where-tasks-actually-live">Where tasks actually live</h3>
+<p>A registered task is not just an abstract entry — it exists in two concrete places, and both matter for triage and cleanup:</p>
 <ul>
-<li>Creates a new scheduled task.</li>
-<li>Command example: <code>schtasks /create /sc minute /mo 1 /tn "My Task" /tr "C:\path\to\my.exe"</code></li>
+<li><strong>On disk:</strong> an XML file at <code>C:\Windows\System32\Tasks\&lt;TaskName&gt;</code> (subfolders map to the task's folder path).</li>
+<li><strong>In the registry:</strong> under
+  <code>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\</code>
+  with the task definition mirrored under <code>\Tasks\{GUID}</code>.</li>
 </ul>
-<h3 id="2-query-tasks">2. Query Tasks</h3>
-<ul>
-<li>Displays all scheduled tasks on the system.</li>
-<li>Command example: <code>schtasks /query</code></li>
-</ul>
-<h3 id="3-run-a-task">3. Run a Task</h3>
-<ul>
-<li>Manually runs a scheduled task.</li>
-<li>Command example: <code>schtasks /run /tn "My Task"</code></li>
-</ul>
-<h3 id="4-delete-a-task">4. Delete a Task</h3>
-<ul>
-<li>Deletes a scheduled task.</li>
-<li>Command example: <code>schtasks /delete /tn "My Task"</code></li>
-</ul>
-<h3 id="5-change-a-task">5. Change a Task</h3>
-<ul>
-<li>Modifies the properties of a task, such as the program it runs or the schedule.</li>
-<li>Command example: <code>schtasks /change /tn "My Task" /tr "C:\new\path\to\my.exe"</code></li>
-</ul>
+<p>A task present in one location but not the other is a broken — and suspicious — state. See the <a href="../../../foundations/windows/winregistry/">Windows Registry deep dive</a> for how these keys are laid out.</p>
 <hr />
-<h2 id="how-to-think-about-schtasks">How to Think About Schtasks</h2>
-<h3 id="offensive-perspective-red-team">Offensive Perspective (Red Team)</h3>
-<ul>
-<li><strong>Persistence:</strong> Create a scheduled task to run a payload at system startup or on a recurring basis.</li>
-<li><strong>Privilege Escalation:</strong> If you have administrative privileges, you can create tasks that run with <code>SYSTEM</code> privileges.</li>
-<li><strong>Lateral Movement:</strong> Use <code>schtasks</code> to create tasks on remote systems, allowing you to execute code and spread through a network.</li>
-</ul>
-<h3 id="defensive-perspective-blue-team">Defensive Perspective (Blue Team)</h3>
-<ul>
-<li><strong>Monitor Task Creation:</strong> Look for suspicious task creation events in the Windows Event Logs (Event ID 4698).</li>
-<li><strong>Analyze Task Properties:</strong> Regularly review scheduled tasks for suspicious names, executables, or run times.</li>
-<li><strong>Harden Configurations:</strong> Use Group Policy to restrict who can create scheduled tasks.</li>
-</ul>
+<h2 id="core-operations">Core Operations</h2>
+<h3 id="create">Create</h3>
+<div class="highlight"><pre><span></span><code>schtasks /create /sc DAILY /st 02:00 /tn &quot;Backups\Nightly&quot; /tr &quot;C:\scripts\backup.cmd&quot;
+</code></pre></div>
+<h3 id="query">Query</h3>
+<p>Listing every task is noisy; the flags that make it useful:</p>
+<div class="highlight"><pre><span></span><code>schtasks /query /fo LIST /v                 :: verbose, one block per task
+schtasks /query /tn &quot;Backups\Nightly&quot; /xml  :: dump the task&#39;s full XML definition
+</code></pre></div>
+<p><code>/v</code> reveals the fields that matter in triage: <strong>Run As User</strong>, <strong>Task To Run</strong>, <strong>Schedule</strong>, and <strong>Last/Next Run Time</strong> — exactly what you check when a task looks out of place.</p>
+<h3 id="run-change-delete">Run, Change, Delete</h3>
+<div class="highlight"><pre><span></span><code>schtasks /run    /tn &quot;Backups\Nightly&quot;                          :: fire it now
+schtasks /change /tn &quot;Backups\Nightly&quot; /tr &quot;C:\scripts\new.cmd&quot; :: repoint the target
+schtasks /delete /tn &quot;Backups\Nightly&quot; /f                       :: remove it (/f = no prompt)
+</code></pre></div>
+<p><code>/change</code> is worth flagging: it repoints the <code>/tr</code> of an <em>existing</em> task. From a defender's view this means a long-lived, trusted task quietly starting to run something new is just as worth investigating as a brand-new one — the creation event is not the only signal.</p>
 <hr />
-<h2 id="integration-with-workflow">Integration with Workflow</h2>
+<h2 id="offensive-practice">Offensive Practice</h2>
+<div class="admonition warning">
+<p class="admonition-title">Lab context</p>
+<p>The points below describe <em>why</em> attackers reach for <code>schtasks</code>, at a conceptual level, so you can recognise the pattern in a lab or an investigation. They are not a deployment recipe. Practise only on machines you own or are explicitly authorised to test.</p>
+</div>
+<p>Three properties make the scheduler attractive to an attacker, and each maps to something a defender can watch for:</p>
 <ul>
-<li><strong>SIEM:</strong> Forward <code>schtasks</code> related events to your SIEM for correlation and alerting.</li>
-<li><strong>Automation:</strong> Use scripts to automate the review of scheduled tasks across your environment.</li>
+<li><strong>Run at a trigger.</strong> <code>ONLOGON</code> and <code>ONSTART</code> schedules re-launch something automatically after a reboot — the mechanical basis of persistence. The tell is a task whose action is a script, a LOLBin, or a binary in a user-writable path rather than a signed program under <code>Program Files</code>.</li>
+<li><strong>Run as SYSTEM.</strong> With admin rights a task can be registered under the SYSTEM account. The tell is any non-Microsoft task whose <em>Run As User</em> is <code>SYSTEM</code>.</li>
+<li><strong>Repoint an existing task.</strong> As noted above, <code>/change</code> alters what a trusted task runs, which is stealthier than a new task. The tell is a modification to a task's action long after it was created.</li>
+</ul>
+<h3 id="proof-of-mechanism-harmless">Proof of mechanism (harmless)</h3>
+<p>To <em>see</em> persistence fire without any payload, register a task that simply appends a timestamp to a marker file at each logon, then inspect it and clean up:</p>
+<div class="highlight"><pre><span></span><code>schtasks /create /sc ONLOGON /tn &quot;LabDemo\Marker&quot; ^
+  /tr &quot;cmd /c echo %DATE% %TIME% &gt;&gt; C:\Temp\lab-marker.txt&quot;
+
+schtasks /query  /tn &quot;LabDemo\Marker&quot; /fo LIST /v
+:: log off and back on, then check C:\Temp\lab-marker.txt
+
+schtasks /delete /tn &quot;LabDemo\Marker&quot; /f
+</code></pre></div>
+<p>That is enough to internalise the create → trigger → verify loop. The marker file stands in for whatever an attacker would schedule; the value here is understanding the mechanism and, more importantly, what it leaves behind — which the next section reads back.</p>
+<hr />
+<h2 id="defensive-practice">Defensive Practice</h2>
+<p>This is where the tool pays off. Every operation above is observable.</p>
+<h3 id="event-log">Event log</h3>
+<p>The Security log records the lifecycle of a task (audit policy permitting):</p>
+<table>
+<thead>
+<tr>
+<th>Event ID</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>4698</strong></td>
+<td>A scheduled task was <strong>created</strong></td>
+</tr>
+<tr>
+<td><strong>4699</strong></td>
+<td>A scheduled task was <strong>deleted</strong></td>
+</tr>
+<tr>
+<td><strong>4700 / 4701</strong></td>
+<td>A task was <strong>enabled / disabled</strong></td>
+</tr>
+<tr>
+<td><strong>4702</strong></td>
+<td>A scheduled task was <strong>updated</strong> (the <code>/change</code> signal)</td>
+</tr>
+</tbody>
+</table>
+<p>Richer detail sits in the dedicated operational channel:
+<code>Microsoft-Windows-TaskScheduler/Operational</code> — task registration, every run, and completion, with the action and account attached.</p>
+<h3 id="hunt-the-task-store-directly">Hunt the task store directly</h3>
+<p>Events can be cleared; the task itself has to exist to run. Enumerate and read the definitions:</p>
+<div class="highlight"><pre><span></span><code>schtasks /query /fo LIST /v &gt; C:\Temp\tasks.txt
+</code></pre></div>
+<p>Then sort for the tells from the offensive section: a <code>Run As User</code> of <code>SYSTEM</code> on a non-Microsoft task, an action pointing at a script or a user-writable directory, a <code>\Tasks\</code> XML file with no matching registry entry, or a recent write time on an old task. Cross-reference disk (<code>C:\Windows\System32\Tasks\</code>) against the registry <code>TaskCache</code> tree — a mismatch is a strong lead.</p>
+<h3 id="harden">Harden</h3>
+<ul>
+<li>Restrict who may register tasks via Group Policy (<code>Log on as a batch job</code> / task-scheduler rights).</li>
+<li>Turn on <strong>auditing of object access / other policy change</strong> so 4698-family events are actually written.</li>
+<li>Forward the Security and <code>TaskScheduler/Operational</code> logs to your SIEM and alert on 4698 for <code>SYSTEM</code>-context tasks. See the <a href="../../../foundations/windows/eventviewer/">Event Viewer deep dive</a> for working with these channels.</li>
 </ul>
 <hr />
 <h2 id="key-takeaway">Key Takeaway</h2>
-<p><code>schtasks</code> is a powerful and versatile tool that can be used for both good and evil. Understanding its capabilities and how it can be abused is essential for any security professional. Whether you are on the offensive or defensive side, <code>schtasks</code> is a tool that you need to have in your arsenal.</p>
+<p><code>schtasks</code> is dual-use by nature: the same command that schedules a nightly backup can plant persistence that outlives a reboot. There is no patch for that — the scheduler is <em>supposed</em> to run programs on triggers. The leverage for a defender is that the tool is loud when you know where it speaks: two files (disk + registry), a handful of Event IDs, and a dedicated operational log. Learn to read a task's <em>Run As User</em>, <em>action</em>, and <em>trigger</em> at a glance, and a suspicious one stops hiding.</p>
 <hr />
 <h2 id="integration">Integration</h2>
 <ul>
 <li><a href="../../../foundations/windows/cli-magic/">Windows CLI Magic</a></li>
+<li><a href="../../../foundations/windows/winregistry/">Windows Registry</a></li>
+<li><a href="../../../foundations/windows/eventviewer/">Windows Event Log</a></li>
 <li><a href="../../privilege-escalation/">Privilege Escalation</a></li>
+<li><a href="../metasploit/">Metasploit</a></li>
 </ul>
 
 
