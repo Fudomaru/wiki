@@ -40,7 +40,7 @@ So I did have to figure out what the right way was.
 I wanted to improve in figuring out this the right way, so instead of looking it up online, I opened the man pages.  
 And shortly after that I found it.  
 I had to use a -p flag to give it the port to use. So I got connected with:  
-`ssh -p bandit0@bandit.labs.overthewire.org:2220`  
+`ssh -p 2220 bandit0@bandit.labs.overthewire.org`  
 
 So I was connected.  
 It was a nice greeting in consol, giving a bit more information on the game.  
