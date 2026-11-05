@@ -156,6 +156,7 @@ nav:
       - Overview: projects/digital-dojo/overview.md
       - PowerShell Autodeploy: projects/digital-dojo/01-powershell-autodeploy.md
       - Scripting Upgrade: projects/digital-dojo/02-scripting-upgrade.md
+      - Publishing Workflow: projects/digital-dojo/03-publishing-workflow.md
     - EchoSnare: projects/echosnare.md
     - Void Linux: projects/void_linux.md
   - Notes:
