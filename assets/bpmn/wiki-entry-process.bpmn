@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+  id="Definitions_WikiEntry" targetNamespace="https://github.com/fudomaru/wiki">
+  <bpmn:process id="Process_WikiEntry" name="Publishing a wiki entry" isExecutable="false">
+    <bpmn:startEvent id="Start_Topic" name="Topic to document found">
+      <bpmn:outgoing>F_Start</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:exclusiveGateway id="Gw_Merge">
+      <bpmn:incoming>F_Start</bpmn:incoming>
+      <bpmn:incoming>F_Errors</bpmn:incoming>
+      <bpmn:incoming>F_Broken</bpmn:incoming>
+      <bpmn:outgoing>F_ToWrite</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_Write" name="Write or fix entry">
+      <bpmn:incoming>F_ToWrite</bpmn:incoming>
+      <bpmn:outgoing>F_ToReread</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_Reread" name="Reread entry for errors">
+      <bpmn:incoming>F_ToReread</bpmn:incoming>
+      <bpmn:outgoing>F_ToCheck</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gw_Errors" name="Errors found?">
+      <bpmn:incoming>F_ToCheck</bpmn:incoming>
+      <bpmn:outgoing>F_Errors</bpmn:outgoing>
+      <bpmn:outgoing>F_NoErrors</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_Nav" name="Add entry to nav">
+      <bpmn:incoming>F_NoErrors</bpmn:incoming>
+      <bpmn:outgoing>F_ToOverview</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_Overview" name="Add entry to overview page">
+      <bpmn:incoming>F_ToOverview</bpmn:incoming>
+      <bpmn:outgoing>F_ToWarboard</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_Warboard" name="Add strike to warboard">
+      <bpmn:incoming>F_ToWarboard</bpmn:incoming>
+      <bpmn:outgoing>F_ToTest</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_Test" name="Test the site">
+      <bpmn:incoming>F_ToTest</bpmn:incoming>
+      <bpmn:outgoing>F_ToWorks</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gw_Works" name="Everything works?">
+      <bpmn:incoming>F_ToWorks</bpmn:incoming>
+      <bpmn:outgoing>F_Broken</bpmn:outgoing>
+      <bpmn:outgoing>F_Works</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Task_Upload" name="Upload new state">
+      <bpmn:incoming>F_Works</bpmn:incoming>
+      <bpmn:outgoing>F_ToEnd</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="End_Live" name="Entry live on the wiki">
+      <bpmn:incoming>F_ToEnd</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="F_Start" sourceRef="Start_Topic" targetRef="Gw_Merge" />
+    <bpmn:sequenceFlow id="F_ToWrite" sourceRef="Gw_Merge" targetRef="Task_Write" />
+    <bpmn:sequenceFlow id="F_ToReread" sourceRef="Task_Write" targetRef="Task_Reread" />
+    <bpmn:sequenceFlow id="F_ToCheck" sourceRef="Task_Reread" targetRef="Gw_Errors" />
+    <bpmn:sequenceFlow id="F_Errors" name="Yes" sourceRef="Gw_Errors" targetRef="Gw_Merge" />
+    <bpmn:sequenceFlow id="F_NoErrors" name="No" sourceRef="Gw_Errors" targetRef="Task_Nav" />
+    <bpmn:sequenceFlow id="F_ToOverview" sourceRef="Task_Nav" targetRef="Task_Overview" />
+    <bpmn:sequenceFlow id="F_ToWarboard" sourceRef="Task_Overview" targetRef="Task_Warboard" />
+    <bpmn:sequenceFlow id="F_ToTest" sourceRef="Task_Warboard" targetRef="Task_Test" />
+    <bpmn:sequenceFlow id="F_ToWorks" sourceRef="Task_Test" targetRef="Gw_Works" />
+    <bpmn:sequenceFlow id="F_Broken" name="No" sourceRef="Gw_Works" targetRef="Gw_Merge" />
+    <bpmn:sequenceFlow id="F_Works" name="Yes" sourceRef="Gw_Works" targetRef="Task_Upload" />
+    <bpmn:sequenceFlow id="F_ToEnd" sourceRef="Task_Upload" targetRef="End_Live" />
+    <bpmn:textAnnotation id="Note_Triggers">
+      <bpmn:text>An idea, something worth documenting, or a finished lab</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Assoc_Triggers" sourceRef="Start_Topic" targetRef="Note_Triggers" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="Diagram_WikiEntry">
+    <bpmndi:BPMNPlane id="Plane_WikiEntry" bpmnElement="Process_WikiEntry">
+      <bpmndi:BPMNShape id="Note_Triggers_di" bpmnElement="Note_Triggers">
+        <dc:Bounds x="100" y="60" width="136" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Start_Topic_di" bpmnElement="Start_Topic">
+        <dc:Bounds x="150" y="202" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="123" y="245" width="90" height="27" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gw_Merge_di" bpmnElement="Gw_Merge" isMarkerVisible="true">
+        <dc:Bounds x="226" y="195" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Write_di" bpmnElement="Task_Write">
+        <dc:Bounds x="316" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Reread_di" bpmnElement="Task_Reread">
+        <dc:Bounds x="456" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gw_Errors_di" bpmnElement="Gw_Errors" isMarkerVisible="true">
+        <dc:Bounds x="596" y="195" width="50" height="50" />
+        <bpmndi:BPMNLabel><dc:Bounds x="586" y="252" width="70" height="14" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Nav_di" bpmnElement="Task_Nav">
+        <dc:Bounds x="686" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Overview_di" bpmnElement="Task_Overview">
+        <dc:Bounds x="826" y="180" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Warboard_di" bpmnElement="Task_Warboard">
+        <dc:Bounds x="316" y="360" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Test_di" bpmnElement="Task_Test">
+        <dc:Bounds x="456" y="360" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gw_Works_di" bpmnElement="Gw_Works" isMarkerVisible="true">
+        <dc:Bounds x="596" y="375" width="50" height="50" />
+        <bpmndi:BPMNLabel><dc:Bounds x="581" y="341" width="80" height="27" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_Upload_di" bpmnElement="Task_Upload">
+        <dc:Bounds x="686" y="360" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="End_Live_di" bpmnElement="End_Live">
+        <dc:Bounds x="826" y="382" width="36" height="36" />
+        <bpmndi:BPMNLabel><dc:Bounds x="799" y="425" width="90" height="27" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Assoc_Triggers_di" bpmnElement="Assoc_Triggers">
+        <di:waypoint x="168" y="202" /><di:waypoint x="168" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F_Start_di" bpmnElement="F_Start">
+        <di:waypoint x="186" y="220" /><di:waypoint x="226" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F_ToWrite_di" bpmnElement="F_ToWrite">
+        <di:waypoint x="276" y="220" /><di:waypoint x="316" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F_ToReread_di" bpmnElement="F_ToReread">
+        <di:waypoint x="416" y="220" /><di:waypoint x="456" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F_ToCheck_di" bpmnElement="F_ToCheck">
+        <di:waypoint x="556" y="220" /><di:waypoint x="596" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F_Errors_di" bpmnElement="F_Errors">
+        <di:waypoint x="621" y="195" /><di:waypoint x="621" y="130" /><di:waypoint x="251" y="130" /><di:waypoint x="251" y="195" />
+        <bpmndi:BPMNLabel><dc:Bounds x="627" y="156" width="20" height="14" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F_NoErrors_di" bpmnElement="F_NoErrors">
+        <di:waypoint x="646" y="220" /><di:waypoint x="686" y="220" />
+        <bpmndi:BPMNLabel><dc:Bounds x="656" y="202" width="16" height="14" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F_ToOverview_di" bpmnElement="F_ToOverview">
+        <di:waypoint x="786" y="220" /><di:waypoint x="826" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F_ToWarboard_di" bpmnElement="F_ToWarboard">
+        <di:waypoint x="876" y="260" /><di:waypoint x="876" y="310" /><di:waypoint x="366" y="310" /><di:waypoint x="366" y="360" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F_ToTest_di" bpmnElement="F_ToTest">
+        <di:waypoint x="416" y="400" /><di:waypoint x="456" y="400" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F_ToWorks_di" bpmnElement="F_ToWorks">
+        <di:waypoint x="556" y="400" /><di:waypoint x="596" y="400" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F_Broken_di" bpmnElement="F_Broken">
+        <di:waypoint x="621" y="425" /><di:waypoint x="621" y="490" /><di:waypoint x="251" y="490" /><di:waypoint x="251" y="245" />
+        <bpmndi:BPMNLabel><dc:Bounds x="627" y="446" width="16" height="14" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F_Works_di" bpmnElement="F_Works">
+        <di:waypoint x="646" y="400" /><di:waypoint x="686" y="400" />
+        <bpmndi:BPMNLabel><dc:Bounds x="655" y="382" width="20" height="14" /></bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="F_ToEnd_di" bpmnElement="F_ToEnd">
+        <di:waypoint x="786" y="400" /><di:waypoint x="826" y="400" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
